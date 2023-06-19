@@ -1,0 +1,93 @@
+\chapter{Search for X17}
+\begin{refsection}
+\label{ch:X17}
+{\itshape After the recent publications from the ATOMKI collaboration, the so called X17 anomaly peaked the interest of the community. The flexibility of the MEG II apparatus allows for a variety of exotic searches and the collaboration deemed of interest searching for this anomaly in an uncorrelated way.
+The chapter starts with a recap of the previous searches and then moves to the description of this search in MEG: setup used; simulations developed; data acquisition and data analysis.}
+
+\section{ATOMKI and the X17 `anomaly'}
+The story of the Hungarian group and their result
+\section{MEG II}
+\section{Target}
+\subsection{Tube and insertion}
+\subsection{Vacuum and mechanical structure}
+\subsection{Lithium target}
+\section{The search}
+\subsection{MC simulations}
+\section{Data acquisition}
+\section{Data analysis}
+\subsection{Pair reconstruction}
+\paragraph{Vertexing}
+\subsection{Asymmetry}
+\paragraph{BGO}
+\paragraph{XEC}
+blo.sl calls /analyzer/config/bla.xml
+
+\subsection{Feldman-Cousin}
+Although the Feldman-Cousin approach is well-established in particle physics research, this was our first hands-on experience. 
+After studying the relevant papers (\cite{feldman:1998}\cite{feldman:2011}) and the internal notes of the collaboration we decided to develop a mock-up experiment to understand the framework necessary for a Feldman Cousin approach to data analysis.  
+Given a measured sample and the pdfs the framework we developed allows us to perform the analysis and obtain the confidence intervals.
+The full-blown X17 analysis was actually performed with the code written for the MEG II analysis. This code was developed and improved upon over many years and was both more robust and flexible. 
+Although it was an `academic exercise', this effort made understanding the existing code and the underlying theory/structure an easier task.  
+I contributed actively to this effort until we managed to have a running structure.
+Although I followed the whole procedure, the finalization of the mockup\footnote{ The full description of the code will be here skipped but it can be found in the following 
+\href{https://github.com/gdalmaso96/X17_LL_mock_up}{git repository \faGithubSquare}} and the transition to the MEG II code were done by Giovanni Dal Maso.
+
+\paragraph{Likelihood}
+This is an exercise to build confidence level belts based on Feldman-Cousins ranking using binned data.
+The data is syntetic and composed of an exponential background with a fixed slope and a Breit-Wigner with unknown mass and width. The data is binned.
+For such analysis the likelihood can be written as:
+
+
+\begin{equation}
+    \mathcal{L}(\textbf{x}|\hat{\mathcal{N}}_{S}, \hat{\mathcal{N}}_{BK}, \hat{m}, \hat{\Gamma}) = \frac{\hat{\mathcal{N}}^\mathcal{N} e^{-\hat{\mathcal{N}}} }{\mathcal{N}!} \prod_{i=1}^{m} \Big( \frac{\hat{N}_S}{\hat{\mathcal{N}}} \hat{\pi}_{S, i} + \frac{\hat{N}_{BK}}{\hat{\mathcal{N}}} \hat{\pi}_{BK, i} \Big)^{\mathcal{N}_i}, \quad \hat{\mathcal{N}} = \hat{\mathcal{N}}_{S} + \hat{\mathcal{N}}_{BK}, \quad \mathcal{N} = \mathcal{N}_{S} + \mathcal{N}_{BK}
+\end{equation}
+
+\noindent Where $\mathcal{N}$ is the number of measured events, $\hat{\mathcal{N}}$ is the center of the Poisson distribution and $\mathcal{N}_i$ is the number of events in the $i$-th bin.
+The $\hat{\pi}_i$ variables are uniquely determined by the signal and background PDFs, and are the expected values of the fraction of events in the $i$-th bin.
+
+\paragraph{PDFs}
+The signal PDF is defined as a Breit-Wigner:
+
+\begin{equation}
+	\mathcal{S}(m | \hat{m}, \hat{\Gamma}) = \frac{k}{(m^2 - \hat{m}^2)^2 + \hat{m}^2\hat{\Gamma}^2}
+\end{equation}
+
+with:
+
+\begin{equation}
+	k = \frac{2\sqrt{2}\hat{m}\hat{\Gamma}\gamma}{\pi\sqrt{\hat{m}^2 + \gamma}}, \quad \gamma = \sqrt{\hat{m}^2 ( \hat{m}^2 + \hat{\Gamma}^2)}
+\end{equation}
+
+Given $\mathcal{S}(m | \hat{m}, \hat{\Gamma})$, it is possible to evaluate the $\hat{\pi}_{S,i}$:
+
+\begin{equation}
+	\hat{\pi}_{S,i} (m_i) = \int_{m_i - \Delta m}^{m_i + \Delta m} \mathcal{S}(m\prime | \hat{m}, \hat{\Gamma}) dm\prime
+\end{equation}
+
+with $\Delta m$ being the bin width.
+
+The background PDF is defined as an exponential tail:
+
+\begin{equation}
+	\mathcal{B}(m) = \lambda e^{-\lambda m}
+\end{equation}
+
+
+with $\lambda$ fixed.
+Given $\mathcal{B}(m)$, it is possible to evaluate the $\hat{\pi}_{BK,i}$:
+
+\begin{equation}
+	\hat{\pi}_{BK,i} (m_i) = \int_{m_i - \Delta m}^{m_i + \Delta m} \mathcal{B}(m\prime)  dm\prime
+\end{equation}
+
+with $\Delta m$ being the bin width.
+
+\paragraph{Toy MC framework}
+
+\section{Results and conclusions}
+
+\cite{X17:1996} \cite{X17:nuclear:2004} \cite{X17:Krasznahorkay:2015} \cite{X17:Ellwanger:2016} \cite{X17:Feng:2016} \cite{X17_Kozaczuk:2017} \cite{X17:Krasznahorkay:2017} \cite{X17:2019} \cite{X17:2021} 
+
+\addcontentsline{toc}{chapter}{Bibliography on X17}
+\printbibliography[title=Bibliography on X17]
+\end{refsection}

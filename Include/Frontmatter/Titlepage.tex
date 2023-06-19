@@ -1,0 +1,56 @@
+\begin{frontespizio}
+% Remember: After editing this file, delete the cache and recompile
+%---------------------Definizione font---------------------%
+\Preambolo{\renewcommand{\fronttitlefont}{\fontsize{24}{24}\bfseries}}
+%----------------------------------------------------------%
+	% \frontinstitutionfont 	Neretto, 14/17 
+	% \frontdivisionfont 		Tondo, 12/16 
+	% \frontpretitlefont 		Maiuscoletto, 10/12
+	% \fronttitlefont 		Neretto, 17/21 
+	% \frontsubtitlefont 		Tondo, 12/14
+	% \frontfixednamesfont 		Tondo, 12/14 
+	% \frontnamesfont 		Neretto, 12/14 
+	% \frontsmallfont 		Neretto, 9/11 
+	% \frontfootfont	 	Neretto, 12/14 
+
+	% \bfseries	Grassetto
+	% \itshape	Corsivo
+	% \scshape	Maiuscoletto
+%----------------------------------------------------------%
+\Margini{4cm}{3cm}{3cm}{3cm}				% Margini sinistro, in basso, destro e in alto
+\Logo[3cm]{Figures/Logo/logo_sapienza_new.jpg}
+%\Universita{Roma}
+\Istituzione{\ }
+%\Facolta{Civil and Industrial Engineering}		% = 'Facolta di Ingegneria Civile ed Industriale'
+\Divisione{Department of Physics `G. Marconi'}		% = 'Facolta di Ingegneria Civile ed Industriale'
+%\Dipartimento{Ingegneria Meccanica e Aerospaziale}	% = 'Dipartimento di Ingegneria Meccanica e Aerospaziale'
+%\Corso[Master Degree]{Aeronautical Engineering}
+\Scuola{PhD in Accelerator Physics}
+\Titoletto{Thesis For The Degree Of Doctor Of Philosophy}
+\Titolo{New high intensity \& brightness muon beams for experiments at the intensity frontier\\
+\vspace{0cm}
+\begin{figure}[h]
+\includegraphics[height=1.6cm]{Figures/Logo/INFN-Pisa.png}
+\includegraphics[height=1.6cm]{Figures/Logo/PSI.png}
+\includegraphics[height=1.6cm, width=0.01cm]{example-image-a}
+\includegraphics[height=1.6cm]{Figures/Logo/meg_logo.jpg}
+\includegraphics[height=1.6cm]{Figures/Logo/muEDMLogoProposal.png}
+\includegraphics[height=1.6cm]{Figures/Logo/muEDMLogoProposal.png}
+\end{figure}
+}
+
+%\Sottotitolo{}
+\Punteggiatura{}					% Modifica la punteggiatura dopo 'Candidato', 'Realatore' ecc. (vuoto per togliere)
+\NCandidato{Candidate}					% Sostituisce 'Candidato' con '...'
+\Preambolo{\renewcommand{\frontsmallfont}[1]{\small}}
+\Candidato[1949877]{Bastiano Vitali}
+%\Candidato{\small{1532252}}
+\NRelatore{Thesis advisor}{Thesis advisors}
+\NCorrelatore{Thesis co-advisor}{Thesis co-advisors}% Sostituisce 'Relatori' con 'Advisor' (permette anche di scrivere più relatori)
+\Relatore{Prof. Angela Papa}
+\Correlatore{Prof. Aldo Sady Antognini}
+%\Rientro{1cm}						% Rientro di Relatore e Candidato
+\Piede{Academic Year 2023-2024 (XXXVI cycle)}					% A fondo pagina
+\end{frontespizio}
+\IfFileExists{\jobname-frn.pdf}{}{%
+\immediate\write18{pdflatex \jobname-frn}}

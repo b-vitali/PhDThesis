@@ -1,0 +1,132 @@
+\chapter{muEDM}
+\begin{refsection}
+
+{\itshape
+This chapter is an introduction to the muEDM experiment. After describing in some detail the spin dynamics, a brief status on the EDM searches for the different particles will follow.
+The description of the muEDM search will follow: starting from the frozen spin technique and outlying the status of the experiment. 
+Description of the apparatus, study on the systematics and introduction to the different simulations.}
+
+\section{Electric Dipole Moment}
+As introduced in \ref{intro:edm}, the Hamiltonian describing the spin dynamics is:
+        \begin{equation}
+            \hat{H} = -\mu\bm{\hat{\sigma}\cdot B}-d\bm{\hat{\sigma}\cdot E}
+        \end{equation}
+        In a magnetic field the dynamic of a particle at rest is described by $\dd s/\dd t=\bm{\mu}\times\bm{b} = \bm{\omega}_L\times\bm{s}$, where $\bm{\mu}=ge/(2m)\bm{s}$ is the \gls{mdm} and $\bm{\omega}_L=-2\mu\bm{B}/\hbar$ the Larmor procession frequency.
+        Similarly an hypotetical \gls{edm} $\bm{d}=\eta e/(2mc)\bm{s}$ results in a procession $\bm{\omega}_d=-2d\bm{E}/\hbar$ in an electric field $\bm{E}$.
+        When considering a moving particle in both fields it is useful to introduce the polarization vector $\bm{\Pi}=\bm{s}/s$ and the Thomas procession $\bm{\Omega}_0$
+        \begin{equation}
+            \dv{\bm{\Pi}}{t}=\bm{\Omega}_0 \times \bm{\Pi}, \quad
+            \bm{\Omega}_0 = -\frac{e}{m\gamma} \left[ (1+\gamma a)\bm{B}-\frac{a\gamma^2}{\gamma+1}(\bm{\beta}\cdot\bm{B})\bm{\beta}-\gamma \left( a+\frac{1}{\gamma+1} \right) \frac{\bm{\beta}\times \bm{E}}{c} \right]
+        \end{equation}
+        
+        \cite{muEDM:Flavour:2008}\cite{muEDM:Ring:2004}
+        
+        If there is no electrical field parallel to the momentum the acceleration is purely transverse so we get the following motion, with $\bm{\Omega}_c$ the cyclotron frequency.
+        \begin{equation}
+            \dv{\bm{\beta}}{t}=\bm{\Omega}_c\times \bm{\beta}, \quad \bm{\Omega}_c = -\frac{e}{m\gamma}\left( \bm{B}- \frac{\gamma^2}{\gamma^2-1}\frac{\bm{\beta} \times \bm{E}}{c} \right)
+        \end{equation}
+        The relative spin procession of a muon in a storage ring will be then given by (T-BMT \cite{miss-59})
+        \begin{equation}
+        \begin{split}
+            \bm{\Omega}=\bm{\Omega}_0-\bm{\Omega}_c &=
+            \underbrace{ 
+                \frac{q}{m}\left[ a\bm{B} -\cancel{\frac{a\gamma}{\gamma+1}(\bm{\beta}\cdot \bm{B})\bm{\beta}} - \left(  a+\frac{1}{1-\gamma^2}\right)\frac{\bm{\beta} \times \bm{E}}{c} \right]
+            }_{\text{Anomalous procession, } \omega_a=\omega_L-\omega_c} \\&+
+            \underbrace{
+                \frac{\eta q}{2m}\left[ \bm{\beta} \times \bm{B} + \frac{\bm{E}}{c}- \cancel{\frac{\gamma c}{\gamma+1}(\bm{\beta}\cdot\bm{E\beta})} \right]
+            }_{\text{Interaction of EDM and relativistic $\bm{E}$, } \omega_a}
+        \end{split}
+        \label{eq:procession}
+        \end{equation}
+        
+        The second term describes the procession due to the \gls{edm} coupling to the relativistic $\bm{E}$, perpendicular to the $\bm{B}$ in which the particle is moving. 
+        The simplification shown are the result of $\bm{p}$, $\bm{B}$ and $\bm{E}$ forming an orthogonal basis, hence the scalar products are null.
+        In the case of the E821 experiment, the muon \textit{magic} momentum was chosen, simplifying eq. \ref{eq:procession} and making the anomaly procession frequency independent from the electric fields needed for beam steering. 
+        
+        \begin{equation}
+            p_{magic}=\frac{m}{\sqrt{a}}=3.09\ \text{GeV}/c, \quad
+            \bm{\Omega} = \frac{q}{m} \left[ a\bm{B} +\frac{\eta}{2}\left( \bm{\beta}\times\bm{B} + \frac{\bm{E}}{c}\right) \right]
+        \end{equation}
+        
+        In the presence of a muon \gls{edm} the plane would be tilted and a vertical procession ($\bm{\omega}_e\perp\bm{B}$), shifted by $\pi/2$ to the horizontal anomalous procession, would become observable.
+\subsection{Particles EDM}
+\paragraph{Neutron}
+\paragraph{Electron} 
+\paragraph{Muon} 
+
+\subsection{The \textit{frozen spin} technique}
+        \cite{1,9} 
+        With the appropriate choice of electric field and having $\bm{p}$, $\bm{B}$ and $\bm{E}$ forming an orthogonal basis, the anomalous precession term in eq. \ref{eq:procession} can be set to zero. 
+        \begin{equation}
+            a\bm{B}=\left( a-\frac{1}{\gamma^2-1} \right)\frac{\bm{\beta}\times\bm{E}}{c}
+        \end{equation}
+        In this situation the relative angle between $\bm{p}$ and spin remains unchanged if $\eta=0$, hence 'frozen'. 
+        In the presence of an \gls{edm} the change in polarization would then follow
+        \begin{equation}
+            \label{eq:freezed}
+            \dv{\bm{\Pi}}{t}=\bm{\omega}_e \times \bm{\Pi}, \quad
+            \bm{\omega}_e=\frac{\eta q}{2m} \left(\bm{\beta}\times\bm{B}+\frac{\bm{E}_f}{c} \right) =
+            \frac{2 d_\mu}{\hbar} \left(\bm{\beta}c\times\bm{B}+\bm{E}_f\right)
+        \end{equation}
+        The net result of the \gls{edm} is a vertical build-up of the polarization
+        \begin{equation}
+            |\bm{\Pi}(t)|=P(t)=P_0\sin(\omega_e t)\approx P_0 \omega_e t \approx 2P_0\frac{d_\mu}{\hbar}\frac{E_f}{a\gamma^2}t
+        \end{equation}    
+        At this point we would like to evaluate the sensitivity to this vertical build-up and this is dependent on the experimental setup investigated.
+        \begin{equation}
+            \dv{P}{d_\mu}=\frac{2P_0E_ft}{a\hbar\gamma^2}
+        \end{equation}     
+        \begin{equation}
+           \sigma(d_\mu)=\frac{a\hbar\gamma}{2P_0E_f\sqrt{N}\tau_\mu A}
+        \end{equation}                 
+
+\section{The muEDM apparatus}
+\subsection{Superconducting injection channel}
+To allow the incoming muons to enter the magnet without being reflected or deviated by fringing fields an injection channel is needed.
+For reasons that will be discussed in the section dedicated to the systematics (\ref{muEDM:systematics}), we will actually require two symmetrical injections.
+The idea is to use a superconducting pipe: the fields around the pipe will generate Eddy currents which will, in turn, generate an opposite field inside the pipe, canceling the first.
+Clearly, the development of such a system is not trivial, and a precise study of the different shapes and materials is required. 
+The hope would be to find a suitable \textit{high-temperature} superconductor.
+
+\subsection{Entrance detector} After a muon successfully enters the experiment it would spiral to the other side of the magnet. 
+To store it a magnetic kick is necessary. 
+How to produce this kick is going to be explained in the next paragraph but in either case, this system needs to be triggered.
+To detect the muon entering the system a thin scintillator can be used.
+This needs to be thick enough to produce sufficient light but thin enough not to deflect the particle from the design orbit.
+With a dedicated \gf simulation\footnote{To be honest this was actually my first \gf project and few iterations were needed.}, the amount of light exiting the different sides of the thin scintillator was studied as a function of muon and positron momenta. 
+The results of the simulations and the dedicated beamtimes to develop this entrance detector will be discussed in a following section (\ref{muEDM:entrance}).
+
+\subsection{Muon tracking} Although during physics runs it is important to minimize the number of interactions of the muon along the path, it is a cardinal step to prove the muons are following the correct path.
+For this reason, a removable muon-tracking device is under development.
+The idea is to use \tpc + \grid.
+
+\subsection{Kicker}
+The prerequisite for the \textit{frozen spin} is to first store the muon around the design orbit.
+This is achieved by applying a longitudinal kick, canceling the momentum component parallel to the magnetic field.
+The development of this element is non-trivial because of the stringent requirements on the strength, time scale, and residual effects of the kick.
+We started by looking into different shapes and types of coil as well as developing \ltsp simulations of the generating circuit.
+
+\subsection{Electrodes}
+After the muon has been successfully stored around the design orbit the next step is to apply a radial electric field. 
+The strength of this field is going to modify the frequency of the g-2 precession, eventually \textit{freezing} the spin (eq. \ref{eq:freezed}) along the momentum direction.
+These electrodes need to be out of the muon orbit and with a minimal material budget to reduce the positron scattering.  
+Dedicated simulations and prototyping have been developed also for this element.
+
+\subsection{Positron tracking}
+The development of the positron tracker has been a big part of my work in the collaboration.
+For this reason, an in-depth description will follow in a dedicated chapter while here we will just outline the basic idea.
+The project is two use two subsystems:
+\begin{outline}
+    \1 A silicon pixel external tracker will be used to track precisely the transverse position of the positron. The aim of this sub-detector is to measure the g-2 precession to fine-tune the radial electric field to achieve the frozen-spin condition.
+    \1 An internal scintillating fiber detector with a comparable resolution on the transverse position will complement the silicon pixel with additional hits. The requirement is to have a better resolution on the longitudinal position of the hits to measure the EDM by looking at the pitch of the outgoing helical track.
+\end{outline}
+
+\section{Systematics}
+\label{muEDM:systematics}
+
+
+\cite{muEDM:Semertzidis:2001} \cite{muEDM:g-2:2008} \cite{muEDM:Adelmann:2010} \cite{muEDM:J-PARC:2011} \cite{muEDM:J-PARC:2016} \cite{muEDM:PSI:2021} \cite{muEDM:PSI:Mikio:2022} \cite{muEDM:PSI:Kim:2022}
+
+\addcontentsline{toc}{chapter}{Bibliography on muEDM}
+\printbibliography[title=Bibliography on muEDM]
+\end{refsection}

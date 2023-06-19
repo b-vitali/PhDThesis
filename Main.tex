@@ -1,0 +1,164 @@
+%   SETUP%
+\documentclass[a4paper,11pt,oneside,titlepage]{book}
+
+%\documentclass[draft, a4paper,11pt,oneside,titlepage]{book}
+%add "draft=false" in includegraphics[draft=false] to keep an image while ignoring the others with "draft"
+
+\input{Include/Settings/Settings}
+
+%\usepackage{natbib}
+\usepackage[backend=biber, style = numeric, sorting=none, natbib=true]{biblatex} %, style = phys
+\bibliography{Include/Backmatter/Bibliography}
+\usepackage{makecell}
+\setlist{nosep}
+\usepackage{bm}
+\usepackage{braket}
+\usepackage{siunitx}
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{outlines}
+\usepackage{subfig}    
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{mhchem}
+\usepackage{hyperref}
+\usepackage{fontawesome}
+
+\usepackage{mathpazo}
+\usepackage{xspace}
+\newcommand{\gf}{\textsc{Geant4}\xspace}
+\newcommand{\tpc}{\textsc{TPC}\xspace}
+\newcommand{\grid}{\textsc{GridPIX}\xspace}
+\newcommand{\ltsp}{\textsc{LTspice}\xspace}
+\newcommand{\madx}{\textsc{Mad-X}\xspace}
+\newcommand{\gfb}{\textsc{G4Beamline}\xspace}
+%\usepackage{chapterbib}
+
+% Replacement                                                  %
+%\usepackage[sectionbib]{natbib}  %
+%\usepackage{chapterbib}                                        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%                %%%%%  
+%%%%%  FRONT MATTER  %%%%%  
+%%%%%                %%%%%                                             %
+\frontmatter 	   % Begin Roman style (i, ii, iii, iv...) page numbering
+\pagestyle{empty}  % No headers or footers for the following pages
+
+%%   TITLE PAGE
+\input{Include/Frontmatter/Titlepage} 
+\clearpage
+
+%%   QUOTE 
+%\input{Include/Frontmatter/Quote}
+%\newpage
+%%   ABSTRACT
+\afterpage{\null\thispagestyle{empty}\clearpage} % Blank page
+\input{Include/Frontmatter/Abstract} 
+\begin{singlespace}
+\tableofcontents 	
+%\addcontentsline{toc}{chapter}{\listfigurename}
+%\listoffigures
+%\addcontentsline{toc}{chapter}{\listtablename}
+%\listoftables
+% \renewcommand{\lstlistlistingname}{List of Code}
+% \addcontentsline{toc}{chapter}{\lstlistlistingname} 
+% \lstlistoflistings
+
+%%   NOMENCLATURE AND ACRONYMS
+%\printnomenclature
+%\printglossaries
+\end{singlespace}
+
+%%   ALL NOMENCCLATURE
+    \nomenclature{$M_\infty$}{Free Stream Mach number}
+
+%%   ALL ACRONYMS
+    \newacronym{g4}{GEANT4}{GEometry ANd Tracking 4}
+% Experiments
+    \newacronym{psi}{PSI}{Paul Scherrer Institute}
+    \newacronym{fnal}{FERMILAB}{Fermi National Accelerator Laboratory}
+
+    \newacronym{meg}{MEG}{Mu to E Gamma}
+    \newacronym{mucool}{muCool}{Computational Fluid Dynamics}
+    \newacronym{muEDM}{muEDM}{Muon Electric Dipole Moment}
+    \newacronym{hipa}{HIPA}{High Intensity Proton Accelerator}
+    \newacronym{himb}{HIMB}{High Intensity Muon Beam}
+    \newacronym{dio}{DIO}{Decay In Orbit}
+% Theory
+    \newacronym{edm}{EDM}{permanent Electric Dipole Moment}
+    \newacronym{mdm}{MDM}{permanent Magnetic Dipole Moment}
+    \newacronym{amm}{AMM}{anomalous magnetic moment}
+    \newacronym{ckm}{CKM}{Cabibbo–Kobayashi–Maskawa}
+
+    \newacronym{sm}{SM}{Standard Model}
+    \newacronym{bsm}{BSM}{Beyond Standard Model}
+    \newacronym{eft}{EFT}{Effective Field Theory}
+    \newacronym{left}{LEFT}{Low-energy Effective Field Theory}
+    \newacronym{smeft}{SMEFT}{Standard Model Effective Field Theory}
+    \newacronym{alp}{ALPs}{Axion-Like Particles}
+
+    \newacronym{clfv}{cLFV}{charged lepton flavour violation}
+    
+    \newacronym{qed}{QED}{Quantum ElectroDynamics}
+    \newacronym{qcd}{QCD}{Quantum ChromoDynamics}
+    \newacronym{cp}{CP}{Charge and Parity}
+    \newacronym{cpt}{CPT}{Charge Parity and Time}
+
+
+%%   MAIN MATTER
+\mainmatter	  % Begin normal, numeric (1,2,3...) page numbering
+\clearpage
+% ------ set page style fancy with the follow 
+\pagestyle{fancy} 
+\renewcommand{\chaptermark}[1]{\markright{\chaptername\ \thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\lhead{} 
+\chead{}                   
+\rhead{\slshape \rightmark} 
+\lfoot{\small Bastiano Vitali}
+\cfoot{\hspace{2cm}\small New high intensity \& brightness muon beams for experiments at the intensity frontier} 
+\rfoot{\small \thepage}          
+\renewcommand{\headrulewidth}{0.4pt} 
+\renewcommand{\footrulewidth}{0.4pt} 
+
+%%%%%                %%%%%  
+%%%%%    CHAPTERS    %%%%%  
+%%%%%                %%%%%  
+
+\input{Include/Chapters/Introduction}
+%\part{muCool}
+%\input{Include/Chapters/muCool_minus}
+\part{muEDM}
+\input{Include/Chapters/muEDM}
+\input{Include/Chapters/muEDM_entrance}
+\input{Include/Chapters/muEDM_tracker}
+\part{MEG II}
+\input{Include/Chapters/MEGandCW}
+\input{Include/Chapters/LH2}
+\input{Include/Chapters/X17}
+
+
+%%%%%                %%%%%  
+%%%%%   BACK MATTER  %%%%%  
+%%%%%                %%%%%  
+
+%%   APPENDIX
+\cleardoublepage
+\appendix % to tell LaTeX that the following chapters are appendices
+%\input{Include/Backmatter/Appendix/Appendix_G4TessellatedSolid}
+
+%%   BIBLIOGRAPHY
+%\cleardoublepage
+%\addcontentsline{toc}{chapter}{Complete Bibliography}
+%\nocite{*}
+%\printbibliography[title=Complete Bibliography]
+
+%%   ACKNOWLEDGEMENTS
+%\cleardoublepage
+%\addcontentsline{toc}{chapter}{Acknowledgement}
+%\input{Include/Backmatter/Acknowledgement}
+
+\end{document} 
