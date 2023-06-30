@@ -10,34 +10,21 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
 
 \section{Outline of this thesis}
     The structure of this Thesis might differ slightly from the norm. While most of my colleagues dedicated their work to a singular subject, like a particular detector or theory, my effort during the course of my Ph.D. has been spread on a wider angle.
-    At first glance, this work might seem the result of three separate projects, namely MEG MuEDM, and muCool. In fact, the spirit in which this Thesis has been written is orthogonal to the chapters themselves: the overall progress of muonic particle physics experiments.
+    At first glance, this work might seem the result of three separate projects, namely MEG, MuEDM, and muCool. 
+    In fact, the spirit in which this Thesis has been developed is orthogonal to the chapters themselves: the overall progress of muonic particle physics experiments.
 
-    \begin{itemize}
-        \item MEG
-        \begin{itemize}
-            \item how to use a CW
-            \item Cryogenic and LH2
-            \item data taking and analysis X17
-        \end{itemize}
-        \item MuEDM
-        \begin{itemize}
-            \item how to use Geant4
-            \item beam insertion
-            \item (beam time + analysis to check Geant4)
-        \end{itemize}
-        \item muCool
-        \begin{itemize}
-            \item field simulations for mu+ Transvers+Longitudinal
-            \item begin of the study for mu-
-        \end{itemize}
-    \end{itemize}
+    \begin{outline}
+        \1 muCool (?)
+        \1 muEDM
+        \1 MEG
+    \end{outline}
 
 \section{Particle physics at Paul Scherrer Institute}
     
 \section{Bite-size theory}
     The aim of this section is to define the framework in which (part) of particle physics research is moving. In particular, we will be focusing on the aspects which are relevant to the three experiments core of this thesis.
-    The searches \gls{bsm} proceed in two main directions: \textit{Intensity frontier} is used to describe the test of contributions which are too small to be experimentally accessible observing large numbers of events;
-    \textit{Precision frontier} is used when improving the accuracy of a specific parameter to test the agreement with the \gls{sm}.
+    The searches \gls{bsm} proceed in two main directions: \textit{intensity frontier} is used to describe the test of contributions that are too small to be experimentally accessible observing large numbers of events;
+    \textit{precision frontier} is used when improving the accuracy of a specific parameter to test the agreement with the \gls{sm}.
     Searches for \gls{clfv} or neutron \gls{edm} are examples of the former type while precision \gls{qed} tests with muonium are of the latter.
     
     \subsection{Standard Model at low energies}
@@ -46,13 +33,13 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
             \mathcal{L}_{QED+QCD}=\sum_{f}\bar{f}(i\cancel{D}-m_f)f-\frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}-\frac{1}{4}G_{\alpha\beta}G^{\alpha\beta}
             \label{eq:sm}
         \end{equation}
-        where $F$ and $G$ are the electromagnetic and gluonic field-strenght tensors. The sum here is on fermions of mass $m_f$, charge $eQ_f$ and color $g_st^a_f$. For a lepton this would mean $Q_\ell=-1$ and $t^a_\ell=0$ while for a quark $Q_q=2/3$ or $-1/3$ and $t^a_q=\lambda^a/2$, with $\lambda$ Gell-Mann matrices.
+        where $F$ and $G$ are the electromagnetic and gluonic field-strength tensors. The sum here is on fermions of mass $m_f$, charge $eQ_f$, and color $g_st^a_f$. For a lepton, this would mean $Q_\ell=-1$ and $t^a_\ell=0$ while for a quark $Q_q=2/3$ or $-1/3$ and $t^a_q=\lambda^a/2$, with $\lambda$ Gell-Mann matrices.
         To compute the matrix element between two lepton states we find:
         \begin{equation}
             \matrixel{\ell(p_2)}{J^a_{em}}{\ell(p_1)} =\bar{u}(p_2,m_\ell)\left(F^{(\ell)}_1(q^2)\gamma^a+F^{(\ell)}_2(q^2)\frac{i\sigma^{\alpha\beta}q_\beta}{2m_\ell} \right)u(p_1,m_\ell)
             \label{eq:matrix}
         \end{equation}
-        Here $u$ and $\bar{u}$ are the spinors and the two states are with momenta $p_1$ and $p_2=p_1+q$ while $F_1^{(\ell)}$ and $F_1^{(\ell)}$ are related rispectively to the electric charge and the \gls{amm}. 
+        Here $u$ and $\bar{u}$ are the spinors and the two states are with momenta $p_1$ and $p_2=p_1+q$ while $F_1^{(\ell)}$ and $F_1^{(\ell)}$ are related respectively to the electric charge and the \gls{amm}. 
         In particular, fort the \gls{amm} we find
         \begin{equation}
             F_2^{(\ell)}(0) = a_\ell = \frac{(g-2)_\ell}{2}  
@@ -89,7 +76,7 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
             \quad
             J^\alpha_{cc}=\sum_\ell \bar{\nu}_\ell\gamma^\alpha P_L\ell+\sum_{ij}V_{ij}\bar{u}_i\gamma^\alpha P_L d_j
         \end{equation}
-        where $g=e/\sin{\vartheta_W}$, $g_Z=e/\cos{\vartheta_W}$ are the $SU(2)_L$ coupling  expressed trough the Weinberg mixing angle $\vartheta_W$. Only the left handed fermions are coupled (trought $P_L\equiv (1-\gamma_5)/2$) and in the sum over the quark the \gls{ckm} matrix $V_{ij}$ describes the flavor-changing effect.
+        where $g=e/\sin{\vartheta_W}$, $g_Z=e/\cos{\vartheta_W}$ are the $SU(2)_L$ coupling  expressed trough the Weinberg mixing angle $\vartheta_W$. Only the left-handed fermions are coupled (through $P_L\equiv (1-\gamma_5)/2$) and, in the sum over the quark, the \gls{ckm} matrix $V_{ij}$ describes the flavor-changing effect.
         When dealing with masses much smaller than $m_W$ and $m_Z$ the result is the `effective' Fermi theory current-current interaction
         \begin{equation}
             \mathcal{L}_{4F}= -\frac{4 G_F}{\sqrt{2}} \left( J_{cc}^\alpha(J_{cc})^\dag_\alpha + J^\alpha_{nc}(J^\alpha_{nc})_\alpha\right)
@@ -155,7 +142,7 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
             \frac{1}{\tau_\mu}\equiv\Gamma_\mu = \Gamma_0(1+\Delta q) = \frac{G_F^2 m_\mu^5}{192 \pi^3}(1+\Delta q)
             \label{eq:tau}
         \end{equation}
-        Unfortunately, \gls{qcd} corrections are non-perturbative for $q^2\sim m_\mu^2$ and are the leading theoretical uncertainty. These correction are known at NNLO.
+        Unfortunately, \gls{qcd} corrections are non-perturbative for $q^2\sim m_\mu^2$ and are the leading theoretical uncertainty. These corrections are known at NNLO.
         Precision measurement of the muon lifetime is key for consistency checks of th \gls{sm}. In fact $G_F$ can be relate to $m_W$ and $m_Z$
         \begin{equation}
             \frac{4G_F}{\sqrt{2}}=\frac{g^2}{2m_W^2}(1+\Delta r)=\frac{2\pi}{\sin^2\vartheta_Wm_W^2}(\+\Delta r)

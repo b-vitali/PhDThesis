@@ -4,29 +4,29 @@
 
 \section{MEG II}
 \section{XEC}
-\subsection{Xe scintillation}
-\subsection{Xe as calorimeter}
-\subsection{Cryogenics}
-\subsection{PMTs}
-\subsection{Performances}
-\subsection{LED Calibration}
-\label{LED}
+    \subsection{Xe scintillation}
+    \subsection{Xe as calorimeter}
+    \subsection{Cryogenics}
+    \subsection{PMTs}
+    \subsection{Performances}
+    \subsection{LED Calibration}
+    \label{LED}
 \section{Spectrumeter}
-\subsection{COBRA}
-\label{MEG:COBRA}
-\subsection{CDCH}
-\subsection{TC}
+    \subsection{COBRA}
+    \label{MEG:COBRA}
+    \subsection{CDCH}
+    \subsection{TC}
 \section{Trigger and DAQ}
 \section{Beam and target}
-The beam-lines at PSI were described in \ref{intro:beamlines}. 
-In particular, the beam-line delivering $\mu^+$ to MEG II is the $\pi e5$ line. 
-Few elements transport the beam from the end of $\pi e5$, finally to the target.
+    The beam-lines at PSI were described in \ref{intro:beamlines}. 
+    In particular, the beam-line delivering $\mu^+$ to MEG II is the $\pi E5$ line. 
+    This line is shown in  Fig. \ref{fig:pie5} and the key elements are here discussed
 
 \subsection{$\pi e5$}
-This beam-line has actually two possible configurations: this will allow to share it between MEG II and Mu3e. But most details are shared.
-As already illustrated, the surface muons delivered by this beam-line are produced for the decay of the pions generated as secondary beams from the HIPA proton beam.
-On top of muons, pions and positrons also are transported by the beam-line: in  the rate of the different species is momentum dependent and is shown in Fig.~\ref{fig:pie5:rates}.
-The peak at \SI{29}{MeV/c} is the working point of the experiment.
+    This beam-line has actually two possible configurations: this will allow to share it between MEG II and Mu3e. 
+    As already illustrated, the surface muons delivered by this beam-line are produced for the decay of the pions generated as secondary beams from the HIPA proton beam.
+    On top of muons, pions and positrons also are transported by the beam-line: in  the rate of the different species is momentum dependent and is shown in Fig.~\ref{fig:pie5:rates}.
+    The peak at \SI{29}{MeV/c} is the working point of the experiment.
 
 \begin{equation}
     \Delta R = a \left\{
@@ -37,25 +37,40 @@ The peak at \SI{29}{MeV/c} is the working point of the experiment.
     \right\} ^{1/2} p^{3.5}
 \end{equation}
 
-\noindent The last elements of one of the two configurations were designed \textit{ad hoc} for MEG II.
-\paragraph{Quadrupoles and separator}
-\paragraph{BTS}
-\paragraph{COBRA} Finally the beam eneters COBRA. 
-The design choice for this element was previously illustrated (\ref{MEG:COBRA}). 
-The behaviour of the beam inside this element is quite tricky to simulate consistently.
-\subsection{MEG II target}
-\paragraph{Deformation and pictures}
-\subsection{Simulations}
-\paragraph{\gfb}
-\paragraph{\madx} During 2022/2023 Luca Biasia, a Master student in Pisa, developed a \madx\footnote{\madx is a general-purpose tool for charged-particle optics design and can be found \href{http://madx.web.cern.ch/madx/}{here}.} simulation to describe the $\pi e5$ line and cross validate the results obtained using \gfb. 
-My contribution to this simulation was only partial: I provided Luca with some working \madx examples, developed while attending the JUAS, for him to start playing with this simulation framework. 
-After this initial `starting kit', Giovanni has actually being the one overseeing the development while I mainly followed the updates. 
+    \noindent The elements that make up one of the two configurations, the "L" channel, were designed \textit{ad hoc} for MEG II.
 
-some plot?
+    \begin{figure}
+        \centering
+        \includegraphics[width = \textwidth]{Figures/MEG/pie5_beamline.png}
+        \caption{Detail of the $\pi E5$ beamline at PSI. OLD}
+        \label{fig:pie5}
+    \end{figure}
 
-During the beam tuning in June 2023 this simulation was crosschecked: after measuring the beam spot at COBRA center the currents of the magnets were chosen with \madx to obtain a different beam shape. 
-The measurement was consistent withe the resulting simulation, validating the  simulation.
+        \paragraph{Quadrupoles and separator}
+        \paragraph{BTS}
+        \paragraph{COBRA} Finally the beam eneters COBRA. 
+        The design choice for this element was previously illustrated (\ref{MEG:COBRA}). 
+        The behaviour of the beam inside this element is quite tricky to simulate consistently.
+    \subsection{MEG II target}
+        \paragraph{Deformation and pictures}
+    \subsection{Simulations}
+        \paragraph{\gfb}
+        \paragraph{\madx} During 2022/2023 Luca Biasia, a Master student in Pisa, developed a \madx\footnote{\madx is a general-purpose tool for charged-particle optics design and can be found \href{http://madx.web.cern.ch/madx/}{\underline{here}}.} simulation to describe the $\pi E5$ line and cross-validate the results obtained using \gfb. 
+        My contribution to this simulation was only partial: I provided Luca with some working \madx examples, developed while attending the JUAS, for him to start playing with this simulation framework. 
+        After this initial `starting kit', Giovanni Dal Maso has been the one overseeing the development while I only followed the updates. \\
+        After a comparison with data and \gfb some discrepancies arose and, after many iterations, they were associated with the description of the fringing fields of the components in \madx. 
+        The solution adopted was to slice the field maps in thin layers and define many thin `\madx elements'. 
+        A comparison of the results from QSK41 to COBRA center is shown in Fig.~\ref{fig:madx_vs_g4b}
+        During the beam tuning in June 2023, this simulation was crosschecked: after measuring the beam spot at COBRA center the currents of the magnets were chosen with \madx to obtain a different beam shape. 
+The measurement was consistent with the resulting simulation.
 Moving forward this tool is going to play a key role during the beam tuning.
+
+\begin{figure}
+    \centering
+    \includegraphics[width = \textwidth]{Figures/MEG/madx_vs_g4b.png}
+    \caption{Comperison of the results from the \gfb and \madx simulations for $\pi E5$.}
+    \label{fig:madx_vs_g4b}
+\end{figure}
 
 \section{Cockcroft–Walton}
 In addition to the muon beamline, MEG II has a Cockcroft–Walton proton accelerator. 
@@ -163,6 +178,8 @@ The only salvageable part of the rectifiers were the aluminum capacitors, which 
 \caption{The rectifiers are made of three elements: diodes; aluminum capacitors; resistors (\ref{fig:CW:burned}). Only the capacitors were salvageable: we re-assembled the rectifiers with new diodes and resistors (\ref{fig:CW:rect_build}; \ref{fig:CW:rect_new}).}
 \label{fig:CW:fixed}
 \end{figure}
+
+\section{Conclusions}
 
 \addcontentsline{toc}{chapter}{Bibliography on MEG II}
 \printbibliography[title=Bibliography on MEG II]

@@ -116,17 +116,17 @@ The readout simulates a SiPM:
 \end{outline}
 
 \subsection{From photons to waveforms}
-The simuation in \gf ends with the recording of the optical photons entering the SiPM SensitiveDetectors.
-The physical processes going from the impinging photons to the analog singal are quite complex and simulate them would require a lot of effort (and CPU time).
+The simulation in \gf ends with the recording of the optical photons entering the SiPM SensitiveDetectors.
+The physical processes going from the impinging photons to the analog signal are quite complex and simulating them would require a lot of effort (and CPU time).
 To get a feeling of the type of signals we can expect from the simulation we can create a simple script \textit{faking} the readout.
-The require steps are:
+The required steps are:
 \begin{outline}
     \1 \textit{PDF}: probability of a photon converting. 
-    This is a binomial distribution and is SiPM dependent: resonable values $p_{PDF}\in [0.4, 0.5]$
+    This is a binomial distribution and is SiPM dependent: reasonable values $p_{PDF}\in [0.3, 0.5]$
     \1 \textit{Response}: per photon converted, add a 'waveform' at the photon time. 
     The shape $w(t)$ is SiPM/electronics dependent but some assumptions can be made.
-    \1 \textit{Dark noise} : add a probability of spurious photons converting. 
-    This is a poissonian process which gives $n_{dark}$ photons distributed flat in the readout time.
+    \1 \textit{Dark noise}: add a probability of spurious photons converting. 
+    This is a poissonian process that gives $n_{dark}$ photons distributed flat in the readout time.
 \end{outline}
 
 \begin{equation}
@@ -141,6 +141,8 @@ Mapping pairs of hits in chits is not trivial and takes as parameters the dimens
 \subsection{From \textit{hits} to \textit{c-hits}}
 
 \section{Prototype/Beamtime}
+
+\section{Conclusions}
 
 \addcontentsline{toc}{chapter}{Bibliography on muEDM positron tracker}
 \printbibliography[title=Bibliography on muEDM positron tracker]
