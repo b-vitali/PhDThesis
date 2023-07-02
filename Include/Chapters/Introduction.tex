@@ -9,17 +9,25 @@ This will be complemented by the description of the different facilities at PSI,
 This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:review:2021}.}
 
 \section{Outline of this thesis}
-    The structure of this Thesis might differ slightly from the norm. While most of my colleagues dedicated their work to a singular subject, like a particular detector or theory, my effort during the course of my Ph.D. has been spread on a wider angle.
+    The structure of this Thesis might differ slightly from the norm. 
+    While most of my colleagues dedicated their work to a singular subject, like a particular detector or theory, my effort during the course of this Ph.D. has been spread on a wider angle.
     At first glance, this work might seem the result of three separate projects, namely MEG, MuEDM, and muCool. 
     In fact, the spirit in which this Thesis has been developed is orthogonal to the chapters themselves: the overall progress of muonic particle physics experiments.
 
     \begin{outline}
+        \1 Introduction: theory, PSI facilities and key experiments
         \1 muCool (?)
-        \1 muEDM
-        \1 MEG
+        \1 muEDM: introduction, entrance detector, tracker
+        \1 MEG: introduction and CW, Liquid Hydrogen target, X17 search
     \end{outline}
 
 \section{Particle physics at Paul Scherrer Institute}
+    Belonging to ETH domain and formed in 1988 as a national laboratory, the Paul Scherrer Institute (PSI) is the largest federal research institute in Switzerland. 
+    PSI hosts the world's most powerful proton accelerators, with an average power of \SI{1.4}{MW} and a beam current of over \SI{2}{mA}.
+    On top of the proton facility, in the last 10 years, a neutron spallation target has been added for ultracold neutrons production.  
+    PSI is renowned for its extensive research across a wide range of scientific disciplines.
+    With its world-class facilities and expertise, PSI plays a pivotal role in advancing our understanding of fundamental particles and their interactions, solidifying its position as a key player in the field of particle physics on a global scale.
+    Everything discussed in this thesis is a product of the fertile environment at this Institute and the active collaborations with universities and institutions, such as INFN, around the world.
     
 \section{Bite-size theory}
     The aim of this section is to define the framework in which (part) of particle physics research is moving. In particular, we will be focusing on the aspects which are relevant to the three experiments core of this thesis.
@@ -40,7 +48,7 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
             \label{eq:matrix}
         \end{equation}
         Here $u$ and $\bar{u}$ are the spinors and the two states are with momenta $p_1$ and $p_2=p_1+q$ while $F_1^{(\ell)}$ and $F_1^{(\ell)}$ are related respectively to the electric charge and the \gls{amm}. 
-        In particular, fort the \gls{amm} we find
+        In particular, fort the \gls{amm} we find  
         \begin{equation}
             F_2^{(\ell)}(0) = a_\ell = \frac{(g-2)_\ell}{2}  
             \label{eq:amm}
@@ -60,13 +68,14 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
         \begin{equation*}
             F_i(Q^2) = \int \dd[3]\bm{r}e^{-i\bm{q\cdot r}}\rho_i(r) = \int \dd[3]\bm{r}\rho_i(r) +\frac{1}{6}Q^2 \int \dd[3]\bm{r}r^2\rho_i(r)  + \dots
         \end{equation*}
-        From this, we can write the general expression for the second moment of the charge distribution or \gls{edm}. This relation is used for example when determining the charge and magnetic radii of the proton.
+        From this, we can write the general expression for the second moment of the charge distribution or \gls{edm}. This relation is used for example when determining the charge and magnetic radii of the proton. 
         \begin{equation}
             r^2_i\equiv\frac{1}{N}\int \dd[3]\bm{r}r^2\rho_i(r) = -6\frac{1}{N}\evaluated{\frac{dF_i(Q^2)}{dQ^2}}_{Q^2=0};
             \quad
-            N=\begin{cases}
-            1 & \text{if}\ F_i(0)=0,\\
-            F_i(0) &\text{else}.
+            N=
+            \begin{cases}
+                1 & \text{if}\ F_i(0)=0,\\
+                F_i(0) &\text{else}.
             \end{cases}
         \end{equation}
         When introducing the weak interaction we arrange fermions in \textit{left-handed doublets} and \textit{right-handed singlets}.
@@ -88,13 +97,13 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
             [O^{XY}_{f}]_{ijkl}=(\bar{\psi}_i\gamma^\alpha P_X \psi_j)(\bar{\psi}_k\gamma_\alpha P_Y \psi_l)
         \end{equation}
         where $X,Y \in {L,R}$ and ${i,j,k,l}$ are generation indices. There are many such operators because $\psi$ could be leptons or quarks but the integration of the $W$ and $Z$ generates only a subset (i.g. we have no \gls{clfv} operator due to accidental symmetries).
-        In a similar fashion an operator will be a 6-dimension scalar when removing the $\gamma$ matrices or a 5-dimension dipole operators including photons and gluons:
+        In a similar fashion, an operator will be a 6-dimension scalar when removing the $\gamma$ matrices or a 5-dimension dipole operator including photons and gluons:
         \begin{equation}
             [O^D_{f\gamma}]_{ij}=(\bar{\psi}_i\sigma_{\alpha\beta}P_R\psi_j)F^{\alpha\beta};
             \quad
             [O^D_{qG}]_{ij}=(\bar{\psi}_i\sigma_{\alpha\beta}G^{\alpha\beta}P_R\psi_j)
         \end{equation}
-    
+        
     \subsection{Beyond Standard Model at low-energy}
         There is no shortage of \gls{bsm} models and one way of (roughly) classifying them would be by the masses and coupling strengths of the particles they introduce. 
         Light \gls{bsm} particles have small couplings to \gls{sm} particles, which would explain the small contribution to physical observables. Prominent examples are dark photons, axions and \gls{alp}.
@@ -103,18 +112,16 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
         As long as the \gls{bsm} physics respects \gls{qed} and \gls{qcd} gauge symmetry and involves `large' mass scale $\Lambda$ ($m_b<\lambda<m_W$), it can be integrated out. 
         This way we add higher-dimensional operators to the \gls{sm} Lagrangian, obtaining a \gls{left}
         \begin{equation}
-            \mathcal{L}_{LEFT}=\mathcal{L}_{QED+QCD}+\frac{1}{\Lambda}\sum_iC^{(5)}_iO^{(5)}_i +\frac{1}{\Lambda^2}\sum_iC^{(6)}_iO^{(6)}_i +\dots
-            \label{eq:left}
+            \mathcal{L}_{LEFT}= \mathcal{L}_{QED+QCD}+\frac{1}{\Lambda}\sum_iC^{(5)}_iO^{(5)}_i +\frac{1}{\Lambda^2}\sum_iC^{(6)}_iO^{(6)}_i +\dots
+                \label{eq:left}
         \end{equation}
-        Parameterize low-energy observables and measuring (or constraining) associated parameters is not easy task: a prime example would be the Michel decay (which we will discuss in the following sections), generalized in terms of scalar vector and tensor contact interactions or the similar effort for the \gls{clfv} $\mu\rightarrow e \gamma$ and $\mu \rightarrow eee$ withe lepton-flavour-violating contact interactions.
-        
+        To parameterize low-energy observables and measuring (or constraining) associated parameters is not an easy task: a prime example would be the Michel decay (which we will discuss in the following sections), generalized in terms of scalar vector and tensor contact interactions or the similar effort for the \gls{clfv} $\mu\rightarrow e \gamma$ and $\mu \rightarrow eee$ withe lepton-flavor-violating contact interactions.
         If the \gls{bsm} physics appears at a scale larger than $m_W$, we first have to develop a \gls{smeft}.
-        The details on how this is achieved are outside our purpose but including all the different gauge fields, higgs doublet, left-handed doublets and right-handed singlet (respecting the $SU(3)_c\times SU(2)_L\times U(1)_Y$ gauge symmetry) we find
+        The details on how this is achieved are outside our purpose but, including all the different gauge fields, Higgs doublet, left-handed doublets, and right-handed singlet (respecting the $SU(3)_c\times SU(2)_L\times U(1)_Y$ gauge symmetry) we find
         \begin{equation}
             \mathcal{L}_{SMEFT}=\mathcal{L}_{SM}+\frac{1}{\Lambda}(C^{(5)}O^{(5)}+\text{h.c.}) +\frac{1}{\Lambda^2}\sum_iC^{(6)}_iO^{(6)}_i +\dots
             \label{eq:smeft}
         \end{equation}
-        
         We can now re-evaluate the matrix in \ref{eq:matrix} element using \ref{eq:smeft} instead of \ref{eq:sm}.
         We will leave the details of the calculation under the hood but the result we get is the following
         \begin{equation}
@@ -129,42 +136,42 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
             d_f=\frac{eF_3^{(f)}(0)}{2m_f}
             \label{eq:edm}
         \end{equation}
-        In the \gls{sm}, $d_f$ recives contributions from quarks at 3-loops and leptons at 4-loops (induced by \gls{cp}-violation in the \gls{ckm}). When considering protons and neutrons there is an additional contribution from the \gls{cp} violating \gls{qcd} $\vartheta$ parameter (found to be extremely low constraining the neutron \gls{edm}).
+        In the \gls{sm}, $d_f$ receives contributions from quarks at 3-loops and leptons at 4-loops (induced by \gls{cp}-violation in the \gls{ckm}). 
+        When considering protons and neutrons there is an additional contribution from the \gls{cp} violating \gls{qcd} $\vartheta$ parameter (found to be extremely low constraining the neutron \gls{edm}).
         For completeness sake, $J_{cc}^\alpha$ give rise to matrix elements between different $SU(2)$ doublets, like $(\nu_\ell,\ell)$ or $(p,n)$. This leads to muon and beta decay or quasi-elastic scattering $\ell p\rightarrow \nu_\ell n$.
-
+        
     \subsection{Muon}
-        The muon is the lepton with the intermediate mass of $m_\mu \approx 105.66$ MeV and it is unstable. The dominant process is the Michel decaly $\mu\rightarrow e\nu\bar{\nu}$ which translates to a lifetime of $\tau\approx2.2\ \mu$s. We already hinted to the fact that the this decay is mediated by the charged current $J_{cc}^\alpha$ through $\matrixel{\nu_\mu}{J_{cc}^\alpha}{\mu}\matrixel{e}{(J_{cc})^\dag_\alpha}{\nu_e}$ which in \gls{eft} corresponds to $(\bar{\nu}_\mu\gamma^\alpha P_L\mu)(\bar{e}\gamma_\alpha P_L\nu_e)$. The resulting \gls{eft} Lagrangian is
+        The muon is the lepton with the intermediate mass of $m_\mu \approx 105.66$ MeV and it is unstable. The dominant process is the Michel decay $\mu\rightarrow e\nu\bar{\nu}$ which translates to a lifetime of $\tau\approx2.2\ \mu$s. We already hinted at the fact that this decay is mediated by the charged current $J_{cc}^\alpha$ through $\matrixel{\nu_\mu}{J_{cc}^\alpha}{\mu}\matrixel{e}{(J_{cc})^\dag_\alpha}{\nu_e}$ which in \gls{eft} corresponds to $(\bar{\nu}_\mu\gamma^\alpha P_L\mu)(\bar{e}\gamma_\alpha P_L\nu_e)$. The resulting \gls{eft} Lagrangian is
         \begin{equation}
             \mathcal{L}_{Fermi}=-\frac{4G_F}{\sqrt{2}} (\bar{\nu}_\mu\gamma^\alpha P_L\mu)(\bar{e}\gamma_\alpha P_L\nu_e) + \text{h.h}+ \mathcal{L}_{QED+QCD}
         \end{equation}
-        When evaluating the lifetime we get an equation which contains, in $\Delta q$, all corrections induced by our Lagrangian: electron mass effect, higher odred \gls{qed} correction and hadronic corrections. 
+        When evaluating the lifetime we get an equation that contains, in $\Delta q$, all corrections induced by our Lagrangian: electron mass effect, higher order \gls{qed} correction, and hadronic corrections. 
         \begin{equation}
             \frac{1}{\tau_\mu}\equiv\Gamma_\mu = \Gamma_0(1+\Delta q) = \frac{G_F^2 m_\mu^5}{192 \pi^3}(1+\Delta q)
             \label{eq:tau}
         \end{equation}
         Unfortunately, \gls{qcd} corrections are non-perturbative for $q^2\sim m_\mu^2$ and are the leading theoretical uncertainty. These corrections are known at NNLO.
-        Precision measurement of the muon lifetime is key for consistency checks of th \gls{sm}. In fact $G_F$ can be relate to $m_W$ and $m_Z$
+        Precision measurement of the muon lifetime is key for consistency checks of the \gls{sm}. In fact $G_F$ can be relate to $m_W$ and $m_Z$
         \begin{equation}
             \frac{4G_F}{\sqrt{2}}=\frac{g^2}{2m_W^2}(1+\Delta r)=\frac{2\pi}{\sin^2\vartheta_Wm_W^2}(\+\Delta r)
         \end{equation}
         Here $\Delta r$ are the \gls{sm} corrections and $\sin^2\vartheta_W=1-m_W^2/m_Z^2$.\\
-        On top of the Michel decay we also have radiative and rare decays
+        On top of the Michel decay, we also have radiative and rare decays
         \begin{equation}
             \mu\rightarrow e\nu\bar{\nu}\gamma, \quad \mu\rightarrow e\nu\bar{\nu}e^+e^-
         \end{equation}
         for which we have $B(\mu\rightarrow e\nu\bar{\nu}\gamma)\sim 1.3\times 10^{-2}$ (for $E_\gamma>10$ MeV) and $B(\mu\rightarrow e\nu\bar{\nu}ee)\sim 3.6 \times 10^{-5}$.
-        
-                 At last we arrive to the `golden' channels for \gls{clfv} studies:
+        At last, we arrive at the `golden' channels for \gls{clfv} studies:
         \begin{equation}
             \mu\rightarrow e\gamma, \quad \mu\rightarrow eee, \quad \mu^- \ ^A_ZN\rightarrow e^-\ ^A_ZN
-        \end{equation}
+        \end{equation}    
         With non-vanishing neutrino masses, the branching rations for these processes are expected to be below $10^{-50}$.
-        To extract constraints on \gls{bsm} physics from the branching rations we can mostly use standard pertuvbative methods with the Lagrangian \ref{eq:left}.
-        For the muon conversion additional precautions are needed due to the nuclear matrix elements $\matrixel{^A_ZN}{J}{^A_ZN}$ as well as the study of the \gls{dio}, electrons for which the energy spectrum was is modify by the nuclear recoil.
+        To extract constraints on \gls{bsm} physics from the branching rations we can mostly use standard perturbative methods with the Lagrangian \ref{eq:left}.
+        For the muon conversion, additional precautions are needed due to the nuclear matrix elements $\matrixel{^A_ZN}{J}{^A_ZN}$ as well as the study of the \gls{dio}, electrons for which the energy spectrum was is modified by the nuclear recoil.
         
-        The last two properities of interest of the muon are the \gls{amm} (eq. \ref{eq:amm}) and \gls{edm} (eq. \ref{eq:edm}). 
-        After the results of the G-2 experiment at \gls{fnal} there is some tension on the first between experimnetal results and theory. 
-        For the \gls{edm} the \gls{sm} value is zero for practical purposes and a non-vanishing result would be clear indication of \gls{bsm}.
+        The last two properties of interest of the muon are the \gls{amm} (eq. \ref{eq:amm}) and \gls{edm} (eq. \ref{eq:edm}). 
+        After the results of the G-2 experiment at \gls{fnal}, there is some tension on the first between experimental results and theory. 
+        For the \gls{edm} the \gls{sm} value is zero for practical purposes and a non-vanishing result would be a clear indication of \gls{bsm}.
         We will further discuss the muon \gls{edm}.
         
     \subsection{Muon decay}
@@ -172,19 +179,17 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
         \begin{equation}
             M=4\frac{G_F}{\sqrt{2}}\sum_{\substack{ \gamma = S,V,T \\ \varepsilon,\mu = R,L}}g^\gamma_{\varepsilon\mu} \matrixel{\bar{e}_\varepsilon}{\Gamma^\gamma}{(\nu_e)_n} \matrixel{(\bar{\nu}_\mu)_m}{\Gamma_\gamma}{\mu_\mu}
         \end{equation}
-        In this definition we find: $\gamma$ indicates a 4-scalar, 4-vector or 4-tensor; $\Gamma$ Dirac (or Pauli) matrices; $\varepsilon$, $\mu$ indicate the chirality of the spinors; m, n the chirality of the neutrinos.
+        In this definition, we find: $\gamma$ indicates a 4-scalar, 4-vector or 4-tensor; $\Gamma$ Dirac (or Pauli) matrices; $\varepsilon$, $\mu$ indicate the chirality of the spinors; m, n the chirality of the neutrinos.
         This means that the physical interpretation of $g^\gamma_{\varepsilon\mu}$ is quite straightforward: $n_\gamma|g^\gamma_{\varepsilon\mu}|^2$ is the probabilit of a $\mu$-handed muon decaying in a $\varepsilon$-handed electron by the interaction $\Gamma^\gamma$ ($n_\gamma$ are required for the correct normalization).
-        In this picture the \gls{sm} corresponds to $g_{LL}^V=1$ with all other couplings to 0. 
+        In this picture, the \gls{sm} corresponds to $g_{LL}^V=1$ with all other couplings to 0. 
         \textcolor{red}{Review chirality vs helicity}
         
-        \paragraph{Observables}
-        Neglecting radiative corrections, we find the differential decay probability with: reduced energy in $[x,x+\dd x]$; along $\hat{x}_3$ with an angle $[\vartheta,\vartheta+\dd\vartheta]$ with respect to the muon polarization $\pmb{P}_\mu$; spin along $\bm{\hat{\zeta}}$.
-        
+        \paragraph{Observables} 
+        Neglecting radiative corrections, we find the differential decay probability: with reduced energy in $[x,x+\dd x]$; along $\hat{x}_3$ with an angle $[\vartheta,\vartheta+\dd\vartheta]$ with respect to the muon polarization $\pmb{P}_\mu$; spin along $\bm{\hat{\zeta}}$.
         \begin{equation}
-           \pdv[2]{\Gamma}{x}{\cos\vartheta}=\frac{m_\mu}{4\pi^3}W^4_{e\mu}G^2_F\sqrt{x^2-x_0^2}\cdot \{F_{IS}(x)\pm P_\mu\cos\vartheta F_{AS}(x)\}\cdot\{\bm{\hat{\zeta}\cdot P}_e(x,\vartheta)\}
-           \label{eq:differentialdecay}
+            \pdv[2]{\Gamma}{x}{\cos\vartheta}=\frac{m_\mu}{4\pi^3}W^4_{e\mu}G^2_F\sqrt{x^2-x_0^2}\cdot \{F_{IS}(x)\pm P_\mu\cos\vartheta F_{AS}(x)\}\cdot\{\bm{\hat{\zeta}\cdot P}_e(x,\vartheta)\}
+            \label{eq:differentialdecay}
         \end{equation}
-        
         Here, $W_{e\mu}=max(E_e)=(m_\mu^2+m_e^2)/2m_\mu$ is the maximum $e^\pm$ energy and $x=E_e/W_{e\mu}$ is the reduced energy ($x_0=m_e/W_{e\mu}$).
         This spectrum has both an isotropic ($F_{IS}$) and anisotropic part ($F_{AS}$). 
         The electron polarization $\bm{P}_e(x,\vartheta)$ can be parametrized by \textit{Michel parameters}, which are combinations of the coupling constants $g^\gamma_{e\mu}$.
@@ -192,26 +197,25 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
         \begin{equation}
             \pdv[2]{\Gamma}{x}{\cos\vartheta}\sim x^2\left\{ 3(1-x)+\frac{2\rho}{3}(4x-3)+3\eta x_0\frac{(1-x)}{x} \pm P_\mu\xi\cos\vartheta  \left[1-x+\frac{2\delta}{3}(4x-3) \right]\right\}
         \end{equation}
-        Here $\vartheta$ is the angle between the elctron momentum and the muon spin and $x\equiv2E_e/m_\mu$. 
+        Here $\vartheta$ is the angle between the electron momentum and the muon spin and $x\equiv2E_e/m_\mu$. 
         In the \gls{sm} we get the following, in which we find the total rate used in \ref{eq:tau}. \textcolor{red}{$\rho=\xi\delta=3/4$, $\xi=1$, $\eta=0$}
         \begin{equation}
             \pdv[2]{\Gamma}{x}{\cos\vartheta}=\frac{G_F^2 m_\mu^5}{192 \pi^3} \left[ 3-2x \pm P_\mu\cos\vartheta (2x-1) \right]x^2
         \end{equation}
-
-        The way the $g^\gamma_{e\mu}$ are connected to the nine decay parameters \cite{3,10}, or the 10 intermediate quantities we can measured \cite{3}, is outside the purpose of this short review. 
+        The way the $g^\gamma_{e\mu}$ are connected to the nine decay parameters \cite{3,10}, or the 10 intermediate quantities we can measure \cite{3}, is outside the purpose of this short review. 
         The bottom line is that a 20-dimensional space of the complex $g^\gamma_{e\mu}$ can be mapped to a 10-dimensional space.
-        Unfortunately many of these parameters are intertwine and (generally) the precise measurement of individual parameters does not give conclusive information on the type of interaction.
-        
+        Unfortunately, many of these parameters are intertwined, and (generally) the precise measurement of individual parameters does not give conclusive information on the type of interaction.
         To avoid being too vague we will take an example from \cite{PSI:review:2021}. 
         The rate $S$ of the reaction $\nu_\mu e^-\rightarrow \mu^-\nu_e$, normalized to the rate predicted by $V-A$ and assuming a negative helicity for $\nu_\mu$, has been found close to 1 \cite{17}.
-        $S$ depends on five coupling constants $\{g^v_{LL},g^v_{RL},g^s_{LR},g^s_{RR}\}$ but four of these parameters are found to be small, and in first approximation we find \cite{7}:
+        $S$ depends on five coupling constants $\{g^v_{LL},g^v_{RL},g^s_{LR},g^s_{RR}\}$ but four of these parameters are found to be small, and in first approximation, we find \cite{7}:
         \begin{equation}
             S=|g^v_{LL}|^2; \quad |g^s_{LL}|<2\sqrt{1-S}
         \end{equation}
-    \subsection{Experiments}
-    \paragraph{Longitudinal Positron Polarization}
-    \paragraph{Transverse Positron Polarization}
-    \paragraph{Electron Decay Asymmetry}
+        
+    \subsection{MISSING! Experiments}
+        \paragraph{Longitudinal Positron Polarization}
+        \paragraph{Transverse Positron Polarization}
+        \paragraph{Electron Decay Asymmetry}
     
     \subsection{Electric Dipole Moment}
         \label{intro:edm}
@@ -221,38 +225,118 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
             \hat{H} = -\mu\bm{\hat{\sigma}\cdot B}-d\bm{\hat{\sigma}\cdot E}
         \end{equation}
         Given that $\bm{\hat{\sigma}\cdot E}$ is odd for time reversal, the existence of a non-zero \gls{edm} would violate \gls{cp} symmetry. 
-        This is an interesting topic, with many implications and key to meany searches. 
+        This is an interesting topic, with many implications, and key to many searches. 
         Here we will just nominate it and underline that at \gls{psi} has been for decades at the frontier in the measurements of the neutron \gls{edm}.
-        We will discuss the muon \gls{edm} in detail in the chapter dedicated to the \gls{muedm} experiment.\\
-\cite{edmasprobe}
-\section{Experimental status}
-    \subsection{MEG}
-    \subsection{Mu3e}
-    \subsection{Mu2e}
-    \subsection{COMET}
-    \subsection{nEDM}
+        We will discuss the muon \gls{edm} in detail in the chapter dedicated to the muEDM experiment.\\
+        \cite{edmasprobe}
+
+\section{MISSING! Experimental status}
+    To give an exhaustive recap of the experimental development, both worldwide and at PSI, is a task we will not undertake. 
+    Here we will briefly discuss the key experiments in CLFV searches (MEG, Mu3e, Mu2e, COMET) and the nEDM experiment at PSI.
+    This choice is driven by the experiment extensively discussed in the following chapters: muEDM; MEG II.
+
+    \subsection{MISSING! CLFV experiments}
+        \subsubsection{MEG}
+        \subsubsection{Mu3e}
+        \subsubsection{Mu2e}
+        \subsubsection{COMET}
+    \subsection{MISSING! EDM experiments}
+        \label{sec:exp:edm}
+        \subsubsection{nEDM}
+            \paragraph{n2EDM}
+        \paragraph{eEDM}
+        \paragraph{muEDM}
     \cite{n2EDM}    
-    \subsection{MUSE}
-    \subsection{MuX}
 
 \section{The beams at PSI}
     \label{intro:beamlines}
-    \subsection{High Intensity Proton Accelerator Facility}
-    \label{sec:hipa}
-    The source of the particle beams at PSI is the \gls{hipa}, which produces a proton beam up to 1.4 MW at 590 MeV of kinetic energy.
-    A Isochronous proton cyclotron  is the main accelerator, with 8 magnet sectors and 4 accelerating cavities at 50.6 MHz.
-    
-    \begin{figure}
-        \centering
-        \includegraphics[width = \textwidth]{Figures/Introduction/PSI_HIPA.png}
-        \caption{\acrfull{hipa} facility at PSI}
-        \label{fig:PSI:HIPA}
-    \end{figure}
-    \paragraph{Pions and Muons production}
-    \paragraph{Neutron production}
-    \paragraph{Isotope production}
+    \subsection{High-Intensity Proton Accelerator facility}
+        \label{sec:hipa}
+        The proposal for the accelerator facility at PSI was completed in 1963. The objective was to develop a proton beam of tens of microAmpere and energy above \SI{450}{MeV} to produce $\pi/\mu$.
+        The main accelerator is a cyclotron designed to accelerate the beam from \SI{72}{MeV} to \SI{590}{MeV}. 
+        The first pre-accelerator, Injector I cyclotron, was developed to accelerate protons and light ions up to \SI{72}{MeV} and \SI{180}{\micro A}
+        The performances steadily improved up to \SI{180}{\micro A} but the beam losses at the extraction from the Injector I were the bottleneck.
+        The Ring cyclotron was deemed to have the potential to surpass \SI{2}{mA}. For this reason,  in 1978, the proposal of using two pre-accelerators was approved: a \SI{860}{keV} Cockcroft-Walton (CW) followed by a new Injector II cyclotron.\\
+        Since 2010 the chain is the following:
+        \begin{outline}
+            \1 Protons are produced by an electron cyclotron resonance source with a \SI{60}{kV} extraction
+            \1 Two solenoids focus the protons onto a collimator: here \ce{^2H+} and \ce{^3H+} ions are stopped
+            \1 Protons are then accelerated in three stages
+                \2 From \SI{60}{keV} to \SI{870}{keV} by the CW DC linear accelerator, shown in Fig.~\ref{fig:PSI:CW}\\
+                The beamline connecting the CW to the Injector II is equipped with a bunching system to match the acceptance of Injector II
+                \2 Injector II accelerates the pre-bunched beam up to \SI{72}{MeV}\\
+                An electrostatic beam splitter can redirect a fraction of the beam extracted beam (up to \SI{100}{\micro A}) to produce radioisotopes 
+                \2 The beam is sent to the Ring cyclotron. Eight magnets keep the particles on the spiral path and four cavities accelerate the beam up to \SI{590}{MeV}
+            \1 After the acceleration the beam is extracted and sent to the meson production targets
+            \1 The surviving $\sim65\%$ of the beam is sent to the spallation source SINQ (or to a beam dump)
+        \end{outline}
+            \begin{figure}
+            \subfloat[CW feeding the Injector II]{
+            \includegraphics[width=0.47\textwidth, keepaspectratio]{Figures/Introduction/PSI_CW.png}
+            \label{fig:PSI:HIPA:CW}}
+            \subfloat[Picture of the Ring cyclotron.]{
+            \includegraphics[width=0.51\textwidth, keepaspectratio]{Figures/Introduction/PSI_cyclotron.png}
+            \label{fig:PSI:HIPA:cylotron}}
+            \caption{Picture of two of the stages of the HIPA facility: the Cockcroft-Walton bringing the proton up to \SI{870}{keV} and the Ring cyclotron accelerating them up to \SI{590}{MeV}.}
+        \end{figure}
+        \begin{figure}
+            \centering
+            \includegraphics[width = \textwidth]{Figures/Introduction/PSI_HIPA.png}
+            \caption{\acrfull{hipa} facility at PSI}
+            \label{fig:PSI:HIPA}
+        \end{figure}
         
-    \subsection{Meson production}
+        \paragraph{Injector II}  
+        The Injector II cyclotron is designed for high-current operation (\SI{1}{mA} and above) with minimal extraction losses. 
+        It achieves high extraction efficiency through a combination of factors: high accelerating voltage, large radius, large gap magnets, and low energy spread. 
+        To counter space charge forces, a high vertical betatron tune\footnote{Refers to the number of vertical or horizontal oscillations that a particle undergoes per turn in a cyclotron, indicating the level of vertical or horizontal focusing.} is employed. 
+        Injector II is a low-field separate sector machine with four wedge sectors, accommodating two high-voltage double-gap resonators and two single-gap flat-top resonators. 
+        Its \SI{870}{keV} injection energy allows for beam collimation and halo cleanup, being below the Coulomb threshold.
+        The "vortex motion" is an interesting phenomenon caused by space charge in isochronous cyclotrons \cite{vortexeffect}. 
+        For long initial bunches, self-sustaining round sub-bunches are generated, while for short and compact bunches, the vortex effect stabilizes the bunch \cite{vortexeffect:longitudinal} \cite{vortexeffect:transverse}. 
+        The PSI operation crew discovered the usefulness of self-focusing, achieving high extracted currents with low losses by operating in an accelerating mode without the need for the flat-top system. 
+        In an ongoing upgrade program, Injector II will replace the flat-top resonators with two 50MHz high-voltage resonators. 
+        This upgrade aims to reduce extraction losses and enable higher beam currents. 
+        Notably, Injector II is the only known production cyclotron worldwide that harnesses the vortex effect.
+
+        \paragraph{Ring cyclotron}
+        Over time, the Ring cyclotron's performance was improved, particularly its extraction efficiency. 
+        Initially, a well-centered beam was required to pass the Walkinshaw resonance\footnote{The Walkinshaw resonance is a phenomenon in cyclotrons where beams experience a resonance with the machine's magnetic field modulation. Proper alignment and adjustments are necessary to prevent significant beam loss.} without significant loss.
+        However, by December 1976, an extraction efficiency of 99.9\% was achieved with a peak intensity of \SI{112}{\micro A}. 
+        Ten years later, Injector II alone achieved a beam current of 1mA, and in combination with the Ring cyclotron, reached \SI{310}{\micro A}.
+        To increase the intensity, the Ring underwent an RF system upgrade, while a bunching system was implemented in the injection line. 
+        The upgrades allowed for a reduction in Ring turns, resulting in a production current of \SI{2.2}{mA} and a beam power of \SI{1.3}{MW}, in line with Joho's $N^3$-Law (see Fig.~\ref{fig:PSI:HIPA:joho}). 
+        Further upgrades, including the replacement of the 150MHz flattop cavity, are expected to enable a beam current of \SI{3}{mA} and power of SI{1.8}{MW} for both Injector II and the Ring cyclotron.
+        \begin{figure}
+            \centering
+            \includegraphics[width = 0.8\textwidth]{Figures/Introduction/PSI_HIPA_joho.png}
+            \caption{In 1981, Werner Joho introduced Joho's N3-Law, an analysis of high-intensity issues in cyclotrons \cite{joho}. This law states that the current limit dominated by losses scales inversely with the third power of the number of turns in the cyclotron: $I_{max}\propto N^{-3}$. Remarkably, this formula accurately predicted the performance of the PSI Ring cyclotron for the subsequent two decades.}
+            \label{fig:PSI:HIPA:joho}
+        \end{figure}
+        
+        \subsubsection{Performances}
+        HIPA operates at a beam power of up to \SI{1.42}{MW}. 
+        The maximum beam power (\SI{1.42}{MW}) is limited by the activation and damage of the accelerator components while the maximum beam current authorized is \SI{2.4}{mA}.
+        The increase of the beam power in the period between 1974 to 2020 is shown in Fig.~\ref{fig:PSI:HIPA:power}.
+        The history of the delivered charge to the meson production targets and SINQ is shown in Fig.~\ref{fig:PSI:HIPA:charge}.  
+        The beam is operated 24/7 around 200 days a year. 
+        Every three weeks of operation two days of maintenance are scheduled. 
+        The details of the different particle production are discussed in the following subsections.
+
+        \begin{figure}
+            \centering
+            \includegraphics[width = 0.8\textwidth]{Figures/Introduction/PSI_HIPA_power.png}
+            \caption{History of the power of the HIPA proton beam.}
+            \label{fig:PSI:HIPA:power}
+        \end{figure}
+        \begin{figure}
+            \centering
+            \includegraphics[width = 0.8\textwidth]{Figures/Introduction/PSI_HIPA_charge.png}
+            \caption{History of the charge delivered by the HIPA beam on the meson production targets and SINQ.}
+            \label{fig:PSI:HIPA:charge}
+        \end{figure}
+   
+    \subsection{Meson production}        
         As we saw in \ref{sec:hipa}, \gls{hipa} delivers a continuous $2.4$ mA $590$ MeV proton beam. 
         To have a high pion/muon yield a low Z material is the best choice for the Meson Production Targets: graphite is has been used since 1990's.
         The whole system (target, collimators, beam dumps, \dots) has to be cooled and, due to nuclear reactions, is highly radioactive.
@@ -261,8 +345,31 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
         These muons have energies below 4.1 MeV ($p=29.8$ MeV) and are $\approx100\%$ polarized.
         Muons created by in-flight decay have higher energies and are cooled \textit{cloud muons}. Both positive and negative muons are possible but the negative charge is suppressed by a factor $\sim 3$.
         There are two targets: M feeds two beamlimes (PiM1 and PiM3; E feeds 5 beamlines (PiE1, MuE1, MuE4, PiE3, PiE5).
+        The detail of the facilites are summarized in Tab.~\ref{tab:PSI:beamlines}
         The targets are graphite wheels which rotate to distribute the heat due to the impinging beam.
-        The material is polycrystalline graphite made of small crystallites of \SI{\sim20}{\mu m} irregularly arranged.
+        The material is polycrystalline graphite made of small crystallites of $\sim2$\SI{0}{\micro m} irregularly arranged.
+        \begin{table}[]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|}
+                 \hline
+                 Target & User facility & Particles & Momenta (MeV/c) & Rate ($s^{-1}mA^{-1}$)\\
+                 \hline
+                 \hline
+                 \multirow{ 2}{*}{M (\SI{5}{mm})} 
+                 & $\pi$M1 & e/$\uppi/\upmu/$p & 10-450 & \SI{2e8}{} \\
+                 & $\pi$M3.1-3 & $\upmu/$ & 10-40 & \SI{3e6}{}\\
+                 \hline
+                 \multirow{ 5}{*}{E (\SI{4/6}{cm})} 
+                 & $\pi$E1 & $\uppi/\upmu/$p & 10-450 & \SI{1e9}{}\\
+                 & $\pi$E3 & $\upmu$ & 10-40 & \SI{3e7}{}\\
+                 & $\pi$E5 & $\uppi/\upmu$ & 10-120 & \SI{5e8}{}\\
+                 & $\pi$E1 & $\upmu$ & 60-120 & \SI{6e7}{}\\
+                 & $\pi$E4 & $\upmu$ & 10-40 & \SI{4e8}{}\\ 
+                 \hline
+            \end{tabular}
+            \caption{Particle types available at the meson facilities. The rate in particles per second per \SI{1}{mA} of proton}
+            \label{tab:PSI:beamlines}
+        \end{table}
         
         \paragraph{E Target}
         The target is inserted vertically into the beamline and held by a horizontal rotating shaft. The graphite and the hub are connected by six spokes. 
@@ -283,7 +390,7 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
         
         \paragraph{Collimators and Beam dump}
         Just like target E, Collimators and beam dump are inserted vertically and shielded.
-        Both are made of oxygen-free copper: improve thermal conductivity; avoid hydrogen embrittlement        \footnote{Hydrogen can be produced by the spallation reaction of the protons with copper. This hydrogen can bond with oxygen creating water molecules which can produce cracks in the copper.}; for brazing of the steel tubes onto the copper body.
+        Both are made of oxygen-free copper: improve thermal conductivity; avoid hydrogen embrittlement \footnote{Hydrogen can be produced by the spallation reaction of the protons with copper. This hydrogen can bond with oxygen creating water molecules that can produce cracks in the copper.}; for brazing of the steel tubes onto the copper body.
         To avoid any significant change in the material, the copper is kept below \SI{400}{K} using water-cooling.
         The collimator system as well as the beam dump have to stand more than 100 kW per component.
         The water flows in stainless steel pipes are wound outside and brazed on the cylindrical body. 
@@ -293,86 +400,88 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
         An aperture, made of 4 slits of \SI{100}{\mu m} Nikel foils, is mounted in front of the devices.
         Here free electrons from ionization are collected and used for beam position and size monitoring.
         Aside from a water leak problem, likely due to thermal stress, no visible signs of radiation damage are observed since installation.
-\subsection{UltraCold Neutron source}
-        Neutrons below \SI{4}{mK} are called UltraCold. 
-        This corresponds to energy below \SI{300}{neV}, which is comparable with the gravitational potential of a neutron at a few meters height and the potential and also the neutron optical potential: material bottles can hence contain UCNs.
-        The first spallation neutron source built at PSI was SINQ, which has dedicated neutron scattering instruments and was used as a polarized cold-neutron beam line for fundamental neutron physics.
-        This beamline was used for many measurements conducted in preparation of the UCN source and many parameters of UCN production (and loss) were here determined.
-        The design of the UCN source was presented in 2000 to push the sensitivity of the nEDM search.
         
-        \paragraph{Source setup}
-        The HIPA \SI{590}{MeV} proton beam is deflected by a magnetic kicker and sent in the spallation source.
-        Each spallation reaction with the lead atoms leads to an average of 8 neutrons, which are then thermalized in heavy water.
-        The main moderator is made of solid deuterium at \SI{5}{K}.
-        The UCN produced exit the moderator's vessel through a thin aluminium lid in a vertical guide and their energy is lost to gravity.
-        From here the UCN are delivered via  long neutron guides: two at the bottom and one at the top of the vessel.
-        The 30 litres of solid D$_2$ is the core of the whole system and takes several days to achieve a good ice quality.
-        UCN intensity reflects the quality of the achieved solid deuterium, as shown in shows the typical UCN intensity behaviour during such a slow freezing process.
+    \subsection{Neutron production}
+        \subsubsection{SINQ}
+            The first spallation neutron source built at PSI was SINQ, which has dedicated neutron scattering instruments and was used as a polarized cold-neutron beam line for fundamental neutron physics.
+            After passing through the meson production target the proton energy is degraded to \SI{570/565}{MeV}. 
+            The beam is bent downwards and then up vertically onto the spallation target.
+            The thermal neutron flux scales with the beam current and is $\sim$\SI{1.5e14}{cm^{-2}s^{-1}} near the target.
+            This beamline was used for many measurements conducted in preparation for the UCN source and many parameters of UCN production (and loss) were here determined.
+            
+        \subsubsection{UltraCold Neutrons}
+            Neutrons below \SI{4}{mK} are called UltraCold. 
+            This corresponds to energy below \SI{300}{neV}, which is comparable with the gravitational potential of a neutron at a few meters height and also the neutron optical potential: material bottles can hence contain UCNs.        
+            The design of the UCN source, shown in Fig.~\ref{fig:UCN_CAD}, was presented in 2000 to push the sensitivity of the nEDM search.
         
-        \paragraph{Performance}
-        A key parameter in the performance of a UCN source is the number of particles delivered.
-        The exponential decay measured at the lower ports reflects the emptying time of the central storage vessel.
-        Measuring in the higher port a faster exponential is found, demonstrating that the UCNs with energies high enough to reach that port are quickly drained.
-        Several studies to understand all aspects of the UCN source have been conducted since its inauguration, as well as the UCN transport from production in the solid deuterium to a beam port.
-        A slow decrease in performance was discovered and studied and a temperature-cycling ``conditioning'' was developed to regain maximum UCN intensity.
-        PSI UCN source has been reliably operating since 2011.
+            \paragraph{Source setup}
+            The HIPA \SI{590}{MeV} proton beam is deflected by a magnetic kicker and sent in the spallation source.
+            Each spallation reaction with the lead atoms leads to an average of 8 neutrons, which are then thermalized in heavy water.
+            The main moderator is made of solid deuterium at \SI{5}{K}.
+            The UCN produced exit the moderator's vessel through a thin aluminum lid in a vertical guide and their energy is lost to gravity.
+            From here the UCN are delivered via  long neutron guides: two at the bottom and one at the top of the vessel.
+            The 30 liters of solid D$_2$ is the core of the whole system and takes several days to achieve a good ice quality.
+            UCN intensity reflects the quality of the achieved solid deuterium, as shown in Fig.~\ref{fig:UCN_behaviour} exemplifying a typical UCN intensity behavior during such a slow freezing process.
+        
+            \paragraph{Performance}
+            A key parameter in the performance of a UCN source is the number of particles delivered.
+            The exponential decay measured at the lower ports reflects the emptying time of the central storage vessel.
+            Measuring in the higher port a faster exponential is found, demonstrating that the UCNs with energies high enough to reach that port are quickly drained.
+            Several studies to understand all aspects of the UCN source have been conducted since its inauguration, as well as the UCN transport from production in the solid deuterium to a beam port.
+            A slow decrease in performance was discovered and a temperature-cycling ``conditioning'' was developed to regain maximum UCN intensity.
+            The UCN source has been reliably operating since 2011 (see Fig.~\ref{fig:UCN_stats}).
+    
+            \paragraph{Results}
+            The resulting nEDM limit $d_n = (0.0 \pm 1.1_{stat}\pm0.2_{sys})\times$\SI{e-26}{e cm} was published in 2020 \cite{nEDM} but other results were also obtained thanks to this facility:
+            \begin{itemize}
+                \item A measurement of the mercury-to-neutron magnetic moment ratio
+                \item Spin-echo spectroscopy with ultracold neutrons
+                \item Measurement of gravitational depolarization of ultracold neutrons
+                \item limit for oscillating electric dipole moments
+                \item limit for spin-dependent forces mediated by axion-like particles
+            \end{itemize}
+            \begin{figure}
+                \centering
+                \includegraphics[scale = 0.5]{Figures/Introduction/UCN_CAD.png}
+                \caption{CAD for the UCN source taken from  \cite{PSI:review:2021}. Some of the key aspects are: 2 - lead spallation source, 4 - heavy water moderator, 5 - D$_2$ moderator, 9 - storage vessel, 10 - 11 UCN guide and guide shutter.}
+                \label{fig:UCN_CAD}
+            \end{figure}
+            \begin{figure}
+                \centering
+                \includegraphics[width = 0.8\textwidth]{Figures/Introduction/UCN_behaviour.png}
+                \caption{The observed behavior during the slow freezing of the deuterium. The large increase in UCN output demonstrates the strong reduction in UCN losses within the D$_2$. 
+                Figure taken from \cite{PSI:review:2021}}
+                \label{fig:UCN_behaviour}
+            \end{figure}
+            \begin{figure}
+                \centering
+                \includegraphics[width = 0.8\textwidth]{Figures/Introduction/UCN_stats.png}
+                \caption{Annual statistics of the UCN source showing total accumulated beam current on target (black bars) and number of beam pulses (red bars) on the UCN spallation target. 
+                Figure taken from \cite{PSI:review:2021}}
+                \label{fig:UCN_stats}
+            \end{figure}
 
-        \paragraph{Results}
-        The resulting new nEDM limit was published in 2020 but other results were also obtained:
-        \begin{itemize}
-            \item A measurement of the mercury-to-neutron magnetic moment ratio
-            \item Spin-echo spectroscopy with ultracold neutrons
-            \item Measurement of gravitational depolarization of ultracold neutrons
-            \item limit for oscillating electric dipole moments
-            \item limit for spin-dependent forces mediated by axion-like particles
-        \end{itemize}
-
-        \begin{figure}
-            \centering
-            \includegraphics[scale = 0.5]{Figures/Introduction/UCN_CAD.png}
-            \caption{CAD for the UCN source taken from  \cite{PSI:review:2021}. Some of the key aspects are: 2 - lead spallation source, 4 - heavy water moderator, 5 - D$_2$ moderator, 9 - storage vessel, 10 - 11 UCN guide and guide shutter.}
-            \label{fig:UCN_CAD}
-        \end{figure}
-        \begin{figure}
-            \centering
-            \includegraphics[scale = 0.5]{Figures/Introduction/UCN_behaviour.png}
-            \caption{The observed behavior during the slow freezing of the deuterium. The large increase in UCN output shown by the green bullets
-            demonstrates the strong reduction in UCN losses within the D$_2$. 
-            Figure taken from \cite{PSI:review:2021}}
-            \label{fig:UCN_behaviour}
-        \end{figure}
-        \begin{figure}
-            \centering
-            \includegraphics[scale = 0.5]{Figures/Introduction/UCN_stats.png}
-            \caption{Annual statistics of the first operating years of the UCN source showing total accumulated beam current on target (black bars) and number of beam pulses (red bars) on the UCN spallation target. 
-            Figure taken from \cite{PSI:review:2021}}
-            \label{fig:UCN_stats}
-        \end{figure}
-
-
-    \subsection{Muon beam-line}
-    \subsection{High-Intensity Muon Beams}
+    \subsection{MISSING! High-Intensity Muon Beams}
     \cite{HIMB:2021} 
 
 \section{Proton Ionization Facility}
-Another interesting facility at PSI is the Proton Ionization Facility (PIF)\cite{PIF:1996}\cite{PIF:2001}.
-This was designed, in conjunction with the European Space Agency, to be a user-friendly testing ground for spacecraft components.
-The deteriorating effect that high-energy protons can have on semiconductors is a key aspect of the correct functioning of spacecraft in the space environment.
-Depending on the orbit and the duration of the flight the exposure to this hazard can vary and having reproducible test grounds is cardinal during the design phase. 
-The original goals of this facility were:
-\begin{outline}
-\1 Radiation hardness of the new electronic products
-\1 Single Event Upsets (SEU) and Latch-ups (SEL) of electronic components
-\1 Properties of radiation monitors for space and laboratory applications
-\1 Basic mechanics of radiation effects in semiconductors
-\1 Space radiation environment by on-earth simulations
-\end{outline}
-Given the broad range of energy and intensities of the facility, alongside ESA many other users apply for beamtime at PIF within the accelerator communities such as CERN but also external laboratories, industries, and universities.
-During the daytime, the beam is usually reserved for biomedical applications and these irradiation studies are done parasitically during the night and on weekends.
-Although only for a short period, I joined PIF and I had the opportunity to be a shifter. 
-It was quite an interesting experience, allowing me to become acquainted with a different setup and to see a different aspect of the research in particle physics.
-
-\subsection{Facility and main features}
+    Another interesting facility at PSI is the Proton Ionization Facility (PIF) \cite{PIF:1996}\cite{PIF:2001}.
+    This was designed, in conjunction with the European Space Agency, to be a user-friendly testing ground for spacecraft components.
+    The deteriorating effect that high-energy protons can have on semiconductors is a key aspect of the correct functioning of spacecraft in the space environment.
+    Depending on the orbit and the duration of the flight the exposure to this hazard can vary and having reproducible test grounds is cardinal during the design phase. 
+    The original goals of this facility were:
+    \begin{outline}
+        \1 Radiation hardness of the new electronic products
+        \1 Single Event Upsets (SEU) and Latch-ups (SEL) of electronic components
+        \1 Properties of radiation monitors for space and laboratory applications
+        \1 Basic mechanics of radiation effects in semiconductors
+        \1 Space radiation environment by on-earth simulations
+    \end{outline}
+    Given the broad range of energy and intensities of the facility, alongside ESA many other users apply for beamtime at PIF within the accelerator communities, such as CERN, but also external laboratories, industries, and universities.
+    During the daytime, the beam is usually reserved for biomedical applications and these irradiation studies are done parasitically during the night and on weekends.
+    Although only for a short period, I joined PIF and I had the opportunity to be a shifter. 
+    It was quite an interesting experience, allowing me to become acquainted with a different setup and to see a different aspect of the research in particle physics.
+    The usual shift would consist in tuning the beam to be suited to the user's needs and supporting during the data taking.
 
 \addcontentsline{toc}{chapter}{Bibliography for the introduction}
 \printbibliography[title=Bibliography for the introduction]
