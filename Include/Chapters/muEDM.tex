@@ -1,76 +1,75 @@
+\status{started}
 \chapter{muEDM}
 \begin{refsection}
 
 {\itshape
-This chapter is an introduction to the muEDM experiment. After describing in some detail the spin dynamics, a brief status on the EDM searches for the different particles will follow.
-The description of the muEDM search will follow: starting from the frozen spin technique and outlying the status of the experiment. 
-Description of the apparatus, study on the systematics and introduction to the different simulations.}
+This chapter is an introduction to the muEDM experiment. After describing in some detail the spin dynamics, a reminder on the EDM searches for the different particles will follow.
+We will then outline the measuring principle of the experiment, the frozen spin technique, and deep dive into the current status of the experiment. 
+The study of systematic uncertainties will close this chapter. 
+As always, the early stage of the experiment means the rate of changes and improvement is outstanding. 
+This my attempt to an up-to-date description but some details might be already outdated.}
 
+\status{review}
 \section{Electric Dipole Moment}
     As introduced in \ref{intro:edm}, the Hamiltonian describing the spin dynamics is:
-    \begin{equation}
+    \begin{equation*}
         \hat{H} = -\mu\bm{\hat{\sigma}\cdot B}-d\bm{\hat{\sigma}\cdot E}
-    \end{equation}
-    In a magnetic field the dynamic of a particle at rest is described by $\dd s/\dd t=\bm{\mu}\times\bm{b} = \bm{\omega}_L\times\bm{s}$, where $\bm{\mu}=ge/(2m)\bm{s}$ is the \gls{mdm} and $\bm{\omega}_L=-2\mu\bm{B}/\hbar$ the Larmor precession frequency.
-    Similarly an hypotetical \gls{edm} $\bm{d}=\eta e/(2mc)\bm{s}$ results in a precession $\bm{\omega}_d=-2d\bm{E}/\hbar$ in an electric field $\bm{E}$.
-    When considering a moving particle in both fields it is useful to introduce the polarization vector $\bm{\Pi}=\bm{s}/s$ and the Thomas precession $\bm{\Omega}_0$
-    \begin{equation}
+    \end{equation*}
+    We then saw that, when considering a combination of magnetic and electric fields and a moving particle it is useful to introduce the polarization vector $\bm{\Pi}=\bm{s}/s$ and the Thomas precession $\bm{\Omega}_0$
+    \begin{equation*}
         \dv{\bm{\Pi}}{t}=\bm{\Omega}_0 \times \bm{\Pi}, \quad
         \bm{\Omega}_0 = -\frac{e}{m\gamma} \left[ (1+\gamma a)\bm{B}-\frac{a\gamma^2}{\gamma+1}(\bm{\beta}\cdot\bm{B})\bm{\beta}-\gamma \left( a+\frac{1}{\gamma+1} \right) \frac{\bm{\beta}\times \bm{E}}{c} \right]
-    \end{equation}
-    \cite{muEDM:Flavour:2008}\cite{muEDM:Ring:2004}
-    If there is no electrical field parallel to the momentum the acceleration is purely transverse so we get the following motion, with $\bm{\Omega}_c$ the cyclotron frequency.
-    \begin{equation}
+    \end{equation*}
+    Which, with no electrical field parallel to the momentum and $\bm{\Omega}_c$ the cyclotron frequency, becomes:
+    \begin{equation*}
         \dv{\bm{\beta}}{t}=\bm{\Omega}_c\times \bm{\beta}, \quad \bm{\Omega}_c = -\frac{e}{m\gamma}\left( \bm{B}- \frac{\gamma^2}{\gamma^2-1}\frac{\bm{\beta} \times \bm{E}}{c} \right)
-    \end{equation}
+    \end{equation*}
     The relative spin precession of a muon in a storage ring will be then given by (T-BMT \cite{miss-59})
     \begin{equation}
         \begin{split}
             \bm{\Omega}=\bm{\Omega}_0-\bm{\Omega}_c &=
             \underbrace{ 
-                \frac{q}{m}\left[ a\bm{B} -\cancel{\frac{a\gamma}{\gamma+1}(\bm{\beta}\cdot \bm{B})\bm{\beta}} - \left(  a+\frac{1}{1-\gamma^2}\right)\frac{\bm{\beta} \times \bm{E}}{c} \right]
+                \frac{q}{m}\left[ a\bm{B} -{\frac{a\gamma}{\gamma+1}(\bm{\beta}\cdot \bm{B})\bm{\beta}} - \left(  a+\frac{1}{1-\gamma^2}\right)\frac{\bm{\beta} \times \bm{E}}{c} \right]
             }_{\text{Anomalous precession, } \omega_a=\omega_L-\omega_c} \\&+
             \underbrace{
-                \frac{\eta q}{2m}\left[ \bm{\beta} \times \bm{B} + \frac{\bm{E}}{c}- \cancel{\frac{\gamma c}{\gamma+1}(\bm{\beta}\cdot\bm{E\beta})} \right]
+                \frac{\eta q}{2m}\left[ \bm{\beta} \times \bm{B} + \frac{\bm{E}}{c}- {\frac{\gamma c}{\gamma+1}(\bm{\beta}\cdot\bm{E\beta})} \right]
             }_{\text{Interaction of EDM and relativistic $\bm{E}$, } \omega_a}
         \end{split}
-        \label{eq:precession}
+        \label{eq:muedm:precession}
     \end{equation}
     The second term describes the precession due to the \gls{edm} coupling to the relativistic $\bm{E}$, perpendicular to the $\bm{B}$ in which the particle is moving. 
-    The simplification shown are the result of $\bm{p}$, $\bm{B}$ and $\bm{E}$ forming an orthogonal basis, hence the scalar products are null.
-    In the case of the E821 experiment, the muon \textit{magic} momentum was chosen, simplifying eq. \ref{eq:precession} and making the anomaly precession frequency independent from the electric fields needed for beam steering. 
-    \begin{equation}
-        p_{magic}=\frac{m}{\sqrt{a}}=3.09\ \text{GeV}/c, \quad
-        \bm{\Omega} = \frac{q}{m} \left[ a\bm{B} +\frac{\eta}{2}\left( \bm{\beta}\times\bm{B} + \frac{\bm{E}}{c}\right) \right]
-    \end{equation} 
     In the presence of a muon \gls{edm} the plane would be tilted and a vertical precession ($\bm{\omega}_e\perp\bm{B}$), shifted by $\pi/2$ to the horizontal anomalous precession, would become observable.
 
+    \status{review}
     \subsection{Current limits on EDM}
-        As discussed in Sec.~\ref{sec:exp:edm}, the last decades saw a continuous effort to measure the EDM of different particles.
-        The experiments setting the current limits were previously discussed but we report in Tab.~\ref{tab:edm} the results to aid the reader.
-        It is important to note there are two limits for $\upmu$: one is obtained by rescaling the limit on the electron, obtaining an \textit{indirect limit}; the less stringent is a \textit{direct} limit.
-        \begin{table}[]
+        As discussed in \ref{sec:exp:edm}, the last decades saw a continuous effort to measure the EDM of different particles.
+        There the experiments setting the current limits were discussed but we report in Tab.~\ref{tab:edm} the results to aid the reader.
+        It is important to note there are two limits for $\upmu$: one obtained by rescaling the limit on $d_e$, obtaining an \textit{indirect limit}; one, less stringent, is a \textit{direct} limit.
+
+        \begin{table}[h]
             \centering
             \begin{tabular}{|c|c|c|}
                 \hline
-                Experiment & Particle & EDM limit \\
+                Experiment & Particle & EDM limit in ecm \\
                 \hline
                 \hline
-                nEDM & n & \SI{3e-3}{}\\
+                nEDM \cite{nEDM} & n & \num{0.18e-25}\\
                 \hline
-                \multirow{2}{*}{eEDM} & e & Limit \\
-                 & $\upmu$ & Limit$^*$ \\
+                ACME \cite{eEDM:ACME} & e & \num{1.1e-29} \\
                 \hline
-                muEDM & $\upmu$ & Limit \\
+                Indirect \cite{muEDM:indirect} & $\upmu$ & \num{0.19e-19}$^*$ \\
+                \hline
+                g-2 \cite{muEDM:direct} & $\upmu$ & \num{1.8e-19} \\
                 \hline
             \end{tabular}
-            \caption{Blablabla\\ $^*$This is an indirect limit and assumes direct scaling between e and $\upmu$.}
+            \caption{Sumary of the current limits on the EDM for neutron electron and muon.}
             \label{tab:edm}
         \end{table}
 
+    \status{review}
     \subsection{The \textit{frozen spin} technique}
-        \cite{1,9} 
-        With the appropriate choice of electric field and having $\bm{p}$, $\bm{B}$ and $\bm{E}$ forming an orthogonal basis, the anomalous precession term in eq. \ref{eq:precession} can be set to zero. 
+        
+        As illustrated in \cite{1,9}, with the appropriate choice of electric field and having $\bm{p}$, $\bm{B}$ and $\bm{E}$ forming an orthogonal basis, the anomalous precession term in eq. \ref{eq:muedm:precession} can be set to zero. 
         \begin{equation}
             a\bm{B}=\left( a-\frac{1}{\gamma^2-1} \right)\frac{\bm{\beta}\times\bm{E}}{c}
         \end{equation}
@@ -92,9 +91,11 @@ Description of the apparatus, study on the systematics and introduction to the d
         \end{equation}     
         \begin{equation}
            \sigma(d_\mu)=\frac{a\hbar\gamma}{2P_0E_f\sqrt{N}\tau_\mu A}
-        \end{equation}                 
-
+        \end{equation}  
+        
+\status{started}
 \section{The muEDM apparatus}
+    \status{started}
     \subsection{Superconducting injection channel}
         To allow the incoming muons to enter the magnet without being reflected or deviated by fringing fields an injection channel is needed.
         For reasons that will be discussed in the section dedicated to the systematics (see Sec.~\ref{muEDM:systematics}), we will actually require two symmetrical injections.
@@ -102,6 +103,7 @@ Description of the apparatus, study on the systematics and introduction to the d
         Clearly, the development of such a system is not trivial, and a precise study of the different shapes and materials is required. 
         The hope would be to find a suitable \textit{high-temperature} superconductor.
 
+    \status{started}
     \subsection{Entrance detector} 
         After a muon successfully enters the experiment it would spiral to the other side of the magnet. 
         To store it a magnetic kick is necessary. 
@@ -111,23 +113,27 @@ Description of the apparatus, study on the systematics and introduction to the d
         With a dedicated \gf simulation\footnote{To be honest this was actually my first \gf project and few iterations were needed.}, the amount of light exiting the different sides of the thin scintillator was studied as a function of muon and positron momenta. 
         The results of the simulations and the dedicated beamtimes to develop this entrance detector will be discussed in Ch.~\ref{ch:muEDM:entrance}, dedicated to this detector.
 
+    \status{started}
     \subsection{Muon tracking} 
         Although during physics runs it is important to minimize the number of interactions of the muon along the path, it is a cardinal step to prove the muons are following the correct path.
         For this reason, a removable muon-tracking device is under development.
         The idea is to use \tpc + \grid. \cite{muEDM:PSI:GridPix}
 
+    \status{started}
     \subsection{Kicker}
         The prerequisite for the \textit{frozen spin} is to first store the muon around the design orbit.
         This is achieved by applying a longitudinal kick, canceling the momentum component parallel to the magnetic field.
         The development of this element is non-trivial because of the stringent requirements on the strength, time scale, and residual effects of the kick.
         We started by looking into different shapes and types of coil as well as developing \ltsp simulations of the generating circuit.
 
+    \status{started}
     \subsection{Electrodes}
         After the muon has been successfully stored around the design orbit the next step is to apply a radial electric field. 
         The strength of this field is going to modify the frequency of the g-2 precession, eventually \textit{freezing} the spin (eq. \ref{eq:freezed}) along the momentum direction.
         These electrodes need to be out of the muon orbit and with a minimal material budget to reduce the positron scattering.  
         Dedicated simulations and prototyping have been developed also for this element.
 
+    \status{started}
     \subsection{Positron tracking}
         The development of the positron tracker has been a big part of my work in the collaboration.
         For this reason, an in-depth description will follow in a dedicated chapter while here we will just outline the basic idea.
@@ -136,7 +142,7 @@ Description of the apparatus, study on the systematics and introduction to the d
             \1 A silicon pixel external tracker will be used to track precisely the transverse position of the positron. The aim of this sub-detector is to measure the g-2 precession to fine-tune the radial electric field to achieve the frozen-spin condition.
             \1 An internal scintillating fiber detector with a comparable resolution on the transverse position will complement the silicon pixel with additional hits. The requirement is to have a better resolution on the longitudinal position of the hits to measure the EDM by looking at the pitch of the outgoing helical track.
         \end{outline}
-        
+
 \section{Systematics}
 \label{muEDM:systematics}
 
@@ -145,6 +151,9 @@ Description of the apparatus, study on the systematics and introduction to the d
 
 \section{Conclusions}
 
-\addcontentsline{toc}{chapter}{Bibliography on muEDM}
-\printbibliography[title=Bibliography on muEDM]
+\printbibliography[
+    heading = bibliographychapter,
+    title=Bibliography on muEDM
+]
+
 \end{refsection}

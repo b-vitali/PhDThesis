@@ -1,13 +1,16 @@
+\status{started}
 \chapter{Introduction}
+
 \begin{refsection}
 
 {\itshape
 Here we will provide an overview of the following chapters as well as define the theoretical and experimental background for this work. 
 The first section will be dedicated to the outline of this thesis, to aid the readers. 
 A somewhat shallow review of the particle physics searches at PSI will follow, with some in-depth dive into the subjects which are close to the core of this thesis. 
-This will be complemented by the description of the different facilities at PSI, with a final section dedicated to the Proton Ionization Facility. 
+This will be complemented by the description of the different facilities at PSI, with a final section dedicated to the Proton Ionization Facility.\\ 
 This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:review:2021}.}
 
+\status{started}
 \section{Outline of this thesis}
     The structure of this Thesis might differ slightly from the norm. 
     While most of my colleagues dedicated their work to a singular subject, like a particular detector or theory, my effort during the course of this Ph.D. has been spread on a wider angle.
@@ -21,7 +24,8 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
         \1 MEG: introduction and CW, Liquid Hydrogen target, X17 search
     \end{outline}
 
-\section{Particle physics at Paul Scherrer Institute}
+\status{started}
+\section{Particle physics at Paul Scherrer Institute} 
     Belonging to ETH domain and formed in 1988 as a national laboratory, the Paul Scherrer Institute (PSI) is the largest federal research institute in Switzerland. 
     PSI hosts the world's most powerful proton accelerators, with an average power of \SI{1.4}{MW} and a beam current of over \SI{2}{mA}.
     On top of the proton facility, in the last 10 years, a neutron spallation target has been added for ultracold neutrons production.  
@@ -29,12 +33,14 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
     With its world-class facilities and expertise, PSI plays a pivotal role in advancing our understanding of fundamental particles and their interactions, solidifying its position as a key player in the field of particle physics on a global scale.
     Everything discussed in this thesis is a product of the fertile environment at this Institute and the active collaborations with universities and institutions, such as INFN, around the world.
     
+\status{review}
 \section{Bite-size theory}
     The aim of this section is to define the framework in which (part) of particle physics research is moving. In particular, we will be focusing on the aspects which are relevant to the three experiments core of this thesis.
     The searches \gls{bsm} proceed in two main directions: \textit{intensity frontier} is used to describe the test of contributions that are too small to be experimentally accessible observing large numbers of events;
     \textit{precision frontier} is used when improving the accuracy of a specific parameter to test the agreement with the \gls{sm}.
     Searches for \gls{clfv} or neutron \gls{edm} are examples of the former type while precision \gls{qed} tests with muonium are of the latter.
-    
+
+    \status{review}
     \subsection{Standard Model at low energies}
         In the low energy regime \gls{qed} and \gls{qcd} are essentially `frozen', and the \gls{sm} reduces to the standard Lagrangian
         \begin{equation}
@@ -104,6 +110,7 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
             [O^D_{qG}]_{ij}=(\bar{\psi}_i\sigma_{\alpha\beta}G^{\alpha\beta}P_R\psi_j)
         \end{equation}
         
+    \status{review}
     \subsection{Beyond Standard Model at low-energy}
         There is no shortage of \gls{bsm} models and one way of (roughly) classifying them would be by the masses and coupling strengths of the particles they introduce. 
         Light \gls{bsm} particles have small couplings to \gls{sm} particles, which would explain the small contribution to physical observables. Prominent examples are dark photons, axions and \gls{alp}.
@@ -139,7 +146,8 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
         In the \gls{sm}, $d_f$ receives contributions from quarks at 3-loops and leptons at 4-loops (induced by \gls{cp}-violation in the \gls{ckm}). 
         When considering protons and neutrons there is an additional contribution from the \gls{cp} violating \gls{qcd} $\vartheta$ parameter (found to be extremely low constraining the neutron \gls{edm}).
         For completeness sake, $J_{cc}^\alpha$ give rise to matrix elements between different $SU(2)$ doublets, like $(\nu_\ell,\ell)$ or $(p,n)$. This leads to muon and beta decay or quasi-elastic scattering $\ell p\rightarrow \nu_\ell n$.
-        
+
+    \status{review}
     \subsection{Muon}
         The muon is the lepton with the intermediate mass of $m_\mu \approx 105.66$ MeV and it is unstable. The dominant process is the Michel decay $\mu\rightarrow e\nu\bar{\nu}$ which translates to a lifetime of $\tau\approx2.2\ \mu$s. We already hinted at the fact that this decay is mediated by the charged current $J_{cc}^\alpha$ through $\matrixel{\nu_\mu}{J_{cc}^\alpha}{\mu}\matrixel{e}{(J_{cc})^\dag_\alpha}{\nu_e}$ which in \gls{eft} corresponds to $(\bar{\nu}_\mu\gamma^\alpha P_L\mu)(\bar{e}\gamma_\alpha P_L\nu_e)$. The resulting \gls{eft} Lagrangian is
         \begin{equation}
@@ -173,7 +181,8 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
         After the results of the G-2 experiment at \gls{fnal}, there is some tension on the first between experimental results and theory. 
         For the \gls{edm} the \gls{sm} value is zero for practical purposes and a non-vanishing result would be a clear indication of \gls{bsm}.
         We will further discuss the muon \gls{edm}.
-        
+
+    \status{review}
     \subsection{Muon decay}
         When using a charge-changing Hamiltonian characterized by fields with define chirality \cite{5}, the general matrix element of the muon decay can be written as \cite{7}
         \begin{equation}
@@ -211,12 +220,8 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
         \begin{equation}
             S=|g^v_{LL}|^2; \quad |g^s_{LL}|<2\sqrt{1-S}
         \end{equation}
-        
-    \subsection{MISSING! Experiments}
-        \paragraph{Longitudinal Positron Polarization}
-        \paragraph{Transverse Positron Polarization}
-        \paragraph{Electron Decay Asymmetry}
     
+    \status{review}
     \subsection{Electric Dipole Moment}
         \label{intro:edm}
         Similarly to how the \gls{mdm} $\mu$ represents the coupling between the spin of a quantum system and an external magnetic $\bm{B}$ field, the \gls{edm} $d$ represents the coupling between the spin of and an external electric field $\bm{E}$.
@@ -226,30 +231,299 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
         \end{equation}
         Given that $\bm{\hat{\sigma}\cdot E}$ is odd for time reversal, the existence of a non-zero \gls{edm} would violate \gls{cp} symmetry. 
         This is an interesting topic, with many implications, and key to many searches. 
-        Here we will just nominate it and underline that at \gls{psi} has been for decades at the frontier in the measurements of the neutron \gls{edm}.
-        We will discuss the muon \gls{edm} in detail in the chapter dedicated to the muEDM experiment.\\
-        \cite{edmasprobe}
+        In a magnetic field, the dynamic of a particle at rest is described by $\dd s/\dd t=\bm{\mu}\times\bm{b} = \bm{\omega}_L\times\bm{s}$, where $\bm{\mu}=ge/(2m)\bm{s}$ is the \gls{mdm} and $\bm{\omega}_L=-2\mu\bm{B}/\hbar$ the Larmor precession frequency.
+        Similarly a hypothetical \gls{edm} $\bm{d}=\eta e/(2mc)\bm{s}$ results in a precession $\bm{\omega}_d=-2d\bm{E}/\hbar$ in an electric field $\bm{E}$.
+    When considering a moving particle in both fields it is useful to introduce the polarization vector $\bm{\Pi}=\bm{s}/s$ and the Thomas precession $\bm{\Omega}_0$
+    \begin{equation}
+        \dv{\bm{\Pi}}{t}=\bm{\Omega}_0 \times \bm{\Pi}, \quad
+        \bm{\Omega}_0 = -\frac{e}{m\gamma} \left[ (1+\gamma a)\bm{B}-\frac{a\gamma^2}{\gamma+1}(\bm{\beta}\cdot\bm{B})\bm{\beta}-\gamma \left( a+\frac{1}{\gamma+1} \right) \frac{\bm{\beta}\times \bm{E}}{c} \right]
+    \end{equation}
+    \cite{muEDM:Flavour:2008}\cite{muEDM:Ring:2004}
+    If there is no electrical field parallel to the momentum the acceleration is purely transverse so we get the following motion, with $\bm{\Omega}_c$ the cyclotron frequency.
+    \begin{equation}
+        \dv{\bm{\beta}}{t}=\bm{\Omega}_c\times \bm{\beta}, \quad \bm{\Omega}_c = -\frac{e}{m\gamma}\left( \bm{B}- \frac{\gamma^2}{\gamma^2-1}\frac{\bm{\beta} \times \bm{E}}{c} \right)
+    \end{equation}
+    The relative spin precession of a muon in a storage ring will be then given by (T-BMT \cite{miss-59})
+    \begin{equation}
+        \begin{split}
+            \bm{\Omega}=\bm{\Omega}_0-\bm{\Omega}_c &=
+            \underbrace{ 
+                \frac{q}{m}\left[ a\bm{B} -\cancel{\frac{a\gamma}{\gamma+1}(\bm{\beta}\cdot \bm{B})\bm{\beta}} - \left(  a+\frac{1}{1-\gamma^2}\right)\frac{\bm{\beta} \times \bm{E}}{c} \right]
+            }_{\text{Anomalous precession, } \omega_a=\omega_L-\omega_c} \\&+
+            \underbrace{
+                \frac{\eta q}{2m}\left[ \bm{\beta} \times \bm{B} + \frac{\bm{E}}{c}- \cancel{\frac{\gamma c}{\gamma+1}(\bm{\beta}\cdot\bm{E\beta})} \right]
+            }_{\text{Interaction of EDM and relativistic $\bm{E}$, } \omega_a}
+        \end{split}
+        \label{eq:precession}
+    \end{equation}
+    The second term describes the precession due to the \gls{edm} coupling to the relativistic $\bm{E}$, perpendicular to the $\bm{B}$ in which the particle is moving. 
+    The simplification shown are the result of $\bm{p}$, $\bm{B}$ and $\bm{E}$ forming an orthogonal basis, hence the scalar products are null.
+    In the case of the E821 experiment, the muon \textit{magic} momentum was chosen, simplifying eq. \ref{eq:precession} and making the anomaly precession frequency independent from the electric fields needed for beam steering. 
+    \begin{equation}
+        p_{magic}=\frac{m}{\sqrt{a}}=3.09\ \text{GeV}/c, \quad
+        \bm{\Omega} = \frac{q}{m} \left[ a\bm{B} +\frac{\eta}{2}\left( \bm{\beta}\times\bm{B} + \frac{\bm{E}}{c}\right) \right]
+    \end{equation} 
+    In the presence of a muon \gls{edm} the plane would be tilted and a vertical precession ($\bm{\omega}_e\perp\bm{B}$), shifted by $\pi/2$ to the horizontal anomalous precession, would become observable.
 
-\section{MISSING! Experimental status}
+    \gls{psi} has been for decades at the frontier in the measurements of the neutron \gls{edm}.
+    We will turn to this topic when describing the existing limits on EDMs and in the chapter dedicated to the muEDM experiment.\\
+    \cite{edmasprobe}
+
+\status{started}
+\section{Experimental status}
     To give an exhaustive recap of the experimental development, both worldwide and at PSI, is a task we will not undertake. 
     Here we will briefly discuss the key experiments in CLFV searches (MEG, Mu3e, Mu2e, COMET) and the nEDM experiment at PSI.
     This choice is driven by the experiment extensively discussed in the following chapters: muEDM; MEG II.
 
-    \subsection{MISSING! CLFV experiments}
-        \subsubsection{MEG}
-        \subsubsection{Mu3e}
-        \subsubsection{Mu2e}
-        \subsubsection{COMET}
-    \subsection{MISSING! EDM experiments}
-        \label{sec:exp:edm}
-        \subsubsection{nEDM}
-            \paragraph{n2EDM}
-        \paragraph{eEDM}
-        \paragraph{muEDM}
-    \cite{n2EDM}    
+    \status{started}
+    \subsection{CLFV experiments}
+        \begin{table}[!h]
+\centering
+\begin{tabular}{c|c|c}
+\hline
+Process & Upper limit & reference\\
+\hline
+\hline
+$\mu^+\rightarrow e^+\gamma$ & $4.2\times 10^{-13}$ & \cite{MEG}\\
+$\mu^+\rightarrow e^+e^+e^-$ & $1.0\times 10^{-12}$ & \cite{SINDRUM}\\
+$\mu^-$Ti$\rightarrow e^-$Ti  & $1.7\times 10^{-12}$ & \cite{SINDRUM}\\
+$\mu^-$Au$\rightarrow e^-$Au  & $7\times 10^{-13}$   & \cite{Bertl}\\
+$\mu^+e^-\rightarrow \mu^-e^+$ & $8.3\times 10^{-11}$ & \cite{Willmann}\\
+$\tau^\pm\rightarrow e^\pm\gamma$ & $3.3\times 10^{-8}$ & \cite{Aubert}\\
+$\tau^\pm\rightarrow \mu^\pm\gamma$ & $4.4\times 10^{-8}$ & \cite{Aubert}\\
+$\tau^-\rightarrow e^-e^-e^+$ & $2.7\times 10^{-8}$ & \cite{Hayasaka}\\
+$\tau^-\rightarrow \mu^-\mu^-\mu^+$ & $2.1\times 10^{-8}$ & \cite{Hayasaka}\\
+$\tau^-\rightarrow e^-\mu^-\mu^+$ & $2.7\times 10^{-8}$ & \cite{Hayasaka}\\
+$\tau^-\rightarrow \mu-e^-e^+$ & $1.8\times 10^{-8}$ & \cite{Hayasaka}\\
+$\tau^-\rightarrow e^+\mu^-\mu^-$ & $1.7\times 10^{-8}$ & \cite{Hayasaka}\\
+$\tau^-\rightarrow \mu+e^-e^-$ & $1.5\times 10^{-8}$ & \cite{Hayasaka}\\
+$\pi^0\rightarrow \mu e$ & $3.6\times 10^{-10}$ & \cite{Abouzaid}\\
+$K^0_L\rightarrow \mu e$ & $4.7\times 10^{-12}$ & \cite{Ambrose}\\
+$K^+\rightarrow \pi^+\mu^+e^-$ & $1.3\times 10^{-11}$ & \cite{Sher}\\
+$K^0_L\rightarrow \pi^0\mu^+e^-$ & $4.4\times 10^{-10}$ & \cite{Abouzaid}\\
+$Z^0\rightarrow \mu e$ & $7.5\times10^{-7}$& \cite{Aad}\\
+$Z^0\rightarrow \tau e$ & $9.8\times10^{-6}$& \cite{Akers} \\
+$Z^0\rightarrow \tau \mu$ & $1.2\times10^{-6}$& \cite{Akers}\\
+\hline
+\end{tabular}
+\caption[Limits for CLFV processes]{Experimental upper limits for a variety of CLFV processes.}
+\label{T_CLFV}
+\end{table}
 
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c||c|c|c|}
+\hline
+& $\mu^+\rightarrow e^+\gamma$ & $\mu^+\rightarrow e^+e^-e^+$ & $\mu^- N \rightarrow e^- N$ \\
+\hline \hline 
+Background &
+Accidental &
+Radiative muon decay &
+Decay in orbit \\
+\hline
+Beam &
+Continuous &
+Continuous &
+Pulsed \\
+\hline
+Current limit &
+\makecell{$4.2 \times 10^{-13}$ \\ MEG \cite{MEG}} &
+\makecell{$1\times10^{-12}$ \\ SINDRUM \cite{SINDRUM}} & 
+\makecell{$7\times10^{-13}$ \\ SINDRUM II \cite{SINDRUMII}} \\
+\hline
+Planned/running &
+\makecell{MEG II \cite{MEG_upgrade}\cite{MEG_II}\cite{Papa}}&
+\makecell{Mu3e \cite{Mu3e:2014}\cite{Mu3e:2016}\cite{Papa}} &
+\makecell{Mu2e \cite{mu2e_proposal} \cite{MTDR}\\ COMET \cite{COMET_2009}\cite{COMET_2012}\cite{COMET_2012_2}\cite{COMET_I}} \\
+\hline
+Planned sensitivity &
+$\sim 6\times 10^{-16}$&
+$\sim 10^{-16}$&
+$\sim$ few $\times 10^{-17}$ \\
+\hline
+\end{tabular}
+\caption[CLFV searches with muons]{Overview of muon CLFV experiments}
+\label{T_CLFV_mu}
+\end{table}
+
+        \subsubsection{MEG}
+        The MEG experiment \cite{MEG} is designed based on two key concepts: the utilization of a liquid xenon detector (LXe) for photons detection, and the implementation of an anti-bottle magnetic field for positron tracking. 
+        Muons are stopped within a polyethylene target located at the magnet's center. 
+        The momentum of positrons is measured using a combination of drift chambers (DCH) and plastic scintillator timing counters (TC). 
+        Photon energy and direction, on the other hand, are determined in a liquid xenon volume containing over 800 photo-multiplier tubes. 
+        The measured quantities include electron and photon energies ($E_e$ and $E_\gamma$), as well as relative positions (angles $\vartheta_{e\gamma}$, $\varphi_{e\gamma}$) and time $t_{e\gamma}$. 
+        Achieving resolutions that effectively separate background signals, such as radiative muon decays, necessitates an energy resolution of $\lessapprox 1\%$ for both particles.
+
+        MEG's magnetic field is not uniform to avoid the accumulation of positrons emitted at low-pitch angles within the tracker. 
+        Instead, the magnetic field diminishes symmetrically from the center towards the periphery, pushing the particles away from the center. 
+        The specific field shape is chosen so that the track radius is proportional to the \textit{absolute} momentum rather than the transverse momentum. 
+        This allows low-energy positrons to be discarded by positioning the detector at a sufficient distance from the magnet axis. 
+        The magnetic system of MEG, known as "COnstant Bending RAdius" (COBRA) magnets, possesses this distinctive feature.
+
+        The DCH spectrometer comprises 16 trapezoidal drift chambers filled with He-C$_2$H$_6$, arranged radially. 
+        The radial coordinate is determined using the timing data collected by the DCH and TC, while the $z$ position is inferred from the induced charge on the zig-zag-shaped pads on the drift chamber sides. The momentum resolution for positrons is approximately 330 keV.
+
+        The choice of employing a liquid xenon scintillating detector for photon reconstruction is motivated by the aim to minimize passive material within the detector and achieve excellent time resolution. 
+        This choice provides a higher light yield and shorter decay time compared to other options, such as NaI crystals. The timing resolution for measuring photon interaction time is below 100 ps.
+
+        MEG successfully gathered $7.5\times10^{14}$ stopped muons between 2008 and 2013 and, as previously mentioned, established the world's best limit on the branching ratio of $\mu^+\rightarrow e^+\gamma$ at 90\% confidence level, with BR$(\mu^+\rightarrow e^+\gamma)<4.2\times10^{-13}$ \cite{MEG}.
+
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.8\textwidth]{example-image-a}
+            \caption[MEG experiment]{Pictorial view of the MEG experiment \cite{Chiappini}\cite{MEG}.}
+            \label{_MEG}
+        \end{figure}
+
+        \paragraph{MEG II} 
+        The upgraded MEG II experiment was proposed to reduce the contamination due to the accidental background that could not be further reduced in MEG \cite{MEG_upgrade} \cite{MEG_II}.
+        MEG II is currently running and a whole part (Part ~\ref{part:MEGII}) of this thesis will be dedicated to this experiment.        
+        
+        \subsubsection{Mu3e}
+        The goal of the Mu3e experiment is to achieve a single-event sensitivity on the $\mu^+ \rightarrow e^+ e^+e^-$ decay at the order of $10^{-16}$ \cite{Mu3e:2016}. This experiment will utilize the same muon beam as MEG II and employ a thin hollow double-cone Mylar target to stop muons. The detector will be a 2 m cylinder situated within a 1.5 T magnetic field and divided into 5 sections (Fig. \ref{_Mu3e}). The central station will consist of two double layers of pixel detectors and a scintillating fiber tracker, while the other four stations will consist of two layers of pixel sensors and a scintillator hodoscope. A visual representation of the Mu3e apparatus can be seen in Fig. \ref{_Mu3e_3D}. To mitigate the impact of multiple Coulomb scattering, which poses limitations on precise track reconstruction, the tracker will utilize High Voltage Monolithic Active Pixel (HV-MAPS) technology, designed to partially cancel out the scattering effect within half of a turn. The estimated resolutions for time and vertex are $\sigma_t \approx 100$ ps and $\sigma_{xy} \approx 200\ \mu$m, respectively, while the momentum resolution ranges from $100$ to $400$ keV for particles with momenta between $10$ and $53$ MeV/c \cite{Signorelli}. The Mu3e experiment is planned in three phases \cite{Signorelli}, as depicted in Fig. \ref{_Mu3e}:
+\begin{itemize}
+    \item Phase Ia: Beam with an intensity of $\mathcal{O}(10^7)\ \mu^+/$s and installation of the tracker only.
+    \item Phase Ib: Beam with an intensity of $\mathcal{O}(10^8)\ \mu^+/$s (currently the maximum at PSI) with the addition of scintillating fibers and two additional tracking stations.
+    \item Phase II: Beam with an intensity of $\mathcal{O}(10^9)\ \mu^+/$s (requires a new beam-line) and inclusion of the remaining two stations to achieve the single-event sensitivity of $10^{-16}$.
+\end{itemize}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{example-image-a}
+\caption[Mu3e experiment]{Pictorial view of the Mu3e apparatus \cite{Papa}.}
+\label{_Mu3e_3D}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{example-image-a}
+\caption[Mu3e experiment phases]{A sketch view of the Mu3e apparatus \cite{Mu3e:2013} and the various phases.}
+\label{_Mu3e}
+\end{figure}
+
+
+        \subsubsection{Mu2e}
+        Mu2e employs an 8 GeV, 25 kW pulsed proton beam with 100 ns wide bunches separated by 1.7 $\mu$s. Figure \ref{MuonBeamline} illustrates the experimental setup, which consists of three sections: the Production Solenoid, Transport Solenoid, and Detector Solenoid. The magnetic field layout around the production target is graded to guide the particles into the transport section. Within this section, the gradient directs the particles towards the stopping target, while the S shape reduces background from neutral particles and enables charge sign selection using Eq. \ref{eq_D} and collimators. Generally, only negative muons with momenta below 100 MeV/c reach the stopping target. Downstream of the aluminum target, the straw tube tracker and crystal electromagnetic calorimeter are located. Both detectors feature a hollow-cylinder geometry, with the tracker consisting of crossed straw tubes grouped in 20 stations and the calorimeter composed of two identical disks made of CsI crystals read by SiPMs. With three years of data taking, Mu2e aims to achieve an expected sensitivity of $R{\mu e}<3\times10^{-17}$ \cite{MTDR}.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{example-image-a}
+\caption[Mu2e experiment]{Pictorial view of the muon beam-line of the Mu2e experiment \cite{MTDR}.}
+\label{_MuonBeamline}
+\end{figure}
+
+Mu2e is a collaborative project involving international partners, including the Italian Institute of Nuclear Physics, responsible for constructing the electromagnetic calorimeter. The Mu2e Collaboration is also conducting preliminary investigations for the upgraded Mu2e II \cite{Mu2e_II:2018}. The proton beam intensity will be enhanced through the PIP-II upgrade \cite{PIP_II:2018}, resulting in a higher rate of stopped muons on target, increasing from $10^{10}\ \mu^-/$s (Mu2e) to $10^{11}\ \mu^-/$s. For the upgraded Mu2e II, new detector technologies are being explored. Simulation studies indicate that with three years of data acquisition, Mu2e II is expected to achieve a sensitivity of $R_{\mu e} < \times10^{-18}$.
+
+        \subsubsection{COMET}
+        The COherent Muon-to-Electron Transition (COMET) experiment is currently being constructed at the Japanese Proton Accelerator Research Center (J-PARC) \cite{COMET_I}. 
+While sharing similarities with Mu2e, such as the use of an 8 GeV, 56 kW pulsed proton beam with a bunch separation of $1.17\ \mu$s, COMET differs in two main aspects, as illustrated in Fig. \ref{_COMET}:
+\begin{itemize}
+    \item The presence of a C-shaped transport solenoid, instead of an S-shaped one, enables a tighter selection of muon momentum, at the cost of reduced beam intensity (approximately 70%).
+    \item An additional curved solenoid after the stopping target eliminates most of the non-interesting electrons before they reach the tracker.
+\end{itemize}
+The development of COMET will occur in two phases: Phase-I and Phase-II (Fig. \ref{_COMET}).
+\paragraph{COMET Phase-I}
+This initial phase aims to establish the experimental techniques, study background effects, and achieve an intermediate measurement at $R_{\mu e}\approx7\times10^{-15}$. The proton power will be limited to 3.2 kW, and a single 90$^\circ$ bend will be employed. The main challenge lies in the short distance between the various elements, with a cylindrical drift chamber serving as the electron tracker. Scintillating hodoscopes will surround the tracker for triggering and timing purposes. The Technical Design Report (TDR) for COMET Phase I can be found in \cite{COMET_I}.
+\paragraph{COMET Phase-II}
+To accommodate the increased particle rate, COMET Phase-II will introduce a straw tube tracker and a crystal electromagnetic calorimeter utilizing LYSO crystals. The entire magnetic system will be expanded and refined.
+The two-step approach is driven by uncertainties in the understanding of the underlying physics processes. Firstly, the backward production by 8 GeV protons remains poorly known, despite results from the HARP experiment \cite{HARP}. Additionally, data on muon nuclear capture in aluminum is still limited, although efforts from the Mu2e and COMET collaborations have led to the development of the AlCap experiment at PSI \cite{Edmonds:2015}\cite{AlCap:2015}\cite{AlCap:2018}. The AlCap collaboration aims to measure the rate and spectra of particles emitted during muon capture in aluminum to improve the physics models employed in Monte Carlo simulations.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{example-image-a}
+\caption[COMET experiment]{Pictorial view of the COMET apparatus \cite{COMET_I}.}
+\label{_COMET}
+\end{figure}
+
+    \status{started}
+    \subsection{EDM experiments}
+        \label{sec:exp:edm}
+        In the last decades the interest towards EDM measurments and limits palyed an important part in testing old and new theories.
+        A summary of the current limits is in Tab.~\ref{tab:intro:edm}. 
+        This subsection is a rundown of the experiments setting these limits.
+        
+        \begin{table}
+            \centering
+            \begin{tabular}{|c|c|c|}
+                \hline
+                Experiment & Particle & EDM limit in ecm \\
+                \hline
+                \hline
+                nEDM \cite{nEDM} & n & \num{0.18e-25}\\
+                \hline
+                ACME \cite{eEDM:ACME} & e & \num{1.1e-29} \\
+                \hline
+                Indirect \cite{muEDM:indirect} & $\upmu$ & \num{0.19e-19}$^*$ \\
+                \hline
+                g-2 \cite{muEDM:direct} & $\upmu$ & \num{1.8e-19} \\
+                \hline
+            \end{tabular}
+            \caption{Sumary of the current limits on the EDM for neutron electron and muon.}
+            \label{tab:intro:edm}
+        \end{table}
+        
+        \subsubsection{Neutron: nEDM}
+            \paragraph{n2EDM}
+            \cite{n2EDM}    
+        \subsubsection{Electron}
+            The conventional way to measure EDM is the separated oscillatory fields method: when a particle is subjected to an electric field parallel to a weak magnetic field the EDM changes interaction changes the Larmor frequency \cite{ramsey}.
+            An alternative approach is to use solid-state techniques.
+            In the presence of a strong magnetic field the EDM of valence electrons in a paramagnetic insulator would generate a small magnetization.
+            Even though the effect is negligible for singular electrons, the cumulative effect can be detected using sensitive magnetometry.
+            Using this method the limit $d_e<\SI{6.05e-25}{e\cdot cm}$ was obtained in \ce{Eu_{0.5}Ba_{0.5}TiO_3} \cite{eEDM:EuBaTiO}.
+            Not long after, a different limit was set with the same technique in  Gadolinium Gallium Garnet (GGG, \ce{Gd_3Ga_5O_{12}}): $d_e=-5.57\pm7.89\pm\SI{0.12e-25}{e\cdot cm}$ \cite{eEDM:GGG}.
+            The choice of material is driven by:
+            \begin{outline}
+                \1 A strong magnetic response, generated by the high density of \ce{Gd^{3+}} ions (\SI{\sim e-22}{cm^{-3}}), each with 7 unpaired electrons in $4f$ shell
+                \1 High dielectric strength (\SI{10}{MV/cm}) and electrical resistivity
+            \end{outline}
+            
+            \paragraph{ACME}
+            The current limit on eEDM was actually set by the ACME collaboration \cite{eEDM:ACME} using a different method: measuring the spin precession in a superposition of quantum states.
+            As illustrated in Fig.~\ref{fig:ACME}, the measuring principle is the following:
+            \begin{outline}
+                \1 A collimated beam of \ce{ThO} enters a $E,B$ fields region
+                \1 A combination of lasers creates a spin state aligned with $\hat{x}$
+                \1 The spin precesses in the $E,B$ fields
+                \1 The final spin alignment is readout by a laser: the resulting fluorescence depends on the angle between the laser linear polarization and the spin direction 
+            \end{outline}
+            The key aspect is that the precession frequency is linked to the states of the system and is modified by the presence of $d_e$.
+            The results obtained is $d_e=(4.3\pm3.1\pm2.6)\times 10^{-30}\si{e\cdot cm}$.
+            Applying the Feldman–Cousins prescription this value translates to the  limit $\abs{d_e}<\SI{1.1e-29}{e\cdot cm}$.
+
+            \begin{figure}
+                \centering
+                \includegraphics[width = 0.8\textwidth]{Figures/Introduction/eEDM_ACME.png}
+                \caption{}
+                \label{fig:ACME}
+            \end{figure}
+        
+        \subsubsection{Muon}
+            We now come to the muon, to which most of this thesis is dedicated. The $d_\upmu$ search at PSI is going to be discussed in detail in the following chapters but we will here review the current limits. 
+            
+            \paragraph{Muon \textit{g-2}}
+            In 2018 the \textit{g-2} collaboration performed three independent searches for $d_\upmu$.
+            All results were compatible with a null value and an upper limit was set: $\abs{d_\upmu}<\SI{1.9e-19}{e\cdot cm}$ \cite{muEDM:direct}.  
+            We will here skip the details but we will outline the methods used.\\
+
+            \begin{outline}
+                \1[BNL] We saw in \ref{intro:edm} the effect that EDM and MDM have on a moving particle in $\bm{E},\bm{B}$ fields.
+                In particular, for muons circulating in a storage ring, the spin precession is given by Eq.~\ref{eq:precession}. 
+                The measurement with the $g-2$ detectors is achieved by measuring the oscillation of the vertical component of the positron from the decay. This direction reflects the oscillation of the muon spin.\\
+                \1[$g-2$] We will here skip the details but we will outline the methods used. We saw in \ref{intro:edm} the effect that EDM and MDM have on a moving particle in $\bm{E},\bm{B}$ fields. In particular, for muons circulating in a storage ring, the spin precession is given by Eq.~\ref{eq:precession}.\\
+                \1[FSD]  We will here skip the details but we will outline the methods used. We saw in \ref{intro:edm} the effect that EDM and MDM have on a moving particle in $\bm{E},\bm{B}$ fields. In particular, for muons circulating in a storage ring, the spin precession is given by Eq.~\ref{eq:precession}.
+            \end{outline}
+              
+            \paragraph{Indirect limit} Given the rise in interest for EDM measurements an effort was undertaken to assess the indirect constraints imposed on $d_\upmu$ by the EDM measurements performed with heavy atoms and molecules~\cite{muEDM:indirect}. 
+            This was done by evaluating the $d_\upmu$- induced \textit{Shiff moment}\footnote{As pointed out in \cite{Shiff}, this is the operator inducing the atomic EDM.} of the \ce{^{199}Hg} nucleus, and a specific CP-odd operator for \ce{ThO}.            
+            The results, $d_\upmu($\ce{^{199}Hg}$)<\SI{6.4e-20}{e\cdot cm}$ and $d_\upmu($\ce{ThO}$)<\SI{1.9e-20}{e\cdot cm}$, are more stringent than the current measured limit but are \textit{indirect}.
+      
+\status{review} 
 \section{The beams at PSI}
     \label{intro:beamlines}
+    
+    \status{review}
     \subsection{High-Intensity Proton Accelerator facility}
         \label{sec:hipa}
         The proposal for the accelerator facility at PSI was completed in 1963. The objective was to develop a proton beam of tens of microAmpere and energy above \SI{450}{MeV} to produce $\pi/\mu$.
@@ -262,11 +536,11 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
             \1 Protons are produced by an electron cyclotron resonance source with a \SI{60}{kV} extraction
             \1 Two solenoids focus the protons onto a collimator: here \ce{^2H+} and \ce{^3H+} ions are stopped
             \1 Protons are then accelerated in three stages
-                \2 From \SI{60}{keV} to \SI{870}{keV} by the CW DC linear accelerator, shown in Fig.~\ref{fig:PSI:CW}\\
+                \2 From \SI{60}{keV} to \SI{870}{keV} by the CW DC linear accelerator, shown in Fig.~\ref{fig:PSI:HIPA:CW}\\
                 The beamline connecting the CW to the Injector II is equipped with a bunching system to match the acceptance of Injector II
-                \2 Injector II accelerates the pre-bunched beam up to \SI{72}{MeV}\\
+                \2 Injector II accelerates the pre-bunched beam up to \SI{72}{MeV}
                 An electrostatic beam splitter can redirect a fraction of the beam extracted beam (up to \SI{100}{\micro A}) to produce radioisotopes 
-                \2 The beam is sent to the Ring cyclotron. Eight magnets keep the particles on the spiral path and four cavities accelerate the beam up to \SI{590}{MeV}
+                \2 The beam is sent to the Ring cyclotron, shown in Fig.~\ref{fig:PSI:HIPA:cylotron}. Eight magnets keep the particles on the spiral path and four cavities accelerate the beam up to \SI{590}{MeV}
             \1 After the acceleration the beam is extracted and sent to the meson production targets
             \1 The surviving $\sim65\%$ of the beam is sent to the spallation source SINQ (or to a beam dump)
         \end{outline}
@@ -319,10 +593,30 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
         The maximum beam power (\SI{1.42}{MW}) is limited by the activation and damage of the accelerator components while the maximum beam current authorized is \SI{2.4}{mA}.
         The increase of the beam power in the period between 1974 to 2020 is shown in Fig.~\ref{fig:PSI:HIPA:power}.
         The history of the delivered charge to the meson production targets and SINQ is shown in Fig.~\ref{fig:PSI:HIPA:charge}.  
+        A major limiting factor is the scattering of halo particles in the extraction septum.
+        There are two key elements for low-loss beam extraction: the generation of beam tails must
+        be suppressed as best as possible and the turn separation at the extraction septum must be
+        maximized. 
+        In this way, the density of halo particles at the position of the extraction septum is minimized.
         The beam is operated 24/7 around 200 days a year. 
         Every three weeks of operation two days of maintenance are scheduled. 
         The details of the different particle production are discussed in the following subsections.
 
+        \paragraph{Power} The experiments at HIPA require high-intensity particle beams for precise measurements, which consume significant electrical power. 
+        Upgrades aim to achieve higher particle flux and brightness, necessitating even greater power. 
+        Considering the global energy consumption challenges, improving HIPA's energy efficiency is crucial. 
+        Fig.~\ref{fig:PSI:HIPA:consumption} displays the power consumption breakdown of the proton facility. 
+        During routine operation at a beam current of \SI{2.2}{mA},\SI{1.3}{MW}, the overall power consumption is approximately 12.5MW leading to an efficiency of 11\%.
+        For the bare accelerator, the figure is 18\%.
+        The RF-to-beam power conversion accounts for the majority of this consumption, around 5.4MW. 
+        It scales linearly with beam power, while the power consumption of magnets and auxiliary systems remains independent of the beam power.
+        It can be shown that the efficiency can increase with higher current and the aim is >20\% with \SI{3}{mA}
+        \begin{figure}
+            \centering
+            \includegraphics[width = 0.8\textwidth]{Figures/Introduction/PSI_HIPA_consumption.png}
+            \caption{Detail of the power usage of the HIPA facility.}
+            \label{fig:PSI:HIPA:consumption}
+        \end{figure}
         \begin{figure}
             \centering
             \includegraphics[width = 0.8\textwidth]{Figures/Introduction/PSI_HIPA_power.png}
@@ -336,6 +630,7 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
             \label{fig:PSI:HIPA:charge}
         \end{figure}
    
+    \status{review}
     \subsection{Meson production}        
         As we saw in \ref{sec:hipa}, \gls{hipa} delivers a continuous $2.4$ mA $590$ MeV proton beam. 
         To have a high pion/muon yield a low Z material is the best choice for the Meson Production Targets: graphite is has been used since 1990's.
@@ -401,6 +696,7 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
         Here free electrons from ionization are collected and used for beam position and size monitoring.
         Aside from a water leak problem, likely due to thermal stress, no visible signs of radiation damage are observed since installation.
         
+    \status{review}
     \subsection{Neutron production}
         \subsubsection{SINQ}
             The first spallation neutron source built at PSI was SINQ, which has dedicated neutron scattering instruments and was used as a polarized cold-neutron beam line for fundamental neutron physics.
@@ -460,16 +756,21 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
                 Figure taken from \cite{PSI:review:2021}}
                 \label{fig:UCN_stats}
             \end{figure}
-
-    \subsection{MISSING! High-Intensity Muon Beams}
-    \cite{HIMB:2021} 
-
+            
+    \status{started}
+    \subsection{High-Intensity Muon Beams}
+    The High-Intensity Muon Beams (HiMB) project at PSI focuses on the development and advancement of high-intensity muon beams for various research applications \cite{HIMB:2021}\cite{HIMB:gio}.
+    Muons offer unique opportunities to investigate fundamental physics and conduct experiments in areas such as particle physics, materials science, and medical imaging. 
+    The HiMB project aims to push the limits of muon beam intensities, enabling more precise measurements and opening up new avenues for scientific exploration.
+    Through innovative techniques and state-of-the-art facilities, HiMB at PSI strives to contribute to advancements in muon-based research and drive scientific progress in multiple disciplines.
+    
+\status{review}
 \section{Proton Ionization Facility}
     Another interesting facility at PSI is the Proton Ionization Facility (PIF) \cite{PIF:1996}\cite{PIF:2001}.
     This was designed, in conjunction with the European Space Agency, to be a user-friendly testing ground for spacecraft components.
     The deteriorating effect that high-energy protons can have on semiconductors is a key aspect of the correct functioning of spacecraft in the space environment.
     Depending on the orbit and the duration of the flight the exposure to this hazard can vary and having reproducible test grounds is cardinal during the design phase. 
-    The original goals of this facility were:
+    The original goals of this facility:
     \begin{outline}
         \1 Radiation hardness of the new electronic products
         \1 Single Event Upsets (SEU) and Latch-ups (SEL) of electronic components
@@ -483,6 +784,9 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
     It was quite an interesting experience, allowing me to become acquainted with a different setup and to see a different aspect of the research in particle physics.
     The usual shift would consist in tuning the beam to be suited to the user's needs and supporting during the data taking.
 
-\addcontentsline{toc}{chapter}{Bibliography for the introduction}
-\printbibliography[title=Bibliography for the introduction]
+\printbibliography[
+    heading = bibliographychapter,
+    title=Bibliography for the introduction
+]
+
 \end{refsection}

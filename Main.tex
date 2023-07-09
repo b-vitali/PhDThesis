@@ -7,7 +7,7 @@
 \input{Include/Settings/Settings}
 
 %\usepackage{natbib}
-\usepackage[backend=biber, style = numeric, sorting=none, natbib=true]{biblatex} %, style = phys
+\usepackage[backend=biber, style = numeric, sorting=none]{biblatex} %, style = phys
 \bibliography{Include/Backmatter/Bibliography}
 \usepackage{makecell}
 \setlist{nosep}
@@ -26,6 +26,124 @@
 \usepackage{upgreek}
 \usepackage{multirow}
 
+% Define the custom command to include chapters
+\newcommand{\includechapters}[1]{%
+    \ifstrequal{#1}{intro}{%
+        \input{Include/Chapters/Introduction}}{}
+    \ifstrequal{#1}{muedm}{%
+        \part{muEDM}
+        \input{Include/Chapters/muEDM}
+        \input{Include/Chapters/muEDM_entrance}
+        \input{Include/Chapters/muEDM_tracker}
+    }{}
+    \ifstrequal{#1}{mucool}{%
+        \part{muCool}
+        \input{Include/Chapters/muCool_minus}
+    }{}
+    \ifstrequal{#1}{meg}{%
+        \part{MEG II}
+        \label{part:MEGII}
+        \input{Include/Chapters/MEGandCW}
+        \input{Include/Chapters/LH2}
+        \input{Include/Chapters/X17}
+    }{}
+}
+
+
+
+%%%%%                   %%%%%   
+%%%%%  To set progress  %%%%%  
+%%%%%                   %%%%%    
+% To do this i had to remove the following
+%\hypersetup{colorlinks=true, linkcolor=black, citecolor=black, filecolor=black, urlcolor=black}
+% plus to propagate the color now the alignment is a bitt off you can just remove this whole thing once everything is Green ;)
+
+\hypersetup{%
+    pdfborder = {0 0 0}
+}
+\usepackage{tocloft,xcolor}
+\usepackage{etoolbox}
+\usepackage{sectsty}
+
+\newcommand{\statuscolor}[2]{%
+  % create a status color
+  \colorlet{status#1}{#2}
+  
+  % propagate the color to the TOC
+  \expandafter\def\csname statusset#1\endcsname{
+    % name
+    \renewcommand{\cftchapfont}{\bfseries\color{status#1}}
+    \renewcommand{\cftsecfont}{\color{status#1}}
+    \renewcommand{\cftsubsecfont}{\color{status#1}}
+    % number
+    \renewcommand{\cftchappagefont}{\color{status#1}}
+    \renewcommand{\cftsecpagefont}{\color{status#1}}
+    \renewcommand{\cftsubsecpagefont}{\color{status#1}}
+    % dots
+    \renewcommand{\cftchapleader}{\color{status#1}\cftdotfill{\cftsecdotsep}}
+    \renewcommand{\cftsecleader}{\color{status#1}\cftdotfill{\cftsecdotsep}}
+    \renewcommand{\cftsubsecleader}{\color{status#1}\cftdotfill{\cftsecdotsep}}
+    }
+}
+
+\makeatletter
+\newcommand{\status}[1]{%
+  \gdef\currentstatus{#1}% Store the current status
+  \addtocontents{toc}{\protect\@nameuse{statusset#1}}%
+  \@nameuse{statusset#1}% Apply status settings
+}
+
+% Redefine \section command
+\let\oldsubsection\subsection
+\RenewDocumentCommand{\subsection}{s m}{
+    \IfBooleanTF{#1}{%starred?
+        \subsectionfont{ \textcolor{status\currentstatus} }
+        \oldsubsection*{#2}% Use starred with colored title
+        \status{missing}% Set the status to reset
+    }{
+        \subsectionfont{ \textcolor{status\currentstatus} }
+        \oldsubsection{#2}% Use standard with colored title
+        \status{missing}% Set the status to reset
+    }
+}
+
+\let\oldsection\section
+\RenewDocumentCommand{\section}{s m}{
+    \IfBooleanTF{#1}{%starred?
+        \sectionfont{ \textcolor{status\currentstatus} }
+        \oldsection*{#2}% Use starred 
+        \status{missing}% Set the status to reset
+    }{
+        \sectionfont{ \textcolor{status\currentstatus} }
+        \oldsection{#2}% Use standard with colored title
+        \status{missing}% Set the status to reset
+    }
+}
+
+\let\oldchapter\chapter
+\RenewDocumentCommand{\chapter}{s m}{
+    \IfBooleanTF{#1}{%starred?
+        \chapterfont{ \textcolor{status\currentstatus} }
+        \oldchapter*{#2}% Use starred with colored title
+        \status{missing}% Set the status to reset
+    }{
+        \chapterfont{ \textcolor{status\currentstatus} }
+        \oldchapter{#2}% Use standard with colored title
+        \status{missing}% Set the status to reset
+    }
+}
+
+\statuscolor{missing}{gray}
+\statuscolor{started}{orange}
+\statuscolor{review}{blue}
+\statuscolor{correct}{red}
+\statuscolor{done}{black}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 %Solve the footnote indentation
 \setlength{\footnotemargin}{2mm}
 
@@ -37,7 +155,13 @@
 \newcommand{\ltsp}{\textsc{LTspice}\xspace}
 \newcommand{\madx}{\textsc{Mad-X}\xspace}
 \newcommand{\gfb}{\textsc{G4Beamline}\xspace}
+
 %\usepackage{chapterbib}
+\defbibheading{bibliographychapter}{%
+  \chapter*{#1}%
+  \addcontentsline{toc}{chapter}{#1}%
+  \markboth{#1}{#1}%
+}
 
 % Replacement                                                  %
 %\usepackage[sectionbib]{natbib}  %
@@ -48,7 +172,7 @@
 
 %%%%%                %%%%%  
 %%%%%  FRONT MATTER  %%%%%  
-%%%%%                %%%%%                                             %
+%%%%%                %%%%%                                   
 \frontmatter 	   % Begin Roman style (i, ii, iii, iv...) page numbering
 \pagestyle{empty}  % No headers or footers for the following pages
 
@@ -60,7 +184,7 @@
 %\input{Include/Frontmatter/Quote}
 %\newpage
 %%   ABSTRACT
-\afterpage{\null\thispagestyle{empty}\clearpage} % Blank page
+\afterpage{\null\thispagestyle{missing}\clearpage} % Blank page
 \input{Include/Frontmatter/Abstract} 
 \begin{singlespace}
 \tableofcontents 	
@@ -128,21 +252,16 @@
 \renewcommand{\headrulewidth}{0.4pt} 
 \renewcommand{\footrulewidth}{0.4pt} 
 
+
+\addcontentsline{toc}{chapter}{\textcolor{gray}{missing}, \textcolor{orange}{started}, \textcolor{blue}{review}, \textcolor{red}{correct}, \textcolor{black}{done}}
 %%%%%                %%%%%  
 %%%%%    CHAPTERS    %%%%%  
 %%%%%                %%%%%  
+\includechapters{intro}
+\includechapters{muedm}
+%\includechapters{mucool}
+\includechapters{meg}
 
-\input{Include/Chapters/Introduction}
-%\part{muCool}
-%\input{Include/Chapters/muCool_minus}
-\part{muEDM}
-\input{Include/Chapters/muEDM}
-\input{Include/Chapters/muEDM_entrance}
-\input{Include/Chapters/muEDM_tracker}
-\part{MEG II}
-\input{Include/Chapters/MEGandCW}
-\input{Include/Chapters/LH2}
-\input{Include/Chapters/X17}
 %%   ACKNOWLEDGEMENTS
 \cleardoublepage
 \addcontentsline{toc}{chapter}{Conclusions}

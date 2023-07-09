@@ -1,6 +1,7 @@
+\status{started}
 \chapter{MEG II and the Cockcroft–Walton}
 \begin{refsection}
-{\itshape This Chapter is dedicated to an in-depth description of the MEG search and the MEG II apparatus. After the description of the different subdetectors and their functionality a description of the beamlines will follow. MEG II has the main muon beamline, part of the PSI beamlines described in the Introduction Chapter, and a secondary proton beamline equipped with its own Cockcroft–Walton. This machine has different uses in the collaboration, which will be here discussed, and its functioning has been one of my main tasks.}
+{\itshape This Chapter is dedicated to an in-depth description of the MEG search and the MEG II apparatus. After the description of the different subdetectors and their functionality a description of the beamlines will follow. MEG II is served by the main muon beamline, part of the PSI beamlines described in the Introduction Chapter, and a secondary proton beamline equipped with its own Cockcroft–Walton. This machine has different uses in the collaboration, which will be here discussed, and its functioning has been one of my main tasks.}
 
 \section{MEG II}
 \section{XEC}
@@ -12,7 +13,7 @@
     \subsection{LED Calibration}
     \label{LED}
 
-\section{Spectrumeter}
+\section{Spectrometer}
     \subsection{COBRA}
     \label{MEG:COBRA}
     \subsection{CDCH}
@@ -20,11 +21,13 @@
 
 \section{Trigger and DAQ}
 
+\status{started}
 \section{Beam and target}
     The beam lines at PSI were described in \ref{intro:beamlines}. 
-    In particular, the beam-line delivering $\mu^+$ to MEG II is the $\pi E5$ line. 
+    In particular, the beam line delivering $\mu^+$ to MEG II is the $\pi E5$ line. 
     This line is shown in  Fig. \ref{fig:pie5} and the key elements are here discussed
 
+    \status{started}
     \subsection{$\pi e5$}
         This beam-line has actually two possible configurations: this will allow to share it between MEG II and Mu3e. 
         As already illustrated, the surface muons delivered by this beam-line are produced for the decay of the pions generated as secondary beams from the HIPA proton beam.
@@ -53,9 +56,7 @@
         The design choice for this element was previously illustrated (\ref{MEG:COBRA}). 
         The behavior of the beam inside this element is quite tricky to simulate consistently.
         
-    \subsection{MEG II target}
-        \paragraph{Deformation and pictures}
-        
+    \status{started}
     \subsection{Simulations}
         \paragraph{\gfb}
         \paragraph{\madx} During 2022/2023 Luca Biasia, a Master student in Pisa, developed a \madx\footnote{\madx is a general-purpose tool for charged-particle optics design and can be found \href{http://madx.web.cern.ch/madx/}{\underline{here}}.} simulation to describe the $\pi E5$ line and cross-validate the results obtained using \gfb. 
@@ -74,7 +75,10 @@
             \caption{Comperison of the results from the \gfb and \madx simulations for $\pi E5$.}
             \label{fig:madx_vs_g4b}
         \end{figure}
-
+    
+    \subsection{MEG II target}
+        \paragraph{Deformation and pictures}
+        
 \section{Cockcroft–Walton}
     In addition to the muon beamline, MEG II has a Cockcroft–Walton proton accelerator. 
     After the description of the machine, we will see the use of this accelerator by the collaboration: calibrations and exotic searches. 
@@ -123,6 +127,7 @@
         Although the protons coming from the CW have been mainly used for the calibration of the XEC detector, this machine is also used to perform parasitic measurements.
         The search for the X17 anomaly done in 2021/2022 will be extensively discussed in the dedicated chapter \ref{ch:X17} but we wanted to underline the key role that the CW machine has played in this parasitic search for exotic physics. 
 
+\status{review}
 \section{CW issues and maintenance}
     By the end of 2020, the CW started having some minor problems: the machine was running fine but the time required to switch it on kept growing longer. 
     While the whole procedure would normally take $\sim$ 15 min the time required exceeded the hour.
@@ -180,6 +185,9 @@
 
 \section{Conclusions}
 
-\addcontentsline{toc}{chapter}{Bibliography on MEG II}
-\printbibliography[title=Bibliography on MEG II]
+\printbibliography[
+    heading = bibliographychapter,
+    title=Bibliography on MEG II
+]
+
 \end{refsection}
