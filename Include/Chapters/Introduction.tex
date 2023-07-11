@@ -24,7 +24,7 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
         \1 MEG: introduction and CW, Liquid Hydrogen target, X17 search
     \end{outline}
 
-\status{started}
+\status{review}
 \section{Particle physics at Paul Scherrer Institute} 
     Belonging to ETH domain and formed in 1988 as a national laboratory, the Paul Scherrer Institute (PSI) is the largest federal research institute in Switzerland. 
     PSI hosts the world's most powerful proton accelerators, with an average power of \SI{1.4}{MW} and a beam current of over \SI{2}{mA}.
@@ -631,7 +631,8 @@ The two-step approach is driven by uncertainties in the understanding of the und
         \end{figure}
    
     \status{review}
-    \subsection{Meson production}        
+    \subsection{Meson production}       
+        \label{sec:hipa:M}
         As we saw in \ref{sec:hipa}, \gls{hipa} delivers a continuous $2.4$ mA $590$ MeV proton beam. 
         To have a high pion/muon yield a low Z material is the best choice for the Meson Production Targets: graphite is has been used since 1990's.
         The whole system (target, collimators, beam dumps, \dots) has to be cooled and, due to nuclear reactions, is highly radioactive.
@@ -757,13 +758,73 @@ The two-step approach is driven by uncertainties in the understanding of the und
                 \label{fig:UCN_stats}
             \end{figure}
             
-    \status{started}
+    \status{review}
     \subsection{High-Intensity Muon Beams}
-    The High-Intensity Muon Beams (HiMB) project at PSI focuses on the development and advancement of high-intensity muon beams for various research applications \cite{HIMB:2021}\cite{HIMB:gio}.
-    Muons offer unique opportunities to investigate fundamental physics and conduct experiments in areas such as particle physics, materials science, and medical imaging. 
-    The HiMB project aims to push the limits of muon beam intensities, enabling more precise measurements and opening up new avenues for scientific exploration.
-    Through innovative techniques and state-of-the-art facilities, HiMB at PSI strives to contribute to advancements in muon-based research and drive scientific progress in multiple disciplines.
-    
+        Currently, PSI delivers the most intense continuous muon beam in the world with up to a few \SI{e8}{\upmu^+/s}.
+        The High-Intensity Muon Beams (HiMB) project at PSI focuses on the development of a new target station and muon beamlines to deliver up to \SI{e10}{\upmu^+/s} \cite{HIMB:2021}\cite{HIMB:gio}.
+        The aim is to boost the production, collection, and transport of surface muons.
+        HIMB is part of the  Isotope and Muon Production using Advanced Cyclotron and Target Technologies project (IMPACT)\cite{impact}.
+
+        \subsubsection{Production and collection}
+        To increase the surface muon yield, the M target discussed in \ref{sec:hipa:M} will be substituted with target H, having a more slanted geometry.
+        This new target, shown in Fig.~\ref{fig:himb:target}, will be \SI{20}{mm} thick in the proton direction, with a \SI{10}{deg} slanting angle: surface muon yields comparable to a 40 mm thick non-slanted target. 
+        The protons will impinge below the rotation shaft (Fig.~\ref{fig:himb:target:b}), from the back of the target, in a copper water-cooled shielding (Fig.~\ref{fig:himb:target:a}).
+        The target will fit in the remote-controlled exchange flask of target E for easier handling and maintenance.
+        \begin{figure}
+            \centering
+            \subfloat[Section of the HIMB H target.]{
+            \includegraphics[height=4.5cm, keepaspectratio]{Figures/Introduction/himb_target_section.png}
+            \label{fig:himb:target:a}}
+            \subfloat[Side views of the HIMB H target]{
+            \includegraphics[height=4.5cm, keepaspectratio]{Figures/Introduction/himb_target.png}
+            \label{fig:himb:target:b}}
+            \caption[HIMB H target]{Depiction of the target H for the HIMB project. The slanted target improves the production of surface muons. \textbf{a)} The proton beam impinges from the back side passing through a copper water-cooled shielding. \textbf{b)} The beam travels lower to avoid the rotating shaft.}
+            \label{fig:himb:target}
+        \end{figure}
+        
+        \noindent
+        When using solenoids to capture particles, the target is often completely enclosed in the solenoid aperture. 
+        This solution is not viable for HIMB because the proton beam is not stopped in the H target. 
+        The proposed solution, shown in Fig.~\ref{fig:himb:solenoids}, is to have two different NC solenoids (\SI{\sim 0.45}{T}) sideways to the target. 
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.8\textwidth]{Figures/Introduction/himb_solenoids.png}
+            \caption[HIMB solenoids]{HIMB will have two different NC solenoids sideways to the target. These are required to collect the produced muons and let the surviving proton beam continue toward the spallation SINQ setup.}
+            \label{fig:himb:solenoids}
+        \end{figure}
+
+        \noindent
+        The particles produce by the impact of the \SI{590}{MeV} proton beam are: electrons, muons and pions.
+        The momentum spectrum of the generated particle is shown in Fig.~\ref{fig:himb:momenta}: the peak in the $\upmu^+$ spectrum is caused by surface muon production while, at higher energies, the muons come from pion decay in flight. 
+        This peak is not present for $\upmu^-$ because stopped $\uppi^-$ undergoes nuclear capture and no muons are produced.  
+        In a similar fashion, the peak in positron around Michel edge is produced by stopped $\upmu^+$.
+        The HIMB project focuses on surface muons but the optimization are done to accept and transport momenta up to \SI{80}{MeV/c}, while keeping the focus on \SI{28}{MeV/c}.
+        
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.9\textwidth]{Figures/Introduction/himb_momenta.png}
+            \caption[HIMB momentum spectrum]{Momentum spectrum for positive and negative $e,\upmu,\uppi$ produced at the HIMB H target for a proton current of \SI{2.4}{mA}.}
+            \label{fig:himb:momenta}
+        \end{figure}
+        
+        \subsubsection{Beamlines}
+        HIMB will introduce two beamlines: MUH2 and MUH3.
+        The peculiarity of these lines is the extensive use of solenoids.
+        Solenoids achieve focus on both axes (wrt. quadrupoles) but usually, their usage is limited by the required magnetic fields. 
+        For the momentum of the surface muons \SI{\sim 0.45}{T} are sufficient and achievable with NC solenoids. 
+        
+        The MUH2 beamline is designed to deliver beams to fixed target experiments (e.g. Mu3e). It will be located at the left-hand side of the target station and its most important figure of merit for MUH2 is transmission.
+        Two 40 deg bends are included in the beam trajectory with dipoles to avoid a direct line of sight to the target.\\
+        The model reported in the Conceptual Design Report (CDR) published in January 2022 [10] is able to deliver \SI{1.22e10}{\upmu^+/s} at a proton current of \SI{2.4}{mA} at the entrance of the experimental area at the surface muon momentum. 
+        The beam spot size and the average polarization at the end of the channel are $\sigma_x = 40$ mm, $\sigma_y = 42$ mm, and $\varepsilon = 0.88$.
+        Interesting to note that a double Wien filter scheme is currently under study to keep the positron contamination under control.
+ 
+        The MUH3 beamline, on the right-hand side of the target station, aims at delivering muon beams for muon spin rotation spectroscopy ($\upmu$SR).
+        For these applications, \SI{e10}{\upmu/s} is not required and part of the beamline follows a more standard approach with quadrupoles.
+        From simulations, while the solenoid section delivers more than \SI{e10}{\upmu/s}, the rate drops to \SI{3e8}{\upmu/s} at \SI{15}{MeV} and \SI{6e6}{\upmu/s} at \SI{10}{MeV} when reaching the two experimental area.
+        The expected beam spots and polarization are $\sigma_x = 40$ mm, $\sigma_y = 42$ mm, and $\varepsilon\gtrsim 0.95$.
+        
 \status{review}
 \section{Proton Ionization Facility}
     Another interesting facility at PSI is the Proton Ionization Facility (PIF) \cite{PIF:1996}\cite{PIF:2001}.
@@ -784,6 +845,7 @@ The two-step approach is driven by uncertainties in the understanding of the und
     It was quite an interesting experience, allowing me to become acquainted with a different setup and to see a different aspect of the research in particle physics.
     The usual shift would consist in tuning the beam to be suited to the user's needs and supporting during the data taking.
 
+\status{started}
 \printbibliography[
     heading = bibliographychapter,
     title=Bibliography for the introduction

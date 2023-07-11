@@ -17,7 +17,6 @@
 \usepackage{physics}
 \usepackage{amsmath}
 \usepackage{outlines}
-\usepackage{subfig}    
 \usepackage{subcaption}
 \usepackage{graphicx}
 \usepackage{mhchem}
@@ -158,15 +157,20 @@
 
 %\usepackage{chapterbib}
 \defbibheading{bibliographychapter}{%
-  \chapter*{#1}%
-  \addcontentsline{toc}{chapter}{#1}%
-  \markboth{#1}{#1}%
+    \let\a\currentstatus
+    \status{\a}
+    \addcontentsline{toc}{chapter}{#1}%
+    \chapter*{#1}%
+    \markboth{#1}{#1}%
 }
 
 % Replacement                                                  %
 %\usepackage[sectionbib]{natbib}  %
 %\usepackage{chapterbib}                                        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareCaptionLabelFormat{myformat}{Fig. #2}
+\captionsetup{labelsep=colon,labelformat=myformat}
 
 \begin{document}
 
@@ -262,10 +266,10 @@
 %\includechapters{mucool}
 \includechapters{meg}
 
-%%   ACKNOWLEDGEMENTS
-\cleardoublepage
-\addcontentsline{toc}{chapter}{Conclusions}
-\input{Include/Chapters/Conclusions}
+%%   Conclusions
+%\cleardoublepage
+%\addcontentsline{toc}{chapter}{Conclusions}
+%\input{Include/Chapters/Conclusions}
 
 
 %%%%%                %%%%%  
@@ -273,9 +277,9 @@
 %%%%%                %%%%%  
 
 %%   APPENDIX
-\cleardoublepage
-\appendix % to tell LaTeX that the following chapters are appendices
-\input{Include/Backmatter/Appendix/Appendix_G4TessellatedSolid}
+%\cleardoublepage
+%\appendix % to tell LaTeX that the following chapters are appendices
+%\input{Include/Backmatter/Appendix/Appendix_G4TessellatedSolid}
 
 %%   BIBLIOGRAPHY
 %\cleardoublepage
@@ -284,8 +288,8 @@
 %\printbibliography[title=Complete Bibliography]
 
 %%   ACKNOWLEDGEMENTS
-%\cleardoublepage
-%\addcontentsline{toc}{chapter}{Acknowledgement}
-%\input{Include/Backmatter/Acknowledgement}
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Acknowledgement}
+\input{Include/Backmatter/Acknowledgement}
 
 \end{document} 

@@ -83,7 +83,7 @@ We will skip the preliminary studies and we will start with the description of t
         \end{figure}
 
     \status{started}
-    \subsection{Geant4 simulation}
+    \subsection{\gf simulation}
         \paragraph{G4TessellatedSolid} The first hurdle in the Geant4 simulation for this sub-detector is the definition of the geometry. 
         The shape is the result of wrapping a squared fiber around a cylinder resulting in a `squared helix'.
         After some consideration there are two ways of defying this geometry:
@@ -94,8 +94,8 @@ We will skip the preliminary studies and we will start with the description of t
         \end{outline}
         The core part of the code for generating the G4TessellatedSolid fibers is in appendix \ref{ch:G4TessellatedSolid}.
 
-        \paragraph{Fibers and read-out} Aside from the specific geometry, cardinal point is how to describe the fibers and their readout. 
-        The fiber itself is simulated as a three layer volume:
+        \paragraph{Fibers and read-out} Aside from the specific geometry, the cardinal point is how to describe the fibers and their readout. 
+        The fiber itself is simulated as a three-layer volume:
         \begin{outline}
             \1 Core: 
             \1 First cladding: PMMA
@@ -110,7 +110,7 @@ We will skip the preliminary studies and we will start with the description of t
         \end{outline}
 
     \status{started}
-    \subsection{From photons to waveforms}
+    \subsection{From $\upgamma$s to waveforms}
         The simulation in \gf ends with the recording of the optical photons entering the SiPM SensitiveDetectors.
         The physical processes going from the impinging photons to the analog signal are quite complex and simulating them would require a lot of effort (and CPU time).
         To get a feeling of the type of signals we can expect from the simulation we can create a simple script \textit{faking} the readout.
@@ -137,6 +137,7 @@ We will skip the preliminary studies and we will start with the description of t
 
 \section{Conclusions}
 
+\status{started}
 \printbibliography[
     heading = bibliographychapter,
     title=Bibliography on muEDM positron tracker
