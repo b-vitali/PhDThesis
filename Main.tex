@@ -25,6 +25,15 @@
 \usepackage{upgreek}
 \usepackage{multirow}
 
+% To avoid footlines to split in pages
+\interfootnotelinepenalty=10000
+
+% Setup \SIlist
+\sisetup{
+  list-pair-separator = {,},
+  list-units = single,
+}
+
 % Define the custom command to include chapters
 \newcommand{\includechapters}[1]{%
     \ifstrequal{#1}{intro}{%
@@ -37,7 +46,8 @@
     }{}
     \ifstrequal{#1}{mucool}{%
         \part{muCool}
-        \input{Include/Chapters/muCool_minus}
+        \input{Include/Chapters/muCool}
+        \input{Include/Chapters/muCool_upgrade}
     }{}
     \ifstrequal{#1}{meg}{%
         \part{MEG II}
@@ -187,10 +197,13 @@
 %%   QUOTE 
 %\input{Include/Frontmatter/Quote}
 %\newpage
+
 %%   ABSTRACT
-\afterpage{\null\thispagestyle{missing}\clearpage} % Blank page
-\input{Include/Frontmatter/Abstract} 
+%\afterpage{\null\thispagestyle{missing}\clearpage} % Blank page
+%\input{Include/Frontmatter/Abstract} 
 \begin{singlespace}
+
+%%   TOC
 \tableofcontents 	
 %\addcontentsline{toc}{chapter}{\listfigurename}
 %\listoffigures
@@ -263,7 +276,7 @@
 %%%%%                %%%%%  
 \includechapters{intro}
 \includechapters{muedm}
-%\includechapters{mucool}
+\includechapters{mucool}
 \includechapters{meg}
 
 %%   Conclusions

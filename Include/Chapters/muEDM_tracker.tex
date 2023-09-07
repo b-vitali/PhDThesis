@@ -2,10 +2,10 @@
 \chapter{muEDM positron tracker}
 \begin{refsection}
 {\itshape This chapter is an in-depth study on the development of the scintillating fiber part of the muEDM positron tracker. 
-We will skip the preliminary studies and we will start with the description of the positron tracker which was included in the proposal of the experiment submitted to PSI at the end of 2022; we will move to the simulations done after that and the current design of this detector.}
+We will skip some preliminary studies and we will start with the description of the positron tracker which was included in the proposal of the experiment submitted to PSI at the end of 2022; we will move to the simulations done after that and the current design of this detector.}
 
 \section{Design in the proposal 2022}
-        The detector described in the proposal would satisfy the requirements for muEDM but comes with some limitations and some oversight.
+    The detector described in the proposal would satisfy the requirements for muEDM but comes with some limitations.
     \subsection{SciFi prototype}
     \subsection{The barrel geometry}
     \subsection{Issues}
@@ -126,9 +126,9 @@ We will skip the preliminary studies and we will start with the description of t
         \begin{equation}
             W(t)=\sum_{i=0}^{n_\gamma} w(t_i)\cdot p_{PDF} + \sum_{i=0}^{n_{dark}} w(t_{flat})
         \end{equation}
-        Once we obtain $W(t)$ we can apply a threshold $th$ and turn the signal from analog to digital. 
-        If the \textit{th} is crossed, we recorded a \textit{hit}.
-        Clearly, given the geometry under consideration, we need two \textit{hits} to make a \textit{chit}.
+        Once we obtain $W(t)$ we can apply a threshold $w_{th}$ and turn the signal from analog to digital. 
+        If the $w_{th}$ is crossed, we recorded a \textit{hit}.
+        Clearly, given the geometry under consideration, we need two \textit{hits} to make a `cylinder'-\textit{hit} (a \textit{c-hit}).
         Mapping pairs of hits in chits is not trivial and takes as parameters the dimensions of the cylinder and the SiPM numbers (or alternatively their position).
 
     \subsection{From \textit{hits} to \textit{c-hits}}

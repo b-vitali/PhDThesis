@@ -15,16 +15,12 @@ This my attempt to an up-to-date description but some details might be already o
     \begin{equation*}
         \hat{H} = -\mu\bm{\hat{\sigma}\cdot B}-d\bm{\hat{\sigma}\cdot E}
     \end{equation*}
-    We then saw that, when considering a combination of magnetic and electric fields and a moving particle it is useful to introduce the polarization vector $\bm{\Pi}=\bm{s}/s$ and the Thomas precession $\bm{\Omega}_0$
+    We then saw that, when considering a combination of magnetic and electric fields and a moving particle it is useful to introduce the polarization vector $\bm{\Pi}=\bm{s}/s$ and the Thomas precession $\bm{\Omega}_0$:
     \begin{equation*}
         \dv{\bm{\Pi}}{t}=\bm{\Omega}_0 \times \bm{\Pi}, \quad
         \bm{\Omega}_0 = -\frac{e}{m\gamma} \left[ (1+\gamma a)\bm{B}-\frac{a\gamma^2}{\gamma+1}(\bm{\beta}\cdot\bm{B})\bm{\beta}-\gamma \left( a+\frac{1}{\gamma+1} \right) \frac{\bm{\beta}\times \bm{E}}{c} \right]
     \end{equation*}
-    Which, with no electrical field parallel to the momentum and $\bm{\Omega}_c$ the cyclotron frequency, becomes:
-    \begin{equation*}
-        \dv{\bm{\beta}}{t}=\bm{\Omega}_c\times \bm{\beta}, \quad \bm{\Omega}_c = -\frac{e}{m\gamma}\left( \bm{B}- \frac{\gamma^2}{\gamma^2-1}\frac{\bm{\beta} \times \bm{E}}{c} \right)
-    \end{equation*}
-    The relative spin precession of a muon in a storage ring will be then given by (T-BMT \cite{miss-59})
+    With no electrical field parallel to the momentum and with $\bm{\Omega}_c$ the cyclotron frequency, the relative spin precession of a muon in a storage ring is described by (T-BMT \cite{miss-59}):
     \begin{equation}
         \begin{split}
             \bm{\Omega}=\bm{\Omega}_0-\bm{\Omega}_c &=
@@ -41,10 +37,32 @@ This my attempt to an up-to-date description but some details might be already o
     In the presence of a muon \gls{edm} the plane would be tilted and a vertical precession ($\bm{\omega}_e\perp\bm{B}$), shifted by $\pi/2$ to the horizontal anomalous precession, would become observable.
 
     \status{review}
+    \subsection{Symmetry violation}
+        In physics, there are three cardinal discrete symmetries: Charge (C), Parity (P), and Time (T).
+        P and T are related to the invariance under spatial and temporal reversal while C is the invariance for particle $\leftrightarrow$ \textit{anti}particle exchange.
+        While the magnetic field and the spin are \textit{pseudo}-vectors under P and vectors under T, the electric field behaves in the opposite way.
+        The implication of this difference is that EDM and MDM behave differently under C, P, and T:
+        \begin{equation}
+            MDM : 
+            \begin{cases}
+                \textbf{P} (-\mu\bm{\hat{\sigma}\cdot B}) = -\mu \bm{P(\hat{\sigma}) \cdot P(B)} = -\mu\bm{(+\hat{\sigma})\cdot (+B)} = -\mu\bm{\hat{\sigma}\cdot B} \\
+                \textbf{T} (-\mu\bm{\hat{\sigma}\cdot B}) = -\mu \bm{T(\hat{\sigma}) \cdot T(B)} = -\mu\bm{(-\hat{\sigma})\cdot (-B)} = -\mu\bm{\hat{\sigma}\cdot B} 
+            \end{cases}
+        \end{equation}
+        \begin{equation}
+            EDM : 
+            \begin{cases}
+                \textbf{P} (-d\bm{\hat{\sigma}\cdot E}) = -d \bm{P(\hat{\sigma}) \cdot P(E)} = -d\bm{(+\hat{\sigma})\cdot (-E)} = +d\bm{\hat{\sigma}\cdot E} \\
+                \textbf{T} (-d\bm{\hat{\sigma}\cdot E}) = -d \bm{T(\hat{\sigma}) \cdot T(E)} = -d\bm{(-\hat{\sigma})\cdot (+E)} = +d\bm{\hat{\sigma}\cdot E}          
+            \end{cases}
+        \end{equation}
+        In light of the CPT theorem, the breaking of the T symmetry implies the breaking of CP.
+        
+    \status{review}
     \subsection{Current limits on EDM}
         As discussed in \ref{sec:exp:edm}, the last decades saw a continuous effort to measure the EDM of different particles.
         There the experiments setting the current limits were discussed but we report in Tab.~\ref{tab:edm} the results to aid the reader.
-        It is important to note there are two limits for $\upmu$: one obtained by rescaling the limit on $d_e$, obtaining an \textit{indirect limit}; one, less stringent, is a \textit{direct} limit.
+        It is important to note there are two limits for $\upmu$: one obtained by rescaling the limit on $d_e$, obtaining an \textit{indirect limit}; one, less stringent, is a \textit{direct} limit ($^*$).
 
         \begin{table}[h]
             \centering
@@ -57,7 +75,7 @@ This my attempt to an up-to-date description but some details might be already o
                 \hline
                 ACME \cite{eEDM:ACME} & e & \num{1.1e-29} \\
                 \hline
-                Indirect \cite{muEDM:indirect} & $\upmu$ & \num{0.19e-19}$^*$ \\
+                Indirect \cite{muEDM:indirect} & $\upmu$ & \num{0.19e-19} $^*$ \\
                 \hline
                 g-2 \cite{muEDM:direct} & $\upmu$ & \num{1.8e-19} \\
                 \hline
@@ -81,11 +99,12 @@ This my attempt to an up-to-date description but some details might be already o
             \bm{\omega}_e=\frac{\eta q}{2m} \left(\bm{\beta}\times\bm{B}+\frac{\bm{E}_f}{c} \right) =
             \frac{2 d_\mu}{\hbar} \left(\bm{\beta}c\times\bm{B}+\bm{E}_f\right)
         \end{equation}
-        The net result of the \gls{edm} is a vertical build-up of the polarization
+        The net result of the \gls{edm} is then a vertical build-up of the polarization given by Eq.~\ref{eq:edm:polarization} and illustrated by the sketch in Fig.~\ref{fig:muEDM:g-2_EDM}.
         \begin{equation}
             |\bm{\Pi}(t)|=P(t)=P_0\sin(\omega_e t)\approx P_0 \omega_e t \approx 2P_0\frac{d_\mu}{\hbar}\frac{E_f}{a\gamma^2}t
+            \label{eq:edm:polarization}
         \end{equation}    
-        At this point we would like to evaluate the sensitivity to this vertical build-up and this is dependent on the experimental setup investigated.
+        At this point, we would like to evaluate the sensitivity to this vertical build-up and this is dependent on the experimental setup investigated.
         \begin{equation}
             \dv{P}{d_\mu}=\frac{2P_0E_ft}{a\hbar\gamma^2}
         \end{equation}     
@@ -93,8 +112,21 @@ This my attempt to an up-to-date description but some details might be already o
            \sigma(d_\mu)=\frac{a\hbar\gamma}{2P_0E_f\sqrt{N}\tau_\mu A}
         \end{equation}  
         
+       
+
+        \begin{figure}
+            \centering
+            \includegraphics[width = 0.6\textwidth]{Figures/muEDM/g-2_EDM.png}
+            \caption{}
+            \label{fig:muEDM:g-2_EDM}
+        \end{figure}
+        
+\section{The muEDM experiment}
+
 \status{started}
-\section{The muEDM apparatus}
+\section{The precursor}
+    The task at hand is quite complex and for this reason, the aim is to first have a working prototype to demonstrate the measuring principles, the achieved control on the different sources of uncertainties and the correct working of the different subdetectors.
+    
     \status{started}
     \subsection{Superconducting injection channel}
         To allow the incoming muons to enter the magnet without being reflected or deviated by fringing fields an injection channel is needed.
@@ -125,6 +157,14 @@ This my attempt to an up-to-date description but some details might be already o
         This is achieved by applying a longitudinal kick, canceling the momentum component parallel to the magnetic field.
         The development of this element is non-trivial because of the stringent requirements on the strength, time scale, and residual effects of the kick.
         We started by looking into different shapes and types of coil as well as developing \ltsp simulations of the generating circuit.
+        The current version of the circuit is shown in Fig.~\ref{fig:muEDM:kicker:circuit}.
+        
+        \begin{figure}
+            \centering
+            \includegraphics[width = \textwidth]{Figures/muEDM/CircuitMuonKickerV3_1.png}
+            \caption{\ltsp simulation for the kicker circuit.}
+            \label{fig:muEDM:kicker:circuit}
+        \end{figure}
 
     \status{started}
     \subsection{Electrodes}

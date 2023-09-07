@@ -1,22 +1,48 @@
 \chapter{Search for X17}
 \begin{refsection}
 \label{ch:X17}
-{\itshape After the recent publications from the ATOMKI collaboration, the so-called X17 anomaly peaked the interest of the community. The flexibility of the MEG II apparatus allows for a variety of exotic searches and the collaboration is deemed of interest in searching for this anomaly in an uncorrelated way.
-The chapter starts with a recap of the previous searches and then moves to the description of this search in MEG: setup used; simulations developed; data acquisition and data analysis.}
+{\itshape After the recent publications from the ATOMKI collaboration, the so-called X17 anomaly piqued the interest of the community. The flexibility of the MEG II apparatus allows for a variety of exotic searches and the collaboration deemed of interest searching for this anomaly in an uncorrelated way.
+The chapter starts with a recap of the previous searches and then moves to the description of this search in MEG II: setup used, simulations developed, data acquisition and data analysis.}
 
 \section{ATOMKI and the X17 `anomaly'}
     The story of the Hungarian group and their result
-\section{MEG II setup}
-    \subsection{Magnetic field choice}
-    \subsection{Target}
-        \paragraph{Tube and insertion}
-        \paragraph{Vacuum and mechanical structure}
-        \paragraph{Lithium target}
+
+\status{started}
+\section{X17 in MEG II}
+    After reading with great interest the papers from ATOMKI, the MEG collaboration started evaluating if repeating this measurement was achievable with the MEG II apparatus.
+    In 2022 the first data collection was performed but the time constraints, required to keep the main focus of the experiment on the $\upmu \rightarrow \upgamma e$ process, meant not all the necessary preparatory studies could be performed.
+    The details of this first data-taking will be skipped and we will move directly to the second campaign, performed in 2023.
+    
     \subsection{MC simulations}
-\section{Data acquisition}
+    
     \status{started}
+    \subsection{Magnetic field choice}
+        The first step is to identify the magnetic field required. 
+        The geometry of the MEG II detector, in junction with the magnetic field, defines the acceptance of the produced particles.
+        Given the nature of the COBRA magnet, the parameter here is the scaling of the magnetic field.
+        Thorough simulations were run to optimize the scaling factor, finding the best compromise between the efficiency for signal and background reconstruction to be $B_{X17}=0.15\times B_{MEG}$. 
+        This value can be roughly estimated considering that a scale factor of 1 is optimized for positrons of \SI{53}{MeV} while the pair produced by the X17 decay should be roughly at \SI{8}{MeV} ($8/53\approx 0.15$). 
+        
+    \status{started}
+    \subsection{Target}
+        The setup for the target is quite straightforward: a carbon fiber vacuum chamber is mounted at the tip of the insertion system of the CW bellows system; a mounting system holds different types of targets.
+        The bellows system is the one used for XEC weekly calibrations and will be not discussed.
+        
+        \paragraph{Vacuum and mechanical structure}
+        The thickness and dimensions of the carbon fiber vacuum chamber have been optimized via dedicated simulations for both integral structure and particle interaction.
+        After receiving the carbon fiber the chamber was glued and tested for vacuum.
+        
+        \paragraph{Lithium target}
+        The interesting process requires Lithium atoms but Lithium targets tend to be unstable. 
+        Among the options studied \ce{LiF} and \ce{Li_{3.6}PO_{3.4}N_{0.6}} were the most promising.
+        Looking back we now know that the spattering process behind the production of our targets resulted in a poorly characterized end-product.
+        \ce{LiF} targets were produced by INFN Legnaro while \ce{Li_{3.6}PO_{3.4}N_{0.6}} targets were produced at PSI.
+        
+\section{Data acquisition}
+    
+    \status{review}
     \subsection{Beam tuning}
-        The beam tuning was performed by substituting the end-cap of the proton beam line with a transparent cap with a AAA crystal. 
+        The beam tuning was performed by substituting the end cap of the proton beam line with a transparent cap with a AAA crystal. 
         The proton beam produces visible photons hitting the crystal so the beam position can be observed.
         Normally this operation would be done while the upstream side of COBRA is not closed, allowing the installation of a webcam that gives instant feedback on the beam position.
         This was not the case so we were forced to use the camera installed inside COBRA for MEG II target monitoring.
@@ -24,24 +50,26 @@ The chapter starts with a recap of the previous searches and then moves to the d
         Key aspects of the beam to be tuned were: 
         \begin{outline}
             \1 Energy: This parameter is controlled by the \textit{Terminal Voltage} of the CW.
-            \1 Focus: This parameter is controlled by the \textit{Extraction Voltage} of the CW. Fig.~\ref{} shows how the beam spot changes as a function of this parameter. 
+            \1 Focus: This parameter is controlled by the \textit{Extraction Voltage} of the CW. Fig.~\ref{fig:focus_500keV} shows how the beam spot changes as a function of this parameter. 
             \1 Position: This parameter is controlled by the three dipoles of the CW beamline. The change of the position for different values of the dipoles at \SI{500}{keV} is shown in Fig.~\ref{fig:position_500keV}.
         \end{outline}
 
         \begin{figure}
             \centering
             \includegraphics[width = \textwidth]{Figures/MEG/X17/beamtuning/psotion_500keV.png}
-            \caption{Position of the proton beam at \SI{500}{keV} when changing the current in the dipoles (the vertical dipole V and only one of the two horizontal dipoles H). In the first row, H(??) is changing and the beam moves diagonally. In the second row, V(??) moves the beam on the perpendicular diagonal.}
+            \caption{Position of the proton beam at \SI{500}{keV} when changing the current in the dipoles (the vertical dipole V and only one of the two horizontal dipoles H). In the first row, H is changing and the beam moves diagonally. In the second row, V moves the beam on the perpendicular diagonal.}
             \label{fig:position_500keV}
         \end{figure}
         \begin{figure}
             \centering
             \includegraphics[width = \textwidth]{Figures/MEG/X17/beamtuning/focus_500keV.png}
             \caption{Focus of the proton beam at \SI{500}{keV} when changing the \textit{extraction voltage} of the CW: values in the range $6\divisionsymbol15$ keV. Is clearly visible for extreme values the beam barely reaches the crystal.}
-            \label{fig:ocus_500keV}
+            \label{fig:focus_500keV}
         \end{figure}
-        After a careful scan of the three parameters, working points at different energies were chosen: the most relevant are the ones for \SI{500}{keV} and \SI{1080}{keV}, shown in Fig.~\ref{fig:ocus_500keV}.
-        It is of interest to notice that these values are the balance between what was previously discussed and the limitations of the CW machine: a higher ($\sim$\SI{1100}{keV}) energy would be a better choice but the nominal upper limit of the machine is actually \SI{1}{MeV}, meaning having it running stably at \SI{1080}{keV} is already an achievement.
+        \noindent
+        After a careful scan of the three parameters, working points at different energies were chosen: the most relevant are the ones for \SI{500}{keV} and \SI{1080}{keV}.
+        It is of interest to notice that \SI{1080}{keV} is the balance between what was previously discussed and the limitations of the CW machine: a higher ($\sim$\SI{1100}{keV}) energy would be a better choice but the nominal upper limit of the machine is actually \SI{1}{MeV}, meaning having it running stably at \SI{1080}{keV} is already an achievement.
+        To the best of our knowledge, the beam at COBRA center during the data-taking was Gaussian \colorbox{red}{$(x, y) = \SIlist{2; -2}{mm}$; $(\sigma_x, \sigma_y) = \SIlist{2; 2}{mm}$}.
 
     \subsection{Asymmetry}
     \subsection{Normalization}
@@ -52,12 +80,12 @@ The chapter starts with a recap of the previous searches and then moves to the d
     \subsection{Asymmetry}
         \paragraph{BGO}
         \paragraph{XEC}
-            blo.sl calls /analyzer/config/bla.xml
+
     \subsection{Feldman-Cousin}
         Although the Feldman-Cousin approach is well-established in particle physics research, this was our first hands-on experience. 
         After studying the relevant papers (\cite{feldman:1998}\cite{feldman:2011}) and the internal notes of the collaboration we decided to develop a mock-up experiment to understand the framework necessary for a Feldman Cousin approach to data analysis.  
-        Given a measured sample and the pdfs the framework we developed allows us to perform the analysis and obtain the confidence intervals.
-        The full-blown X17 analysis was actually performed with the code written for the MEG II analysis. This code was developed and improved upon over many years and was both more robust and flexible. 
+        Given a measured sample and the probability density functions (PDFs) the framework we developed allows us to perform the analysis and obtain the confidence intervals.
+        The full-blown X17 analysis was actually performed with the code already written for the MEG II analysis. This code was developed and improved upon over many years and was both more robust and flexible. 
         Although it was an `academic exercise', this effort made understanding the existing code and the underlying theory/structure an easier task.  
         I contributed actively to this effort until we managed to have a running structure.
         Although I followed the whole procedure, the finalization of the mockup\footnote{ The full description of the code will be here skipped but it can be found in the following 
