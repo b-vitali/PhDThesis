@@ -1,5 +1,6 @@
 \status{started}
 \chapter{muEDM}
+\label{ch:muEDM}
 \begin{refsection}
 
 {\itshape
@@ -135,22 +136,27 @@ This my attempt to an up-to-date description but some details might be already o
         Clearly, the development of such a system is not trivial, and a precise study of the different shapes and materials is required. 
         The hope would be to find a suitable \textit{high-temperature} superconductor.
 
-    \status{started}
+    \status{review}
     \subsection{Entrance detector} 
         After a muon successfully enters the experiment it would spiral to the other side of the magnet. 
         To store it a magnetic kick is necessary. 
-        How to produce this kick is going to be explained in the next paragraph but in either case, this system needs to be triggered.
+        How to produce this kick is going to be discussed in the next section but in either case, this system needs to be triggered.
         To detect the muon entering the system a thin scintillator can be used.
         This needs to be thick enough to produce sufficient light but thin enough not to deflect the particle from the design orbit.
-        With a dedicated \gf simulation\footnote{To be honest this was actually my first \gf project and few iterations were needed.}, the amount of light exiting the different sides of the thin scintillator was studied as a function of muon and positron momenta. 
+        With a dedicated \gf simulation\footnote{To be honest this was actually my first \gf project and \textit{few iterations} were needed.}, the amount of light exiting the different sides of the thin scintillator was studied as a function of the muon momentum. 
         The results of the simulations and the dedicated beamtimes to develop this entrance detector will be discussed in Ch.~\ref{ch:muEDM:entrance}, dedicated to this detector.
 
     \status{started}
-    \subsection{Muon tracking} 
+    \subsection{Muon tracking}
+    \label{sec:muEDM:gridpix:beamtime}
         Although during physics runs it is important to minimize the number of interactions of the muon along the path, it is a cardinal step to prove the muons are following the correct path.
         For this reason, a removable muon-tracking device is under development.
-        The idea is to use \tpc + \grid. \cite{muEDM:PSI:GridPix}
+        The idea is to use \tpc + \grid.
 
+        \paragraph{Beamtime}
+        A prototype of this detector was developed and tested in 2022, the results have been published and can be found in \cite{muEDM:PSI:GridPix}.
+        The setup was quite simple: the beam was centered through the TPC and scintillators were used as an external trigger.
+        During this testing, the detector was tested at different pressures and voltages, and with different mixtures of gas.
     \status{started}
     \subsection{Kicker}
         The prerequisite for the \textit{frozen spin} is to first store the muon around the design orbit.
@@ -173,14 +179,18 @@ This my attempt to an up-to-date description but some details might be already o
         These electrodes need to be out of the muon orbit and with a minimal material budget to reduce the positron scattering.  
         Dedicated simulations and prototyping have been developed also for this element.
 
-    \status{started}
+    \status{review}
     \subsection{Positron tracking}
         The development of the positron tracker has been a big part of my work in the collaboration.
-        For this reason, an in-depth description will follow in a dedicated chapter while here we will just outline the basic idea.
-        The project is two use two subsystems:
+        For this reason, an in-depth description will follow in a dedicated chapter (see Ch.~\ref{ch:muEDM:tracker}) while here we will just outline the basic idea.
+        The project is to use two subsystems:
         \begin{outline}
-            \1 A silicon pixel external tracker will be used to track precisely the transverse position of the positron. The aim of this sub-detector is to measure the g-2 precession to fine-tune the radial electric field to achieve the frozen-spin condition.
-            \1 An internal scintillating fiber detector with a comparable resolution on the transverse position will complement the silicon pixel with additional hits. The requirement is to have a better resolution on the longitudinal position of the hits to measure the EDM by looking at the pitch of the outgoing helical track.
+            \1 A silicon pixel external tracker will be used to track precisely the transverse position of the positron. 
+            The aim of this sub-detector is to measure the g-2 precession to fine-tune the radial electric field to achieve the frozen-spin condition.
+            A straw-tube-based alternative design for this sub-detector is also under study.
+            \1 An internal scintillating fiber detector (with comparable resolution on the transverse position) will complement the silicon pixel with additional hits. 
+            The requirement is to have a better resolution on the longitudinal position of the hits to measure the EDM by looking at the pitch of the outgoing helical track.
+            I dedicated most of my effort to this sub-detector.
         \end{outline}
 
 \section{Systematics}
@@ -189,6 +199,35 @@ This my attempt to an up-to-date description but some details might be already o
 
 \cite{muEDM:Semertzidis:2001} \cite{muEDM:g-2:2008} \cite{muEDM:Adelmann:2010} \cite{muEDM:J-PARC:2011} \cite{muEDM:J-PARC:2016} \cite{muEDM:PSI:2021} \cite{muEDM:PSI:Mikio:2022} \cite{muEDM:PSI:Kim:2022}
 
+\status{review}
+\section{Schedule}
+    As we just saw, although the development of the precursor is moving at a very nice speed, the tasks are very challenging.
+    To put in perspective the current understanding of the different challenges and time constraints, we add here the schedule that was included in the proposal of the experiment in 2022.
+    Fig.~\ref{fig:muEDM:schedule:short} is a schedule on the short period up to the long shut-down, in which 6 main milestones are highlighted:
+    \begin{outline}
+        \1[1] Demonstration of off-axis injection
+        \1[2] Muon selection and generation of trigger
+        \1[3] Generation of the pulsed magnetic field and measurement of eddy-currents
+        \1[4] Stopping of muons and detection of $(g - 2)$ precession
+        \1[5] Adjusting the electric field by tuning $(g - 2)$ precession to zero
+        \1[6] Data-taking in muon EDM mode
+    \end{outline}
+    Fig.~\ref{fig:muEDM:schedule:long} goes beyond the long shut-down and covers the full life of the experiment, up to 2033.
+    
+    \begin{figure}
+        \centering
+        \includegraphics[width = \textwidth]{Figures/muEDM/Schedule2023-2026.png}
+        \caption{`Short' term muEDM schedule, with highlighted the 6 main milestones up to the \textit{long shutdown}. Milestones: 1) off-axis injection; 2) generation of the entrance trigger; 3) generation of the pulsed B field; 4) detection of $g-2$; 5) adjust $g-2$ to zero; 6) EDM data taking.}
+        \label{fig:muEDM:schedule:short}
+    \end{figure}
+       
+    \begin{figure}
+        \centering
+        \includegraphics[width = \textwidth]{Figures/muEDM/SchedPropLongTerm23.png}
+        \caption{`Long' term muEDM schedule, with the different phases up to the end of the experiment.}
+        \label{fig:muEDM:schedule:long}
+    \end{figure}
+    
 \section{Conclusions}
 
 \status{started}

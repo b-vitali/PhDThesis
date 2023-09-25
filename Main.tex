@@ -14,6 +14,8 @@
 \usepackage{bm}
 \usepackage{braket}
 \usepackage{siunitx}
+\sisetup{separate-uncertainty=true}
+
 \usepackage{physics}
 \usepackage{amsmath}
 \usepackage{outlines}
@@ -63,9 +65,9 @@
 %%%%%                   %%%%%   
 %%%%%  To set progress  %%%%%  
 %%%%%                   %%%%%    
-% To do this i had to remove the following
+% To do this I had to remove the following
 %\hypersetup{colorlinks=true, linkcolor=black, citecolor=black, filecolor=black, urlcolor=black}
-% plus to propagate the color now the alignment is a bitt off you can just remove this whole thing once everything is Green ;)
+% plus to propagate the color now the alignment is a bit off you can just remove this whole thing once everything is Green ;)
 
 \hypersetup{%
     pdfborder = {0 0 0}
@@ -151,7 +153,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+% Turn OFF warning
+\hbadness=10000000
 
 %Solve the footnote indentation
 \setlength{\footnotemargin}{2mm}
@@ -164,6 +167,20 @@
 \newcommand{\ltsp}{\textsc{LTspice}\xspace}
 \newcommand{\madx}{\textsc{Mad-X}\xspace}
 \newcommand{\gfb}{\textsc{G4Beamline}\xspace}
+\newcommand{\mylar}{Mylar$\textsuperscript{\textregistered}$\xspace}
+\newcommand{\tedlar}{TEDLAR$\textsuperscript{\textregistered}$\xspace}
+\newcommand{\bc}[1]{BC{#1}$\textsuperscript{\textregistered}$\xspace}
+
+
+\newcommand{\ra}{\rightarrow}
+
+% My particles
+\newcommand{\m}{\upmu^-}
+\newcommand{\Am}{\upmu^+}
+\newcommand{\g}{\upgamma}
+\newcommand{\e}{\text{e}^-}
+\newcommand{\Ae}{\text{e}^+}
+
 
 %\usepackage{chapterbib}
 \defbibheading{bibliographychapter}{%
@@ -290,9 +307,10 @@
 %%%%%                %%%%%  
 
 %%   APPENDIX
-%\cleardoublepage
-%\appendix % to tell LaTeX that the following chapters are appendices
-%\input{Include/Backmatter/Appendix/Appendix_G4TessellatedSolid}
+\cleardoublepage
+\appendix % to tell LaTeX that the following chapters are appendices
+\input{Include/Backmatter/Appendix/Appendix_G4TessellatedSolid}
+\input{Include/Backmatter/Appendix/Appendix_Kalman}
 
 %%   BIBLIOGRAPHY
 %\cleardoublepage
@@ -302,6 +320,7 @@
 
 %%   ACKNOWLEDGEMENTS
 \cleardoublepage
+\status{started}
 \addcontentsline{toc}{chapter}{Acknowledgement}
 \input{Include/Backmatter/Acknowledgement}
 

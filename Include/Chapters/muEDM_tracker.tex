@@ -1,15 +1,25 @@
 \status{started}
 \chapter{muEDM positron tracker}
+\label{ch:muEDM:tracker}
 \begin{refsection}
 {\itshape This chapter is an in-depth study on the development of the scintillating fiber part of the muEDM positron tracker. 
 We will skip some preliminary studies and we will start with the description of the positron tracker which was included in the proposal of the experiment submitted to PSI at the end of 2022; we will move to the simulations done after that and the current design of this detector.}
 
-\section{Design in the proposal 2022}
-    The detector described in the proposal would satisfy the requirements for muEDM but comes with some limitations.
-    \subsection{SciFi prototype}
-    \subsection{The barrel geometry}
-    \subsection{Issues}
-    \subsection{Alternatives}
+\section{Tracking $\Ae$ in muEDM}
+    As already introduced in Ch.~\ref{ch:muEDM}, the muEDM experiment is based on the \textit{frozen spin} technique.
+    First of all, it is cardinal to stop the muon in the right orbit. 
+    The careful calibration of the radial electric field will then change the $(g-2)$ precession, bringing it eventually to 0.
+    At this point, the direction of the positron emission will be the relevant variable for the EDM search.
+    These three steps require a way to track the outgoing $\Ae$.
+    Developing such a tracker in the muEDM environment is the challenge to which this chapter is dedicated.
+    
+    \subsection{The g-2 anomaly}
+    \subsection{The EDM}
+    \subsection{Design in the 2022 proposal}
+    \paragraph{The `barrel' geometry}
+    \paragraph{SciFi prototype}
+    \paragraph{Issues}
+    \paragraph{Alternatives}
 
 \status{started}
 \section{CHeT or CyFi}
@@ -109,7 +119,7 @@ We will skip some preliminary studies and we will start with the description of 
             \1 SiPM :
         \end{outline}
 
-    \status{started}
+    \status{review}
     \subsection{From $\upgamma$s to waveforms}
         The simulation in \gf ends with the recording of the optical photons entering the SiPM SensitiveDetectors.
         The physical processes going from the impinging photons to the analog signal are quite complex and simulating them would require a lot of effort (and CPU time).
@@ -120,16 +130,18 @@ We will skip some preliminary studies and we will start with the description of 
             This is a binomial distribution and is SiPM dependent: reasonable values $p_{PDF}\in [0.3, 0.5]$
             \1 \textit{Response}: per photon converted, add a 'waveform' at the photon time. 
             The shape $w(t)$ is SiPM/electronics dependent but some assumptions can be made.
+            \1 \textit{Dead time}: when a pixel generates a signal, any additional photon coming within a $t_D$ is lost.
             \1 \textit{Dark noise}: add a probability of spurious photons converting. 
-            This is a poissonian process that gives $n_{dark}$ photons distributed flat in the readout time.
+            This is a Poissonian process that gives $n_{dark}$ photons distributed flat in the readout time.
         \end{outline}
         \begin{equation}
-            W(t)=\sum_{i=0}^{n_\gamma} w(t_i)\cdot p_{PDF} + \sum_{i=0}^{n_{dark}} w(t_{flat})
+            W(t)=\sum_{i=0}^{n_\gamma} w(t_i|\Delta t>t_D)\cdot p_{PDF} + \sum_{i=0}^{n_{dark}} w(t_{flat}) 
         \end{equation}
-        Once we obtain $W(t)$ we can apply a threshold $w_{th}$ and turn the signal from analog to digital. 
+        \begin{equation}
+\end{equation}Once we obtain $W(t)$ we can apply a threshold $w_{th}$ and turn the signal from analog to digital. 
         If the $w_{th}$ is crossed, we recorded a \textit{hit}.
-        Clearly, given the geometry under consideration, we need two \textit{hits} to make a `cylinder'-\textit{hit} (a \textit{c-hit}).
-        Mapping pairs of hits in chits is not trivial and takes as parameters the dimensions of the cylinder and the SiPM numbers (or alternatively their position).
+        Given the geometry under consideration, we need >2 \textit{hits} to make a `cylinder'-\textit{hit} (a \textit{c-hit}).
+        Mapping groups of hits in chits is not trivial and takes as parameters the dimensions of the cylinder and the SiPM numbers (or alternatively their position).
 
     \subsection{From \textit{hits} to \textit{c-hits}}
 

@@ -6,17 +6,18 @@
 {\itshape
 Here we will provide an overview of the following chapters as well as define the theoretical and experimental background for this work. 
 The first section will be dedicated to the outline of this thesis, to aid the readers. 
-A somewhat shallow review of the particle physics searches at PSI will follow, with some in-depth dive into the subjects which are close to the core of this thesis. 
+A somewhat shallow review of the particle physics searches at PSI will follow, with some in-depth dive into the subjects that are close to the core of this thesis. 
 This will be complemented by the description of the different facilities at PSI, with a final section dedicated to the Proton Ionization Facility.\\ 
-This whole chapter relies heavily on references \textcite{Signorelli} \cite{PSI:review:2021}.}
+This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:review:2021} and partially on \cite{mythesis}.}
 
-\status{started}
+\status{review}
 \section{Outline of this thesis}
     The structure of this Thesis might differ slightly from the norm. 
-    While most of my colleagues dedicated their work to a singular subject, like a particular detector or theory, my effort during the course of this Ph.D. has been spread on a wider angle.
+    While most of my colleagues dedicated their work to a singular subject, like a particular detector or theory, my effort during the course of this Ph.D. has been spread on a quite large angle.
     At first glance, this work might seem the result of three separate projects, namely MEG, MuEDM, and muCool. 
     In fact, the spirit in which this Thesis has been developed is orthogonal to the chapters themselves: the overall progress of muonic particle physics experiments.
-
+    Given the nature of the different tasks I worked on, I included \textit{a lot} of introductory material to guide the reader through the different sections.  
+    
     \begin{outline}
         \1 Introduction: theory, PSI facilities and key experiments
         \1 muCool (?)
@@ -266,7 +267,7 @@ This whole chapter relies heavily on references \textcite{Signorelli} \cite{PSI:
     In the presence of a muon \gls{edm} the plane would be tilted and a vertical precession ($\bm{\omega}_e\perp\bm{B}$), shifted by $\pi/2$ to the horizontal anomalous precession, would become observable.
 
     \gls{psi} has been for decades at the frontier in the measurements of the neutron \gls{edm}.
-    We will turn to this topic when describing the existing limits on EDMs and in the chapter dedicated to the muEDM experiment.\\
+    More on this will follow in this chapter when describing the existing limits on EDMs.\\
     \cite{edmasprobe}
 
 \status{started}
@@ -436,11 +437,11 @@ The two-step approach is driven by uncertainties in the understanding of the und
 \label{_COMET}
 \end{figure}
 
-    \status{started}
+    \status{review}
     \subsection{EDM experiments}
         \label{sec:exp:edm}
-        In the last decades the interest towards EDM measurments and limits palyed an important part in testing old and new theories.
-        A summary of the current limits is in Tab.~\ref{tab:intro:edm}. 
+        In the last decades, the interest towards EDM measurements and limits played an important part in testing old and new theories.
+        A summary of (some of) the current limits is in Tab.~\ref{tab:intro:edm}. 
         This subsection is a rundown of the experiments setting these limits.
         
         \begin{table}
@@ -464,12 +465,51 @@ The two-step approach is driven by uncertainties in the understanding of the und
         \end{table}
         
         \subsubsection{Neutron: nEDM}
-            \paragraph{n2EDM}
-            \cite{n2EDM}    
+            The current upper limit on the neutron EDM comes from the apparatus built by the  RAL/Sussex/ILL collaboration \cite{nEDM} using the PSI UCN source (see~\ref{sec:nproduction}): the measured result of $d_n = (0\pm1.1_{stat}\pm0.2_{sys})\times\SI{e-26}{e cm}$ translates to an upper limit of $\abs{d_n} < \SI{1.8e-26}{ecm}$ (90\% CL).\\
+            The method used was to determine the change in Larmor precession frequency of neutrons ($f_n = \frac{1}{\pi\hbar}\abs{\mu_n\textbf{B}_0+d_n\textbf{E}}$) using the spectrometer sketched in Fig.~\ref{fig:nEDM}.
+            This frequency is correlated to the change in polarity of the electric field.
+            Each cycle of measurement consisted in:
+            \begin{outline}
+                \1 Polarizing UCNs with a 5 T solenoid, selecting the initial state with a spin flipper
+                \1 Confining them in the precession chamber to the equilibrium density of $\sim\SI{2}{UCN/cm^3}$
+                \1 A small quantity of polarized \ce{199Hg} vapor was injected as comagnetometer
+                \1 Different low-frequency pulses were used to tip Hg or UCNs spins by $\pi/2$
+                \1 The detection system counts both spin-up ($\uparrow$) and down ($\downarrow$) states
+                \1 For each cycle i, the asymmetry is evaluated: $ A = (N_\uparrow-N_\downarrow)/(N_\uparrow+N_\downarrow)$.
+            \end{outline}
+            An interesting detail is that, to compensate for residual magnetic-field fluctuations and drifts, the frequency ratio $R = f_n/f_{Hg}$ was used.
+            
+            \begin{figure}
+                \centering
+                \includegraphics[width = 0.8\textwidth]{Figures/Introduction/nEDM.png}
+                \caption{}
+                \label{fig:nEDM}
+            \end{figure}
+            
+            \paragraph{n2EDM} Any significant improvement on the limit requires a completely new setup. With this aim the n2EDM was developed \cite{n2EDM}.
+            This measurement will (again) rely on the estimation of the precession frequency $f_n$ of polarized ultracold neutrons in weak B and strong E fields:
+            $$d_n = \frac{\pi\hbar}{2\abs{E}}(f_{n, \uparrow\downarrow}-f_{n, \uparrow\uparrow})$$
+            Key aspects are the size and quality of the cylindrical storage chambers and the precision of the magnetometry, which will rely on mercury and cesium.
+            A sketch of the concept design is in Fig.~\ref{fig:n2EDM} and the whole design in Fig.~\ref{fig:n2EDM_whole}.
+            Other sizable improvements, here not discussed, will be the further optimization of the production and transport of the UCN from the source as well as the improved magnetic shielding.\\
+
+            \begin{figure}
+                \centering
+                \includegraphics[width = 0.8\textwidth]{Figures/Introduction/n2EDM.png}
+                \caption{}
+                \label{fig:n2EDM}
+            \end{figure}
+            \begin{figure}
+                \centering
+                \includegraphics[width = 0.8\textwidth]{Figures/Introduction/n2EDM_whole.png}
+                \caption{}
+                \label{fig:n2EDM_whole}
+            \end{figure}        
+            
         \subsubsection{Electron}
-            The conventional way to measure EDM is the separated oscillatory fields method: when a particle is subjected to an electric field parallel to a weak magnetic field the EDM changes interaction changes the Larmor frequency \cite{ramsey}.
-            An alternative approach is to use solid-state techniques.
-            In the presence of a strong magnetic field the EDM of valence electrons in a paramagnetic insulator would generate a small magnetization.
+            The conventional way to measure EDM is the separated oscillatory fields method: when a particle is subjected to an electric field parallel to a weak magnetic field the EDM interaction changes the Larmor frequency \cite{ramsey}.
+            An alternative approach is to use solid-state techniques:
+            in the presence of a strong magnetic field the EDM of valence electrons in a paramagnetic insulator would generate a small magnetization.
             Even though the effect is negligible for singular electrons, the cumulative effect can be detected using sensitive magnetometry.
             Using this method the limit $d_e<\SI{6.05e-25}{e\cdot cm}$ was obtained in \ce{Eu_{0.5}Ba_{0.5}TiO_3} \cite{eEDM:EuBaTiO}.
             Not long after, a different limit was set with the same technique in  Gadolinium Gallium Garnet (GGG, \ce{Gd_3Ga_5O_{12}}): $d_e=-5.57\pm7.89\pm\SI{0.12e-25}{e\cdot cm}$ \cite{eEDM:GGG}.
@@ -490,7 +530,7 @@ The two-step approach is driven by uncertainties in the understanding of the und
             \end{outline}
             The key aspect is that the precession frequency is linked to the states of the system and is modified by the presence of $d_e$.
             The results obtained is $d_e=(4.3\pm3.1\pm2.6)\times 10^{-30}\si{e\cdot cm}$.
-            Applying the Feldman–Cousins prescription this value translates to the  limit $\abs{d_e}<\SI{1.1e-29}{e\cdot cm}$.
+            Applying the Feldman–Cousins prescription this value translates to the limit $\abs{d_e}<\SI{1.1e-29}{e\cdot cm}$.
 
             \begin{figure}
                 \centering
@@ -501,23 +541,45 @@ The two-step approach is driven by uncertainties in the understanding of the und
         
         \subsubsection{Muon}
             We now come to the muon, to which most of this thesis is dedicated. The $d_\upmu$ search at PSI is going to be discussed in detail in the following chapters but we will here review the current limits. 
+            These are the references for the direct \cite{muEDM:direct} and indirect \cite{muEDM:indirect} limits, where all the missing details can be found.
             
             \paragraph{Muon \textit{g-2}}
             In 2018 the \textit{g-2} collaboration performed three independent searches for $d_\upmu$.
-            All results were compatible with a null value and an upper limit was set: $\abs{d_\upmu}<\SI{1.9e-19}{e\cdot cm}$ \cite{muEDM:direct}.  
-            We will here skip the details but we will outline the methods used.\\
-
+            All results were compatible with a null value and a combined upper limit was set: $\abs{d_\upmu}<\SI{1.9e-19}{e\cdot cm}$ \cite{muEDM:direct}.  
+            We will here skip the details but we will outline the methods used and the results (all 95\% CL).
+            Three additional detectors were added to the BNL experiment to measure the EDM measuring the positrons coming from the muon decay.
+            In Fig.~\ref{fig:g-2:ring} a sketch of the g-2 ring and the different detectors.
             \begin{outline}
-                \1[BNL] We saw in \ref{intro:edm} the effect that EDM and MDM have on a moving particle in $\bm{E},\bm{B}$ fields.
-                In particular, for muons circulating in a storage ring, the spin precession is given by Eq.~\ref{eq:precession}. 
-                The measurement with the $g-2$ detectors is achieved by measuring the oscillation of the vertical component of the positron from the decay. This direction reflects the oscillation of the muon spin.\\
-                \1[$g-2$] We will here skip the details but we will outline the methods used. We saw in \ref{intro:edm} the effect that EDM and MDM have on a moving particle in $\bm{E},\bm{B}$ fields. In particular, for muons circulating in a storage ring, the spin precession is given by Eq.~\ref{eq:precession}.\\
-                \1[FSD]  We will here skip the details but we will outline the methods used. We saw in \ref{intro:edm} the effect that EDM and MDM have on a moving particle in $\bm{E},\bm{B}$ fields. In particular, for muons circulating in a storage ring, the spin precession is given by Eq.~\ref{eq:precession}.
+                \1 Front Scintillator Detectors (FSD): stacks of five horizontal scintillators to measure oscillation of the average vertical position. A sketch of such a detector is in Fig.~\ref{fig:g-2:detectors}.
+                The analysis of the data collected in 2000 yielded: $\abs{d_{\Am}} < \SI{2.9e-19}{ecm}$
+                \1 Position-Sensitive Detectors (PSD): a version of FSD that is segmented both horizontally and vertically.
+                $\abs{d_{\m}} < \SI{1.5e-19}{ecm}$
+                \1 Traceback Wire Chamber (TWC): series of eight, three-layer drift tube planes in front of one of the calorimeters (a sketch is shown in Fig.~\ref{fig:g-2:TWC}). these are used to track the positrons back to the storage volume.
+                The analysis conducted on the 1999-2000 data with this detector yielded: $\abs{d_{\Am}} < \SI{3.2e-19}{ecm}$
             \end{outline}
-              
+
+        \begin{figure}
+            \subfloat[Layout of the g-2 storage ring with the detector stations and the Traceback Chambers.]{
+            \includegraphics[width=0.37\textwidth, keepaspectratio]{Figures/Introduction/g-2.png}
+            \label{fig:g-2:ring}}
+            \hfill
+            \subfloat[Sketch of the Front Scintillation Detectors (FSD). The Position-Sensitive Detector (PSD) is not shown but is set in front of the FSD.]{
+            \includegraphics[width=0.6\textwidth, keepaspectratio]{Figures/Introduction/muEDM_FSD.png}
+            \label{fig:g-2:detectors}}
+            \caption{Sketches of the g-2 storage ring and the detector used to measure the muon EDM.}
+        \end{figure}
+
+        \begin{figure}
+            \centering
+            \includegraphics[width = 0.8\textwidth]{Figures/Introduction/muEDM_TB.png}
+            \caption{The Traceback Wire Chamber is the most complex detector added for the EDM measurement. It consists of eight three-layer drift tube planes to propagate the positron track back to the decay point.}
+            \label{fig:g-2:TWC}
+        \end{figure}             
+        
             \paragraph{Indirect limit} Given the rise in interest for EDM measurements an effort was undertaken to assess the indirect constraints imposed on $d_\upmu$ by the EDM measurements performed with heavy atoms and molecules~\cite{muEDM:indirect}. 
             This was done by evaluating the $d_\upmu$- induced \textit{Shiff moment}\footnote{As pointed out in \cite{Shiff}, this is the operator inducing the atomic EDM.} of the \ce{^{199}Hg} nucleus, and a specific CP-odd operator for \ce{ThO}.            
             The results, $d_\upmu($\ce{^{199}Hg}$)<\SI{6.4e-20}{e\cdot cm}$ and $d_\upmu($\ce{ThO}$)<\SI{1.9e-20}{e\cdot cm}$, are more stringent than the current measured limit but are \textit{indirect}.
+            This means that an assumption on lepton universality is done when considering this limit. 
       
 \status{review} 
 \section{The beams at PSI}
@@ -699,6 +761,7 @@ The two-step approach is driven by uncertainties in the understanding of the und
         
     \status{review}
     \subsection{Neutron production}
+        \label{sec:nproduction}
         \subsubsection{SINQ}
             The first spallation neutron source built at PSI was SINQ, which has dedicated neutron scattering instruments and was used as a polarized cold-neutron beam line for fundamental neutron physics.
             After passing through the meson production target the proton energy is degraded to \SI{570/565}{MeV}. 
@@ -729,7 +792,7 @@ The two-step approach is driven by uncertainties in the understanding of the und
             The UCN source has been reliably operating since 2011 (see Fig.~\ref{fig:UCN_stats}).
     
             \paragraph{Results}
-            The resulting nEDM limit $d_n = (0.0 \pm 1.1_{stat}\pm0.2_{sys})\times$\SI{e-26}{e cm} was published in 2020 \cite{nEDM} but other results were also obtained thanks to this facility:
+            The resulting nEDM limit $d_n = (0.0 \pm 1.1_{stat}\pm0.2_{sys})\times$\SI{e-26}{e cm} (see~\ref{sec:exp:edm}) was published in 2020 \cite{nEDM}  but other results were also obtained thanks to this facility:
             \begin{itemize}
                 \item A measurement of the mercury-to-neutron magnetic moment ratio
                 \item Spin-echo spectroscopy with ultracold neutrons
