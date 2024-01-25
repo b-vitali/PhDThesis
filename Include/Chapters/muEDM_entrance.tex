@@ -10,10 +10,10 @@ We will start with the \gf simulations of thin and thick scintillators, moving t
 We will then move through the beamtimes.
 }
 
-\status{started}
+\status{review}
 \section{Short intro to scintillators}
 \label{sec:muEDM:scintillators}
-    A \textit{scintillator} is any material that emits light (visible or ultraviolet) when exposed to ionizing radiation, like high-energy photons or charged particles.
+    A \textit{scintillator} is any material that emits light when exposed to ionizing radiation, like high-energy photons or charged particles.
     The main distinction is between organic and inorganic scintillators:
     \begin{outline}
         \1 Organic scintillators are typically composed of carbon, hydrogen, and other organic (carbon-based) compounds. These materials often include fluorescent dyes or organic molecules that emit light when excited by ionizing radiation.
@@ -23,27 +23,48 @@ We will then move through the beamtimes.
     \end{outline}
     Organic scintillators typically have relatively fast response times and are less expensive, while inorganic scintillators tend to have better energy resolution.
     Organic scintillators dived in: liquid, crystaline and plastic.
-    We will discuss plastic scintillators while an example of a liquid scintillator, based on Xenon, will be presented when describing the MEG II apparatus (see Ch.\ref{ch:MEG}).
+    We will discuss plastic scintillators. 
+    An example of a liquid scintillator, based on Xenon, will be presented when describing the MEG II apparatus (see Ch.\ref{ch:MEG}).
 
-    \status{started}
+    \status{review}
     \subsection{Plastic scintillators}
         Plastic scintillators are by far the most widely used and their densities range from $1.03$ to $\SI{1.2}{g\per cm^3}$, with a light yield of $1\divisionsymbol\SI{100}{\upgamma/eV}$ of energy deposit \cite{PDG}.
         The number of photons emitted is not linear with the energy deposit: in very dense ionization the light yield is lower than expected.
         This effect is described with the Birks's formula (Eq.~\ref{eq:Birk}) for the luminescence $\mathcal{L}$.
-
         \begin{equation}
             \dv{\mathcal{L}}{x} = \mathcal{L}_0 \frac{\dv{E}{x}}{1 + k \dv{E}{x}}
             \label{eq:Birk}
         \end{equation}
+        Where $\dv{\mathcal{L}}{x}$ is the Light output, $\dv{E}{x}$ the energy loss per unit length by ionizing radiation and $k$ Birks' constant (also known as the stopping power ratio).\\
+        Plastic scintillators are widely used in particle detectors due to their high light yield and fast response time, enabling sub-nanosecond timing resolution. 
+        They offer the advantage of pulse shape discrimination, allowing for particle identification based on emitted light during the decay "tail".
+        These are also popular due to their ease of fabrication into various shapes and cost-effectiveness. 
+        Scintillating fibers made from plastic scintillators are commonly used in tracking and calorimetry applications.
 
-        Where $\dv{\mathcal{L}}{x}$ is the Light output, $\dv{E}{x}$ the energy loss per unit length by ionizing radiation and $k$ Birks' constant (also known as the stopping power ratio).
+    \status{started}
+    \subsection{Scintillating Fibers}
+        This is also a good moment to introduce The concept of \textit{scintillating fibers}.
+        We will not use them in this chapter but will be key in Ch.~\ref{ch:muEDM:tracker}, dedicated to the $\Ae$ tracking.\\
+        A fiber is generally a thin plastic scintillator that undergoes a process named \textit{cladding}.
+        This process consists of covering the thin structure with multiple layers of lower refractive index, which helps to trap the scintillation light in the \textit{core} of the fiber.
+        Scintillating fibers (SCIFI) have become quite common in calorimeters, due to their speed, density, radiation resistance, and resolution glass. 
+        At the same time, SCIFI trackers can handle high rates and radiation. 
+        The downside is the requirement for sensitive photodetectors, due to low photon yield at the fiber's end. 
+        A key aspect is that it is possible to control the sensitive region by pairing scintillating and non-scintillating fibers. 
+        This results in a loss in the collected light but allows the extraction of the light produced in specific regions without creating unwanted hits.
+        On this point is important to remember that the particles will still interact with the non-scintillating fiber, losing energy and undergoing multiple scattering.
 
-        Plastic scintillators are widely used in particle detectors due to their high light yield and fast response time, enabling sub-nanosecond timing resolution. They offer the advantage of pulse shape discrimination, allowing for particle identification based on emitted light during the decay "tail," particularly sensitive to proton recoils from neutrons due to their hydrogen content.
+        \paragraph{Typical Fibers}
+        The typical material for the core is a polystyrene-based scintillator or Wave-Length Shifter (refractive index n = 1.59) while the cladding is often of PMMA\footnote{Poly(methyl methacrylate) is a synthetic polymer which goes by many names: acrylic, acrylic glass, plexiglas, lucite, ...} (n = 1.49), sometimes followed by an additional fluorinated PMMA cladding (n = 1.42) for enhanced light capture. 
+        The resulting diameter is of the order of few $\SI{0.1}{mm}$.
+        The fraction of the light transported is around 6\% for single-clad fibers and 10\% for double-clad fibers. 
+        Considering concrete numbers: a minimum-ionizing particle in 1 mm diameter fiber would generate a few thousand of photons.
+        The number of these actually reaching the ends of the fiber depends on the length and the \textit{attenuation length} but goes from a few hundred to a few photons.
+        The attenuation length, the distance over which the signal diminishes to 1/e of its original value, is influenced by factors such as re-absorption of emitted photons, polymer base crystallinity, photodetector sensitivity, and internal surface quality. 
+        High-quality fibers can achieve attenuation lengths of several meters.
 
-        These scintillators are popular due to their ease of fabrication into various shapes and cost-effectiveness. Scintillating fibers made from plastic scintillators are commonly used in tracking and calorimetry applications.
-
-        \status{started}
-        \subsection{Scintillation process}
+    \status{started}
+    \subsection{Scintillation process}
         Charged particles passing through matter create excited molecules, some of which release about 3\% of their energy as optical photons through a process known as scintillation. This phenomenon is prominent in organic substances containing aromatic rings like polystyrene (PS) and polyvinyltoluene (PVT), as well as in liquids such as toluene, xylene, and pseudocumene.
 
         In fluorescence, molecules are initially excited by absorbing a photon and then deexcite by emitting a longer wavelength photon. To shift scintillation light to a more convenient wavelength, fluorescent materials, or "fluors," are used as "waveshifters." However, complex molecules in fluorescence can exhibit self-absorption, which shortens the attenuation length. The greater the Stokes' shift (the difference between absorption and emission wavelengths), the less self-absorption occurs, making a larger Stokes' shift desirable for fluors.
@@ -57,19 +78,6 @@ We will then move through the beamtimes.
         External wavelength shifters are employed to aid light collection in complex geometries. They consist of a lightpipe with a wave-shifting fluor dissolved in a non-scintillating base. Typically, an acrylic base is used for its optical qualities, along with a single fluor to shift the emitted light to the blue-green range. These shifters also contain additives to absorb ultraviolet light and reduce sensitivity to Cherenkov radiation.
 
         For specialized applications, scintillators with increased radiation resistance or unique properties like neutron/gamma discrimination can be created by significantly increasing fluor concentrations.
-        
-        \status{started}
-        \subsection{Scintillating Fibers}
-        This is also a good moment to introduce The concept of \textit{scintillating fibres}.
-        We will not use them in this chapter but will be key in Ch.~\ref{ch:muEDM:tracker}, dedicated to the $\Ae$ tracking.
-        
-        The use of clad optical fibers containing scintillators and wavelength shifters (WLS) has proven highly beneficial. Scintillating fiber (SCIFI) calorimeters, first demonstrated in [45], have become mainstream due to their speed, density, radiation resistance, and impressive resolution akin to lead glass. SCIFI trackers can handle high rates and radiation but require sensitive photodetectors due to low photon yield at the fiber's end. 
-
-        Control over the sensitive region of scintillating fibers can be achieved by splicing them onto clear, non-scintillating fibers.
-
-        Typically, these fibers have a core of polystyrene-based scintillator or WLS (refractive index n = 1.59), surrounded by a cladding of PMMA (n = 1.49), sometimes with an additional fluorinated PMMA cladding (n = 1.42) for enhanced light capture, resulting in a diameter of 0.5 to 1 mm. The capture fraction, representing the proportion of generated light transported down the optical fiber, is around 6\% for single-clad fibers and 10\% for double-clad fibers. A minimum-ionizing particle traversing a 1 mm diameter fiber perpendicularly generates fewer than 2000 photons, with approximately 200 captured. In a large collider tracker, attenuation may eliminate up to 95\% of these photons.
-
-        The attenuation length, the distance over which the signal diminishes to 1/e of its original value, is influenced by factors such as re-absorption of emitted photons, polymer base crystallinity, photodetector sensitivity, and internal surface quality. High-quality fibers can achieve attenuation lengths of several meters.
         
 \status{started}
 \section{\gf simulations}
@@ -158,24 +166,26 @@ We will then move through the beamtimes.
             Multiple readouts would allow us to lower the threshold and improve the dark noise rejection. Calling the sides $s_i$, the options could be $(s_1\land s_3)\lor(s_2\land s_4)$, $(s_1\land s_3)\land(s_2\land s_4)$, or simply $(s_1\land s_3)$.
             We studied these different readouts schemes in the beamtime of Dec. 2023 (see Sec.~\ref{muEDM:beamtime2023}) 
 
-        \begin{figure}
+        \begin{figure}   
             \centering
-            \includegraphics[height = 5cm]{Figures/muEDM/Entrance/gate_multireadout.png}
-            \caption{Multiple readouts of a thin scintillator to lower the threshold and improve the dark noise rejection. Possible schemes are $(s_1\land s_3)\lor(s_2\land s_4)$, $(s_1\land s_3)\land(s_2\land s_4)$, or simply $(s_1\land s_3)$.}
-            \label{fig:muEDM:entrance:gate:readout}
+            \subfloat[Possible schemes are $(s_1\land s_3)\lor(s_2\land s_4)$, $(s_1\land s_3)\land(s_2\land s_4)$, or simply $(s_1\land s_3)$.]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM/Entrance/gate_multireadout.png}\label{ig:muEDM:entrance:gate:readout:guide}}
+            \hfill
+            \subfloat[Mounting a thin scintillator in a light guide can improve the photon collection. A `frame' shape prevents the incoming particle from interacting with additional material.]{\includegraphics[height=3.5cm, keepaspectratio]{Figures/muEDM/Entrance/gate_waveguide.png}\label{ig:muEDM:entrance:gate:readout:multi}}
+            \caption[muEDM: \textit{gate} scintillator readouts]{Two options to lower the threshold and improve the dark noise rejection: multiple readouts of a thin scintillator (a) and/or a light guide to improve the photon collection (b).}
+            \label{ig:muEDM:entrance:gate:readout}
         \end{figure}
         
     \subsection{Telescope and entrance detector}
         \begin{figure}   
             \centering
-            \subfloat[ASD]{\includegraphics[height=4.5cm, keepaspectratio]{Figures/muEDM/Entrance/gate_geometry.png}\label{fig:muEDM:entrance:ms:28}}
+            \subfloat[Front view of the detector system. \\The \textit{gate} is big enough to cover the aperture of the \textit{telescope}.]{\includegraphics[height=4.5cm, keepaspectratio]{Figures/muEDM/Entrance/gate_geometry.png}\label{fig:muEDM:entrance:ms:28}}
             \hfill
-            \subfloat[ASD]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM/Entrance/entrance_geometry.png}\label{fig:muEDM:entrance:ms:128}}
-            \caption{}
+            \subfloat[Side view of the syste. Additional VD used in the simulation for debugging are also shown.]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM/Entrance/entrance_geometry.png}\label{fig:muEDM:entrance:ms:128}}
+            \caption[muEDM: sketch if the \textit{telescope}]{Sketch of the first geometry for the \textit{gate} and \textit{telescope} detector for the 2022 muEDM beamtime. The aim was to test the thin \textit{gate} scintillator and the effect it has on the beam.}
             \label{fig:muEDM:entrance:sketches}
         \end{figure}
         
-\status{started}
+\status{review}
 \section{Beamtime 2021}
 \label{sec:muEDM:tim}
     This was the first muEDM beamtime I participated in. 
@@ -185,7 +195,7 @@ We will then move through the beamtimes.
     On top of the material details, the aim was also to validate the scattering model used in the \gf simulations for further reference.
     The setup was quite simple: a telescope of five silicon pixel sensors,  three upstream and two downstream.
 
-    \status{started}
+    \status{review}
     \subsection{Description of the multiple scattering}
         \paragraph{Highland}
         The Highland formula for multiple scattering is a parameterization for the width of the multiple scattering distribution.
@@ -200,7 +210,8 @@ We will then move through the beamtimes.
         \end{equation}
 
         \paragraph{\gf}
-        The default parameterization of the multiple scattering in \gf is the Urb\'{a}n. This is based on a different description of the process, required because when evaluating the processes at each step of the simulation, meaning \textit{within} the volume.
+        The default parameterization of the multiple scattering in \gf is the Urb\'{a}n. 
+        This is based on a different description of the process, required because the evaluation is done at each step of the simulation, meaning \textit{within} the volume.
         This model describes the angular distribution of multiple scattering and samples it every interaction.
         The probability density of the angular distribution is usually indicated with $g(u)$ where $u = \cos \theta$ and the form is the following:
         \begin{equation}
@@ -216,15 +227,15 @@ We will then move through the beamtimes.
         For the Highland formula, the PDG reports an accuracy of $\sim 10\%$ in the range $\num{e-3}<x/X_0<\num{e2}$ \cite{PDG}, meaning it is less reliable for thin targets for which $x/X_0 \sim \mathcal{O}(\num{e-4})$.
         On the other hand, while \gf results have been widely tested against experimental measurements, there is a lack of data to compare in the ranges we are interested in.
 
-    \status{started}
+    \status{review}
     \subsection{Data taking}
-        The idea behind the data taking is quite simple: a study on the multiple scattering can be performed using a beam telescope, such as the one sketched in Fig~\ref{fig:muEDM:beamtime2021:telescope}, in which the two sides of the telescope are used to track the in/out-coming particles. 
+        The idea behind the data taking is quite simple: a study on the multiple scattering can be performed using a beam telescope, such as the one sketched in Fig~\ref{fig:muEDM:bt2021:telescope}, in which the two sides of the telescope are used to track the in/out-coming particles. 
         The delicate point is to carefully take into account the scattering of the particles in the telescope itself. 
         It is then needed to collect data without the sample to apply a deconvolution of the telescope response.
         The downstream part of the detector is not symmetrical to the upstream because only five sensors had the necessary performance. This made the tracking task more challenging, leading to wider distributions.
-        The beamline used is the $\pi$E1, which provides $\uppi^\pm,\upmu^\pm,e^\pm$ in a momentum range \SI{100}{MeV} to \SI{500}{MeV}.
+        The beamline used is the $\pi E1$, which provides $\uppi^\pm,\upmu^\pm,e^\pm$ in a momentum range $\SI{100}{MeV}\divisionsymbol\SI{500}{MeV}$.
         Clearly, a good understanding of the beam is key in both data-taking and analysis. 
-        An example is the study of the beam changing the degrader's thickness, shown in Fig.~\ref{fig:muEDM:beamtime2021:TOF}.
+        An example is the study of the beam changing the degrader's thickness, shown in Fig.~\ref{fig:muEDM:bt2021:TOF}.
         For brevity, the description of the electronics and DAQ system will be skipped. 
 
         \paragraph{Silicon Pixel Sensors}
@@ -235,7 +246,7 @@ We will then move through the beamtimes.
         These sensors have been developed to achieve excellent position and time resolutions (\SI{100}{\micro m} and \SI{20}{ns}) with efficiency of $\varepsilon \approx 0.99$. 
         The thickness of these sensors is \SI{50}{\micro m} but this was the case for just the detector positioned after the samples. 
         The others were \SI{100}{\micro m}, important to be considered during the analysis.
-        The whole apparatus is shown in Fig.~\ref{fig:muEDM:beamtime2021:setup:telescope} while a singular MuPix10 is shown in Fig.~\ref{fig:muEDM:beamtime2021:setup:MuPix10}.
+        The whole apparatus is shown in Fig.~\ref{fig:muEDM:bt2021:setup:telescope} while a singular MuPix10 is shown in Fig.~\ref{fig:muEDM:bt2021:setup:MuPix10}.
         
         \begin{figure}
             \centering
@@ -243,16 +254,16 @@ We will then move through the beamtimes.
             \caption{Sketch of the telescope of Silicon Pixel Sensors used to study the multiple scattering in different materials.
             The samples are held in the position of the 'target'. 
             In this sketch, the beam is coming from the left side.}
-            \label{fig:muEDM:beamtime2021:telescope}
+            \label{fig:muEDM:bt2021:telescope}
         \end{figure}
 
         \begin{figure}   
             \centering
-            \subfloat[Picture of the setup for the beamtime of 2021. On the right, the scintillator was used as an external trigger, on the left, beam exit window.]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM_Dec2021/Telescope_Picture.png}\label{fig:muEDM:beamtime2021:setup:telescope}}
+            \subfloat[Picture of the setup for the beamtime of 2021. On the right, the scintillator was used as an external trigger, on the left, beam exit window.]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM_Dec2021/Telescope_Picture.png}\label{fig:muEDM:bt2021:setup:telescope}}
             \hfill
-            \subfloat[Picture of one of the MuPix10 mounted on the two PCBs.]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM_Dec2021/MuPix10_Picture.png}\label{fig:muEDM:beamtime2021:setup:MuPix10}}
+            \subfloat[Picture of one of the MuPix10 mounted on the two PCBs.]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM_Dec2021/MuPix10_Picture.png}\label{fig:muEDM:bt2021:setup:MuPix10}}
             \caption{Picture of the setup and one of the MuPix10 (grey-colored square) mounted on the PCBs.}
-            \label{fig:muEDM:beamtime2021:setup}
+            \label{fig:muEDM:bt2021:setup}
         \end{figure}
 
         \begin{figure}
@@ -263,10 +274,10 @@ We will then move through the beamtimes.
             When increasing the thickness, the contributions of $\uppi$ and $\upmu$ decrease.
             It is important to note that the $e$ and $\upmu$ distribution overlap.
             In gray the distribution of the previous plot to make a comparison.}
-            \label{fig:muEDM:beamtime2021:TOF}
+            \label{fig:muEDM:bt2021:TOF}
         \end{figure}
 
-    \status{started}
+    \status{review}
     \subsection{Data analysis}
         \paragraph{Track selection}
         Initial angular distributions obtained were broad due to noise in downstream sensors, making it difficult to distinguish noise from true hits. 
@@ -276,13 +287,13 @@ We will then move through the beamtimes.
         To mitigate the effects the idea was to combine distributions from multiple axes.
         In the initial distributions, the broad background can be attributed to false tracks generated by noise, poor fits, and some contribution of events with large angles of scattering in the telescope itself. 
         This background was suppressed by enforcing a distance of \SI{1}{mm} between the points at which the upstream and downstream tracks intersect the plane of the sample.        
-        Distributions before and after applying this filter are shown in black and red in Fig.~\ref{fig:muEDM:beamtime2021:distributions}
+        Distributions before and after applying this filter are shown in black and red in Fig.~\ref{fig:muEDM:bt2021:distributions}
         This distribution was then corrected for the geometric acceptance of the telescope.
         \begin{figure}
             \centering
             \includegraphics[width=0.8\textwidth]{Figures/muEDM_Dec2021/distributions.png}
             \caption{The angular distributions show: the full distribution (black), the distribution after cuts in the distance at the sample's plane (red), the distribution after acceptance correction (blue), and the fitted function for telescope characterization (violet).}
-            \label{fig:muEDM:beamtime2021:distributions}
+            \label{fig:muEDM:bt2021:distributions}
         \end{figure}
         
         \paragraph{Acceptance}
@@ -290,7 +301,7 @@ We will then move through the beamtimes.
         To estimate the acceptance, for each upstream track identified, scattering angles were randomly assigned and added to a histogram, distinguishing instances within the acceptance of the most downstream sensor. 
         The ratio of histograms yielded the average acceptance as a function of projected scattering angles. 
         The acceptance correction was applied on a per-event basis, adjusting the scattering angles based on the acceptance value. 
-        An example of such correction is shown in blue in Fig.~\ref{fig:muEDM:beamtime2021:distributions}
+        An example of such correction is shown in blue in Fig.~\ref{fig:muEDM:bt2021:distributions}
         
         \paragraph{Deconvolution}
         The method of track selection and acceptance correction was applied to both runs with and without the sample. 
@@ -302,60 +313,169 @@ We will then move through the beamtimes.
             \1 using the negative log-likelihood to determine the best-fit parameters for describing the measured distribution with the sample
         \end{outline}
     
-    \status{started}
+    \status{review}
     \subsection{Model evaluation and conclusions}
         This first beamtime aimed at testing the agreement between the Highland formula and the \gf Urb\'{a}n model for the multiple scattering in thin materials.
-        The analysis of the data collected is still not finalized, but a rough agreement between data and models can be seen in Fig.~\ref{fig:muEDM:beamtime2021:results}.
+        The analysis of the data collected is still not finalized, but a rough agreement between data and models can be seen in Fig.~\ref{fig:muEDM:bt2021:results}.
         There are improvements that could be added to the analysis and/or to the simulation of the experimental setup, so updated results are expected in the following months.
         
     \begin{figure}   
             \centering
-            \subfloat[Pokalon (orange), \SI{17}{\micro m} Graphite (blue), \SI{50}{\micro m} Graphite (violet), Silicon (red); circular markers for data at \SI{70}{MeV} and squared at \SI{90}{MeV}; error bars are the statistical uncertainties and the shaded area is the total uncertainties.]{\includegraphics[width=0.48\textwidth, keepaspectratio]{Figures/muEDM_Dec2021/ms_fits.png}\label{fig:muEDM:beamtime2021:results:analysis}}
+            \subfloat[Pokalon (orange), \SI{17}{\micro m} Graphite (blue), \SI{50}{\micro m} Graphite (violet), Silicon (red); circular markers for data at \SI{70}{MeV}, squared at \SI{90}{MeV}; error bars are the statistical and the shaded the total uncertainties.]{\includegraphics[width=0.48\textwidth, keepaspectratio]{Figures/muEDM_Dec2021/ms_fits.png}\label{fig:muEDM:bt2021:results:analysis}}
             \hfill
-            \subfloat[Same color/shape coding as Fig.~\ref{fig:muEDM:beamtime2021:results:analysis} and the predictions of the Highland formula are shown by lines of width representing the uncertainty in thickness.]{\includegraphics[width=0.48\textwidth, keepaspectratio]{Figures/muEDM_Dec2021/gf-highland_evaluation.png}\label{fig:muEDM:beamtime2021:results:models}}
+            \subfloat[Same color/shape coding as Fig.~\ref{fig:muEDM:bt2021:results:analysis} and the predictions of the Highland formula are shown by lines of width representing the uncertainty in thickness.]{\includegraphics[width=0.48\textwidth, keepaspectratio]{Figures/muEDM_Dec2021/gf-highland_evaluation.png}\label{fig:muEDM:bt2021:results:models}}
             \caption{Results of the analysis of the different samples and confronted with predictions using the Highland formula and \gf. The details are not easy to read but the 'bring-home' message is that the results are somewhat in agreement and some improvement are planned on the analysis.}
-            \label{fig:muEDM:beamtime2021:results}
+            \label{fig:muEDM:bt2021:results}
         \end{figure}
-        
+
+\status{started}
 \section{Beamtime 2022: Telescope and entrance detector}
-    This second beamtime\footnote{Not counting the one for the \tpc + \grid of Sec.~\ref{sec:muEDM:gridpix:beamtime}, this is the second beamtime related to the entrance detector.} happened in November 2022.
-    The amis where:
+    This second beamtime\footnote{Not counting the one for the \tpc + \grid of Sec.~\ref{sec:muEDM:gridpix:beamtime}. This is the second beamtime related to the entrance detector.} happened in November 2022.
+    The aims were:
     \begin{outline}
         \1 Test of entrance scintillator with the additional `telescope'
-        \1 parassitic measurements for the \tpc+ \grid
+        \1 parasitic measurements for the \tpc+ \grid
     \end{outline}
-    This time I, togheter with Prof. Angela Papa and a David St\"{a}ger (a master student from ETH) partecipated actively in the development of the setup. 
-    In particular we took care of the entrance scintillator, auxiliary detectors, the electronic, vacuum system, and one version of the telescope. 
-    To test different reading options a second  telescope was developed by the Shanghai part of the collaboration and they also helped developing the mechanical structure.
-    
+    This time I, together with Prof. Angela Papa and David St\"{a}ger (a master student from ETH) participated actively in the development of the setup. 
+    In particular, we took care of the entrance scintillator, auxiliary detectors, the electronic, vacuum system, and one version of the telescope. 
+    To test different reading options a second telescope was developed by the Shanghai part of the collaboration and they also helped develop the mechanical structure.
+
+    \status{started}
     \subsection{Construction}
-        \paragraph{Electronics}
+        
         \paragraph{Scintillators}
-        \paragraph{Final setup}
-        \paragraph{Shanghai's version} 
-    \begin{figure}   
+        The thin scintillators used during this beamtime had already been tested for previous purposes. 
+        We had \SI{100}{\micro m} and \SI{200}{\micro m} to be used as entrance and exit from the telescope.
+        These were already mounted on PCB boards with multiple SiPMs as readouts. The SiPMs were read all together so the sum of the signals was the only information available.
+        An example of this setup is shown in Fig.~\ref{fig:muEDM:thin_scintillators}.
+        On the other side, the long scintillators which compose the telescope were not already available.
+        Two versions were built in parallel.
+        \begin{outline}
+            \1 The "Shanghai's version" was made of $200\times 20\times\SI{10}{mm}$ scintillators read on one side.
+            \1 The "Italian's version" was made of $200\times 25\times\SI{5}{mm}$ scintillators read on both sides.
+        \end{outline}
+        Two versions were built to study how much the longitudinal information of the hits on the telescope would benefit the study of the overall system.
+        I worked on the soldering of the SiPMs on the PCB boards for the readout (3 per side).
+        Then I glued the scintillators using \textit{optical cement}.
+        The gluing to the PCB is shown in Fig.~\ref{fig:muEDM:bt2021:setup:gluing}.
+        Gluing the scintillators this way, we knew small gaps between them after mounting the telescope were unavoidable. 
+        This was actually to confront it with the Shanghai telescope\footnote{Being my first gluing I used too much optical cement, which further increased the gap between crystals.}, for which the cross-talk between different crystals was expected.
+
+        \begin{figure}
             \centering
-            \subfloat[Custom feed-throughs: PCB board, with soldered connectors, sealed with Stycast in a blind flange.]{\includegraphics[width=0.49\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/feedthrough.png}\label{}}
+            \includegraphics[width = 0.8\textwidth]{Figures/muEDM/thin_scintillators.jpg}
+            \caption[muEDM: Thin scintillators for the beamtimes.]{Picture of different scintillators mounted on PCBs and read by multiple SiPMs. The signals of the SiPMs are summed and different thicknesses were already available at the time of the 2021 beam time.}
+            \label{fig:muEDM:thin_scintillators}
+        \end{figure}
+
+        \paragraph{Electronics}
+        The First challenge was to bring the necessary power to the detectors and bring the readout out of the vacuum chamber.
+        The choice was to use a WaveDream board as a DAQ unit for this beamtime.
+        This meant N connection were needed.
+        We custom-made the necessary feed-throughs, gluing with \stycast PCB boards through two blind flanges.
+        The connectors were then soldered to the PCB, creating the feed-throughs shown in Fig.~\ref{fig:muEDM:bt2021:setup:feedthrough}.
+        
+        \paragraph{Final setup}
+        Combining the thin scintillators as \textit{gate} and \textit{exit} with the telescope and the needed feed-throughs we get the complete setup shown in Fig.~\ref{fig:muEDM:bt2021:telescope:front}.
+        The only parts missing been a veto scintillator ($100\times 100\times\SI{5}{mm}$ with a circular \SI{10}{mm} hole) to optimize the particle selection and a tube to contain the whole thing.
+        For this last item, to allow the feed-throughs to be on the side of the setup, we used a "T" beampipe piece, shown in Fig.~\ref{fig:muEDM:bt2021:telescope:built}.
+        
+        \begin{figure}   
+            \centering
+            \subfloat[Custom feed-throughs: PCB board, with soldered connectors, sealed with Stycast in a blind flange.]{\includegraphics[width=0.49\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/feedthrough.png}\label{fig:muEDM:bt2021:setup:feedthrough}}
             \hfill
-            \subfloat[A small PCB board with 3 SiPMs and one connector attached with optical cement to one of the scintillators.]{\includegraphics[width=0.49\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/SIPMgluing.png}\label{}}
-            \caption{Part of the preparation needed for the beamtime was to develop the detectors, as well as the vacuum in which the measurement would have taken place.}
-            \label{fig:muEDM:beamtime2021:setup}
+            \subfloat[A small PCB board with 3 SiPMs and one connector attached with optical cement to one of the scintillators.]{\includegraphics[width=0.49\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/SIPMgluing.png}\label{fig:muEDM:bt2021:setup:gluing}}
+            \caption[muEDM 2022: entrance preparations]{Part of the preparation needed for the beamtime was to develop the detectors, as well as the vacuum in which the measurement would have taken place.}
+            \label{fig:muEDM:bt2021:setup}
         \end{figure}
         
         \begin{figure}   
             \centering
-            \subfloat[Assembly of the \textit{telescope} with \textit{entrance} and \textit{veto}.]{\includegraphics[width=0.49\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/telescope_side.png}\label{}}
+            \subfloat[Assembly of the \textit{telescope} with \textit{entrance} and \textit{veto}.]{\includegraphics[width=0.49\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/telescope_front.png}\label{fig:muEDM:bt2021:telescope:front}}
             \hfill
-            \subfloat[``T'' beamline piece used as vacuum chamber.]{\includegraphics[width=0.49\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/telescope_built.png}\label{}}
-            \caption{The \textit{entrance} scintillator, the \textit{telescope}, and the \textit{veto} were assembled in a rigid structure. A ``T'' beamline piece was used to put the detector in the beamline. The lateral flange was adapted for the feedthroughs while, on the back, a \mylar widow was mounted to allow further measurements of the beam.}
-            \label{fig:muEDM:beamtime2021:setup}
+            \subfloat[``T'' beamline piece used as vacuum chamber.]{\includegraphics[width=0.49\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/telescope_built.png}\label{fig:muEDM:bt2021:telescope:built}}
+            \caption[muEDM 2022: entrance setup]{The \textit{entrance} scintillator, the \textit{telescope}, and the \textit{veto} were assembled in a rigid structure. A ``T'' beamline piece was used to put the detector in the beamline. The lateral flange was adapted for the feedthroughs while, on the back, a \mylar widow was mounted to allow further measurements of the beam.}
+            \label{fig:muEDM:bt2021:telescope}
         \end{figure}
+
+        \paragraph{Additional items}
+        After the system just described, two more items were added:
+        \begin{outline}
+            \1 SIMON/PIL: Beam monitors were used to characterize the beam.
+            \1 \tpc+ \grid: Used parasitically to gather some missing details, which were merged to the data from 2021 beam-time in the publication already mentioned (see Sec.~\ref{sec:muEDM:gridpix:beamtime}) \cite{muEDM:PSI:GridPix}.
+        \end{outline}
     \subsection{Data taking}
     \subsection{Data analysis}
-    
+
+\status{started}
 \section{Beamtime 2023: Multi readout entrance}
 \label{muEDM:beamtime2023}
+    The beamtime at the end of 2023 had four main goals:
+    \begin{outline}
+        \1 Test the beam alignment
+        \1 Test the multi-readout entrance scintillators
+        \1 Develop a Time OF Flight (TOF) measurement to study the momentum spread.
+        \1 Test the injection channel into the magnet
+    \end{outline}
+
+    \status{started}
     \subsection{Data taking}
+    \subsubsection{Setup}
+        Let's start by describing the setup used during this beam-time.
+        As already introduced 
+
+        \paragraph{Injection channel}
+        Another key aspect of this beamtime is the study of the injection channel in the magnet. 
+        Here the fringing fields could behave as magnetic mirrors, rejecting the incoming muon, or deflecting them from the ideal trajectory.
+        The expected stress for these injection channels is significant and for this reason, a proper holding structure was developed.
+        The \ansys structural simulation and the CAD design of the holder are shown in Fig.~\ref{fig:muEDM:bt2023:injectionCAD}
+        
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.8\textwidth]{Figures/muEDM_Dec2023/muEDM2023_injection_ANSYS.png}
+            \includegraphics[width=0.8\textwidth]{Figures/muEDM_Dec2023/muEDM2023_injection_CAD.png}
+            \includegraphics[width=0.8\textwidth]{Figures/muEDM_Dec2023/TOF_Setup.png}
+            \caption[muEDM 2023: Injection support structure.]{An injection support structure was developed to prevent the injection system from being bent by the magnetic fringing fields. This support was studied with \ansys}
+            \label{fig:muEDM:bt2023:injectionCAD}
+        \end{figure}
+        
+        \paragraph{Beam centering monitor}
+        The first item in the setup is a squared detector made of scintillators arranged to have a squared hole.
+        The aim of this detector, as outlined in Ch.~\ref{ch:muEDM}, is to center the beam.
+        A picture of the detector is in Fig.~\ref{} while the details of the working principles were previously discussed.
+        
+        \paragraph{Time Of Flight (TOF)}
+        Following the beam monitor, two scintillators are used to evaluate the time of flight.
+        The idea is to use thin scintillators to reduce the multiple scattering.
+        From the previous beamtime, we know we can use $\SI{100}{\micro m}\divisionsymbol\SI{200}{\micro m}$ achieving an intrinsic time resolution of $\upsigma_{int}\approx\SI{300}{\micro s}$.
+        The aim here is to evaluate the momentum spread of the beam by measuring the TOF.
+        The difference in momentum translates into the difference in time of the scintillator signals $\Delta t$. 
+        The distribution of $\Delta t$ is the convolution of the momentum distribution and the intrinsic time resolution of the system.
+        Assuming a Gaussian distribution for the beam momentum, centered around \SI{28}{MeV/c} and having spread 1\%, 3\%, and 5\%, we can evaluate the $\Delta t_{measured}$ for different distances.
+        In Fig~\ref{fig:muEDM:bt2023:TOFPython} the expected distributions for $1\%$ spread and $\upsigma_{int}\approx\SI{300}{\micro s}$, while the \textit{std. dev.} of the obtained distributions is shown as a function of distance for 3\% and 5\%.
+        From these (rough) estimations we can conclude a 1\% momentum spread, with the given $\upsigma_{int}$ and reasonable distances, cannot be appreciated. 
+        The situation seems different for 3\% and 5\%.
+        
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{Figures/muEDM_Dec2023/histo_28_1_300.png}\\
+            \includegraphics[width=0.49\textwidth]{Figures/muEDM_Dec2023/trend_28_3_300.00.png}
+            \hfill
+            \includegraphics[width=0.49\textwidth]{Figures/muEDM_Dec2023/trend_28_5_300.00.png}
+            \caption[muEDM 2023: TOF momentum spread.]{A simple Python simulation to evaluate the resolution for the TOF for different distances, momentum spread, and time intrinsic resolution of the couple of scintillators used. For $\upsigma_{int}=\SI{300}{ps}$ we do not appreciate a 1\% spread in momentum while we have the sensitivity for 3\% and 5\%.}
+            \label{fig:muEDM:bt2023:TOFPython}
+        \end{figure}
+
+        \paragraph{Multi-readout \textit{gate}}
+        
+        \begin{figure}
+            \centering
+            \includegraphics[height=5cm]{Figures/muEDM_Dec2023/TOF_soldering.jpg}
+            \includegraphics[height=5cm]{Figures/muEDM_Dec2023/TOF_CAD.png}
+            \caption[muEDM 2023: TOF detector soldering.]{A picture of the TOF detectors used during the 2023 December beam-time. Thin scintillators (50 and \SI{100}{\micro m}) read on four sides by four SiPMs.}
+            \label{fig:muEDM:bt2023:TOFPython}
+        \end{figure}
+        
     \subsection{Data analysis}
 
 \status{started}

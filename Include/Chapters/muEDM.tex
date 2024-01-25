@@ -10,6 +10,8 @@ The study of systematic uncertainties will close this chapter.
 As always, the early stage of the experiment means the rate of changes and improvement is outstanding. 
 This my attempt to an up-to-date description but some details might be already outdated.}
 
+\cite{muEDM:Semertzidis:2001} \cite{muEDM:Adelmann:2010} \cite{muEDM:J-PARC:2011} \cite{muEDM:J-PARC:2016} \cite{muEDM:PSI:2021} \cite{muEDM:PSI:Mikio:2022} \cite{muEDM:PSI:Kim:2022}
+
 \status{review}
 \section{Electric Dipole Moment}
     As introduced in \ref{intro:edm}, the Hamiltonian describing the spin dynamics is:
@@ -64,7 +66,8 @@ This my attempt to an up-to-date description but some details might be already o
         As discussed in \ref{sec:exp:edm}, the last decades saw a continuous effort to measure the EDM of different particles.
         There the experiments setting the current limits were discussed but we report in Tab.~\ref{tab:edm} the results to aid the reader.
         It is important to note there are two limits for $\upmu$: one obtained by rescaling the limit on $d_e$, obtaining an \textit{indirect limit}; one, less stringent, is a \textit{direct} limit ($^*$).
-
+        
+        \setcounter{table}{0}
         \begin{table}[h]
             \centering
             \begin{tabular}{|c|c|c|}
@@ -81,7 +84,7 @@ This my attempt to an up-to-date description but some details might be already o
                 g-2 \cite{muEDM:direct} & $\upmu$ & \num{1.8e-19} \\
                 \hline
             \end{tabular}
-            \caption{Sumary of the current limits on the EDM for neutron electron and muon.}
+            \caption[]{Sumary of the current limits on the EDM for neutron electron and muon.}
             \label{tab:edm}
         \end{table}
 
@@ -105,15 +108,7 @@ This my attempt to an up-to-date description but some details might be already o
             |\bm{\Pi}(t)|=P(t)=P_0\sin(\omega_e t)\approx P_0 \omega_e t \approx 2P_0\frac{d_\mu}{\hbar}\frac{E_f}{a\gamma^2}t
             \label{eq:edm:polarization}
         \end{equation}    
-        At this point, we would like to evaluate the sensitivity to this vertical build-up and this is dependent on the experimental setup investigated.
-        \begin{equation}
-            \dv{P}{d_\mu}=\frac{2P_0E_ft}{a\hbar\gamma^2}
-        \end{equation}     
-        \begin{equation}
-           \sigma(d_\mu)=\frac{a\hbar\gamma}{2P_0E_f\sqrt{N}\tau_\mu A}
-        \end{equation}  
-        
-       
+        The evaluation of the sensitivity will follow a brief introduction to the muEDM experiment, to better familiarize the reader with the system.
 
         \begin{figure}
             \centering
@@ -183,21 +178,158 @@ This my attempt to an up-to-date description but some details might be already o
     \subsection{Positron tracking}
         The development of the positron tracker has been a big part of my work in the collaboration.
         For this reason, an in-depth description will follow in a dedicated chapter (see Ch.~\ref{ch:muEDM:tracker}) while here we will just outline the basic idea.
-        The project is to use two subsystems:
+        The project started with a `two subsystems' approach:
         \begin{outline}
             \1 A silicon pixel external tracker will be used to track precisely the transverse position of the positron. 
-            The aim of this sub-detector is to measure the g-2 precession to fine-tune the radial electric field to achieve the frozen-spin condition.
-            A straw-tube-based alternative design for this sub-detector is also under study.
+            This sub-detector aims to measure the g-2 precession to fine-tune the radial electric field to achieve the frozen-spin condition.
+            A straw-tube-based alternative design for this sub-detector as also been studied but later discarded.
             \1 An internal scintillating fiber detector (with comparable resolution on the transverse position) will complement the silicon pixel with additional hits. 
             The requirement is to have a better resolution on the longitudinal position of the hits to measure the EDM by looking at the pitch of the outgoing helical track.
             I dedicated most of my effort to this sub-detector.
         \end{outline}
+        Unfortunately, the development of the Pixel detector met some complications and we will rely exclusively on the scintillating fibers during Phase I, prompting a review of the whole detector design.  
 
+\status{review}
+\section{Sensitivity}
+\label{muEDM:sensitivity}
+    If the muon spin has a component parallel to the main magnetic field, the difference in probability $p$ for positron emission along ($p_\uparrow$) or opposite ($p_\downarrow$) the magnetic field will generate an asymmetry
+    \begin{equation}
+        A = \frac{p_\uparrow - p_\downarrow}{p_\uparrow + p_\downarrow}
+    \label{eq:asym_theory}
+    \end{equation}        
+    For an EDM-induced spin precession, the observable is the time derivative of $A$.
+    The variables $p_\uparrow$ and $p_\downarrow$ are the result of the angular distribution of Michel decay positrons
+    \begin{equation}
+        W(x, y)dxdy = x^2 \left((3-2x) + (2x - 1)y\right)dxdy,
+    \end{equation}
+    where $x = E/E_\mathrm{max}$, and $y = \lvert \vec p_\mu \cdot \vec p_e \rvert$ is the angle between the momenta of the muon and decay positron. 
+    We can express the non-boosted variables in terms of the boosted ones, such as
+    \begin{equation}
+	u = \frac{E'}{E'_\mathrm{max}} = x\frac{\sqrt{\gamma^2 (y+\beta)^2 + 1 - y^2}}{\gamma(1+\beta)},\quad
+	v = \cos\left(\arctan\frac{E'_x}{E'_z}\right) = \frac{1}{\sqrt{(E'_x/E'_z)^2 + 1}}.
+    \end{equation}
+    Expressing non-boosted variables with these, and with some manipulation, we obtain the boosted energy spectrum $N(u)$, the asymmetry $A(u, v)$, and its rate of change $\partial_\Psi A$ with respect to the polar angle $\Psi$ of the spin.
+    For details, see \cite{chavdar:2023}.
+    These variables are shown in Fig.~\ref{fig:n_dot_a} for phases I and II.
+    \noindent
+    The aim is then to optimize the sensitivity by applying a selection of positron energies and emission angles at the cost of statistics. Therefore, we optimize the sensitivity to $d_\mu$: $\sigma(d_\mu) \sim 1/(\alpha\sqrt{N})$ and define the figure of merit, where $N_{e^+}$ is the number of detected decay positrons, $N_{\mu^+}$ is the total number of muons stored, and $\tilde\alpha$ is the weighted average of the rate of change of the parity-violating decay asymmetry. 
+
+    \begin{equation}
+	F = \tilde\alpha \sqrt{\frac{N_{e^+}}{N_{\mu^+}}}; \ 
+    \tilde\alpha = \frac{1}{N_{\mu^+}} \int \partial_\Psi A(u) N(u)
+	du,
+	\label{eq:figure_of_merit}
+    \end{equation}
+
+    At this point, we have a few options:
+    \begin{outline}
+        \1[A] The first option is to count all positrons, independently of the emission variables. This leads to $F=\tilde\alpha \approx 0.166$ for both phases I and II
+        \1[T] The second option is to count only positrons above a given fractional energy $u_0$. For the two phases, maximizing the figure of merit results in 0.22 for $u_0\approx0.60$ and 0.17 for $u_0=0.18$
+        \1[W] Last option is to define emission angle and/or fractional energy bins. 
+        For each bin $(u, \theta, \phi)$ we can define a figure of merit $W_{ijk} = \alpha_{ijk} \sqrt{N_{ijk}}$, with $N_{ijk}$ as integral of $ N(u, \theta, \phi)$ on the $ijk$ bin, and $\alpha_{ijk}$ the integral of $ \partial_\Psi A(u,
+	\theta, \phi) N(u, \theta, \phi) / N_{ijk}$.\\
+        The resulting figure of merit is then $\mathcal{W} =  \sqrt{\sum_{ijk} W_{ijk}^2}$ and it's maximum is $\approx0.29$.
+        On a practical level, it depends on the reconstruction in the different bins and is evaluated as:
+        $$W^2_{ijk} = \frac{(N_\uparrow - N_\downarrow)^2}{N_\uparrow + N_\downarrow},\text{ and }  \dot A_{ijk} = \frac{d}{dt} \left( \frac{N_\uparrow - N_\downarrow}{N_\uparrow + N_\downarrow} \right)$$
+    \end{outline}
+    All these values are illustrated in Tab.~\ref{tab:AnalysisMethods}. 
+    The key aspects are clearly shown in Fig.~\ref{} and here sumarized.
+    In the Phase I, the impact of positrons with an energy below \SI{27.6}{MeV} on measurement asymmetry is negligible. 
+    Optimal sensitivity is achieved when considering positrons within an opening angle range of \SI{30}{\degree} to \SI{90}{\degree}, provided their energy exceeds \SI{41}{MeV}. 
+    For PhaseII, valuable asymmetry information is present in emission angles up to \SI{135}{\degree} and energies surpassing \SI{21}{MeV}.
+    
+\begin{figure}
+	\subfloat[Phase~I, $p = \SI{28}{MeV/c}$]{\includegraphics[width=0.49\columnwidth]{Figures/muEDM/Tracker/n_a_afb.png}}
+	\hfill
+	\subfloat[Phase~II, $p = \SI{125}{MeV/c}$]{\includegraphics[width=0.49\columnwidth]{Figures/muEDM/Tracker/n_a_afb_PhaseII.png}}
+	\caption{Positron energy distribution $N$, rate of change of asymmetry $\partial_\Psi A$ evaluated for spin pointing opposite and along the momentum, respectively for Phase~I and II\@. The g-2 precession is deduced from the asymmetry~($A_\mathrm{fb}$ green) between the energy distributions, while the EDM signal is proportional to the directional asymmetry~(red). The spectrum is divided into two to improve the visibility of the plot. The arrows point to the mean rate of change of asymmetry $\tilde \alpha$ and the fraction of the positron spectrum at the optimal threshold using the T-method.
+ }
+	\label{fig:n_dot_a}
+\end{figure}
+
+
+\begin{table}
+\begin{tabular}{@{}p{2.0cm}@{\hspace{10pt}}p{2cm}ccc@{\hspace{10pt}}p{2cm}ccc@{}}
+\toprule
+\multicolumn{1}{c}{\multirow{2}{*}{Method}} & \multicolumn{4}{c}{Phase I} & \multicolumn{4}{c}{Phase II} \\ \cmidrule(l{2pt}r{10pt}){2-5} \cmidrule(l{2pt}r{2pt}){6-9} 
+\multicolumn{1}{c}{} & Threshold \scriptsize$\times \SI{68.9}{MeV}$ & \multicolumn{1}{c}{$\tilde \alpha$} & \multicolumn{1}{c}{$N_{e^+}/N_{\mu^+}$} & \multicolumn{1}{l}{FoM} & Threshold \scriptsize$\times \SI{140.2}{MeV}$ & \multicolumn{1}{c}{$\tilde \alpha$} & \multicolumn{1}{c}{$N_{e^+}/N_{\mu^+}$} & \multicolumn{1}{c}{FoM} \\ \midrule
+Simple & None & 0.166 & 1.0 & 0.166 & None & 0.166 & 1.0 & 0.166 \\ \midrule
+T-method & 0.596 & 0.348 & 0.384 & 0.216 & 0.183 & 0.195 & 0.835 & 0.178 \\ \midrule
+W-method \scriptsize(20 energy bins) & None & -- & 1.0 & 0.251 & None & -- & 1.0 & 0.183 \\
+W-method \scriptsize (20 energy bins) & 0.4 & -- & 0.800 & 0.250 & 0.15 & -- & 0.876 & 0.183 \\ \midrule
+W-method \scriptsize (20x20x20 bins) & None & -- & 1.0 & 0.292 & None & -- & 1.0 & 0.280 \\
+W-method \scriptsize (20x20x20 bins) & 0.4 & -- & 0.800 & 0.291 & 0.15 & -- & 0.876 & 0.280 \\ \bottomrule
+\end{tabular}
+\caption{Summary of analysis methods. The ratio $N_{e^+}/N_{\mu^+}$ is the fraction of detected positrons with respect to the total number of injected muons and $\tilde \alpha$ is the mean asymmetry above a threshold. The values presented are the theoretical maximum and do not include the effects of multiple scattering of positrons or limited detector acceptance.}\label{tab:AnalysisMethods}
+\end{table}
+
+
+\status{started}
 \section{Systematics}
 \label{muEDM:systematics}
+    Like for the majority of the experiment at the edge of our current understanding, the systematic effects play a key role.
+    Most of the studies on this topic were performed by Chavdar Dustov, Post Doc at PSI. 
+    The key aspects have been compiled in a recent publication \cite{chavdar:2023}, on which this section relies. 
+    For the precursor and final experiment, the expected angular velocity of the spin induced by the EDM is here evaluated. These values give us a benchmark for the systematic effects.
+    \begin{equation*}
+        \dot{\Pi} = 
+        \begin{cases}
+            \SI{21.15}{\micro rad \per \micro s};&\text{for $\beta=0.26$ and $d_\upmu=\SI{3e-21}{e cm}$} \\
+            \SI{1.26}{\micro rad \per \micro s};&\text{for $\beta=0.77$ and $d_\upmu=\SI{6e-23}{e cm}$}
+        \end{cases}
+    \end{equation*}
+    
 
+    \status{review}
+    \subsection{Possible sources of spin precessions}
+    We will now outline different sources of possible spin precession. 
+    From each of these sources, a limit on a specific aspect of the experiment was extracted. 
+    
+        \paragraph{Radial} If the particle stays at a constant radius, the coupling of the MDM with the radial component of the weakly focusing field generates a precession.
+        A similar effect arises from the non-zero longitudinal electric field. This component, seen from the muon reference frame, corresponds to a radial magnetic field and also leads to a radial precession.
 
-\cite{muEDM:Semertzidis:2001} \cite{muEDM:g-2:2008} \cite{muEDM:Adelmann:2010} \cite{muEDM:J-PARC:2011} \cite{muEDM:J-PARC:2016} \cite{muEDM:PSI:2021} \cite{muEDM:PSI:Mikio:2022} \cite{muEDM:PSI:Kim:2022}
+        \paragraph{Azimuthal} When stored in the equilibrium orbit the muons oscillate. Because of this oscillation, the momentum is not perfectly perpendicular to the longitudinal magnetic field. 
+        This produces a non-zero projection of the magnetic field along the trajectory.
+        On top of this, if the radial electric field is not \textit{exactly} set to the value required to freeze the spin, it will interact with the longitudinal momentum of the particle.
+        
+        \paragraph{$\bm{E}$ imperfections} Another source of precession can be the change of the electric field along the orbit.
+        This can be the case if the axes of the magnetic field and electric fields are displaced or at an angle.
+        Just like for the other sources, we will omit the calculations, which can be found in the reference \cite{chavdar:2023}. 
+        In these effects, is important to consider the cylindrical symmetry of the problem and evaluate the effects averaged over the circular orbit.
+        In the next order, the deviations from circular to distorted orbits are also an interesting exercise, although the approximation holds quite well.
+
+        \paragraph{Apparent spin precession} As already discussed, a longitudinal component of the spin produces an asymmetry. 
+        This asymmetry changes in time because of the coupling of the spin with the EM fields. 
+        What is measured is this rate of change of the asymmetry.
+        The number of observed particles in a direction will be $N_\uparrow = \Omega_\uparrow\varepsilon_\uparrow p_\uparrow N_{\mu^+} =  \kappa_\uparrow p_\uparrow N_{\mu^+}$, where $\kappa$ takes into account the acceptance and efficiency of the detector, while $p$ is the probability and $N_{\mu^+}$ the number of stopped muons.
+        \begin{equation}
+            A_m = \frac{1}{N_{\mu^+}} \left( \frac{n_\uparrow}{\kappa_\uparrow} - \frac{n_\downarrow}{\kappa_\downarrow} \right)
+        \end{equation}
+        This equation highlights why a requirement on the temporal stability of the detectors is necessary to avoid detecting apparent asymmetry.
+
+    \status{review}
+    \subsection{Comparison with \gf}
+        The analytical part of this study has two types of parameters: 8 stochastic, defining the initial condition of every stored particle, and 10 constant/slowly changing parameters of the experimental setup. 
+        To verify the results of the analytical mode, a \gf simulation was developed.
+        In this simulation, the EM fields can be calculated or interpolated from ANSYS field maps.
+        The simulation tracks the spin orientation in the muon and in the laboratory reference frame, which can be then compared with the analytic results.
+        The example in Fig.~\ref{fig:muEDM:systematics} shows very good agreement.
+
+        \begin{figure}
+            \centering
+            \includegraphics[width = 0.8\textwidth]{Figures/muEDM/gf_systematics.png}
+            \caption{\ltsp simulation for the kicker circuit.}
+            \label{fig:muEDM:systematics}
+        \end{figure}
+
+    \subsection{Constraits} 
+    
+        \begin{figure}
+            \centering
+            \includegraphics[width = 0.8\textwidth]{Figures/muEDM/systematic_table.png}
+            \caption{Table for the constraint extracted from the study of the different systematic effects.}
+            \label{fig:muEDM:systematics:table}
+        \end{figure}
 
 \status{review}
 \section{Schedule}

@@ -39,17 +39,14 @@
 % Define the custom command to include chapters
 \newcommand{\includechapters}[1]{%
     \ifstrequal{#1}{intro}{%
-        \input{Include/Chapters/Introduction}}{}
+        \input{Include/Chapters/Introduction}
+        %\input{Include/Chapters/muCool}
+    }{}
     \ifstrequal{#1}{muedm}{%
         \part{muEDM}
         \input{Include/Chapters/muEDM}
         \input{Include/Chapters/muEDM_entrance}
         \input{Include/Chapters/muEDM_tracker}
-    }{}
-    \ifstrequal{#1}{mucool}{%
-        \part{muCool}
-        \input{Include/Chapters/muCool}
-        \input{Include/Chapters/muCool_upgrade}
     }{}
     \ifstrequal{#1}{meg}{%
         \part{MEG II}
@@ -168,9 +165,12 @@
 \newcommand{\madx}{\textsc{Mad-X}\xspace}
 \newcommand{\gfb}{\textsc{G4Beamline}\xspace}
 \newcommand{\mylar}{Mylar$\textsuperscript{\textregistered}$\xspace}
-\newcommand{\tedlar}{TEDLAR$\textsuperscript{\textregistered}$\xspace}
+\newcommand{\tedlar}{Tedlar$\textsuperscript{\textregistered}$\xspace}
 \newcommand{\bc}[1]{BC{#1}$\textsuperscript{\textregistered}$\xspace}
+\newcommand{\ansys}{\textsc{Ansys}$\textsuperscript{\textregistered}$\xspace}
+\newcommand{\stycast}{\textsc{Stycast}$\textsuperscript{\textregistered}$\xspace}
 
+\newcommand{\lakeshore}{Lakeshore$\textsuperscript{\textregistered}$\xspace}
 
 \newcommand{\ra}{\rightarrow}
 
@@ -196,8 +196,11 @@
 %\usepackage{chapterbib}                                        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\DeclareCaptionLabelFormat{myformat}{Fig. #2}
-\captionsetup{labelsep=colon,labelformat=myformat}
+%\DeclareCaptionLabelFormat{myformat}{Fig. #2}
+%\captionsetup{labelsep=colon,labelformat=myformat}
+\usepackage[margin=0pt,font={small},labelfont={bf},labelsep=colon,format=plain]{caption}
+\captionsetup[figure]{name=Fig.}
+\captionsetup[table]{name=Tab.}
 
 \begin{document}
 
@@ -222,13 +225,12 @@
 
 %%   TOC
 \tableofcontents 	
-%\addcontentsline{toc}{chapter}{\listfigurename}
-%\listoffigures
-%\addcontentsline{toc}{chapter}{\listtablename}
-%\listoftables
-% \renewcommand{\lstlistlistingname}{List of Code}
-% \addcontentsline{toc}{chapter}{\lstlistlistingname} 
-% \lstlistoflistings
+\pagebreak
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+\pagebreak
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
 
 %%   NOMENCLATURE AND ACRONYMS
 %\printnomenclature
@@ -293,7 +295,6 @@
 %%%%%                %%%%%  
 \includechapters{intro}
 \includechapters{muedm}
-\includechapters{mucool}
 \includechapters{meg}
 
 %%   Conclusions
@@ -307,10 +308,10 @@
 %%%%%                %%%%%  
 
 %%   APPENDIX
-\cleardoublepage
-\appendix % to tell LaTeX that the following chapters are appendices
-\input{Include/Backmatter/Appendix/Appendix_G4TessellatedSolid}
-\input{Include/Backmatter/Appendix/Appendix_Kalman}
+%\cleardoublepage
+%\appendix % to tell LaTeX that the following chapters are appendices
+%\input{Include/Backmatter/Appendix/Appendix_G4TessellatedSolid}
+%\input{Include/Backmatter/Appendix/Appendix_Kalman}
 
 %%   BIBLIOGRAPHY
 %\cleardoublepage
@@ -319,9 +320,9 @@
 %\printbibliography[title=Complete Bibliography]
 
 %%   ACKNOWLEDGEMENTS
-\cleardoublepage
-\status{started}
-\addcontentsline{toc}{chapter}{Acknowledgement}
-\input{Include/Backmatter/Acknowledgement}
+%\cleardoublepage
+%\status{started}
+%\addcontentsline{toc}{chapter}{Acknowledgement}
+%\input{Include/Backmatter/Acknowledgement}
 
 \end{document} 

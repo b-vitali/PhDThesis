@@ -5,9 +5,10 @@
 {\itshape In this chapter the Charge EXchange reaction, a calibration for the liquid XEnon Calorimeter, will be discussed and an in-depth description of the associated Liquid Hydrogen Target is given. 
 Data taking, analysis, performances, and the different modifications will be also discussed.
 This target was designed in 2020 to overcome some limitations of the previous and in the last two years went through some heavy re-development.
-This calibration is cardinal for the correct functioning of the key subdetector of the MEG II experiment. It  was one of the main tasks in my involvement in this experiment and it absorbed a sizable portion of my time and effort.}
+This calibration is cardinal for the correct functioning of the key subdetector of the MEG II experiment. 
+This item was one of the main tasks in my involvement in this experiment and it absorbed a sizable portion of my time and effort.}
 
-\status{started} 
+\status{review} 
 \section{Charge EXchange reaction}
     As already discussed, the $\upmu \rightarrow e\upgamma$ process searched by MEG leads to a monochromatic photon at \SI{53.2}{MeV}.
     We saw in Sec.~\ref{sec:cw:calib} the XEC calibration which is performed three times a week. 
@@ -32,26 +33,39 @@ This calibration is cardinal for the correct functioning of the key subdetector 
 
 \status{started}
 \section{BGO}
+    \label{sec:LH2:BGO}
     The BGO crystal already mentioned, and shown in Fig.~\ref{fig:CEX:bgo}, is an auxiliary detector that plays a key role in two subjects of this thesis.
     For this reason, we will here describe it in some detail.
     BGO refers to \ce{Bi4Ge3O12}, a compound with a cubic crystal structure and often used as a scintillator.
     This detector is, in particular, a matrix 4x4 of \SI{4x4}{cm} crystals and mounted on a structure (see Fig.~\ref{fig:CEX:mover}) that allows it to translate and rotate around COBRA.
+    This detector plays the key role in the back-to-back event tagging but it was also used during the X17 search, subject of Ch.~\ref{ch:X17}.
 
 \status{started}
-\section{LH2 target working principle}
-    The details of the circuit and the operation changed on a yearly basis but it's worth do discuss the overall working principle before seeing the evolution of this system.
+\section{LH2 target}
+    The details of the circuit and the operation changed on a yearly basis but it's worth discussing the overall working principle before seeing the evolution of this system.
     Liquid Hydrogen was chosen to provide the protons needed for the CEX reaction.  
     The incoming 70.6 MeV/c $\pi^-$ are stopped in a cylindrical cell (60 mm diameter, 70 mm length) of 0.5 mm stainless steel containing liquid Hydrogen. 
     This corresponds to $\sim 90\%$ stopping efficiency.
     The hydrogen has to be kept liquid ($T<20.39$ K at 1 atm) and in the center of the COBRA magnet, requiring a cryogenic infrastructure to be inserted for 2 m.
     The target consists of four sub-systems:
     \begin{itemize}
-        \item A ``closed volume'' hydrogen circuit, in which a $1.5$ bar over-pressurized $100\ \ell$ buffer is connected to the target cell 
+        \item A ``closed volume'' hydrogen circuit, in which a over-pressurized $100\ \ell$ buffer is connected to the target cell 
         \item  A copper rod (2 m in length and 2 cm in diameter): supported and cooled at one end with liquid helium flowing in a copper coil; holding the target cell at the other.
         \item Vacuum Insulation for the whole system
-        \item A slow-control based on an SCS2000 \cite{midas} controlling: temperatures, pressures, He flux, and the alarm system
+        \item A slow-control based on an SCS2000\footnote{More info can be found here \href{https://daq00.triumf.ca/MidasWiki/index.php/Main_Page}{\underline{MIDAS}} and here \href{https://www.psi.ch/en/ltp-electronics/www-documents}{\underline{SCS and MSCB}}.} for: temperatures, pressures, and He flux
     \end{itemize}
-    The buffer volume for the gaseous hydrogen, as well as all the infrastructure and services, are kept outside the magnet. The circuit for the 2021 version is shown in Fig. \ref{fig:LH2:2021:circuit} and, to increase the readability, the different sub-circuits are color-coded:
+    
+    \paragraph{Working principle}
+    Let's now outline the working principle of this system.
+    The first step is to pressurize with a Helium bottle a Helium dewar.
+    When the liquid helium starts flowing in the copper coil, the copper rod is cooled on one side.
+    After thermalizing the whole copper rod, the cell temperature slowly follows, reaching the same temperature.
+    Once the temperature is low enough for the Hydrogen to condensate, this process in the cell reduces the Hydrogen pressure, sucking additional gas from the buffer.
+
+    \paragraph{The circuit}
+    The buffer volume for the gaseous hydrogen, as well as all the infrastructure and services, are kept outside the magnet. The circuit for the 2021 version is shown in Fig. \ref{fig:LH2:2021:circuit} and, to increase the readability, the different sub-circuits are color-coded. 
+    Similar sketches are available for the 2022 and 2023 versions, here not shown for simplicity.
+    The color coding is kept consistent:
     \begin{itemize}
         \item Blue - Hydrogen is filled into the buffer from a cylinder, which gets then removed.
         The buffer itself is connected to the cell, the exhausting line, a vacuum pump, piezoresistive pressure transmitters and a Nitrogen bottle
@@ -60,11 +74,12 @@ This calibration is cardinal for the correct functioning of the key subdetector 
         \item Green - Insulation vacuum system
         \item Yellow - A nitrogen bottle is used for purging the hydrogen when emptying the buffer and kept connected for safety
     \end{itemize}
+    
 
     \begin{sidewaysfigure}
         \centering
         \includegraphics[width=\textwidth]{Figures/LH2/2021/2021_LH2_circuit.png}
-        \caption{Circuit of the LH2 target. To increase the readability of the scheme of the circuit, the different sub-circuits are color-coded:\\ Blue - Hydrogen; Red - Liquid Helium; Green - Insulation vacuum; Yellow - A nitrogen}
+        \caption[CEX 2021: LH2 circuit.]{Circuit of the LH2 target. To increase the readability of the scheme of the circuit, the different sub-circuits are color-coded:\\ Blue - Hydrogen; Red - Liquid Helium; Green - Insulation vacuum; Yellow - A nitrogen bottle to flush the system.}
     \label{fig:LH2:2021:circuit}
     \end{sidewaysfigure}
 
@@ -75,10 +90,13 @@ This calibration is cardinal for the correct functioning of the key subdetector 
         There are two key indicators used to monitor the liquefaction process and stability of the system:
     
         \begin{itemize}
-            \item Temperature sensors: resistors(later replaced by Lakeshore silicon diodes sensors) have been put in thermal contact with the Cu rod at both ends (two per side for redundancy). 
+            \item Temperature sensors: resistors (later replaced by \lakeshore silicon diodes sensors) have been put in thermal contact with the Cu rod at both ends (two per side for redundancy). 
             The readings of these elements allow us to monitor the cooling at the Cu coil and the cell.
             \item Hydrogen pressure: at room temperature, the hydrogen is set to 1.5 bar over-pressure. When the liquefaction starts the overall pressure is reduced and can be linked to the amount of liquid Hydrogen in the cell. 
         \end{itemize}
+        \noindent
+        The procedures to operate the system were developed, discussed with the safety committee, and adapted to the different upgrades.
+        We will not discuss them here.
 
 \status{started}
 \section{2021}
@@ -92,62 +110,162 @@ This calibration is cardinal for the correct functioning of the key subdetector 
         As soon as the level was sufficient the pion beam would be used for CEX data taking for a specific patch of the XEC.  
         When the dewar needed to be exchanged, the data taking would be stopped and CR/calibrations would restart, waiting for the target to be sufficiently full to restart.
         \noindent
-        In figure \ref{fig:CEX:2021:datataking} is shown the history of the Hydrogen and Helium pressure at the dewar. 
+        In figure \ref{fig:CEX:datataking:2021} is shown the history of the Hydrogen and Helium pressure at the dewar, where the red line marks when the beam was on. 
         Interesting features are:
         \begin{outline}
             \1 The decreasing parts of the blue plot are the liquefaction period: the Hydrogen pressure drops because of the phase change
-            \1 During liquefaction, some spikes can be seen: these are instances in which the system became unstable and liquefaction stopped
-            \1 The speed of cooling and liquefaction is always the same because the result of hardware choices; 
+            \1 During liquefaction, some spikes can be seen: these are instances in which the system became unstable and liquefaction was lost
+            \1 The speed of cooling and liquefaction is always the same, a result of hardware 
         \end{outline}
         Overall, CEX data could be collected when the target was considered `full enough': below AAA bar, meaning \SI{0}{\%}. 
-        In the two weeks, this translates to efficiency of $\varepsilon_{2021}\approx0$.
+        In the two weeks, this translates to efficiency of $D_{2021}\approx0$.
         The efficiency for 2021 was lower than expected and the necessary statistic was not reached for every patch.
-        
-        \begin{figure}
-            \centering
-            \includegraphics[width = \textwidth]{Figures/LH2/2021CEX_LH2.png}
-            \caption{Measured hydrogen pressure in the target and helium pressure in the dewar used for cooling during 2021 CEX data taking. 
-            Beam was ON when the target was considered `full enough': below AAA bar, meaning \SI{0}{\%}. 
-            This translates to a time efficiency of $\varepsilon_{2021}\approx0$. 
-            Unfortunately, the low efficiency prevented the collection of the necessary statistics for every patch of the XEC.}
-            \label{fig:CEX:2021:datataking}
-        \end{figure}
     
     \subsection{Data anlaysis}
 
+\status{started}
 \section{2022}
-    \subsection{Upgrades}
-        \paragraph{He circuit}
-        \paragraph{Cup}
-        \paragraph{Shielding}
-        
-    \subsection{Data taking}
-        \begin{figure}
-            \centering
-            \includegraphics[width = \textwidth]{Figures/LH2/2022CEX_LH2.png}
-            \caption{Measured hydrogen pressure in the target and helium pressure in the dewar used for cooling during 2022 CEX data taking. 
-            Beam was ON when the target was considered `full enough': below AAA bar, meaning \SI{0}{\%}.  
-            This translates to a time efficiency of $\varepsilon_{2022}\approx0$ (against $\varepsilon_{2021}\approx0$). 
-            The improvement in efficiency allowed us to collect the necessary statistics for every patch of the XEC.}
-            \label{fig:CEX2022}
-        \end{figure}
+    After (the only partial success of) the 2021 CEX data-taking, major upgrades were needed.
+    We modified key aspects of the target and managed to test it before moving it to the experimental area.
+    This step was not possible in 2021 because of safety regulations around the usage of Hydrogen.
 
+    \status{started}
+    \subsection{Upgrades}
+        \paragraph{He circuit} The liquid helium circuit of the 2021 version had a  design flow, namely the `output' from the target was not under vacuum.
+        This was solved by adding an additional section to the back side of the target, similar in design to the `inlet`: a beam pipe part on which an evacuated pipe was soldered such that the nozzle of the transfer line could be connected.
+        A sketch of such part is in Fig.~\ref{fig:} while a picture of the target after this change is in Fig.~\ref{fig:}.
+        
+        \paragraph{Cell}
+
+        
+        \paragraph{Shielding} To improve the stability of the system and the thermal radiation of the vacuum pipe to the cold system, two types of shielding were introduced:
+        \begin{outline}
+            \1 A copper sheet was bent to create an intermediate cylinder between the main copper rod and the vacuum pipe. The reason is to have this shield to an intermediate temperature and reduce the thermal radiation of the system. 
+            \1 Multi-layer insulation\footnote{This type of insulation is standard in cryogenic infrastructure, for example, it is used in liquid helium dewars.} on the helium line, the main copper rod, and the hydrogen line. This insulation is made of alternated layers of thin metal and plastic `nets' to create concentric layers at different temperatures. 
+        \end{outline}
+        Pictures of the target after adding this shielding are in Fig.~\ref{fig:} and Fig.~\ref{fig:}. 
+
+        \paragraph{Sensors} The PT100 sensors used in 2021 were not suited for very low-temperature readings but were used due to time constraints. 
+        For this reason in 2022, we added two additional sensors from  \lakeshore.
+        These are \footnote{For additional info visit the \href{https://www.lakeshore.com/products/categories/overview/temperature-products/cryogenic-temperature-sensors/germanium}{\underline{\lakeshore}} website.} 
+        
+    \status{started}
+    \subsection{Data taking}
+        The 2022 data taking was similar in structure to the previous: roughly two weeks of CR and CEX runs alternated given the status of the target.
+        CEX data were collected when the target was considered `full enough': below AAA bar, meaning \SI{0}{\%}. 
+        In the two weeks, this translates to efficiency of $D_{2021}\approx0$.
+        The hydrogen and helium pressure during data-taking is shown in Fig.~\ref{fig:CEX:datataking:2022}.
+        The efficiency for 2022 was higher than the previous year and was enough to collect the necessary statistics for every patch.
+        
     \subsection{Data analysis}
 
+
+\status{started}
 \section{2023}
-    Although the 2022 CEX campaign was much more successful than the previous one, the limitations of this design and the second iteration dictated a hectic schedule during data taking. 
+    Although the 2022 CEX campaign was much more successful than the previous one, the limitations of the second iteration dictated a hectic schedule during data taking. 
     The (somewhat risky) modification of the liquid hydrogen cup turned out to be a good improvement but there was still room for refinement. 
+    Mainly, we wanted to reduce the time/amount of liquid Helium needed to reach the liquid hydrogen status. 
     For this reason, we went back to the drawing board.
+    The starting idea of the design used in 2021 and 2022 was to assess the feasibility of using a long Cu rod to transport the heat with the final aim of installing a 'cold head' as a cooling mechanism.
+    This system was proven good enough for the calibrations needed but eventually, the re-design of the system was deemed unnecessary.
+    Once the plan of installing a cryopump was no longer on the table, we opted to adapt the current design free from the constraint of having such a long system. 
 
-    \subsection{Upgrades}
+    \status{started}
+    \subsection{Upgrade}
         \paragraph{He circuit}
-        \paragraph{Cup}
-        \paragraph{Shielding}
+        The first item was to try reducing the time needed to cool the system down.
+        In this direction, the only change on the Helium circuit was to install a new cooling coil.
+        This was built in a similar fashion but longer (\SI{120}{mm} instead of \SI{60}{mm}) increasing the thermal conduction between liquid helium and the main copper parts.
+        A sketch of the new copper coil is shown in Fig.~\ref{fig:}.
+        On top of this change to the He circuit, we replaced the copper rod with a shorter copper cylinder, threaded on both sides, to reduce the thermal load of the system.
+        This meant the position of the cooling coil was moved further inside COBRA, requiring longer in/out helium lines. 
+        
+        \paragraph{Cell} Learning from the modifications done in 2022, a new Cell was produced (see Fig.~\ref{fig:}):
+        \begin{outline}
+            \1 This was built with the copper connection so that it could be screwed on the copper rod
+            \1 The thermal connection with the copper was improved by making the wall thinner (\SI{-999}{mm} instead of \SI{-999}{mm}) and having a larger copper surface, covering most of the wall (see Fig.~\ref{fig:})
+        \end{outline}
+        
+        \paragraph{Shielding} The shielding also went through few changes:
+        \begin{outline}
+            \1 Multi-layer insulation was added to the in/out helium lines, to prevent the liquid helium from evaporating before reaching the cooling coil.
+            \1 A copper shielding was added around the cooling section
+            \1 Multi-layer insulation was added to the cell itself to improve the stability of the system 
+        \end{outline}
+
+        \paragraph{Sensors} As already discussed, the slow control of the system is based on an SCS2000.
+        Just like in 2022, unfortunately, we did not manage to have the \lakeshore read by this module, meaning they were not recorded on the MIDAS page of the experiment.\\
+        In total, we had four \lakeshore sensors:
+        \begin{outline}
+            \1 Two sensors were placed on the inlet and outlet of the helium line, near the cooler.
+            \1 Two were used to follow the temperature of the cell
+                \2 one at the end of the Cu rod, to ensure the cooler-rod thermal connection
+                \2 one on the cell, to ensure the rod-cell thermal connection 
+        \end{outline}
+
+    \status{started}
+    \subsection{Tests}
+        A few hiccups with the production and delivery of the parts forced us into a hectic schedule to ensure the proper testing of this renovated system.
+        The main challenges were linked to: a mistake in the production of the cooler, which led to unwanted thermal connections; the reproducibility of the proper thermal connection when screwing the different parts together.
+        The first problem was solved by adjusting the assembly procedure. The second point was solved, with a bit of trial and error, using thermal grease and indium.
+        In Fig.~\ref{fig:CEX:2023:tests} the results of two successful liquefaction during the testing phase.
+        
+        \begin{figure}[ht]   
+            \centering
+            \subfloat[CEX test 20 Oct. 2023]{\includegraphics[width=\textwidth, keepaspectratio]{Figures/LH2/2023/CEX_test_201023.png}\label{fig:CEX:2023:tests:201023}}\\
+            \subfloat[CEX test 23 Oct. 2023]{
+            \includegraphics[width=\textwidth, keepaspectratio]{Figures/LH2/2023/CEX_test_231023.png}}
+            \caption{}
+            \label{fig:CEX:2023:tests}
+        \end{figure}
+    
+    \status{started}
     \subsection{Data taking}
-    \subsection{Data anlaysis}
+        The last test outside the experimental area was performed on the 13th Oct. 2023 and the target was installed on the 14th.
+        The warped shape of the insertion system forced us to insert the target lower than the beam height. 
+        After managing a sufficient alignment in \textbf{x} and \textbf{z}, the target was lifted to center it vertically (\textbf{y}). The alignment, shown in Fig.~\ref{fig:LH2:2023:UCI} was performed by observing the tip of the target via the UCI camera (this item was discussed in Sec.~\ref{sec:MEG:target})
+        The main points of this data taking were the following:
+        \begin{outline}
+            \1 The cell was full (>90\%) during data taking. This was unfortunately not the case in 2021 and 2022, during which we collected data when the level was >50\%
+            \2[->] Higher trigger rate ($30\ra45$Hz) and better quality events, improvement of $>\times1.5$
+            \1 A shorter dead time after the dewar exchange: 30 mins for cooling and 2h for liquefaction
+            \2[->] Higher duty-cycle $15\ra20h/24h$, an improvement of $\times1.3$
+            \1 We used a 250L dewar every 24h
+            \2[->] Cheaper than last year and simpler to organize
+        \end{outline}
+        Overall more CEX data were collected in a shorter period, marking a success for this iteration of the LH2 target. 
 
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.5\textwidth]{Figures/LH2/2023/LH2_UCI_2023.png}
+            \caption[Short Caption]{NB: the UCI pictures are upside-down}
+            \label{fig:CEX:2023:tests}
+        \end{figure}
+
+    \begin{figure}[ht]   
+    \centering
+        \subfloat[CEX 2021: beam below \SI{2.1}{bar}. 
+        This translates to a duty cycle of $D_{2021}\approx0.45 (0.55)$,  with target level $>50\%$. 
+        The low efficiency prevented the collection of the necessary statistics for every patch.]{\includegraphics[width=0.9\textwidth, height=6cm]{Figures/LH2/2021CEX_LH2.png}\label{fig:CEX:datataking:2021}}\\
+        \subfloat[CEX 2022: beam below \SI{2.1}{bar}. 
+        This translates to a duty cycle of $D_{2022}\approx0.6$, with target level $>50\%$.]{\includegraphics[width=0.9\textwidth, height=6cm]{Figures/LH2/2022CEX_LH2.png}\label{fig:CEX:datataking:2022}}\\
+        \subfloat[CEX 2023: beam below \SI{1.9}{bar}. 
+        This translates to a duty cycle of $D_{2023}>0.8$, with target level $>90\%$.]{
+        \includegraphics[width=0.9\textwidth, height=6cm]{Figures/LH2/2023CEX_LH2.png}\label{fig:CEX:datataking:2023}}
+        \caption{Measured hydrogen pressure in the target and helium pressure in the dewar used for cooling during the different CEX data takings. 
+        The beam was ON (red line) when the target was considered `full enough'. This value changed as a consequence of the different upgrades of the target and was evaluated by measuring the XEC trigger rate.}
+        \label{fig:CEX:datataking}
+    \end{figure}
+
+\status{started}
 \section{Conclusions}
+    The duty cycle, the stability, and the level of the target improved significantly during these three years: $D_{2021, 50\%}\approx 0.55 \ra D_{2022, 50\%}\approx0.6 \ra D_{2023, 90\%}>0.8$.\\
 
+    \noindent
+    The development of this system has been my first (and only) real immersion in the vast subject of cryogenics. 
+    Many things were quite new to me, from the materials' thermal properties to the inner structure of a Helium dewar and from the working principle of low-temperature sensors to the CAD design of peek/vetronite parts required for structural stability and thermal insulation.
+    Although being still far from any shade of \textit{expertise}, this has been quite an eye-opening endeavor.
+    
 \status{started}
 \printbibliography[
     heading = bibliographychapter,

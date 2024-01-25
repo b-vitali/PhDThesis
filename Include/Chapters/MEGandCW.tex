@@ -35,6 +35,7 @@
 
 \status{review}
 \section{The liquid XEnon Calorimeter}
+    \label{sec:MEG:XEC}
     As already introduced, the kinematic variables (E, t, position) of the $\g$, expected to be monochromatic at $52.8$ MeV, are measured with the liquid XEnon Calorimeter (XEC).
     This is a $\SI{900}{\liter}$ LXe c-shaped tank and the main improvement from MEG has been the increase in the granularity of the photosensors on the inner face: from 216 \SI{5}{cm} round PMTs to 4092 $15\times\SI{15}{mm^2}$ Multi-Pixel Photon Counters (MPPCs). 
     The other faces are equipped with the same 668 PMTs as in MEG.
@@ -120,7 +121,7 @@
 
     \paragraph{\ce{^7Li(p,\g)^8Be}}
     The \SI{17.6}{MeV} line of the \ce{^7Li(p,\g)^8Be} reaction is also used to calibrate the XEC.
-    This line is produced impinging a beam of \SI{500}{keV} protons, produced via a Cockcroft-Walton (which will be described in a following section) on a \ce{^7Li} target.
+    This line is produced impinging a beam of \SI{500}{keV} protons, produced via a Cockcroft-Walton (which will be described in a following section) on a Lithium tetraborate (\ce{Li2B4O7}) target.
 
     \paragraph{CEX}
     The last of the calibrations is more complex and requires changing the beam from $\Am$ to $\upmu$. 
@@ -184,6 +185,14 @@
             \1 Make so that a positron with a given momentum would follow a trajectory of specific radius \textit{independently of the angle} at which the particle has been emitted
             \1 \textit{Quickly} sweep particles emitted at very steep angles, to reduce the pileup
         \end{outline}
+        The profile of the axial magnetic field obtained is shown in Fig.~\ref{fig:MEGII:COBRA:B}
+        
+        \begin{figure}
+            \centering
+            \includegraphics[width = 0.6\textwidth]{Figures/MEG/COBRA_B.jpeg}
+            \caption{The specific profile of the axial magnetic field of COBRA is the result of the 5 different coils. The aim is to sweep the particles at higher $\abs{z}$ and have a radius, independent from the direction of emission, for the $\Ae$ at $\sim$\SI{50}{MeV}.}
+            \label{fig:MEGII:COBRA:B}
+        \end{figure}
         
     \status{started}
     \subsection{Cylindrical Drift CHamber (CDCH)}
@@ -229,15 +238,15 @@
         The arrival time of the first cluster is determined from the summed waveform of both ends after adjusting their relative timing. 
         The drift time of the first cluster is converted to DOCA using the time-distance relationship (TXY tables).
 
-        \paragraph{Track} After identifying and reconstructing hits, a pattern recognition algorithm (track finder) and a track-fitter algorithm, both based on Kalman filters\footnote{The Kalman filter is a recursive procedure to `bend' the result of a fit. A simple example explanation and an example in 2D are shown in App.~\ref{ch:Kalman}, taken from \cite{mythesis}}, are employed:
+        \paragraph{Track} After identifying and reconstructing hits, a pattern recognition algorithm and a track-fitter algorithm (both based on Kalman filters\footnote{This is a recursive procedure to `adapt' the result of a fit. A simple explanation and a 2D-example are in App.~\ref{ch:Kalman} \cite{mythesis}}) are employed:
 
         \begin{outline}
             \1 The track finder initiates from hit pairs in outer layers with lower occupancy and generates track seeds by combining compatible pairs from different layers. 
             Each seed is propagated through adjacent layers, checking consistency with hits and updating track parameters. 
             Candidates with at least seven hits are formed.
-            \1 The track fitter utilizes an extension of the Kalman filter called the deterministic annealing filter (DAF) and resolves left/right ambiguities. 
+            \1 The track fitter utilizes an extension of the Kalman filter called the deterministic annealing filter (DAF) \cite{Kalman:DAF} and resolves left/right ambiguities. 
             It fits individual track candidates from the track finder, combining segments to form multi-turn tracks within CDCH. 
-            Tracks are propagated to the pTC and backward to the target, with re-fitting based on updated DOCA using the best-estimated T0.
+            Tracks are propagated to the pTC and backward to the target, with a re-fitting based on updated DOCA.
         \end{outline}
 
         \noindent
@@ -247,11 +256,33 @@
 
 
         \paragraph{Perfomrance and efficiency}
+        To evaluate the resolutions, the \textit{double turns} are studied: when a particle traverses the CDCH in two positions, the two trajectories are fitted separately and the difference of the kinematical variables is studied.
+        The resulting resolution is not $\sqrt{2}$ of the core resolution because the effect of the particle interaction with matter is not the same for the two turns.
+        The results need to be corrected with ad hoc simulations for both Signal and Michel positrons.
+        The resulting values for the 2021 run are shown in Tab.~\ref{tab:CDCH:resolution}.
+        
+
+\begin{table}
+    \centering
+    \begin{tabular}{ccccc}
+        \hline
+        Data & $\upsigma_{y_{\Ae}}$ & $\upsigma_{z_{\Ae}}$ & $\upsigma_{\phi_{\Ae}}$ & $\upsigma_{\theta_{\Ae}}$\\
+        \hline
+        \hline
+        2021 DT& 1.07 & 2.94 & 9.62 & 11.86\\
+        Signal DT& 1.00 & 2.42 & 8.57 & 10.38\\
+        Michel DT& 1.01 & 2.49 & 9.11 & 11.40\\
+        \hline
+        Effective & 0.72 & 2.0 & 4.1 & 7.4\\
+    \end{tabular}
+    \caption[MEG II: resolutions and efficiencies]{Double Turn (DT) resolutions for 2021 data, Signal MC and Michel MC simulations. The MCs are used to correct the value extracted from the data and the last row gives the effective core resolutions.}
+    \label{tab:CDCH:resolution}
+\end{table}
 
         \begin{figure}
             \centering
             \includegraphics[width = 0.48\textwidth]{Figures/MEG/CDCH_michelfit.png}
-            \caption{Michel positron spectrum in logarithmic (a) and linear (b) scales. Black - data; Blue - 3 Gaussians to describe the resolution; Red- fit. The acceptance curve is shown in (c).}
+            \caption[CDCH: resolution fit]{Michel positron spectrum in logarithmic (a) and linear (b) scales. Black - data; Blue - 3 Gaussians to describe the resolution; Red- fit. The acceptance curve is shown in (c).}
             \label{fig:MEGII:CDCH:michel}
         \end{figure}
 
@@ -280,7 +311,7 @@
         \begin{figure}
             \centering
             \includegraphics[width = 0.8\textwidth]{Figures/MEG/pTC.png}
-            \caption{}
+            \caption{Picture of the timing counter tiles.}
             \label{fig:MEGII:pTC}
         \end{figure}
 
@@ -425,15 +456,35 @@
             \label{fig:meg:target}
         \end{figure}
 
-        \begin{figure}   
-            \centering
-            \subfloat[Example of a photon detected by the XEC.]{\includegraphics[width=\textwidth]{Figures/MEG/XEC_example.png}\label{}}\\
-            \subfloat[Example of a $\Ae$ detected by the pTC.]{            \includegraphics[height=6.3cm]{Figures/MEG/pTC_example.png}\label{}}
-            \hfill
-            \subfloat[Example of a $\Ae$ detected by the CDCH. AAA WRONG]{            \includegraphics[height=6.6cm]{Figures/MEG/CDCH_example.png}\label{}}
-            \caption{}
-        \end{figure}
+\status{started}
+\section{Sensitivity}  
+    When collecting the information from all the different subdetectors the picture looks something like shown in Fig.~\ref{fig:MEGII:event}
+    The final confidence interval is extracted on the variables that have good discriminating power wrt the background: $E_{\Ae}$, $E_\g,$, the relative angle $\Phi_{\Ae\g}$, the relative time $t_{\Ae\g}$, plus two variables relative to the RDC ($t_{\Ae, RDC}-t_{\g, XEC}$ and $E_{\Ae, RDC}$).
+    The likelihood analysis will be here skipped but a very similar analysis will be outlined for the X17 search in Ch.~\ref{ch:X17}.
+    The analysis region is defined as ($E_{\Ae}\in[48,58]$MeV; $t_{\Ae\g}\in[-500,500]$ps).
+    The probability density functions (PDFs) for the background are constructed looking at the \textit{sidebads}, while for the signal the expected distributions are convolved with the extracted resolutions.
+    The sensitivity obtained reflects the resolutions, efficiency, and the live time of data-taking. 
+    This information is shown in Fig.~\ref{fig:MEG:sensitivity}
+    
+    \begin{figure}   
+        \centering
+        \subfloat[Example of a photon detected by the XEC.]{\includegraphics[width=\textwidth]{Figures/MEG/XEC_example.png}\label{}}\\
+        \subfloat[Example of a $\Ae$ detected by the pTC.]{            \includegraphics[height=6.3cm]{Figures/MEG/pTC_example.png}\label{}}
+        \hfill
+        \subfloat[Example of a $\Ae$ detected by the CDCH. AAA WRONG]{            \includegraphics[height=6.6cm]{Figures/MEG/CDCH_example.png}}
+        \caption{Once all the MEG II detectors are combined, the usual data-taking looks something like this. These are just examples taken from different events.}
+        \label{fig:MEG:event}
+    \end{figure}
         
+    \begin{figure}   
+        \centering
+        \subfloat[Obtained and expected resolutions at $R_\upmu = \SI{3e7}{\upmu \per s}$. A $5\divisionsymbol7\%$ deterioration of the positron efficiency was found at $R_\upmu = \SI{3e7}{\upmu \per s}$.]{\raisebox{-.5\height}{      \includegraphics[height=5cm]{Figures/MEG/MEG_resolutions.png}}\label{}}
+        \hfill
+        \subfloat[Expected sensitivity as a function of the DAQ livetime.]{\includegraphics[height=8cm]{Figures/MEG/MEG_sensitivity.png}}
+        \caption{The sensitivity reached by MEG II has a strong dependence on the DAQ livetime, as shown in (b), and the resolution/efficiency obtained, shown in (a).}
+        \label{fig:MEG:sensitivity}
+    \end{figure}
+
 \status{review}
 \section{Cockcroft–Walton}
     \label{sec:cw:calib}
@@ -462,8 +513,7 @@
         \paragraph{CW-Circuit}
         The high-voltage multiplier and rectifier stack, together with the RF driver and HV control and stabilizing system, is one of the core sections of the machine.
         It is located in the main pressure tank, while the RF resonance coils are in a separate \ce{SF6} filled tank and the RF driver in a separate cabinet.
-        This gas is often used as a gaseous dielectric medium because of its high dielectric strength, the result of the gas's high electronegativity
-        \footnote{Electronegativity is a measure of the attraction of an atom for bonding electrons in molecules compared to that of other atoms: large values indicate a stronger attraction and it increases from left to right across the periodic table.} and density.
+        This gas is often used as a gaseous dielectric medium because of its high dielectric strength, the result of the gas's high electronegativity\footnote{Electronegativity is a measure of the attraction of an atom for bonding electrons in molecules compared to that of other atoms: large values indicate a stronger attraction and it increases from left to right across the periodic table.} and density.
         In the case of an arc, \ce{SF6} can break down in different ways but most of the decomposition products tend to quickly re-form \ce{SF6}, a process termed \textit{self-healing}. 
         Arcing or corona can also produce disulfur decafluoride (\ce{S2F10}), a highly toxic gas, which is the reason extra care is needed when opening such a system.
         This stack is a parallel-fed CW power supply that consists of a series of high voltage rectifiers and capacitive coupling \textit{corona} rings.
@@ -472,9 +522,10 @@
 
         \begin{figure}[ht]   
             \centering
-            \subfloat[Schematic of power supply.]{\includegraphics[width=0.8\textwidth]{Figures/MEG/CW/cw_circuit_stack.jpeg}\label{fig:CW:circuit:stack}}\\
+            \subfloat[``Standard'' CW circuit.]{\includegraphics[height=5.5cm]{Figures/MEG/CW/CW_standard.png}}\label{fig:CW:circuit:standard}
+            \subfloat[Schematic of the `real' CW circuit.]{\includegraphics[height=5.5cm]{Figures/MEG/CW/cw_circuit_stack.jpeg}\label{fig:CW:circuit:stack}}\\
             \subfloat[Sketch of the inner structure of a \textit{stack ass'y}: 15 rectifiers and 2 resistors.]{            \includegraphics[width=0.8\textwidth]{Figures/MEG/CW/cw_rectifier.jpeg}\label{fig:CW:sketch:rectifier}}
-            \caption{The first schematic (a) shows the CW circuit and the capacitive coupling to the RF driver while the second (b) shows the internal structure of a rectifier stack (\textit{stack ass'y}).}
+            \caption{The first schematic (a) is presented just for reference, given the usual depiction of a CW circuit. The second (b) shows the CW circuit and the capacitive coupling to the RF driver while the third (c) shows the internal structure of a rectifier stack (\textit{stack ass'y}).}
         \end{figure}
 
         \paragraph{Driver}
@@ -550,12 +601,14 @@
 
     \status{review}
     \subsection{Usage}
-        This machine is used 3 times a week, together with a \ce{^7Li} target, to produce the \SI{17.6}{MeV} line of the \ce{^7Li(p,\g)^8Be} to calibrate the XEC. 
+        This machine is used 3 times a week, together with a \ce{^7Li} target (Lithium tetraborate (\ce{Li2B4O7})), to produce the \SI{17.6}{MeV} line from the \ce{^7Li(p,\g)^8Be} process to calibrate the XEC. For this process, the required energy is $E_p=\SI{500}{keV}$.
         This process was already outlined in Sec.~\ref{sec:MEG:XEC:calibrations}.
-        On top of taking care of these calibrations\footnote{This 3 times a week task was shared between 3 people, me included.} I ironed out the procedure and reworked the documentation.
+        On top of taking care of this calibration\footnote {This 3 times a week task was shared between me and other 2 people.} 
+        I ironed out the procedure and reworked the documentation to aid other members of the collaboration.
         
-        \paragraph{X17} The protons coming from the CW have been mainly used for the calibration of the XEC detector, but also to perform a parasitic measurement:the search for the X17 anomaly.
+        \paragraph{X17} The protons coming from the CW have been mainly used for the calibration of the XEC detector, but also to perform a parasitic measurement: the search for the X17 anomaly.
         This search, done in 2021-2023, will be extensively discussed in Ch.~\ref{ch:X17} but we wanted to underline here the key role that the CW machine has played in this parasitic search for exotic physics. 
+        For this search, we used the machine up to $E_p=\SI{1080}{keV}$ (Higher than the nominal maximum voltage).
 
     \status{review}
     \subsection{CW issues and maintenance}
@@ -571,11 +624,11 @@
         We adjusted the frequency at which the machine starts when turning ON. 
         This solved the delay problem but didn't recover the maximum voltage. \\
         The machine was now starting quickly but working in a stable configuration only up to half of the nominal maximum voltage.
-        As explained in the previous paragraph this was not a problem for the `usual' calibrations but was a worrying sign on the health of the machine and would have prevented the CEX.
+        As explained in the previous paragraph this was not a problem for the \ce{^7Li(p,\g)^8Be} calibrations but was a worrying sign on the health of the machine, and it would have prevented the CEX.
         At this point, an expert from HVEE was sent to inspect the machine.
 
         \paragraph{Maintenance}
-        After running some checks opening the CW was deemed necessary and for this reason, we removed the \ce{SF6} contained in the main tank. 
+        After running some checks, opening the CW was deemed necessary and, for this reason, we removed the \ce{SF6} contained in the main tank. 
         After the extraction of the CW, we inspected and measured all the elements, removing also some of the \textit{corona rings} for easier inspection. 
         We found signs of arcing on one of the \textit{rectifier ass'y}. 
         After the substitution of this element\footnote{The rectifier ass'y are stacks of alternated diodes and aluminum capacitors capped by two resistors. We could re-use the capacitors, after careful cleaning, while resistors and diodes were too badly damaged. The process of refurbishing is shown in Fig.~\ref{fig:CW:fixed}}, the machine was closed again, filled with \ce{SF6}, and tested again.
