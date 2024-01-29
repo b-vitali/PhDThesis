@@ -41,49 +41,54 @@ We will then move through the beamtimes.
         These are also popular due to their ease of fabrication into various shapes and cost-effectiveness. 
         Scintillating fibers made from plastic scintillators are commonly used in tracking and calorimetry applications.
 
-    \status{started}
+    \status{review}
     \subsection{Scintillating Fibers}
         This is also a good moment to introduce The concept of \textit{scintillating fibers}.
         We will not use them in this chapter but will be key in Ch.~\ref{ch:muEDM:tracker}, dedicated to the $\Ae$ tracking.\\
         A fiber is generally a thin plastic scintillator that undergoes a process named \textit{cladding}.
         This process consists of covering the thin structure with multiple layers of lower refractive index, which helps to trap the scintillation light in the \textit{core} of the fiber.
-        Scintillating fibers (SCIFI) have become quite common in calorimeters, due to their speed, density, radiation resistance, and resolution glass. 
-        At the same time, SCIFI trackers can handle high rates and radiation. 
-        The downside is the requirement for sensitive photodetectors, due to low photon yield at the fiber's end. 
-        A key aspect is that it is possible to control the sensitive region by pairing scintillating and non-scintillating fibers. 
+        Scintillating fibers (SciFi) have become quite common due to their speed, density, radiation resistance, and resolution. 
+        At the same time, SciFi trackers can handle high rates and radiation. 
+        The downside of this technology is the requirement for sensitive photodetectors, due to low photon yield at the fiber's end. 
+
+        \noindent
+        Another interesting aspect is that it is possible to control the sensitive region by pairing scintillating and non-scintillating fibers. 
         This results in a loss in the collected light but allows the extraction of the light produced in specific regions without creating unwanted hits.
         On this point is important to remember that the particles will still interact with the non-scintillating fiber, losing energy and undergoing multiple scattering.
+        A careful balance is required.
 
         \paragraph{Typical Fibers}
-        The typical material for the core is a polystyrene-based scintillator or Wave-Length Shifter (refractive index n = 1.59) while the cladding is often of PMMA\footnote{Poly(methyl methacrylate) is a synthetic polymer which goes by many names: acrylic, acrylic glass, plexiglas, lucite, ...} (n = 1.49), sometimes followed by an additional fluorinated PMMA cladding (n = 1.42) for enhanced light capture. 
+        The typical material for the core is a polystyrene-based scintillator or Wave-Length Shifter (refractive index $n\approx1.59$) while the cladding is often of PMMA\footnote{Poly(methyl methacrylate) is a synthetic polymer which goes by many names: acrylic glass, plexiglas, lucite, ...} ($n\approx1.49$), sometimes followed by an additional fluorinated PMMA cladding ($n\approx1.42$) for enhanced light capture. 
         The resulting diameter is of the order of few $\SI{0.1}{mm}$.
         The fraction of the light transported is around 6\% for single-clad fibers and 10\% for double-clad fibers. 
-        Considering concrete numbers: a minimum-ionizing particle in 1 mm diameter fiber would generate a few thousand of photons.
-        The number of these actually reaching the ends of the fiber depends on the length and the \textit{attenuation length} but goes from a few hundred to a few photons.
+        Considering concrete numbers: a minimum-ionizing particle in 1 mm diameter fiber would generate a few thousand photons.
+        The number of these reaching the ends of the fiber depends on the length and the \textit{attenuation length} but goes from a few hundred to a few photons.
         The attenuation length, the distance over which the signal diminishes to 1/e of its original value, is influenced by factors such as re-absorption of emitted photons, polymer base crystallinity, photodetector sensitivity, and internal surface quality. 
         High-quality fibers can achieve attenuation lengths of several meters.
+        In case the quality of the fiber is not enough for the task at hand, the addition of a very thin layer (few atoms) of a reflective material, like aluminum, can further improve the light collection. 
 
-    \status{started}
+    \status{review}
     \subsection{Scintillation process}
-        Charged particles passing through matter create excited molecules, some of which release about 3\% of their energy as optical photons through a process known as scintillation. This phenomenon is prominent in organic substances containing aromatic rings like polystyrene (PS) and polyvinyltoluene (PVT), as well as in liquids such as toluene, xylene, and pseudocumene.
-
-        In fluorescence, molecules are initially excited by absorbing a photon and then deexcite by emitting a longer wavelength photon. To shift scintillation light to a more convenient wavelength, fluorescent materials, or "fluors," are used as "waveshifters." However, complex molecules in fluorescence can exhibit self-absorption, which shortens the attenuation length. The greater the Stokes' shift (the difference between absorption and emission wavelengths), the less self-absorption occurs, making a larger Stokes' shift desirable for fluors.
-
-        In high-energy physics, plastic scintillators are typically composed of selected fluors dissolved in a plastic base containing aromatic rings. Most plastic scintillators use either PVT or PS as their base, with PVT-based scintillators being up to 50\% brighter. Adding a "primary" fluor in high concentration (1\% by weight) into the base helps improve the attenuation length, as it efficiently re-radiates absorbed energy at wavelengths where the base is more transparent.
-
-        The primary fluor also plays a crucial role in shortening the scintillator's decay time, increasing the total light yield. The strong coupling between the base and fluor, known as Foerster resonance energy transfer, occurs at short distances, enhancing the speed and light yield of plastic scintillators.
-
-        In some cases, when the selected fluor doesn't meet all requirements, a "secondary" fluor may be added in fractional percent levels, and occasionally even a third.
-
+        Charged particles passing through matter create excited molecules, some of which release a small amount of their energy as optical photons through a process known as scintillation. This phenomenon is prominent in organic substances containing aromatic rings like polystyrene (PS) and polyvinyltoluene (PVT), as well as in liquids such as toluene, xylene, and pseudocumene.\\
+        In fluorescence, molecules are initially excited by absorbing a photon and then deexcite by emitting a longer wavelength photon. To shift scintillation light to a more convenient wavelength, fluorescent materials are used as ``wave-shifters''.
+        However, complex molecules in fluorescence can exhibit self-absorption, which shortens the attenuation length. 
+        The greater the difference between absorption and emission wavelengths (Stokes' shift), the less self-absorption occurs, making a larger shift desirable.\\
+        
+        \noindent
+        In high-energy physics, plastic scintillators are typically composed of selected fluors dissolved in a plastic base containing aromatic rings. Most plastic scintillators use either PVT or PS as their base, with PVT-based scintillators being often brighter. 
+        Adding a fluor in high concentration (1\% by weight) into the base helps improve the attenuation length, as it efficiently re-radiates absorbed energy at wavelengths where the base is more transparent.
+        The primary fluor also plays a crucial role in shortening the scintillator's decay time, increasing the total light yield. 
+        The strong coupling between the base and fluor, known as Foerster resonance energy transfer, occurs at short distances, enhancing the speed and light yield of plastic scintillators.
+        In some cases, a "secondary" fluor may be added in fractional percent levels, and occasionally even a third.
         External wavelength shifters are employed to aid light collection in complex geometries. They consist of a lightpipe with a wave-shifting fluor dissolved in a non-scintillating base. Typically, an acrylic base is used for its optical qualities, along with a single fluor to shift the emitted light to the blue-green range. These shifters also contain additives to absorb ultraviolet light and reduce sensitivity to Cherenkov radiation.
-
+        \noindent
         For specialized applications, scintillators with increased radiation resistance or unique properties like neutron/gamma discrimination can be created by significantly increasing fluor concentrations.
         
 \status{started}
 \section{\gf simulations}
     \label{sec:muEDM:entrance:sim}
     \status{review}
-    \subsection{\gf}
+    \subsection{What is \gf?}
         \gf (GEometry ANd Tracking) is a powerful open-source simulation toolkit used in various scientific fields, primarily for studying the interactions of particles with matter, and is widely employed in particle, nuclear, and medical physics. 
         At its core, \gf works by representing the physical world as a set of geometric shapes and materials. 
         After defining the properties of particles, their energy, and the materials they interact with, \gf simulates their behavior. 

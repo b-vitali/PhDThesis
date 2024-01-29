@@ -1,4 +1,4 @@
-\status{started}
+\status{review}
 \chapter{MEG II and the Cockcroft–Walton}
 \label{ch:MEG}
 \begin{refsection}
@@ -171,12 +171,12 @@
             \label{fig:MEC:XEC:resolution}
         \end{figure}
 
-\status{started}
+\status{review}
 \section{Spectrometer}
     As already introduced, the spectrometer for the positron's kinematic variables is made of COBRA, CDCH, and pTC.
     We will now review their working principles and designs.
 
-    \status{started}
+    \status{review}
     \subsection{COBRA}
     \label{MEG:COBRA}
         The COnstant Bending RAdius magnet (COBRA) consists of a main superconducting magnet a two normal conducting compensation coils.
@@ -185,16 +185,17 @@
             \1 Make so that a positron with a given momentum would follow a trajectory of specific radius \textit{independently of the angle} at which the particle has been emitted
             \1 \textit{Quickly} sweep particles emitted at very steep angles, to reduce the pileup
         \end{outline}
-        The profile of the axial magnetic field obtained is shown in Fig.~\ref{fig:MEGII:COBRA:B}
+        The profile of the axial magnetic field obtained and the particle trajectories are shown in Fig.~\ref{fig:MEGII:COBRA:B}.
         
         \begin{figure}
             \centering
-            \includegraphics[width = 0.6\textwidth]{Figures/MEG/COBRA_B.jpeg}
-            \caption{The specific profile of the axial magnetic field of COBRA is the result of the 5 different coils. The aim is to sweep the particles at higher $\abs{z}$ and have a radius, independent from the direction of emission, for the $\Ae$ at $\sim$\SI{50}{MeV}.}
+            \includegraphics[height = 4.5cm]{Figures/MEG/COBRA_B.jpeg}
+            \includegraphics[height = 4.5cm]{Figures/MEG/cobra_effect_meg1.png}
+            \caption{The specific profile of the axial magnetic field of COBRA is the result of the 5 different coils. The aim is to sweep the particles at higher $\abs{z}$ with an independent radius.}
             \label{fig:MEGII:COBRA:B}
         \end{figure}
         
-    \status{started}
+    \status{review}
     \subsection{Cylindrical Drift CHamber (CDCH)}
         The major difference between MEG's drift chamber and its successor is that the CDCH is a single-volume, replacing the segmented structure.
         This is a $\sim\SI{1.9}{m}$ long cylinder, filled with a helium-isobutane mixture and containing nine concentric layers of 192 gold-plated tungsten wires, which are the heart of this detector.
@@ -211,12 +212,12 @@
         \begin{figure}
             \centering
             \includegraphics[width = \textwidth]{Figures/MEG/CDCH.png}
-            \caption{CDCH with all the wires mounted.}
+            \caption{CDCH with all the wires mounted. The light catching the wires highlights the stereo design of the detector.}
             \label{fig:MEGII:CDCH}
         \end{figure}
 
         \paragraph{Hits} The first step in positron tracking is identifying signals (\textit{hits}) induced by drift electrons in the waveforms of the CDCH cells.
-        These hits are characterized by multiple pulses from different ionization clusters, stretched due to the slow drift time of electrons.
+        These hits are characterized by multiple pulses from different ionization clusters, stretched due to the drift time of electrons.
         Signal-to-noise discrimination and pileup identification are essential. 
         Two waveform processing algorithms have been developed:
         \begin{outline}
@@ -231,9 +232,8 @@
         The second method results in higher hit efficiency but also a higher fake hit rate. 
         To optimize results, the reconstruction process is done once with hits found using the first method and once with hits from both methods combined. 
         The final results are combined after the reconstruction is completed, favoring higher quality tracks if successful with both methods. \\
-        The arrival time differences of signals and charges collected at both ends of a wire provide rough (few cm) information about the z-coordinate of the hit along the wire. 
-        Stereo wire configuration further improves the z-coordinate resolution.
-        This makes the track finding more robust, especially against pileup. \\
+        The arrival time differences of signals and charges collected at both ends of a wire provide rough (few cm) information about the position of the hit along the wire. 
+        Stereo wire configuration further improves the z-coordinate resolution making the track finding more robust against pileup. \\
         Since multiple clusters often appear on one waveform, identifying the first cluster's time is crucial for correct drift circle reconstruction. 
         The arrival time of the first cluster is determined from the summed waveform of both ends after adjusting their relative timing. 
         The drift time of the first cluster is converted to DOCA using the time-distance relationship (TXY tables).
@@ -245,7 +245,7 @@
             Each seed is propagated through adjacent layers, checking consistency with hits and updating track parameters. 
             Candidates with at least seven hits are formed.
             \1 The track fitter utilizes an extension of the Kalman filter called the deterministic annealing filter (DAF) \cite{Kalman:DAF} and resolves left/right ambiguities. 
-            It fits individual track candidates from the track finder, combining segments to form multi-turn tracks within CDCH. 
+            It fits individual track candidates, combining segments to form multi-turn tracks within CDCH. 
             Tracks are propagated to the pTC and backward to the target, with a re-fitting based on updated DOCA.
         \end{outline}
 
@@ -259,41 +259,41 @@
         To evaluate the resolutions, the \textit{double turns} are studied: when a particle traverses the CDCH in two positions, the two trajectories are fitted separately and the difference of the kinematical variables is studied.
         The resulting resolution is not $\sqrt{2}$ of the core resolution because the effect of the particle interaction with matter is not the same for the two turns.
         The results need to be corrected with ad hoc simulations for both Signal and Michel positrons.
-        The resulting values for the 2021 run are shown in Tab.~\ref{tab:CDCH:resolution}.
+        The resulting values for the 2021 run are shown in Tab.~\ref{tab:CDCH:resolution}, while the fit to the Michel spectrum is shown in Fig.~\ref{fig:MEGII:CDCH:michel}.
         
 
-\begin{table}
-    \centering
-    \begin{tabular}{ccccc}
-        \hline
-        Data & $\upsigma_{y_{\Ae}}$ & $\upsigma_{z_{\Ae}}$ & $\upsigma_{\phi_{\Ae}}$ & $\upsigma_{\theta_{\Ae}}$\\
-        \hline
-        \hline
-        2021 DT& 1.07 & 2.94 & 9.62 & 11.86\\
-        Signal DT& 1.00 & 2.42 & 8.57 & 10.38\\
-        Michel DT& 1.01 & 2.49 & 9.11 & 11.40\\
-        \hline
-        Effective & 0.72 & 2.0 & 4.1 & 7.4\\
-    \end{tabular}
-    \caption[MEG II: resolutions and efficiencies]{Double Turn (DT) resolutions for 2021 data, Signal MC and Michel MC simulations. The MCs are used to correct the value extracted from the data and the last row gives the effective core resolutions.}
-    \label{tab:CDCH:resolution}
-\end{table}
+        \begin{table}
+            \centering
+            \begin{tabular}{ccccc}
+                \hline
+                Data & $\upsigma_{y_{\Ae}}$ & $\upsigma_{z_{\Ae}}$ & $\upsigma_{\phi_{\Ae}}$ & $\upsigma_{\theta_{\Ae}}$\\
+                \hline
+                \hline
+                2021 DT& 1.07 & 2.94 & 9.62 & 11.86\\
+                Signal DT& 1.00 & 2.42 & 8.57 & 10.38\\
+                Michel DT& 1.01 & 2.49 & 9.11 & 11.40\\
+                \hline
+                Effective & 0.72 & 2.0 & 4.1 & 7.4\\
+            \end{tabular}
+            \caption[CDCH: resolutions]{Double Turn (DT) resolutions for 2021 data, Signal MC and Michel MC simulations. The MCs are used to correct the value extracted from the data and the last row gives the effective core resolutions.}
+            \label{tab:CDCH:resolution}
+        \end{table}
 
         \begin{figure}
             \centering
             \includegraphics[width = 0.48\textwidth]{Figures/MEG/CDCH_michelfit.png}
-            \caption[CDCH: resolution fit]{Michel positron spectrum in logarithmic (a) and linear (b) scales. Black - data; Blue - 3 Gaussians to describe the resolution; Red- fit. The acceptance curve is shown in (c).}
+            \caption[CDCH: Michel fit]{Michel positron spectrum in logarithmic (a) and linear (b) scales. Black - data; Blue - 3 Gaussians to describe the resolution; Red- fit. The acceptance curve is shown in (c).}
             \label{fig:MEGII:CDCH:michel}
         \end{figure}
 
         \paragraph{CDCH2} The studies prompted by the wire breakage evolved in an R\&D for the updated version of the CDCH. The main change was the choice of pure aluminum \SI{50}{\micro m} wires,  almost insensitive to corrosion.
         One of the main challenges spawned by this choice was to develop a solid way of fixing the wires to the PCBs: the solution found was a combination of soldering and gluing.
-        The CDCH2 will be completed by the end of 2023 and delivered to PSI in spring 2024.
+        The CDCH2 will soon be completed and is expected to be delivered to PSI in spring 2024.
         The choice of mounting the new system will then depend on the current status and stability of the CDCH.
 
-    \status{started}
+    \status{review}
     \subsection{pixelated Timing Counter (pTC)}
-        The time coincidence between $\Ae$ and $\g$ is crucial at high $R_\upmu$. 
+        The time coincidence between $\Ae$ and $\g$ is a crucial aspect of the experiment. 
         The pixellated Timing Counter plays two roles: first, it is part of the trigger algorithms; second it assigns the time of the positron track, which is then propagated backward to the target plane $t_{\Ae}$. 
         This detector is made of two symmetric half-cylinders of scintillators between the CDCH and COBRA, as shown in Fig.~\ref{fig:MEGII:pTC}.
         To cover the $\Ae$ acceptance corresponding to a $\g$ entering the XEC, the pTC covers : $\SI{23}{cm}<\abs{z}<\SI{117}{cm}$ and $\SI{-166}{\deg}<\phi<\SI{5}{\deg}$. 
@@ -306,7 +306,13 @@
         
         \paragraph{Performance} The single-counter time resolutions were measured to be $\sigma_{t_{\Ae}, pTC}(N_{\text{hit}} = 1) \sim 80-120$ ps for counters with heights of 40 mm and 50 mm. These resolutions correlate with light yield, influenced by scintillator aging, SiPM detachment, and radiation damage.
         Multi-hit time resolution is assessed via the "even-odd" method, improving average resolution to $\sigma_{t_{\Ae}, pTC} = 43$ ps by combining results from different hit groups. 
-        Efficiency of $pTC$ was studied with MC simulation, yielding a total detection efficiency of $\epsilon_{e^+, pTC} = (91 \pm 2)\%$, considering factors like geometric acceptance and scattering effects on endcaps.
+        Efficiency of $pTC$ was studied with MC simulation, yielding a total detection efficiency of $\epsilon_{e^+, pTC} = (91 \pm 2)\%$, considering factors like geometric acceptance and scattering effects on endcaps.\\
+
+        \noindent
+        An important aspect of this detector is the angle at which the tiles are tilted.
+        This improves the overall reconstruction of $\Ae$, which are the signature particles of the $\Am \rightarrow \Ae \g$.
+        In Ch.~\ref{ch:X17} we will see that for the X17 search, $\e \Ae$ pairs need to be reconstructed. 
+        For this search, this aspect of the pTC will generate an asymmetry in the reconstruction of the two particles. 
 
         \begin{figure}
             \centering
@@ -328,9 +334,72 @@
             \caption{Hit rates map of the pTC at $R_\upmu = \SI{5e7}{\upmu \per s}$ during the 2022 run. Each circle indicates a counter.}
             \label{fig:MEGII:pTC:rate}
         \end{figure}
-        
-\section{Trigger and DAQ}
 
+\status{review}
+\section{Trigger and DAQ}
+    Although the trigger and DAQ for MEG II were developed on top of the previous knowledge, the number of additional channels ($\times4$) was quite the challenge. 
+    Here we will illustrate some of the key features while the details can be found in \cite{Galli2014JINST}.
+    The solution adopted was to merge the two branches in the WaveDAQ system.
+    Between 2015 and 2020 the system was tested, expanded, and was completed in 2021.
+    It was then ready for the DAQ campaign of May 2021, with 35 crates with up to 16 WaveDREAM modules.
+
+    \status{review}
+    \subsection{WaveDAQ}
+    The WaveDREAM is a 16-channel data acquisition platform utilizing two DRS4 chips for digitizing analog signals at speeds up to 5.0 GSPS.
+    Input channels have a programmable gain stage (0.25–100) with an 800 MHz analog bandwidth, providing bias voltage for SiPMs. 
+    Detected events trigger external ADC readout, and data is sent to a Data Concentrator Board (DCB) over Ethernet. 
+    Trigger decisions are made by FPGA Trigger Concentrator Boards within $\sim\SI{600}{ns}$.
+    The DAQ operates in \textit{push-mode}: trigger signals prompt boards to prepare data for DCBs, delivered to the DAQ server via Ethernet. However, there is a potential packet loss, leading to incomplete event reception and DAQ inefficiency. 
+    
+    The typical trigger rate during physics runs ranges from 10 to 30 Hz. 
+    Each waveform is $\sim$1.5 kB, necessitating a 10 Gbit/s connection between WaveDAQ and the DAQ server. 
+    To manage the data rate, a private network, is used independently of the laboratory network. 
+    A multi-threaded software involves four independent processing steps: Collector, Builder, Worker, and Data Handler. 
+    Each step can be parallelised as needed; in total, we use 32 threads.
+
+    \status{review}
+    \subsection{Data reduction}
+        A full MEG II event is as large as 16 MB, but this can be reduced without deteriorating the experiment’s performance by applying data reduction schemes tailored to each detector.\\
+        \noindent
+        The methods implemented at the data handler stage are:
+        \begin{outline}
+            \1 Waveform re-binning: Merge the waveform bins in groups of \(2^n\) (\(n = 1, 2, 3, 4, 5\)).
+            \1 Region of interest (ROI): Slice the waveform in a window around the trigger time.
+            \1 Zero suppression: Discard waveforms without pulses.
+        \end{outline}
+        \noindent
+        For the LXe detector, re-binning is widely used.
+        The pTC detector is highly segmented with a very good signal-to-noise separation, making zero suppression very powerful. 
+        The size of pTC events is negligible since only a small fraction of pTC counters is hit.
+        The same approach cannot be used for the CDCH because the signal-to-noise separation is not at the same level, so all waveforms are written to disk and re-binned by a factor of ten. 
+        The overall event size reduction is a factor $\approx 10$.
+
+    \status{review}
+    \subsection{Performances}
+        The infrastructure guarantees over 99\% efficiency for trigger rates up to 35 Hz, corresponding to an 8 Gbit/s traffic rate on the private network. 
+        However, some inefficiency is observed above this threshold.
+        For detector calibration runs requiring only a subsample of signals, the system can run at the current maximum rate of about 52 Hz. 
+        This is crucial to minimize detector calibration time and increase the sample of physics data.
+        
+    \status{review}
+    \subsection{Triggers}
+        The WaveDAQ system supports up to 64 independent trigger lines, each with its prescaling factor. 
+        Trigger lines are identified by a number, serving as a priority order when multiple conditions are matched. 
+        The remaining triggers are dedicated to collecting detector-specific calibration data.
+        
+        \paragraph{MEG trigger}
+        The $\mu^+ \to e^+ \gamma$ trigger requires the simultaneous presence of three conditions: gamma-ray energy above a threshold, time coincidence within a programmable window, and direction match compatible with a two-body muon decay at rest. 
+        Three triggers, each with relaxed conditions, are recorded during physics runs.        
+        The offline-reconstructed observables are then used evaluate online selection efficiency. 
+        The $\mu^+ \to e^+\gamma$ trigger efficiency is approximately $(80 \pm 1)\%$ at a muon rate of $3 \times 10^7 s^{-1}$. 
+        Improvements since 2022 include an enhanced gamma-ray conversion time algorithm and improved LXe detector calibration, with further investigations planned for direction match efficiency.
+
+        \paragraph{Triggers for calibrations}
+        A comprehensive set of calibration methods, each with dedicated trigger logic, is deployed, and signals are collected by the auxiliary crate.
+        The most challenging calibration is for the LXe detector (see Sec.~\ref{sec:MEG:XEC}). 
+        Approximately 10 trigger lines are dedicated to LXe calibration, involving energy scale calibration with triggered $\g$ rays of known energies (from 9 to 130 MeV). 
+        The pTC is calibrated daily using a laser-based system, with a dedicated trigger line providing synchronization. 
+        
 \status{review}
 \section{Beam and target}
     The beamlines at PSI were described in \ref{intro:beamlines}. 
@@ -424,6 +493,7 @@
 
     \status{review}
     \subsection{MEG II target}
+    \label{sec:MEG:target}
         The aim of the target is to stop $\Am$ at COBRA center while minimizing the interaction of the secondary particles produced.
         The knowledge of the position of the target and planarity are key components in evaluating the systematic errors on the reconstructed vertex position. 
         After in-depth studies, the BC400 scintillating plastic was selected as the material for the target.
@@ -456,11 +526,11 @@
             \label{fig:meg:target}
         \end{figure}
 
-\status{started}
+\status{review}
 \section{Sensitivity}  
-    When collecting the information from all the different subdetectors the picture looks something like shown in Fig.~\ref{fig:MEGII:event}
-    The final confidence interval is extracted on the variables that have good discriminating power wrt the background: $E_{\Ae}$, $E_\g,$, the relative angle $\Phi_{\Ae\g}$, the relative time $t_{\Ae\g}$, plus two variables relative to the RDC ($t_{\Ae, RDC}-t_{\g, XEC}$ and $E_{\Ae, RDC}$).
-    The likelihood analysis will be here skipped but a very similar analysis will be outlined for the X17 search in Ch.~\ref{ch:X17}.
+    When collecting the information from all the different subdetectors the picture looks something like shown in Fig.~\ref{fig:MEG:event}.
+    The confidence interval is extracted on the variables that have good discriminating power wrt the background: $E_{\Ae}$, $E_\g,$, the relative angle $\Phi_{\Ae\g}$, the relative time $t_{\Ae\g}$, plus two variables relative to the RDC ($t_{\Ae, RDC}-t_{\g, XEC}$ and $E_{\Ae, RDC}$).
+    The likelihood analysis will be here skipped but a similar analysis will be outlined for the X17 search in Ch.~\ref{ch:X17}.
     The analysis region is defined as ($E_{\Ae}\in[48,58]$MeV; $t_{\Ae\g}\in[-500,500]$ps).
     The probability density functions (PDFs) for the background are constructed looking at the \textit{sidebads}, while for the signal the expected distributions are convolved with the extracted resolutions.
     The sensitivity obtained reflects the resolutions, efficiency, and the live time of data-taking. 
@@ -612,13 +682,13 @@
 
     \status{review}
     \subsection{CW issues and maintenance}
-        By the end of 2020, the CW started having some minor problems: the machine was running fine but the time required to switch it on kept growing longer. 
+        By the end of 2020, the CW started having some minor problems: the machine was running fine but the time required to switch it on kept growing longer.
         While the whole procedure would normally take $\sim$ 15 min the time required exceeded the hour.
         We also noticed the machine was getting unstable when running near the maximum voltage at \SI{1}{MV}.
         Following this behavior, an intense exchange with the HVEE company started and we performed many different tests on both the software and hardware sides.
     
         \paragraph{Hot Fix}
-        We performed a measurement of the Q-factor of the machine using Eq.~\ref{eq:cw:qfactor}, shown in Fig. \ref{fig:CW:Q-factor}.  
+        We measured the Q-factor of the machine using Eq.~\ref{eq:cw:qfactor}, shown in Fig. \ref{fig:CW:Q-factor}.  
         The value found was a factor $\sim2k$ lower than expected and the position of the resonance frequency was shifted from the design value.
         For more information on the functioning of the machine and the Q-factor see Sec.~\ref{sec:cw:machine}.
         We adjusted the frequency at which the machine starts when turning ON. 

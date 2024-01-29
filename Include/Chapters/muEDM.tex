@@ -6,9 +6,9 @@
 {\itshape
 This chapter is an introduction to the muEDM experiment. After describing in some detail the spin dynamics, a reminder on the EDM searches for the different particles will follow.
 We will then outline the measuring principle of the experiment, the frozen spin technique, and deep dive into the current status of the experiment. 
-The study of systematic uncertainties will close this chapter. 
+The study of systematic uncertainties and the upcoming schedule will close this chapter. 
 As always, the early stage of the experiment means the rate of changes and improvement is outstanding. 
-This my attempt to an up-to-date description but some details might be already outdated.}
+This is my attempt at an up-to-date description, which relies on the ``muEDM Status Report 2023'' submitted to PSI, but some details might be already outdated.}
 
 \cite{muEDM:Semertzidis:2001} \cite{muEDM:Adelmann:2010} \cite{muEDM:J-PARC:2011} \cite{muEDM:J-PARC:2016} \cite{muEDM:PSI:2021} \cite{muEDM:PSI:Mikio:2022} \cite{muEDM:PSI:Kim:2022}
 
@@ -122,6 +122,11 @@ This my attempt to an up-to-date description but some details might be already o
 \status{started}
 \section{The precursor}
     The task at hand is quite complex and for this reason, the aim is to first have a working prototype to demonstrate the measuring principles, the achieved control on the different sources of uncertainties and the correct working of the different subdetectors.
+
+    \subsection{Beam monitor}
+    \subsection{TOF}
+    \subsection{Injection}
+    \subsection{Faraday rotator}
     
     \status{started}
     \subsection{Superconducting injection channel}
@@ -130,6 +135,52 @@ This my attempt to an up-to-date description but some details might be already o
         The idea is to use a superconducting pipe: the fields around the pipe will generate Eddy currents which will, in turn, generate an opposite field inside the pipe, canceling the first.
         Clearly, the development of such a system is not trivial, and a precise study of the different shapes and materials is required. 
         The hope would be to find a suitable \textit{high-temperature} superconductor.
+
+        \paragraph{Prototypes}
+        Three different concepts for SC-prototype shields are currently being investigated and tested. 
+        The first concept employs high-temperature superconducting (HTS) tape\footnote{2G HTS wire, S-Innovations, 2011-2020} made of Yttrium barium copper oxide~(YBCO), with a high $T_{\rm c}$ of \SI{93}{K}, wound helically around a copper tube. The second prototype consists of Nb-Ti/Nb/Cu SC-sheets~\cite{Barna2018}, with a $T_{\rm c}$ of \SI{9.2}{K}, clamped around a hollow copper tube. 
+        Lastly, the third prototype will be a combination of a commercial SC-tube Bi-2223\footnote{CAN-superconductors, 2023}, with an inner diameter of \SI{15}{mm}, and a $T_{\rm c}$ between \SIrange{105}{110}{K}, and a stack of discs made of rare-earth barium copper oxide (REBCO)\@. 
+        This approach benefits from isotropically induced currents in the Bi-2223 tube, as well as persistent currents along the circular paths in the disks.
+        Once the SC-prototypes are assembled, we will test them and compare the shielding factor to results from numerical models using the finite element method (COMSOL) to identify the most efficient configuration with the highest shielding factor. 
+
+        \paragraph{First tests}
+We are using a test setup made of a Helmholtz coil pair with a magnetic field strength of \SI{100}{mT} and a liquid nitrogen (LN\textsubscript{2}) bath maintained at \SI{77}{K} to evaluate the superconducting prototypes. The SC-prototype, under study, will be placed between the two coils and the whole system will be submerged into the cryogenic bath, as shown in Figure \ref{fig:Setup}.
+
+\begin{figure}
+    \centering
+		\subfloat[]{
+    \includegraphics[width=0.5\columnwidth]{Figures/muEDM/SCshielding/SetUp.jpg}}
+		\hfill
+		\subfloat[]{
+    \includegraphics[width=0.3\columnwidth]{Figures/muEDM/SCshielding/IMG_8296.jpg}}
+    \caption{(a)~Experimental setup for testing of superconducting shield prototypes; Helmholtz coil pair and a HTS-prototype placed between the two coils; (b)~setup submerged in LN\textsubscript{2}.}
+    \label{fig:Setup}
+\end{figure}
+
+Initial measurements were performed on a prototype with a YBCO-tape, helically wound around a copper tube with an inner diameter of \SI{15}{mm} and a Bi-2223 sintered tube. Measurements of the magnetic field inside the prototypes were conducted using four Hall sensors\footnote{THS119 Hall Sensors, TOSHIBA Electronic Devises \& Storage Corporation, 2023}, distributed along a 3D-printed support inside the tube on four positions with a separation of \SI{24}{mm} between each of them. This setup enabled the measurement of the magnetic field as a function of position. The measurements were taken at \SI{77}{K}, with and without superconducting shielding, as illustrated in Figures~\ref{fig:YBCO} and~\ref{fig:Bi2223}.
+
+\begin{figure}
+    \centering
+		\subfloat[]{
+    \includegraphics[width=0.58\columnwidth]{Figures/muEDM/SCshielding/YBCO_testMeasurements.png}}\hfill
+		\subfloat[]{
+    \includegraphics[width=0.40\columnwidth]{Figures/muEDM/SCshielding/YBCO_ScreeningFactor.png}}
+    \caption{Measurement of the YBCO prototype. (a)~Measured magnetic field versus time, {\it left}, and versus coil current, {\it center}, at \SI{77}{K} with and without prototype. (b)~Experimental shielding factor of YBCO prototype.}
+    \label{fig:YBCO}
+\end{figure}
+%
+%Comparing the plots in Figure \ref{fig:Plots}, we notice that the plateaus of the SC-shielded tube are curved with respect to the sharp plateaus of the tube without the SC-shielding. This indicates the presence of persistent currents flowing in the SC-shielded tube, counteracting the external magnetic field, and thus shows signs of superconductivity. After completing the measurement cycle, the current returns to \SI{0}{A}, but there is still remaining magnetic field inside the SC-tube. This indicates the presence of hysteresis effect, where persistent currents are still flowing inside the superconductor even when the magnetic field is removed. In future tests with better SC-tubes, a more dominant presence of persistent currents and hysteresis is expected as well as lower leaking magnetic flux densities.
+
+
+\begin{figure}
+    \centering
+		\subfloat[]{
+    \includegraphics[width=0.62\columnwidth]{Figures/muEDM/SCshielding/Bi2223_testMeasurements.png}}\hfill
+		\subfloat[]{
+    \includegraphics[width=0.34\columnwidth]{Figures/muEDM/SCshielding/Bi2223_ScreeningFactor.png}}
+    \caption{Measurement of the Bi2223 prototype. (a)~Measured magnetic field versus time, {\it left}, and versus coil current, {\it center}, at \SI{77}{K} with and without prototype, and as simulated. (b)~Comparison of experimental versus simulated shielding factor of Bi2223 prototype.}
+    \label{fig:Bi2223}
+\end{figure}
 
     \status{review}
     \subsection{Entrance detector} 
@@ -144,36 +195,160 @@ This my attempt to an up-to-date description but some details might be already o
     \status{started}
     \subsection{Muon tracking}
     \label{sec:muEDM:gridpix:beamtime}
-        Although during physics runs it is important to minimize the number of interactions of the muon along the path, it is a cardinal step to prove the muons are following the correct path.
+        Although during physics runs it is important to minimize the number of interactions of the muon along the path, it is a cardinal step to prove the muons are following the correct path and are properly stored.
+        On top of this, the momentum difference between the CW and CCW injection needs to be below 0.5\%.
         For this reason, a removable muon-tracking device is under development.
-        The idea is to use \tpc + \grid.
+        The proposed solution is a Time Projection Chamber (TPC) operated with an extremely light gas mixture based on helium, separated from the vacuum in the magnet bore by an extremely thin and vacuum-tight window (\SI{300}{\nano\meter} Silicon Nitride). 
+        As a readout structure for this \tpc, the \grid detector is considered. 
+        \grid is a gaseous detector made of a conductive mesh implanted \SI{50}{\micro\meter} above a Timepix chip~\cite{Llopart2007NIMA}.
+        A voltage difference between the mesh and the chip produces an avalanche when drift electrons reach the mesh so that the \grid behaves like a sort of microscopic Micromegas.
 
         \paragraph{Beamtime}
-        A prototype of this detector was developed and tested in 2022, the results have been published and can be found in \cite{muEDM:PSI:GridPix}.
+        A prototype of this detector was developed a single GridPix and flushed with helium-isobutane gas mixtures. 
+        It was tested in 2022 and the results have been published and can be found in \cite{muEDM:PSI:GridPix}.
         The setup was quite simple: the beam was centered through the TPC and scintillators were used as an external trigger.
         During this testing, the detector was tested at different pressures and voltages, and with different mixtures of gas.
+        In Fig.~\ref{fig:gridpix_plateau} the trend of the detection efficiency of GridPix as a function of the mesh voltage is shown, demonstrating that the detector can be used with these kinds of mixtures with a wide efficiency plateau.
+
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.5 \linewidth]{Figures/muEDM/gridpix_plateau.pdf}    
+            \caption{Average number of reconstructed hits per track in the GridPix detector, as a function of mesh voltage, normalized to the asymptotic value of a sigmoid curve fitting the data points, for three different mixtures of helium-isobutane (95:5, 90:10, and 85:15).}
+            \label{fig:gridpix_plateau}
+        \end{figure}
+        
+        Following a successful beam test, simulation studies were conducted to evaluate the tracking capabilities of a Time Projection Chamber (TPC) designed for tracking \SI{28}{MeV/c} muons within the Phase~I magnet. 
+        Two geometries were explored: a conventional longitudinal setup, where electrons drift along the $z$ axis parallel to the magnetic field, and an unconventional radial configuration, with electron drift in the $(x,y)$ plane. 
+        Typically, TPC track resolution is highest in the direction orthogonal to the drift, favoring the longitudinal option for optimal momentum resolution, while the radial geometry excels in measuring muon entrance angles. 
+        Despite assuming a detector pressure of \SI{400}{\milli\bar} in the simulations, the prevalence of multiple scattering effects diminishes the characteristic differences between the two geometries, making the resolution advantages less distinct.
+        Achieving a momentum resolution surpassing \SI{0.3}{\percent} appears feasible, and the phase space resolutions seem adequate for alignment purposes. 
+        In early 2024, a decision will be made regarding the TPC configuration, and the detector engineering will be finalized by year-end. 
+        This encompasses the development of mechanical mockups for installing silicon nitride entrance windows with a thickness of \SI{300}{\nano\meter}. 
+        On the detector front, tests are scheduled to experimentally validate the proposal to operate the detector at sub-atmospheric pressure, considering the anticipated very high ionization rates in the Phase~I experiment. 
+        The design process will be complemented by thorough simulation studies aimed at optimizing the final configuration.
+        
     \status{started}
     \subsection{Kicker}
         The prerequisite for the \textit{frozen spin} is to first store the muon around the design orbit.
         This is achieved by applying a longitudinal kick, canceling the momentum component parallel to the magnetic field.
         The development of this element is non-trivial because of the stringent requirements on the strength, time scale, and residual effects of the kick.
+        A weakly focusing static field, produced by a circular coil, ensures confinement. 
+        To compensate for muon acceleration upon entering the weakly focusing field, the pulsed field must be optimized to reduce longitudinal oscillations.
+        The trigger signal for the magnet pulse, generated by an entrance detector (Sec.\ref{sec:MuInjTrigger}), selects muons within the storage phase space. 
+        Considering processing delays, the \textit{on-demand} pulse generator must have an internal latency <$\SI{60}{ns}$.
         We started by looking into different shapes and types of coil as well as developing \ltsp simulations of the generating circuit.
         The current version of the circuit is shown in Fig.~\ref{fig:muEDM:kicker:circuit}.
         
+        The Institute for Pulsed Power and Microwave Technology at KIT developed high-voltage switching technology \cite{GateBoosting}, meeting current pulse specifications. 
+        The generator, designed with a \SI{20}{\micro s} recovery time, can deliver up to 2000 pulses per second. 
+        Pulse amplitude and shape are defined passively by load circuit impedance characteristics. 
+        Lower inductance, achieved by splitting pulse coils into quadrants supplied in parallel, allows operation at \SI{12}{kV}, supporting the required pulse width and reducing voltage ratings of components and cables.
+
+        \paragraph{Prototype}
+        A \SI{100}{\micro m} copper sheet prototype for the quadrant pulse coil configuration (Fig.~\ref{fig:coils}(a)) was constructed, minimizing positron multiple scattering compared to \SI{500}{\micro m} thick plastic scintillating fibers. 
+        The measured inductance per loop was \SI{76(3)}{nH}, in line with the ANSYS model prediction of \SI{79}{nH}.
+        
+        ANSYS-generated field maps (Fig.\ref{fig:coils}(c) and(d)) simulated the kick and characterized field strength and inductance. The quadrant model's geometry (Fig.\ref{fig:coils}(b)) with overlapping longitudinal sections led to partial cancellation due to opposite polarities. The DC magnetic field map in the central ($z=0$) $x-y$-plane is shown in(c), and plot~(d) displays the field along the orbit, parameterized by azimuthal angle $\phi$.
+        
+        The orange line at \SI{8.4}{\micro\tesla\per\ampere} in plot~(d) represents the average field strength over the orbit, falling $20\%$ below the expected strength for ideal circular loops. 
+        Despite requiring a higher current for a given field strength, the quadrant model's advantage lies in the shorter pulse width allowed by low-inductance parallel circuits. 
+        The compact design minimizes stray capacitance and inductance. 
+        Supplying upstream and downstream segments in series within each quadrant ensures better longitudinal symmetry of the field, with equal current flow in both segments.
+        
+        \begin{figure}
+        \centering
+            \subfloat[Coil quadrants prototype]{
+            \includegraphics[width=0.27\textwidth]{Figures/muEDM/Pulser/quadprototype.jpg}}
+            \hfill
+            \subfloat[Quadrant geometry (ANSYS)]{
+            \includegraphics[width=0.65\textwidth]{Figures/muEDM/Pulser/ANSYS_Geometry.png}}
+            \hfill
+            \subfloat[Magnetic field map (z=0)]{
+            \includegraphics[width=0.45\textwidth]{Figures/muEDM/Pulser/xy0map.png}}
+            \hfill
+            \subfloat[Magnetic field along orbit]{
+            \includegraphics[width=0.45\textwidth]{Figures/muEDM/Pulser/xyint0map.png}}
+            \caption{The pulse coils, (a)~prototype and (b)~geometry implemented in ANSYS, are responsible for kicking the remaining longitudinal momentum to permit storage in a weakly-focusing magnetic field. 
+            They will be constructed from \SI{100}{\micro m} copper sheets to minimize multiple scattering without significantly increasing electrical resistance for frequencies $\sim \SI{10}{\mega\hertz}$.
+            The ANSYS simulation produces field maps, shown on the central $x-y$-plane in~(c) where the dashed black line shows the stored muon orbit. 
+            The average field strength over the orbit is \SI{8.4}{\micro\tesla\per\ampere}, as shown by the orange line in~(d), where the field strength is plotted over the orbit parametrized by the azimuthal angle $\phi$.}
+        \label{fig:coils}
+        \end{figure}
+        
+        \paragraph{Generator}
+        The pulse generator design, developed in collaboration with the KIT team, adheres to constraints from injection simulations and systematic effects studies. 
+        Operating at \SI{12}{kV}, it delivers \SI{200}{A} to each coil quadrant. 
+        Load characteristics, shaping the pulse, are defined based on prototype measurements and ANSYS simulations. 
+        Inductive couplings between parallel circuits are determined from induced voltage measurements on the prototype.
+        
+        The current design, shown in Fig.~\ref{fig:circuit} includes resistance-capacitive~(RC) damping elements on the coaxial cable, tuned to critically damp the primary pulse and suppress after-pulse oscillations. 
+        This avoids perturbing the muon orbit or inducing time-dependent spin precession signals. 
+        The pulse shape, influencing the applied momentum kick, is adjustable to maximize storage efficiency. 
+        Simulated current profiles illustrate optimized damping for maximizing peak current and reducing after-pulse oscillations. 
+        The voltage over the charging capacitor \textit{C1} demonstrates recovery within $1\%$ of the nominal operating voltage after a \SI{20}{\micro s} delay, meeting the desired interval between muon triggers.
+        We plan to commission and test the pulse generator in mid-2024 for the upcoming beam test. 
+        Pulse generator development is underway at KIT, with circuit parameters being finalized. Simultaneously, full load circuit characterization, utilizing a network analyzer, is ongoing to refine the ANSYS model of the quadrant configuration.
+            
         \begin{figure}
             \centering
-            \includegraphics[width = \textwidth]{Figures/muEDM/CircuitMuonKickerV3_1.png}
-            \caption{\ltsp simulation for the kicker circuit.}
-            \label{fig:muEDM:kicker:circuit}
+            \includegraphics[width=\textwidth]{Figures/muEDM/Pulser/PulserModelJan2024.png}
+            \caption{Circuit model, developed in LTSpice, for the load attached to simplified charging-stage circuits using ideal switches. Transmission lines labeled \textit{CoaxLine1-4} transmit from generator to the external flange of the solenoid; \textit{CoaxLineB1-4} transmit from the flange to the center of the bore, where the coils are located. Inductive couplings between quadrants \textit{i} and \textit{j} are specified by the listed constants labeled \textit{Kij}. Capacitive couplings between quadrants \textit{i} and \textit{j} are described by capacitors labeled \textit{CQij}. The second and third quadrants are not shown for compactness.}
+        \label{fig:circuit}
+        \end{figure}
+        
+        
+        \begin{figure}
+        \centering
+        \subfloat[Pulse current]{
+        \includegraphics[width=0.3\textwidth]{Figures/muEDM/Pulser/pulse.png}}
+        \hfill
+        \subfloat[After-pulse oscillations]{
+        \includegraphics[width=0.3\textwidth]{Figures/muEDM/Pulser/pulse_zoom.png}}
+        \hfill
+        \subfloat[Charging voltage recovery ]{
+        \includegraphics[width=0.3\textwidth]{Figures/muEDM/Pulser/chargingvoltage.png}}
+        \caption{Pulse current profiles simulated using the LTspice circuit model with parameters as shown in Fig.~\ref{fig:circuit}. The current plotted in (a) and (b) from $t=0$ (entrance) to $t=\SI{500}{ns}$ is for the first quadrant, labeled \textit{LQ1} in Fig.~\ref{fig:circuit}. The dashed vertical line at \SI{210}{ns} indicates the time after which the current remains below $\sim 1\,A$. The voltage over the capacitor labeled \textit{C1} is plotted in (c), showing the recovery of the charging voltage within the desired \SI{20}{\micro s} duration.}
+        \label{fig:pulses}
         \end{figure}
 
     \status{started}
-    \subsection{Electrodes}
+    \subsection{Frozen-spin electrodes}
         After the muon has been successfully stored around the design orbit the next step is to apply a radial electric field. 
         The strength of this field is going to modify the frequency of the g-2 precession, eventually \textit{freezing} the spin (eq. \ref{eq:freezed}) along the momentum direction.
         These electrodes need to be out of the muon orbit and with a minimal material budget to reduce the positron scattering.  
-        Dedicated simulations and prototyping have been developed also for this element.
+        Dedicated simulations and prototyping have been developed also for this element.\\\\
 
+The radial electric field will be induced by concentric cylindrical electrodes at $r=\SI{40}{mm}$ (grounded) and $r=\SI{20}{mm}$ (high voltage), requiring $\sim\SI{6}{kV}$ to achieve a frozen-spin field strength of $\approx\SI{3}{kV\per cm}$ at the nominal orbit radius ($\rho=\SI{31}{mm}$).
+
+A momentum bite of $0.5\%$ leads to a limit of approximately $1\%$ for matching the frozen-spin field strength over the momentum distribution, requiring a voltage precision better than $0.5\%$. To control systematic effects from a longitudinal electric field, the applied voltage stability must be constrained to $\sim10^{-4}$.
+
+The 20HVA24-BP1-F high voltage amplifier by \textit{Advanced Energy}\footnote{\url{www.advancedenergy.com/en-us/products/dc-dc-conversion-products/high-voltage-boost-(u-v)/high-voltage-amplifiers/hva-series/}} meets these requirements with limited voltage ripple and a bipolar supply, enabling calibration of the frozen-spin field strength. This calibration involves observing spin precession due to the anomalous magnetic moment when the electric field is offset from $E_f$. The device will be tested with existing electrode prototypes to verify stability under applied high voltage in a vacuum, facilitating electric field measurements and geometric alignment. This progress informs the final electrode system design for integration in 2024, with further development leading to incorporation into anticipated beam tests in 2025.
+Prototype electrodes, made from aluminized Kapton films, were designed to study eddy-currents induced by the magnetic field pulse. To minimize eddy currents, material with higher resistivity or optimized geometry is crucial. Measurement of the radial component at the muon orbit is necessary for shielding determination and design optimization.
+
+Using a \SI{5}{mm} radius pickup coil, voltages induced by a \SI{10}{\mega\hertz} sinusoidal current in the pulse coils were compared for various electrode configurations. A ground electrode made from homogeneously aluminized Kapton exhibited a maximum shielding factor of $1.9(1)$, increasing to $3.0(2)$ with the HV electrode installed. However, azimuthal asymmetry along the muon orbit was observed due to the discontinuity at the gluing seam.
+
+A new prototype with aluminum distributed in \SI{2}{mm} stripes (\SI{2.2}{mm} pitch) was prepared. Measurements with this segmented electrode showed shielding factors $<1.1$ ($90\%$ C.L.), indicating effective restriction of radial eddy-current flow across length scales comparable to the coils. This allows near-complete transmission of the radial field at frequencies relevant to the magnetic field pulse (Sec.~\ref{sec:B_FieldPulse}), with no measurable shielding or azimuthal asymmetry.
+
+Noting that a segmented electrode introduces periodic field non-uniformity along the orbit, investigations were conducted to explore possible systematic effects arising from the accumulation of a geometric phase. For instance, separating the electrodes into 100 longitudinal strands would induce $E$-field oscillations of approximately \SI{40}{\giga\hertz}.
+
+Implemented in ANSYS with 60 wires of \SI{1}{mm} diameter for the high voltage electrode and 120 for the ground (Fig.~\ref{fig:segmented}(b)), the transverse cross-section of the electric field shows negligible high-frequency oscillations for a displaced orbit (\SI{6}{mm}). The study demonstrates that a segmented electrode will not introduce additional systematic effects.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figures/muEDM/Electrode/ElectricField.pdf}
+    \caption{The radial electric field corresponding to the frozen-spin field strength at the nominal orbit radius is plotted over the radial position. The dashed vertical lines indicate the radial offset due to changes in momentum $\pm0.5\%$. The dashed curves indicate the electric field which would satisfy the frozen-spin condition for these shifted momenta and radii. The resultant discrepancy is $\sim1\%$, limiting the precision necessary for the electric field strength given a momentum bite of $0.5\%$.}
+    \label{fig:efieldprecision}
+\end{figure}
+
+\begin{figure}
+    \centering
+        \subfloat[Stripe-segmented electrode prototype]{
+    \includegraphics[height=0.4\textwidth]{Figures/muEDM/Electrode/stripedfoil.jpg}}
+		\hfill
+        \subfloat[Wire electrode simulation]{
+    \includegraphics[height=0.4\textwidth]{Figures/muEDM/Electrode/ansys_striped_field.png}}
+    \caption{A segmented electrode prevents eddy current shielding of the magnetic pulse, while preserving the required electric field properties. A prototype made from aluminized Kapton (a) showed negligible shielding, while simulation studies using a wire array electrode modeled in ANSYS (b) show no significant systematic effects and sufficient uniformity of the field in the storage region.}
+    \label{fig:segmented}
+\end{figure}
     \status{review}
     \subsection{Positron tracking}
         The development of the positron tracker has been a big part of my work in the collaboration.
@@ -233,38 +408,36 @@ This my attempt to an up-to-date description but some details might be already o
         $$W^2_{ijk} = \frac{(N_\uparrow - N_\downarrow)^2}{N_\uparrow + N_\downarrow},\text{ and }  \dot A_{ijk} = \frac{d}{dt} \left( \frac{N_\uparrow - N_\downarrow}{N_\uparrow + N_\downarrow} \right)$$
     \end{outline}
     All these values are illustrated in Tab.~\ref{tab:AnalysisMethods}. 
-    The key aspects are clearly shown in Fig.~\ref{} and here sumarized.
-    In the Phase I, the impact of positrons with an energy below \SI{27.6}{MeV} on measurement asymmetry is negligible. 
+    The key aspects are clearly shown in Fig.~\ref{fig:n_dot_a} and here summarized.
+    In Phase I, the impact of positrons with energy below \SI{27.6}{MeV} on measurement asymmetry is negligible. 
     Optimal sensitivity is achieved when considering positrons within an opening angle range of \SI{30}{\degree} to \SI{90}{\degree}, provided their energy exceeds \SI{41}{MeV}. 
-    For PhaseII, valuable asymmetry information is present in emission angles up to \SI{135}{\degree} and energies surpassing \SI{21}{MeV}.
+    For Phase II, valuable asymmetry information is present in emission angles up to \SI{135}{\degree} and energies surpassing \SI{21}{MeV}.
     
 \begin{figure}
 	\subfloat[Phase~I, $p = \SI{28}{MeV/c}$]{\includegraphics[width=0.49\columnwidth]{Figures/muEDM/Tracker/n_a_afb.png}}
 	\hfill
 	\subfloat[Phase~II, $p = \SI{125}{MeV/c}$]{\includegraphics[width=0.49\columnwidth]{Figures/muEDM/Tracker/n_a_afb_PhaseII.png}}
-	\caption{Positron energy distribution $N$, rate of change of asymmetry $\partial_\Psi A$ evaluated for spin pointing opposite and along the momentum, respectively for Phase~I and II\@. The g-2 precession is deduced from the asymmetry~($A_\mathrm{fb}$ green) between the energy distributions, while the EDM signal is proportional to the directional asymmetry~(red). The spectrum is divided into two to improve the visibility of the plot. The arrows point to the mean rate of change of asymmetry $\tilde \alpha$ and the fraction of the positron spectrum at the optimal threshold using the T-method.
- }
+	\caption{Positron energy distribution $N$, rate of change of asymmetry $\partial_\Psi A$ evaluated for spin pointing opposite and along the momentum, respectively for Phase~I and II\@. The g-2 precession is deduced from the asymmetry~($A_\mathrm{fb}$ green) between the energy distributions, while the EDM signal is proportional to the directional asymmetry~(red). The spectrum is divided into two to improve the visibility of the plot. The arrows point to the mean rate of change of asymmetry $\tilde \alpha$ and the fraction of the positron spectrum at the optimal threshold using the T-method. }
 	\label{fig:n_dot_a}
 \end{figure}
 
 
-\begin{table}
-\begin{tabular}{@{}p{2.0cm}@{\hspace{10pt}}p{2cm}ccc@{\hspace{10pt}}p{2cm}ccc@{}}
-\toprule
-\multicolumn{1}{c}{\multirow{2}{*}{Method}} & \multicolumn{4}{c}{Phase I} & \multicolumn{4}{c}{Phase II} \\ \cmidrule(l{2pt}r{10pt}){2-5} \cmidrule(l{2pt}r{2pt}){6-9} 
-\multicolumn{1}{c}{} & Threshold \scriptsize$\times \SI{68.9}{MeV}$ & \multicolumn{1}{c}{$\tilde \alpha$} & \multicolumn{1}{c}{$N_{e^+}/N_{\mu^+}$} & \multicolumn{1}{l}{FoM} & Threshold \scriptsize$\times \SI{140.2}{MeV}$ & \multicolumn{1}{c}{$\tilde \alpha$} & \multicolumn{1}{c}{$N_{e^+}/N_{\mu^+}$} & \multicolumn{1}{c}{FoM} \\ \midrule
-Simple & None & 0.166 & 1.0 & 0.166 & None & 0.166 & 1.0 & 0.166 \\ \midrule
-T-method & 0.596 & 0.348 & 0.384 & 0.216 & 0.183 & 0.195 & 0.835 & 0.178 \\ \midrule
-W-method \scriptsize(20 energy bins) & None & -- & 1.0 & 0.251 & None & -- & 1.0 & 0.183 \\
-W-method \scriptsize (20 energy bins) & 0.4 & -- & 0.800 & 0.250 & 0.15 & -- & 0.876 & 0.183 \\ \midrule
-W-method \scriptsize (20x20x20 bins) & None & -- & 1.0 & 0.292 & None & -- & 1.0 & 0.280 \\
-W-method \scriptsize (20x20x20 bins) & 0.4 & -- & 0.800 & 0.291 & 0.15 & -- & 0.876 & 0.280 \\ \bottomrule
-\end{tabular}
-\caption{Summary of analysis methods. The ratio $N_{e^+}/N_{\mu^+}$ is the fraction of detected positrons with respect to the total number of injected muons and $\tilde \alpha$ is the mean asymmetry above a threshold. The values presented are the theoretical maximum and do not include the effects of multiple scattering of positrons or limited detector acceptance.}\label{tab:AnalysisMethods}
+\begin{table}[ht]
+    \begin{tabular}{@{}p{2.2cm}p{2cm}ccc@{\hspace{10pt}}p{2cm}ccc@{}}
+    \toprule
+    \multicolumn{1}{c}{\multirow{2}{*}{Method}} & \multicolumn{4}{c}{Phase I} & \multicolumn{4}{c}{Phase II} \\ \cmidrule(l{2pt}r{10pt}){2-5} \cmidrule(l{2pt}r{2pt}){6-9} 
+    \multicolumn{1}{c}{} & Threshold \scriptsize$\times \SI{68.9}{MeV}$ & \multicolumn{1}{c}{$\tilde \alpha$} & \multicolumn{1}{c}{$N_{e^+}/N_{\mu^+}$} & \multicolumn{1}{l}{FoM} & Threshold \scriptsize$\times \SI{140.2}{MeV}$ & \multicolumn{1}{c}{$\tilde \alpha$} & \multicolumn{1}{c}{$N_{e^+}/N_{\mu^+}$} & \multicolumn{1}{c}{FoM} \\ \midrule
+    Simple & None & 0.166 & 1.0 & 0.166 & None & 0.166 & 1.0 & 0.166 \\ \midrule
+    T-method & 0.596 & 0.348 & 0.384 & 0.216 & 0.183 & 0.195 & 0.835 & 0.178 \\ \midrule
+    W-method \scriptsize(20 energy bins) & None & 0.251 & 1.0 & 0.251 & None & 0.183 & 1.0 & 0.183 \\
+    W-method \scriptsize (20 energy bins) & 0.4 & 0.280 & 0.800 & 0.250 & 0.15 & 0.194 & 0.876 & 0.183 \\ \midrule
+    W-method \scriptsize (20x20x20 bins) & None & 0.292 & 1.0 & 0.292 & None & 0.280 & 1.0 & 0.280 \\
+    W-method \scriptsize (20x20x20 bins) & 0.4 & 0.326 & 0.800 & 0.291 & 0.15 & 0.299 & 0.876 & 0.280 \\ \bottomrule
+    \end{tabular}
+    \caption[Analysis method for the muEDM search]{Summary of analysis methods. The ratio $N_{e^+}/N_{\mu^+}$ is the fraction of detected positrons with respect to the total number of injected muons and $\tilde \alpha$ is the mean asymmetry above a threshold. The presented values are the theoretical maximum and do not include the effects of multiple scattering of positrons or limited detector acceptance.}\label{tab:AnalysisMethods}
 \end{table}
-
-
-\status{started}
+    
+\status{review}
 \section{Systematics}
 \label{muEDM:systematics}
     Like for the majority of the experiment at the edge of our current understanding, the systematic effects play a key role.
@@ -294,6 +467,7 @@ W-method \scriptsize (20x20x20 bins) & 0.4 & -- & 0.800 & 0.291 & 0.15 & -- & 0.
         
         \paragraph{$\bm{E}$ imperfections} Another source of precession can be the change of the electric field along the orbit.
         This can be the case if the axes of the magnetic field and electric fields are displaced or at an angle.
+        The effect of such imperfections can be mitigated by developing two injection channels and inverting the $B$ field, obtaining `specular' trajectories (CW and CCW).
         Just like for the other sources, we will omit the calculations, which can be found in the reference \cite{chavdar:2023}. 
         In these effects, is important to consider the cylindrical symmetry of the problem and evaluate the effects averaged over the circular orbit.
         In the next order, the deviations from circular to distorted orbits are also an interesting exercise, although the approximation holds quite well.
@@ -317,19 +491,59 @@ W-method \scriptsize (20x20x20 bins) & 0.4 & -- & 0.800 & 0.291 & 0.15 & -- & 0.
 
         \begin{figure}
             \centering
-            \includegraphics[width = 0.8\textwidth]{Figures/muEDM/gf_systematics.png}
-            \caption{\ltsp simulation for the kicker circuit.}
+            \subfloat[Comparison between the spin precession analytical description and the \gf  tracking.]{\includegraphics[height = 8.5cm]{Figures/muEDM/gf_systematics.png}}
+            \hfill
+            \subfloat[Constraints to avoid asymmetry rising from the electric fields. The vertical lines refer to the two Phases I and II.]{\includegraphics[height = 8.5cm]{Figures/muEDM/systemtacti_constraints.png}}
+            \caption{The study on systematics has two main parts:  (a) developing and crosschecking the results extracted analytically and (b) extracting limits on the relevant parameters.}
             \label{fig:muEDM:systematics}
         \end{figure}
 
+    \status{review}
     \subsection{Constraits} 
-    
+        To extract from each aspect a constraint on the variables at play in the experiment is not an easy task.
+        Although we highlighted some key sources of real/apparent spin precession, we will not delve into the evaluation of the actual constraints and the way they can be extracted, which is partially described in \cite{chavdar:2023}.
+        An example of the plot showing this type of study is in Fig.~\ref{fig:muEDM:systematics}, in which the measured `false' EDM is shown as a function of the longitudinal E field and $\beta$ of the muons.
+        The introduction of the CW and CCW injection brings us to the plot in Fig.~\ref{fig:muEDM:omz_ez_limit}.
+        The summary of the current understanding of the systematics is shown in Tab.~\ref{tab:SystematicEffects}.
+        Fo each entry of this table plots similar to Fig.~\ref{fig:muEDM:systematics} or Fig.~\ref{fig:muEDM:omz_ez_limit} have been used, but we will not include them.
+        For the detail see \cite{chavdar:2023}.
+
         \begin{figure}
             \centering
-            \includegraphics[width = 0.8\textwidth]{Figures/muEDM/systematic_table.png}
-            \caption{Table for the constraint extracted from the study of the different systematic effects.}
-            \label{fig:muEDM:systematics:table}
+            \subfloat[]{\includegraphics[width=0.526\linewidth]{Figures/muEDM/omz_ez_limit.pdf}\label{fig:omz_ez_limit_a}}
+            \hfill
+            \subfloat[]{\includegraphics[width=0.451\linewidth]{Figures/muEDM/omz_speed.pdf}\label{fig:omz_ez_limit_b}}
+            \caption{ Limit on the longitudinal $E$-field, $E_z$, when considering alternating CW/CCW injections, where the difference in mean momentum averaged over all injected muons for injections of CW and CCW beams is fixed at $\Delta p = 0.5\%$. 
+            a)~Shows the limit as a function of the initial phase difference$\Phi_0^\mathrm{cw} - \Phi_0^\mathrm{ccw}$. 
+            The horizontal dashed line indicates the limit coming from $\Delta$, keeping all other parameters equal between the two injection modes. 
+            The brown area is the constraint that results from the difference in the initial phase at $\Delta p = 0\%$. 
+            The green area and its thick dashed line edge show the combined limits of the two effects. 
+            b)~Shows the limit as a function of the difference in $E$- or $B$-field for CW and CCW orbits, at various times. $\Delta F = 2 (F^\mathrm{cw} - F^\mathrm{ccw})/(F^\mathrm{cw} + F^\mathrm{ccw})$, where $F \in \{B_z, \tilde E_\rho \}$, while the difference in initial phases was fixed at \SI{25}{mrad}.
+            }
+        \label{fig:muEDM:omz_ez_limit}
         \end{figure}
+
+        \begin{table}
+            \centering
+            \scriptsize
+            {\renewcommand{\arraystretch}{1.2} %<- table feels too clumped without
+                \begin{tabular}{@{}llcccc@{}}
+                    \toprule
+                    \multicolumn{1}{l}{\multirow{2}{*}{\textbf{Systematic effect}}} & \multicolumn{1}{l}{\multirow{2}{*}{\textbf{Constraints}}} & \multicolumn{2}{c}{\textbf{Phase I}} & \multicolumn{2}{c}{\textbf{Phase II}} \\ \cmidrule(l){3-6}
+                    \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}Expected\\ value\end{tabular}}} & \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}Syst.\\ \scriptsize(\boldmath$\times 10^{-21} e\cdot$cm)\end{tabular}}} & \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}Expected\\ value\end{tabular}}} & \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}Syst.\\ \scriptsize(\boldmath$\times 10^{-23} e\cdot$cm)\end{tabular}}} \\ \midrule
+                    \begin{tabular}[c]{@{}l@{}}Cone shaped electrodes\\ (longitudinal E-field)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Up-down asymmetry\\ in the electrode shape\end{tabular} & $\Delta_R < 30$ \textmu m & 0.75 & $\Delta_R < 7$ \textmu m & 1.5 \\ \midrule
+                    \begin{tabular}[c]{@{}l@{}}Electrode local smoothness\\ (longitudinal E-field)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Local longitudinal\\ electrode smoothness\end{tabular} & $\delta_R < 3$ \textmu m & 0.75 & $\delta_R < 0.7$ \textmu m & 1.5 \\ \midrule
+                    Residual B-field from kick & \begin{tabular}[c]{@{}l@{}}Decay time of\\ kicker field\end{tabular} & < 50 ns & $< 10^{-2}$ & < 50 ns & 0.5 \\ \midrule
+                    \begin{tabular}[c]{@{}l@{}}Net current flowing\\ muon orbit area\end{tabular} & \begin{tabular}[c]{@{}l@{}}Wiring of electronics\\ inside the orbit\end{tabular} & < 10 mA & $< 10^{-2}$ & < 10 mA & 0.3 \\ \midrule
+                    \begin{tabular}[c]{@{}l@{}}Early-to-late detection\\ efficiency change\end{tabular} & \begin{tabular}[c]{@{}l@{}}Shielding and cooling\\ of detectors\end{tabular} & -- & & -- & \\ \midrule
+                    \begin{tabular}[c]{@{}l@{}}Resonant geometrical\\ phase accumulation\end{tabular} & \begin{tabular}[c]{@{}l@{}}Misalignment of\\ central axes\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pitch < 1 mrad\\ Offset < 2 mm\end{tabular} & $2\times 10^{-2}$ & \begin{tabular}[c]{@{}l@{}}Pitch < 1 mrad\\ Offset < 2 mm\end{tabular} & 0.15 \\ \midrule
+                    TOTAL & & & 1.1 & & 2.2 \\ \bottomrule
+                \end{tabular}
+            }
+            \caption[Systematic effects for the muEDM search]{Summary of systematic effects for both phases of the experiment. The determination of the effects related to early-to-late detection efficiency changes is currently under evaluation.}
+            \label{tab:SystematicEffects}
+        \end{table}
+
 
 \status{review}
 \section{Schedule}
@@ -359,9 +573,13 @@ W-method \scriptsize (20x20x20 bins) & 0.4 & -- & 0.800 & 0.291 & 0.15 & -- & 0.
         \caption{`Long' term muEDM schedule, with the different phases up to the end of the experiment.}
         \label{fig:muEDM:schedule:long}
     \end{figure}
-    
-\section{Conclusions}
 
+\status{review}
+\section{Conclusions}
+    After reviewing the concept of EDM, the current limits, and the frozen spin technique, we described the MuEDM experiment.
+    A description of the different subsistem and their current status was given, leaving the muon detection and the positron tracking for the Ch.~\ref{ch:muEDM:entrance} and Ch.~\ref{ch:muEDM:tracker}.
+    A status on the study of the systematics and a brief section on the upcoming schedule end the chapter.
+    The experiment is still in an early phase but a lot of progress has been made during the last 2/3 years.
 \status{started}
 \printbibliography[
     heading = bibliographychapter,

@@ -1,11 +1,10 @@
-\status{started}
+\status{review}
 \chapter{Kalman filter}
 {\itshape
-This Appendix is to illustrate the working principle of a Kalman filter, showing a simple linear problem in 2D.
-This is taken, with minor adjustments, from my Master Thesis: In situ monitoring of the stopped muon flux at Mu2e}
+This Appendix is to illustrate the working principle of a Kalman filter, showing a simple linear problem in 2D. This is taken, with minor adjustments, from my Master Thesis: In situ monitoring of the stopped muon flux at Mu2e. Although during my PhD I did not implement any Kalman filter, this concept is central in MEG II analysis as well as the muEDM upcoming track fitting and in modern particle physics at large.}
 \label{ch:Kalman}
 
-\status{started}
+\status{review}
 \section{The problem}
     Once the pattern recognition algorithms have been executed, a preliminary but rough estimate of the track parameters $\vec{\eta}$ is available. 
     At this point, there are still numerous effects that should be accounted for when trying to optimize track reconstruction. 
@@ -14,7 +13,7 @@ This is taken, with minor adjustments, from my Master Thesis: In situ monitoring
 
     \noindent
     Mathematically, a track can be parameterized using a running variable and a vector of parameters. 
-    Quite often in particle physics, the particles move in magnetic fields, following a helicoidal trajectory. 
+    To make an example, quite often in particle physics, the particles move in magnetic fields, following a helicoidal trajectory. 
     In this case the vector $\vec{\eta}$ with the helix parameters and the position along the beam axis $z$ can be used: $F(\vec{\eta};z)$. 
     The fitting procedure then determines the best estimate of the vector $\vec{\eta}$ and the corresponding covariance matrix $V$. 
     The task gets substantially more complicated if the parameters vector depends on the running variable $\vec{\eta}(z)$. 
@@ -31,11 +30,11 @@ This is taken, with minor adjustments, from my Master Thesis: In situ monitoring
         \label{_Kutschke_Kalman_circ}
     \end{figure}
 
-\status{started}
+\status{review}
 \section{The solution}
     The Kalman filter is a well-established algorithm in the standard formalism employed for track fitting developed to account for mechanisms like interactions with the detector material and magnetic field distortions that can affect the particle trajectory \cite{Kalman:1984}\cite{Kalman:1987}. 
     Most of today's implementations are based on the BaBar filter and adaptations of \cite{Kalman}\cite{Kalman:1987}.
-    In the typical track fitting procedure, the pattern recognition algorithms employed to find a first estimate of the helix are followed by a simplified Kalman filter. 
+    In the typical track fitting procedure, the pattern recognition algorithms employed to find a first estimate of the track are followed by a simplified Kalman filter. 
     This version does not account for all the effects yet, like the interaction with the detector material, but improves the accuracy of track parameters reconstruction. 
     If more effects need to be accounted for, a second and more complete Kalman filter can be executed to introduce the missing residual effects. 
     There are two important general aspects of this iterative algorithm we should briefly mention: 
@@ -48,7 +47,7 @@ This is taken, with minor adjustments, from my Master Thesis: In situ monitoring
     Nonetheless, it is still useful to describe the basic principle through the discussion of a simplified problem, as a 2D linear fit. 
     This will be done in Sec.~\ref{2Dfit}.
 
-\status{started}
+\status{review}
 \section{Implementation}
     The Kalman filter equations, linearized in $\eta$, are reported in Eq.\ref{eq_Kalman} with no proof, which is available in \cite{KutschkePaper}. 
     In these equations, $\eta$ (dropping the vector symbol to avoid a too-heavy notation) and $V$ are the current estimates of the vector and the covariance matrix, while the primed versions are the new estimates after a new hit is added. 
@@ -65,7 +64,7 @@ This is taken, with minor adjustments, from my Master Thesis: In situ monitoring
         \label{eq_Kalman}
     \end{equation}
 
-\status{started}
+\status{review}
 \section{Example: a 2D linear fit}
     \label{2Dfit}
     Track fitting and Kalman filtering are complex procedures and we have reported the description of the simpler 2D linear problem (Fig. \ref{_Kutschke_Kalman}) in the following to better explain them. 
@@ -175,7 +174,7 @@ To extrapolate to the track IP,
 the procedure is the same as before, 
 describing the trajectory in the coordinate system set in the IP. 
 
-\status{started}
+\status{review}
 \subsection{Adding multiple scattering}
 How does the problem of track fitting change if the detectors are not ideal planes but consist of a thin scattering volume? 
 The initialization and the inclusion of the first hit do not change. 
@@ -195,7 +194,7 @@ From this point on the presence of $\delta$ can change substantially the results
  In \cite{KutschkePaper} the calculations are extensively developed up to the third point (point C) 
  with the specific example $\delta^2L^2=\sigma^2$ to keep the passages easy to follow.
 
-\status{started}
+\status{review}
 \printbibliography[
     title=Bibliography on Kalman filter
 ]

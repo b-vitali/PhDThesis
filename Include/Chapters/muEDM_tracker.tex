@@ -17,23 +17,6 @@ We will skip some preliminary studies and we will start with the description of 
     \noindent
     We will start by presenting the original detector design, which was developed to be complemented with silicon devices.
 
-\section{Kinematics}
-    \begin{table}[ht]
-    \begin{tabular}{@{}p{2.2cm}p{2cm}ccc@{\hspace{10pt}}p{2cm}ccc@{}}
-    \toprule
-    \multicolumn{1}{c}{\multirow{2}{*}{Method}} & \multicolumn{4}{c}{Phase I} & \multicolumn{4}{c}{Phase II} \\ \cmidrule(l{2pt}r{10pt}){2-5} \cmidrule(l{2pt}r{2pt}){6-9} 
-    \multicolumn{1}{c}{} & Threshold \scriptsize$\times \SI{68.9}{MeV}$ & \multicolumn{1}{c}{$\tilde \alpha$} & \multicolumn{1}{c}{$N_{e^+}/N_{\mu^+}$} & \multicolumn{1}{l}{FoM} & Threshold \scriptsize$\times \SI{140.2}{MeV}$ & \multicolumn{1}{c}{$\tilde \alpha$} & \multicolumn{1}{c}{$N_{e^+}/N_{\mu^+}$} & \multicolumn{1}{c}{FoM} \\ \midrule
-    Simple & None & 0.166 & 1.0 & 0.166 & None & 0.166 & 1.0 & 0.166 \\ \midrule
-    T-method & 0.596 & 0.348 & 0.384 & 0.216 & 0.183 & 0.195 & 0.835 & 0.178 \\ \midrule
-    W-method \scriptsize(20 energy bins) & None & 0.251 & 1.0 & 0.251 & None & 0.183 & 1.0 & 0.183 \\
-    W-method \scriptsize (20 energy bins) & 0.4 & 0.280 & 0.800 & 0.250 & 0.15 & 0.194 & 0.876 & 0.183 \\ \midrule
-    W-method \scriptsize (20x20x20 bins) & None & 0.292 & 1.0 & 0.292 & None & 0.280 & 1.0 & 0.280 \\
-    W-method \scriptsize (20x20x20 bins) & 0.4 & 0.326 & 0.800 & 0.291 & 0.15 & 0.299 & 0.876 & 0.280 \\ \bottomrule
-    \end{tabular}
-    \caption{Summary of analysis methods. The ratio $N_{e^+}/N_{\mu^+}$ is the fraction of detected positrons with respect to the total number of injected muons and $\tilde \alpha$ is the mean asymmetry above a threshold. The presented values are the theoretical maximum and do not include effects of multiple scattering of positrons or limited detector acceptance.}\label{tab:AnalysisMethods}
-    \end{table}
-
-
 \status{started}
 \section{Design in the 2022 proposal}
     The kinematics of the $e^+$ coming from the decay is described in a Sec.~\ref{sec:StatSysEstimate}.
@@ -67,48 +50,155 @@ We will skip some preliminary studies and we will start with the description of 
     \label{fig:SciFi_ConceptualDesign}
 \end{figure}
 
-\status{started}
-\subsection{The SciFi detector}
-    The SciFi detector is designed to provide excellent tracking capacities for minimum-ionizing particles with a detector thickness below \SI{0.4}{\%}, a timing resolution better than \SI{1}{ns}, and a spatial resolution of \SI{1}{mm}, or probably better.
-    Figure~\ref{fig:SciFi_ConceptualDesign} shows the first conceptual design of the detector. The tracker will be a compact detector made of several ribbons of \SI{250}{\micro m} scintillating fibers arranged in an inner~(transverse) and an outer~(longitudinal) detector.
+    \status{started}
+    \subsection{The SciFi detector}
+        The SciFi detector is designed to provide excellent tracking capacities for minimum-ionizing particles with a detector thickness below \SI{0.4}{\%}, a timing resolution better than \SI{1}{ns}, and a spatial resolution of \SI{1}{mm}, or probably better.
+        Figure~\ref{fig:SciFi_ConceptualDesign} shows the first conceptual design of the detector. The tracker will be a compact detector made of several ribbons of \SI{250}{\micro m} scintillating fibers arranged in an inner~(transverse) and an outer~(longitudinal) detector.
 
-The inner detector is made of a minimum of three barrels, extendable to five, of scintillating fiber ribbons. Each barrel is made of eight ribbons, with the fibers oriented transversely. This is the so-called SciFi transverse detector, as shown in Fig.~\ref{fig:SciFi_InnerDetector}, providing the necessary longitudinal resolution (up/down) to measure the EDM signal. In this detector, the fiber ribbons are polygonally shaped as shown by the blue elements in the figure. The red elements represent the photosensors. The optional outer detector is made of eight ribbons, with the fibers oriented longitudinally. Here, the ribbons have a parallelepipedal shape (green elements) with photosensors at both ends (red elements), as shown in Fig.~\ref{fig:SciFi_ConceptualDesign}. This is the SciFi longitudinal detector, which could complement the silicon strip detector discussed in the previous sections. Both detectors are arranged to cover a cylindrical surface, with the radius of the inner detector currently equal to \SI{50}{mm}.
+        The inner detector is made of a minimum of three barrels, extendable to five, of scintillating fiber ribbons. Each barrel is made of eight ribbons, with the fibers oriented transversely. This is the so-called SciFi transverse detector, as shown in Fig.~\ref{fig:SciFi_InnerDetector}, providing the necessary longitudinal resolution (up/down) to measure the EDM signal. In this detector, the fiber ribbons are polygonally shaped as shown by the blue elements in the figure. The red elements represent the photosensors. The optional outer detector is made of eight ribbons, with the fibers oriented longitudinally. Here, the ribbons have a parallelepipedal shape (green elements) with photosensors at both ends (red elements), as shown in Fig.~\ref{fig:SciFi_ConceptualDesign}. This is the SciFi longitudinal detector, which could complement the silicon strip detector discussed in the previous sections. Both detectors are arranged to cover a cylindrical surface, with the radius of the inner detector currently equal to \SI{50}{mm}.
 
-Each ribbon has three layers of fibers, and these three layers are glued together in a staggered way, as sketched in Fig.~\ref{fig:SciFi_MC}. Each layer is made up of 128 \SI{250}{\micro m} square or round multiclad fibers. One layer has a width of approximately \SI{32}{mm} and a length of approximately \SI{200}{mm}. Each ribbon is read out at both ends by silicon photomultiplier (SiPM) arrays. Double-readout of each ribbon is essential for matching the experiment requirements. The amount of energy deposited in such a thin fiber by a mip is small ($\mathcal{O}(\SI{35}{keV})$) and, given the size of the detector, the relative light reaching the photosensor turns out to be equal to a few photons/fiber. 
-To successfully collect these few photons with maximum efficiency and high dark noise rejection factor, a double readout scheme is foreseen, as well as extreme care in the coupling of the fibers to the photosensors.
+        Each ribbon has three layers of fibers, and these three layers are glued together in a staggered way, as sketched in Fig.~\ref{fig:SciFi_MC}. Each layer is made up of 128 \SI{250}{\micro m} square or round multiclad fibers. One layer has a width of approximately \SI{32}{mm} and a length of approximately \SI{200}{mm}. Each ribbon is read out at both ends by silicon photomultiplier (SiPM) arrays. Double-readout of each ribbon is essential for matching the experiment requirements. The amount of energy deposited in such a thin fiber by a mip is small ($\mathcal{O}(\SI{35}{keV})$) and, given the size of the detector, the relative light reaching the photosensor turns out to be equal to a few photons/fiber. 
+        To successfully collect these few photons with maximum efficiency and high dark noise rejection factor, a double readout scheme is foreseen, as well as extreme care in the coupling of the fibers to the photosensors.
 
-\status{started}
-\subsection{Geant4 simulation and performance}
-For current simulations, fiber implementation is based on double-clad BCF20 Saint-Gobain scintillating fiber parameters\footnote{\url{https://www.crystals.saint-gobain.com/radiation-detection-scintillators/fibers}}.
-The sketches of the fiber section and the ribbon are shown in Fig.~\ref{fig:SciFi_MC}.
-Currently, we are performing simulations that include the interaction between radiation and matter using \textsc{GEANT4} physics processes. Complete photosensor readout and electronics will be implemented once all details of the detector are finalized. 
-For these simulations, we assume an ideal readout scenario in which all photons that reach the ends of the fibers are detected and the exact position and timing of each photon are recorded. Additionally, each fiber is treated as a single detector element equivalent to a single fiber readout.
+    \status{started}
+    \subsection{Scintillating fibers prototype}
+    \label{sec:SciFi_prototype}
+        A prototype to mimic the behavior of a fiber ribbon was built and tested.     
+        It consists of 32 squared, \SI{250}{\micro m} thin multiclad BCF-12 fibers manufactured by Saint-Gobain\footnote{\url{https://www.crystals.saint-gobain.com/radiation-detection-scintillators/fibers}} and it is shown in Fig.~\ref{fig:LargePrototype}. 
+        The fibers were assembled to make four fiber layers; the first one was used as a trigger, and the others, staggered by half a fiber, were used to mimic the detector. 
+        Each fiber was coated by physical vapor deposition with $\sim \SI{100}{nm}$ of aluminum along its whole length, with the aluminum acting as an optical insulator.
+        The fiber ends were fixed on two plexiglass end plates, which were polished with a diamond cutting blade and fixed to an aluminum support structure. 
+        Each fiber end was coupled with BC630 optical grease to a Hamamatsu 13360-1350CS SiPM (active area $1.3\times1.3$~mm$^{2}$, pixel size \SI{50}{\micro m}, PDE 40\thinspace\%\footnote{\url{www.hamamatsu.com/us/en/product/category/3100/4004/4113/S12571-100C/index.html}}~\cite{Stoykov2012NIMA}), resulting in 64 channels. 
+        All SiPMs were biased at the same bias voltage ($\approx \SI{55}{V}$). 
+        The signal was passed through a minicircuit amplifier, working with a typical gain of \SI{40}{dB}, and finally digitized with DRS V5 evaluation boards \cite{Ritt2010NIMA,Galli2014JINST} at a sampling speed of 5 GSPS.
+        To emulate the situation in which the fiber tracker is read out column-wise by SiPM arrays (see Fig.~\ref{fig:sipmarray:sketch}), rather than reading out every fiber individually, the information from fibers of three consecutive layers was combined at the software level, as shown in Fig.~\ref{fig:sipmarray:fibercombination}.
+        
+        \begin{figure}
+            \centering
+            \includegraphics[ width=11.5cm]{Figures/muEDM/prototype/largeprototype.jpg}	
+            \caption[The Large Prototype]{The fibers prototype, made of 32~squared, multiclad BCF-12 fibers of \SI{250}{\micro m} thickness. Each individual fiber is coated with $\sim\SI{100}{nm}$ of aluminum and read out by a SiPM at each end.}
+            \label{fig:LargePrototype}
+        \end{figure}
+             
+        \begin{figure}
+            \centering
+            \subfloat[]{
+            \includegraphics[height=3cm]{Figures/muEDM/prototype/sipmarray.png}
+            \label{fig:sipmarray:sketch}} 
+            \hspace{0.2\columnwidth}
+            \subfloat[]{
+            \includegraphics[height=2.2cm]{Figures/muEDM/prototype/fiberscombined_scheme.png}
+            \label{fig:sipmarray:fibercombination}}
+            \caption[Fiber tracker read-out column-wise by SiPM arrays ]{Illustration of a column-wise readout of fiber tracker using SiPM arrays, rather than reading out every fiber individually. Fiber tracker~(blue) coupled to a SiPM array~(gray/b). Emulation of the column-wise read-out by SiPM arrays, combining offline the SiPM read out~(b).}
+            \label{fig:sipmarray}
+        \end{figure}
+        
+        The prototype was studied in both the laboratory with a $^{90}$Sr source (electrons with endpoint energy \SI{2.28}{MeV}) housed in a plexiglass collimator and at PSI's $\pi$M1 beam line. Unless otherwise stated, the following results refer to measurements at the $\pi$M1 beamline when selecting minimum ionizing positrons and irradiating the fibers at approximately half the fiber length, perpendicularly to their central axes. The $\pi$M1 beam was tuned to positive polarity and to a momentum of \SI{115}{\MeVc}. 
+        
+        The Large Prototype showed a uniform response (variations between fibers $\lesssim10$\thinspace\%, variations in time and different trigger conditions $\leq 5$\thinspace\%) with the average number of photoelectrons (phe) (average of the histogram) being $4.6\pm0.3$ (stat) for the AND and $3.7\pm0.3$ (stat) for the OR configuration at a threshold of 0.5~phe, consistent with the expectations. A typical light spectrum is shown in Fig.~\ref{fig:ChargeSpectrumAND}.
+        \begin{figure}
+        	\centering
+        	\includegraphics[width=7cm]{Figures/muEDM/prototype/prototype_positrons.pdf}
+        	\caption{Typical light spectrum (threshold 0.5~phe) measured by a single \SI{250}{\micro m} square multiclad fiber ($\approx \SI{50}{cm}$ length) read out by a SiPM on each end (SiPMs combined in logic AND) upon the passage of a mip.}
+        	\label{fig:ChargeSpectrumAND}
+        \end{figure}
+        
+        The detection efficiency for both individual and multiple fibers combined was evaluated by using the first fiber layer (and, where appropriate, also preceding / successive fibers) as a trigger. The measured mip detection efficiency for the different logic configurations, thresholds, and layer numbers are summarized in Table~\ref{tab:DetectionEff}.
+        
+        \begin{table}
+        	\begin{center}
+        		\begin{tabular}{l | c | c | c | c } 
+        		& Single layer & Double layer& Triple layer & Array  \\ \hline\hline
+        			   $\varepsilon_{AND}$ [\%] (1.5 phe)  & $34\pm1$ & $52\pm1$ & $67\pm1$ & $88.0\pm0.3$ \\
+        			  $\varepsilon_{OR}$ \hspace{0.13cm} [\%] (1.5 phe)    & $79\pm1$ & $93\pm1$ & $97\pm1$ & $97.5\pm0.2$ \\
+        			   $\varepsilon_{AND}$ [\%] (0.5 phe) & $72\pm1$ & $89\pm1$ & $95\pm2$ & $95.8\pm0.2$ \\
+        			   $\varepsilon_{OR}$ \hspace{0.13cm} [\%] (0.5 phe)   & $96\pm1$  & $99\pm1$ & $98\pm1$ & $98.3\pm0.2$ 
+        		\end{tabular}
+        	\end{center}	
+        		\caption[Detection efficiencies for m.i.p.]{mip detection efficiencies $\varepsilon_{\rm AND}$ and $\varepsilon_{\rm OR}$ measured by the large prototype when triggering at the indicated threshold (0.5 or 1.5 phe) on the respective SiPMs in the AND and OR logic. The errors are statistical.}
+        		\label{tab:DetectionEff}
+        \end{table}
+        
+        
+        The time resolution on the mean time for a single fiber was determined considering the distribution $T_{single} = (t_{1}-t_{2})/2$, where $t_{1}$ and $t_{2}$ denote the time extracted from the SiPM at the left and right ends of the fiber, respectively. A typical distribution measured for a single fiber is shown in Fig.\ref{fig:TimingSingleFibre}.
+        \begin{figure}
+        \centering
+         \includegraphics[height = 6cm]{Figures/muEDM/prototype/prototype_timing.pdf}
+         \caption{Timing distribution of a single fiber with a double Gaussian fit (solid line).}
+        	\label{fig:TimingSingleFibre}
+        \end{figure}
+        
+        When a particle hits more than just one fiber, the mean times of the individual fibers can be combined to obtain more precise timing information. Table~\ref{tab:TimingResRibbon} summarizes the measured timing resolutions for different combinations of fibers, which correspond to potentially different thick ribbons, thresholds. The quoted sigma was obtained with a single Gaussian fit. A better resolution can be quoted using a double Gaussian fit, but is beyond the scope of this report. As shown by the measurements, with a ribbon made of three layers of fibers, a timing resolution of \SI{500}{ps} can be achieved with a detection efficiency $\geq90\%$.
+        
+        \begin{table}
+        	\centering
+        		\begin{tabular}{l | c | c | c }
+          			  & Single & Double & Triple \\ \hline\hline
+        			  $\sigma_{t}$ [ps] \hspace{0.32cm} (0.5~NPhe) & $1160\pm50$ & $830\pm3$ & $681\pm4$ \\
+        			 $\sigma_{t}$ [ps] \hspace{0.32cm} (1.5~NPhe) & $803\pm5$& $600\pm5$ & $504\pm6$  \\
+        		\end{tabular}
+             \caption[]{Timing resolutions measured by the Large Prototype when triggering at the indicated threshold on the respective SiPMs in the AND logic. The numbers are extracted from single Gaussian fits to the timing spectra. The errors are statistical. }
+        	\label{tab:TimingResRibbon}
+        \end{table}
+        
+        Finally, Fig.~\ref{fig:SciFi_position} shows the tracking capability of the detector with real data. Positrons are impinging at different angles with respect to the plane of the ribbon prototype, and consequently, the fired fibers reproduce the particle path. To push the detector performance in this direction, each fiber was coated with a layer of \SI{100}{nm} aluminum before assembling the prototype, reducing optical crosstalk between fibers from around $30\%$ with naked fibers to $\leq1\%$ with coated aluminum fibers.
+        
+        \begin{figure}
+        	\centering
+         \begin{minipage}{.3\textwidth}
+          \centering	
+        		\includegraphics[width=4cm]{Figures/muEDM/prototype/SquaredFiberIlluminationOffset2275.pdf}
+        		\label{Ffig:angletracks:0deg}
+         \end{minipage}%	
+         \begin{minipage}{.3\textwidth}
+          \centering		
+        		\includegraphics[width=4cm]{Figures/muEDM/prototype/SquaredFiberIlluminationOffset2272.pdf}
+        		\label{fig:angletracks:22deg}
+        \end{minipage}%	
+        \begin{minipage}{.3\textwidth}
+          \centering
+        		\includegraphics[width=4cm]{Figures/muEDM/prototype/SquaredFiberIlluminationOffset2274.pdf}
+        		\label{fig:angletracks:60deg}
+        \end{minipage}%	
+        \caption[]{Particle tracks observed in the Large Prototype as a function of the inclination angle~$\phi$. From left to right, the impinging angle is $\phi = 0^{\circ}$, $\phi = 22^{\circ}$, and $\phi = 60^{\circ}$. The color scale indicates the number of events involving the corresponding fiber relative to the number of triggered events.}
+        \label{fig:SciFi_position}
+        \end{figure}
+        
+        %\section{Outlook}
+        The tracker technology and geometry illustrated above are a preliminary design, but already meet the requirements of positron tracking, i.e. millimeter and nanosecond resolutions. The interplay of a transverse SciFi detector and a silicon-based longitudinal detector seems to be a desirable choice. Working under this assumption, we envision the possibility of removing the longitudinal outer SciFi, which would be redundant, further reducing multiple scattering. Still, alternative geometries are being studied, for example the deployment of radial detectors on the outer part to better follow the positron tracks. 
 
-We are considering the possibility of merging multiple fibers into a single photosensor to reduce the number of channels required for the Data Acquisition System (DAQ) of the experiment. 
-However, the performance of the resulting system may be compromised by the balance between the desired resolution and the number of available DAQ channels, as well as by the pixelation of the SiPMs. Despite this, the initial results of tests with a prototype ribbon using a fiber merging readout scheme under realistic conditions (including photosensor response, front-end electronics, and noise) show promising potential to meet muon EDM requirements, as described in Sec.~\ref{sec:SciFi_prototype}. These results were obtained using waveform analysis to extract the necessary information from the digitized data.
+    \status{started}
+    \subsection{Geant4 simulation and performance}
+        For current simulations, fiber implementation is based on double-clad BCF20 Saint-Gobain scintillating fiber parameters\footnote{\url{https://www.crystals.saint-gobain.com/radiation-detection-scintillators/fibers}}.
+        The sketches of the fiber section and the ribbon are shown in Fig.~\ref{fig:SciFi_MC}.
+        Currently, we are performing simulations that include the interaction between radiation and matter using \textsc{GEANT4} physics processes. Complete photosensor readout and electronics will be implemented once all details of the detector are finalized. 
+        For these simulations, we assume an ideal readout scenario in which all photons that reach the ends of the fibers are detected and the exact position and timing of each photon are recorded. Additionally, each fiber is treated as a single detector element equivalent to a single fiber readout.
 
-The expected performance of a single fiber ribbon for both position and timing resolution, where each \SI{250}{\micro m} fiber is read out independently, has been evaluated by dedicated studies. 
-The first step is to study the characteristics and performance of a single ribbon. Having two impinging particles at the same time at a given distance, we can estimate the spatial resolution of this system.  Fig.~\ref{fig:geant4_position_resolution} shows an event with two particles separated by \SI{2}{mm}. Looking at the position of the generated photons, we can clearly distinguish the two hits, and the resolution is of the order of \SI{0.1}{mm}.
+        We are considering the possibility of merging multiple fibers into a single photosensor to reduce the number of channels required for the Data Acquisition System (DAQ) of the experiment. 
+        However, the performance of the resulting system may be compromised by the balance between the desired resolution and the number of available DAQ channels, as well as by the pixelation of the SiPMs. Despite this, the initial results of tests with a prototype ribbon using a fiber merging readout scheme under realistic conditions (including photosensor response, front-end electronics, and noise) show promising potential to meet muon EDM requirements, as described in Sec.~\ref{sec:SciFi_prototype}. These results were obtained using waveform analysis to extract the necessary information from the digitized data.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{Figures/muEDM/Tracker/2mm.png}
-    \caption{Two particles impinging \SI{2}{mm} apart on the same ribbon. Using \SI{250}{\mum} fibers and having no pixelation on the readout, the spatial resolution is $\sigma\approx \SI{100}{\mum}$ (p5 and p8). This value was obtained with a fit to \textit{plo2+gauss+gauss} and with a bin width of \SI{125}{\mum} (half a fiber width).}
-    \label{fig:geant4_position_resolution}
-\end{figure}
+        The expected performance of a single fiber ribbon for both position and timing resolution, where each \SI{250}{\micro m} fiber is read out independently, has been evaluated by dedicated studies. 
+        The first step is to study the characteristics and performance of a single ribbon. Having two impinging particles at the same time at a given distance, we can estimate the spatial resolution of this system.  Fig.~\ref{fig:geant4_position_resolution} shows an event with two particles separated by \SI{2}{mm}. Looking at the position of the generated photons, we can clearly distinguish the two hits, and the resolution is of the order of \SI{0.1}{mm}.
+
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.5\textwidth]{Figures/muEDM/Tracker/2mm.png}
+            \caption{Two particles impinging \SI{2}{mm} apart on the same ribbon. Using \SI{250}{\micro m} fibers and having no pixelation on the readout, the spatial resolution is $\sigma\approx \SI{100}{\micro m}$ (p5 and p8). This value was obtained with a fit to \textit{plo2+gauss+gauss} and with a bin width of \SI{125}{\micro m} (half a fiber width).}
+            \label{fig:geant4_position_resolution}
+        \end{figure}
     
-In Fig.~\ref{fig:geant4_time}, the arrival time of the scintillating photons at the photosensor, generated by two consecutive particles, is shown. The position of the impinging particles is the same, but a different $\Delta t$ was set between them. Although the time resolution for a single particle is given by the rising edge of the distribution, much sharper than required $\sim \SI{1}{ns}$, the distribution itself is quite broad. This means that a particle that crosses at the exact same position within $\lesssim$ \SI{3}{ns} will induce a pile-up event. Note that here we neglect the shaping of the waveform, for which a width of \SIrange{10}{20}{ns} is expected. This is the time window within which a pile-up event could occur. The resulting distribution is still quite different from that of a single impinging particle, and this feature could be somewhat mitigated. On top of this, the probability of having no deflection due to multiple scattering on a full rotation is quite low: the spatial resolution will further mitigate this pile-up effect. 
+        In Fig.~\ref{fig:geant4_time}, the arrival time of the scintillating photons at the photosensor, generated by two consecutive particles, is shown. The position of the impinging particles is the same, but a different $\Delta t$ was set between them. Although the time resolution for a single particle is given by the rising edge of the distribution, much sharper than required $\sim \SI{1}{ns}$, the distribution itself is quite broad. This means that a particle that crosses at the exact same position within $\lesssim$ \SI{3}{ns} will induce a pile-up event. Note that here we neglect the shaping of the waveform, for which a width of \SIrange{10}{20}{ns} is expected. This is the time window within which a pile-up event could occur. The resulting distribution is still quite different from that of a single impinging particle, and this feature could be somewhat mitigated. On top of this, the probability of having no deflection due to multiple scattering on a full rotation is quite low: the spatial resolution will further mitigate this pile-up effect. 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.32\textwidth]{Figures/muEDM/Tracker/10ns.png}
-    \includegraphics[width=0.32\textwidth]{Figures/muEDM/Tracker/5ns.png}
-    \includegraphics[width=0.32\textwidth]{Figures/muEDM/Tracker/2ns.png}
-    \caption{In case of a particle impinging on the same position, the timing of the photon can be used to distinguish the two hits. For \SI{20}{cm} fibers, the limit seems to be \SIrange{3}{5}{ns}.}
-    \label{fig:geant4_time}
-\end{figure}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.32\textwidth]{Figures/muEDM/Tracker/10ns.png}
+            \includegraphics[width=0.32\textwidth]{Figures/muEDM/Tracker/5ns.png}
+            \includegraphics[width=0.32\textwidth]{Figures/muEDM/Tracker/2ns.png}
+            \caption{In case of a particle impinging on the same position, the timing of the photon can be used to distinguish the two hits. For \SI{20}{cm} fibers, the limit seems to be \SIrange{3}{5}{ns}. This value refers to the time the optical photon interacts with the SiPM. The actual distribution will be larger.}
+            \label{fig:geant4_time}
+        \end{figure}
 
- \paragraph{Fibers and read-out} Aside from the specific geometry, the cardinal point is how to describe the fibers and their readout. 
+        \paragraph{Fibers and read-out} Aside from the specific geometry, the cardinal point is how to describe the fibers and their readout. 
         The fiber itself is simulated as a three-layer volume:
         \begin{outline}
             \1 Core: 
@@ -125,45 +215,41 @@ In Fig.~\ref{fig:geant4_time}, the arrival time of the scintillating photons at 
         The idea of this readout is not to simulate the actual physical processes leading to an electric signal, but just to record the position and time of optical photons entering the system.
 
 
-\vspace{2mm}
-\paragraph{MuEDM geometry}~\\
+        \vspace{2mm}
+        \paragraph{MuEDM geometry}
+        Simulating the full geometry of our detector, including both the inner layer of transverse fibers and the outer layer of longitudinal fibers, and incorporating the effects of the magnetic field, leads to more complex events. An example is shown in Fig.~\ref{fig:geant4_B}. In this scenario, a single particle can pass through multiple layers, undergoing scattering and losing energy. The spatial information provided by both layers, as shown in Fig.~\ref{fig:geant4_position}, demonstrates that the positions of the hits on the transverse plane are relatively stable, probably due to the low material budget. On the contrary, the inner layer provides information about the longitudinal movement of the particle.
 
-Simulating the full geometry of our detector, including both the inner layer of transverse fibers and the outer layer of longitudinal fibers, and incorporating the effects of the magnetic field, leads to more complex events. An example is shown in Fig.~\ref{fig:geant4_B}. In this scenario, a single particle can pass through multiple layers, undergoing scattering and losing energy. The spatial information provided by both layers, as shown in Fig.~\ref{fig:geant4_position}, demonstrates that the positions of the hits on the transverse plane are relatively stable, probably due to the low material budget. On the contrary, the inner layer provides information about the longitudinal movement of the particle.
+        The incorporation of timing information for the transverse fibers results in the plot shown in Fig.~\ref{fig:geant4_time_pos}. This plot includes horizontal lines that represent the separation between different barrels. The relationship between transverse position and time provides additional information, although it can be more difficult to interpret. The resulting plots are shown in Fig.~\ref{fig:geant4_time_pos_transverse}.
 
-The incorporation of timing information for the transverse fibers results in the plot shown in Fig.~\ref{fig:geant4_time_pos}. This plot includes horizontal lines that represent the separation between different barrels. The relationship between transverse position and time provides additional information, although it can be more difficult to interpret. The resulting plots are shown in Fig.~\ref{fig:geant4_time_pos_transverse}.
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.5\textwidth]{Figures/muEDM/Tracker/muedm_scifi_B.png}
+            \caption{An example of a \textsc{GEANT4} simulated event. In green the optical photons reflecting inside the fiber ribbons; in blue the trajectory of the positron. Keeping the same color scheme, the longitudinal SciFi is green while the transverse one is blue.}
+        \label{fig:geant4_B}
+        \end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{Figures/muEDM/Tracker/muedm_scifi_B.png}
-    \caption{An example of a \textsc{GEANT4} simulated event. In green the optical photons reflecting inside the fiber ribbons; in blue the trajectory of the positron. Keeping the same color scheme, the longitudinal SciFi is green while the transverse one is blue.
-    }
-    \label{fig:geant4_B}
-\end{figure}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.45\textwidth]{Figures/muEDM/Tracker/fPosInXfPosInZ.png}
+            \includegraphics[width=0.45\textwidth]{Figures/muEDM/Tracker/fPosInY.png}
+            \caption{Looking at the position for the photons arriving at the readout for both SciFi layers.}
+        \label{fig:geant4_position}
+        \end{figure}
+    
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.5\textwidth]{Figures/muEDM/Tracker/fPosInYfTimeIn.png}
+            \caption{Looking at the relationship between time and longitudinal position for the inner layer makes it possible to see if the particle is spiraling up or down.}
+        \label{fig:geant4_time_pos}
+        \end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.45\textwidth]{Figures/muEDM/Tracker/fPosInXfPosInZ.png}
-    \includegraphics[width=0.45\textwidth]{Figures/muEDM/Tracker/fPosInY.png}
-    \caption{Looking at the position for the photons arriving at the readout for both SciFi layers. 
-}
-    \label{fig:geant4_position}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{Figures/muEDM/Tracker/fPosInYfTimeIn.png}
-    \caption{Looking at the relationship between time and longitudinal position for the inner layer makes it possible to see if the particle is spiraling up or down.}
-    \label{fig:geant4_time_pos}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.45\textwidth]{Figures/muEDM/Tracker/fPosInXfTimeIn.png}
-    \includegraphics[width=0.45\textwidth]{Figures/muEDM/Tracker/fPosInZfTimeIn.png}
-    \caption{The information from the joint use of transverse position and time, given by the outer layer, is more complex but nonetheless essential (and a unique feature of this detector) in understanding the particle trajectory.
-}
-    \label{fig:geant4_time_pos_transverse}
-\end{figure}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.45\textwidth]{Figures/muEDM/Tracker/fPosInXfTimeIn.png}
+            \includegraphics[width=0.45\textwidth]{Figures/muEDM/Tracker/fPosInZfTimeIn.png}
+            \caption{The information from the joint use of transverse position and time, given by the outer layer, is more complex but nonetheless essential (and a unique feature of this detector) in understanding the particle trajectory.}
+        \label{fig:geant4_time_pos_transverse}
+        \end{figure}
 
 \status{started}
 \section{CHeT}

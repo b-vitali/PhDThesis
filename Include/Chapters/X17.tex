@@ -37,10 +37,12 @@ The chapter starts with a recap of the previous searches and then moves to the d
         
         \paragraph{Lithium targets}
         The interesting process requires Lithium atoms but Lithium targets tend to be unstable. 
-        Among the options studied \ce{LiF} and \ce{Li_{3.6}PO_{3.4}N_{0.6}} were the most promising.
+        Among the options studied, \ce{LiF} and \ce{Li_{3.6}PO_{3.4}N_{0.6}} were the most promising.
         \ce{LiF} targets were produced by INFN Legnaro while \ce{Li_{3.6}PO_{3.4}N_{0.6}} targets were produced at PSI.
-        Looking back we now know that the spattering process behind the production of the \ce{Li_{3.6}PO_{3.4}N_{0.6}} targets resulted in a poorly characterized end-product (more on this in a following section).
+        Looking back we now know that the spattering process behind the production of the \ce{Li_{3.6}PO_{3.4}N_{0.6}} targets resulted in a poorly characterized end-product (more on this in the following section).
         What drove us to rely on the LiPON instead of the LiF was to avoid the F resonance. 
+        Some data was acquired using the \ce{LiF} target but the Fluorine has a resonance at \SI{}{} with a cross-section much higher than the one of the Lithium.
+        This meant that the events of interest were hidden by the F resonance.
         More on targets will follow.
         
 \status{started}
@@ -94,7 +96,7 @@ The chapter starts with a recap of the previous searches and then moves to the d
     My contribution to the data analysis was only partial so I will not go into much detail. 
     Even so, at least a broad overview of the analysis status at the time of writing is in order.
     Most of the studies on event reconstruction and quality cuts were performed by Hicham Benmansour, while the Likelihood analysis was developed by Giovanni Dal Maso. 
-    I contributed to the analysis of the BGO data and the development of the Likelihood analysis.
+    I contributed in different aspects but mainly during the development of the Likelihood analysis.
     
     \status{started}
     \subsection{Pair reconstruction}
@@ -169,7 +171,8 @@ The chapter starts with a recap of the previous searches and then moves to the d
         The results from this analysis seem to indicate something was not well under control.
         We had few hints but most seemed to point towards some defect of the target. 
         Before moving on with the X17 analysis, we decided to follow these hints.
-        
+
+    \status{started}   
     \section{Measurement of the different targets}
         To further understand the results of the preliminary analysis, and to cross-check different hypotheses, a few of the targets were brought to different experts.
         \begin{outline}
@@ -211,8 +214,15 @@ The chapter starts with a recap of the previous searches and then moves to the d
         \caption[Small LiPON target]{Here is a picture of the target itself after two days of datataking at 5 and \SI{10}{\micro A}. The dark spot marks the position on which the beam was impinging.}
         \label{fig:X17:target:LiPON:psi}
     \end{figure}       
-\section{Beam studies: Jan 2024}
 
+\status{started}
+\section{Beam studies: Jan 2024}
+    After the analysis of the different targets and the small data-taking at the end of 2023, we realized the problem lied in the proton beam produced by the CW.
+    The option of the beam not being at the expected energy was already discarded, for example by the peak measured at $\SI{11}{MeV}$ using aluminum to hold the target.
+    The point was that, while producing mainly \ce{H1+}, the machine produces also \ce{H2+} and \ce{H3+}.
+    The relative fraction of the different species is roughly $0.7:0.25:0.05$, meaning the fraction of \ce{H2} is non negligible.
+    Having this specie the same $\SI{1}{MeV}$ energy as the protons, when interacting with the target it splits, creating  $\SI{500}{keV}$ protons.
+    These particles interact with the Lithium in the much resonance, generating the measured \SI{17.6}{MeV} line. 
 \section{Results and conclusions}
 
 \cite{X17:1996} \cite{X17:nuclear:2004} \cite{X17:Krasznahorkay:2015} \cite{X17:Ellwanger:2016} \cite{X17:Feng:2016} \cite{X17_Kozaczuk:2017} \cite{X17:Krasznahorkay:2017} \cite{X17:2019} \cite{X17:2021} 
