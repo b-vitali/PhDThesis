@@ -1,4 +1,4 @@
-\status{started}
+\status{review}
 \chapter{Introduction}
 
 \begin{refsection}
@@ -191,8 +191,7 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
         \end{equation}
         In this definition, we find: $\gamma$ indicates a 4-scalar, 4-vector or 4-tensor; $\Gamma$ Dirac (or Pauli) matrices; $\varepsilon$, $\mu$ indicate the chirality of the spinors; m, n the chirality of the neutrinos.
         This means that the physical interpretation of $g^\gamma_{\varepsilon\mu}$ is quite straightforward: $n_\gamma|g^\gamma_{\varepsilon\mu}|^2$ is the probabilit of a $\mu$-handed muon decaying in a $\varepsilon$-handed electron by the interaction $\Gamma^\gamma$ ($n_\gamma$ are required for the correct normalization).
-        In this picture, the \gls{sm} corresponds to $g_{LL}^V=1$ with all other couplings to 0. 
-        \textcolor{red}{Review chirality vs helicity}
+        In this picture, the \gls{sm} corresponds to $g_{LL}^V=1$ with all other couplings to 0.
         
         \paragraph{Observables} 
         Neglecting radiative corrections, we find the differential decay probability: with reduced energy in $[x,x+\dd x]$; along $\hat{x}_3$ with an angle $[\vartheta,\vartheta+\dd\vartheta]$ with respect to the muon polarization $\pmb{P}_\mu$; spin along $\bm{\hat{\zeta}}$.
@@ -208,7 +207,7 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
             \pdv[2]{\Gamma}{x}{\cos\vartheta}\sim x^2\left\{ 3(1-x)+\frac{2\rho}{3}(4x-3)+3\eta x_0\frac{(1-x)}{x} \pm P_\mu\xi\cos\vartheta  \left[1-x+\frac{2\delta}{3}(4x-3) \right]\right\}
         \end{equation}
         Here $\vartheta$ is the angle between the electron momentum and the muon spin and $x\equiv2E_e/m_\mu$. 
-        In the \gls{sm} we get the following, in which we find the total rate used in \ref{eq:tau}. \textcolor{red}{$\rho=\xi\delta=3/4$, $\xi=1$, $\eta=0$}
+        In the \gls{sm} we get the following, in which we find the total rate used in \ref{eq:tau}. 
         \begin{equation}
             \pdv[2]{\Gamma}{x}{\cos\vartheta}=\frac{G_F^2 m_\mu^5}{192 \pi^3} \left[ 3-2x \pm P_\mu\cos\vartheta (2x-1) \right]x^2
         \end{equation}
@@ -270,86 +269,86 @@ This whole chapter relies heavily on references \cite{Signorelli} \cite{PSI:revi
     More on this will follow in this chapter when describing the existing limits on EDMs.\\
     \cite{edmasprobe}
 
-\status{started}
+\status{review}
 \section{Experimental status}
     To give an exhaustive recap of the experimental development, both worldwide and at PSI, is a task we will not undertake. 
     Here we will briefly discuss the key experiments in CLFV searches (MEG, Mu3e, Mu2e, COMET) and the nEDM experiment at PSI.
     This choice is driven by the experiment extensively discussed in the following chapters: muEDM; MEG II.
 
-    \status{started}
+    \status{review}
     \subsection{CLFV experiments}
         \begin{table}[!h]
-\centering
-\begin{tabular}{c|c|c}
-\hline
-Process & Upper limit & reference\\
-\hline
-\hline
-$\mu^+\rightarrow e^+\gamma$ & $4.2\times 10^{-13}$ & \cite{MEG}\\
-$\mu^+\rightarrow e^+e^+e^-$ & $1.0\times 10^{-12}$ & \cite{SINDRUM}\\
-$\mu^-$Ti$\rightarrow e^-$Ti  & $1.7\times 10^{-12}$ & \cite{SINDRUM}\\
-$\mu^-$Au$\rightarrow e^-$Au  & $7\times 10^{-13}$   & \cite{Bertl}\\
-$\mu^+e^-\rightarrow \mu^-e^+$ & $8.3\times 10^{-11}$ & \cite{Willmann}\\
-$\tau^\pm\rightarrow e^\pm\gamma$ & $3.3\times 10^{-8}$ & \cite{Aubert}\\
-$\tau^\pm\rightarrow \mu^\pm\gamma$ & $4.4\times 10^{-8}$ & \cite{Aubert}\\
-$\tau^-\rightarrow e^-e^-e^+$ & $2.7\times 10^{-8}$ & \cite{Hayasaka}\\
-$\tau^-\rightarrow \mu^-\mu^-\mu^+$ & $2.1\times 10^{-8}$ & \cite{Hayasaka}\\
-$\tau^-\rightarrow e^-\mu^-\mu^+$ & $2.7\times 10^{-8}$ & \cite{Hayasaka}\\
-$\tau^-\rightarrow \mu-e^-e^+$ & $1.8\times 10^{-8}$ & \cite{Hayasaka}\\
-$\tau^-\rightarrow e^+\mu^-\mu^-$ & $1.7\times 10^{-8}$ & \cite{Hayasaka}\\
-$\tau^-\rightarrow \mu+e^-e^-$ & $1.5\times 10^{-8}$ & \cite{Hayasaka}\\
-$\pi^0\rightarrow \mu e$ & $3.6\times 10^{-10}$ & \cite{Abouzaid}\\
-$K^0_L\rightarrow \mu e$ & $4.7\times 10^{-12}$ & \cite{Ambrose}\\
-$K^+\rightarrow \pi^+\mu^+e^-$ & $1.3\times 10^{-11}$ & \cite{Sher}\\
-$K^0_L\rightarrow \pi^0\mu^+e^-$ & $4.4\times 10^{-10}$ & \cite{Abouzaid}\\
-$Z^0\rightarrow \mu e$ & $7.5\times10^{-7}$& \cite{Aad}\\
-$Z^0\rightarrow \tau e$ & $9.8\times10^{-6}$& \cite{Akers} \\
-$Z^0\rightarrow \tau \mu$ & $1.2\times10^{-6}$& \cite{Akers}\\
-\hline
-\end{tabular}
-\caption[Limits for CLFV processes]{Experimental upper limits for a variety of CLFV processes.}
-\label{T_CLFV}
-\end{table}
-
-
-\begin{table}[!h]
-\centering
-\begin{tabular}{|c||c|c|c|}
-\hline
-& $\mu^+\rightarrow e^+\gamma$ & $\mu^+\rightarrow e^+e^-e^+$ & $\mu^- N \rightarrow e^- N$ \\
-\hline \hline 
-Background &
-Accidental &
-Radiative muon decay &
-Decay in orbit \\
-\hline
-Beam &
-Continuous &
-Continuous &
-Pulsed \\
-\hline
-Current limit &
-\makecell{$4.2 \times 10^{-13}$ \\ MEG \cite{MEG}} &
-\makecell{$1\times10^{-12}$ \\ SINDRUM \cite{SINDRUM}} & 
-\makecell{$7\times10^{-13}$ \\ SINDRUM II \cite{SINDRUMII}} \\
-\hline
-Planned/running &
-\makecell{MEG II \cite{MEG_upgrade}\cite{MEG_II}\cite{Papa}}&
-\makecell{Mu3e \cite{Mu3e:2014}\cite{Mu3e:2016}\cite{Papa}} &
-\makecell{Mu2e \cite{mu2e_proposal} \cite{MTDR}\\ COMET \cite{COMET_2009}\cite{COMET_2012}\cite{COMET_2012_2}\cite{COMET_I}} \\
-\hline
-Planned sensitivity &
-$\sim 6\times 10^{-16}$&
-$\sim 10^{-16}$&
-$\sim$ few $\times 10^{-17}$ \\
-\hline
-\end{tabular}
-\caption[CLFV searches with muons]{Overview of muon CLFV experiments}
-\label{T_CLFV_mu}
-\end{table}
+            \centering
+            \begin{tabular}{c|c|c}
+            \hline
+            Process & Upper limit & reference\\
+            \hline
+            \hline
+            $\mu^+\rightarrow e^+\gamma$ & $3.1\times 10^{-13}$ & \cite{MEG_II:physics}\\
+            $\mu^+\rightarrow e^+e^+e^-$ & $1.0\times 10^{-12}$ & \cite{SINDRUM}\\
+            $\mu^-$Ti$\rightarrow e^-$Ti  & $1.7\times 10^{-12}$ & \cite{SINDRUM}\\
+            $\mu^-$Au$\rightarrow e^-$Au  & $7\times 10^{-13}$   & \cite{Bertl}\\
+            $\mu^+e^-\rightarrow \mu^-e^+$ & $8.3\times 10^{-11}$ & \cite{Willmann}\\
+            $\tau^\pm\rightarrow e^\pm\gamma$ & $3.3\times 10^{-8}$ & \cite{Aubert}\\
+            $\tau^\pm\rightarrow \mu^\pm\gamma$ & $4.4\times 10^{-8}$ & \cite{Aubert}\\
+            $\tau^-\rightarrow e^-e^-e^+$ & $2.7\times 10^{-8}$ & \cite{Hayasaka}\\
+            $\tau^-\rightarrow \mu^-\mu^-\mu^+$ & $2.1\times 10^{-8}$ & \cite{Hayasaka}\\
+            $\tau^-\rightarrow e^-\mu^-\mu^+$ & $2.7\times 10^{-8}$ & \cite{Hayasaka}\\
+            $\tau^-\rightarrow \mu-e^-e^+$ & $1.8\times 10^{-8}$ & \cite{Hayasaka}\\
+            $\tau^-\rightarrow e^+\mu^-\mu^-$ & $1.7\times 10^{-8}$ & \cite{Hayasaka}\\
+            $\tau^-\rightarrow \mu+e^-e^-$ & $1.5\times 10^{-8}$ & \cite{Hayasaka}\\
+            $\pi^0\rightarrow \mu e$ & $3.6\times 10^{-10}$ & \cite{Abouzaid}\\
+            $K^0_L\rightarrow \mu e$ & $4.7\times 10^{-12}$ & \cite{Ambrose}\\
+            $K^+\rightarrow \pi^+\mu^+e^-$ & $1.3\times 10^{-11}$ & \cite{Sher}\\
+            $K^0_L\rightarrow \pi^0\mu^+e^-$ & $4.4\times 10^{-10}$ & \cite{Abouzaid}\\
+            $Z^0\rightarrow \mu e$ & $7.5\times10^{-7}$& \cite{Aad}\\
+            $Z^0\rightarrow \tau e$ & $9.8\times10^{-6}$& \cite{Akers} \\
+            $Z^0\rightarrow \tau \mu$ & $1.2\times10^{-6}$& \cite{Akers}\\
+            \hline
+            \end{tabular}
+            \caption[Limits for CLFV processes]{Experimental upper limits for a variety of CLFV processes.}
+        \label{T_CLFV}
+        \end{table}
+        
+        
+        \begin{table}[!h]
+            \centering
+            \begin{tabular}{|c||c|c|c|}
+            \hline
+            & $\mu^+\rightarrow e^+\gamma$ & $\mu^+\rightarrow e^+e^-e^+$ & $\mu^- N \rightarrow e^- N$ \\
+            \hline \hline 
+            Background &
+            Accidental &
+            Radiative muon decay &
+            Decay in orbit \\
+            \hline
+            Beam &
+            Continuous &
+            Continuous &
+            Pulsed \\
+            \hline
+            Current limit &
+            \makecell{$3.1 \times 10^{-13} (*)$ \\ MEG II \cite{MEG_II:physics}} &
+            \makecell{$1\times10^{-12}$ \\ SINDRUM \cite{SINDRUM}} & 
+            \makecell{$7\times10^{-13}$ \\ SINDRUM II \cite{SINDRUMII}} \\
+            \hline
+            Planned/running &
+            \makecell{MEG II \cite{MEG_upgrade}\cite{MEG_II}\cite{Papa}}&
+            \makecell{Mu3e \cite{Mu3e:2014}\cite{Mu3e:2016}\cite{Papa}} &
+            \makecell{Mu2e \cite{mu2e_proposal} \cite{MTDR}\cite{Mu2e:2022}\\ COMET \cite{COMET_2009}\cite{COMET_2012}\cite{COMET_2012_2}\cite{COMET_I}} \\
+            \hline
+            Planned sensitivity &
+            $\sim 6\times 10^{-16}$&
+            $\sim 10^{-16}$&
+            $\sim$ few $\times 10^{-17}$ \\
+            \hline
+            \end{tabular}
+            \caption[CLFV searches with muons]{Overview of muon CLFV experiments. \\(*) The current limit recently surpassed the one set by MEG, $4.2 \times 10^{-13}$ \cite{MEG}.}
+        \label{T_CLFV_mu}
+        \end{table}
 
         \subsubsection{MEG}
-        The MEG experiment \cite{MEG} is designed based on two key concepts: the utilization of a liquid xenon detector (LXe) for photons detection, and the implementation of an anti-bottle magnetic field for positron tracking. 
+        The MEG experiment \cite{MEG} is designed based on two key concepts: the utilization of a liquid xenon detector (LXe) for photon detection, and the implementation of an anti-bottle magnetic field for positron tracking. 
         Muons are stopped within a polyethylene target located at the magnet's center. 
         The momentum of positrons is measured using a combination of drift chambers (DCH) and plastic scintillator timing counters (TC). 
         Photon energy and direction, on the other hand, are determined in a liquid xenon volume containing over 800 photo-multiplier tubes. 
@@ -366,13 +365,13 @@ $\sim$ few $\times 10^{-17}$ \\
         The radial coordinate is determined using the timing data collected by the DCH and TC, while the $z$ position is inferred from the induced charge on the zig-zag-shaped pads on the drift chamber sides. The momentum resolution for positrons is approximately 330 keV.
 
         The choice of employing a liquid xenon scintillating detector for photon reconstruction is motivated by the aim to minimize passive material within the detector and achieve excellent time resolution. 
-        This choice provides a higher light yield and shorter decay time compared to other options, such as NaI crystals. The timing resolution for measuring photon interaction time is below 100 ps.
+        This choice provides a higher light yield and shorter decay time compared to other options, such as NaI crystals. The timing resolution for photon interaction time is below 100 ps.
 
-        MEG successfully gathered $7.5\times10^{14}$ stopped muons between 2008 and 2013 and, as previously mentioned, established the world's best limit on the branching ratio of $\mu^+\rightarrow e^+\gamma$ at 90\% confidence level, with BR$(\mu^+\rightarrow e^+\gamma)<4.2\times10^{-13}$ \cite{MEG}.
+        MEG successfully gathered $7.5\times10^{14}$ stopped muons between 2008 and 2013 and, as previously mentioned, established the previous world's best limit on the branching ratio of $\mu^+\rightarrow e^+\gamma$ at 90\% confidence level, with BR$(\mu^+\rightarrow e^+\gamma)<4.2\times10^{-13}$ \cite{MEG}.
 
         \begin{figure}[h!]
             \centering
-            \includegraphics[width=0.8\textwidth]{example-image-a}
+            \includegraphics[width=0.8\textwidth]{Figures/Introduction/MEG.png}
             \caption[MEG experiment]{Pictorial view of the MEG experiment \cite{Chiappini}\cite{MEG}.}
             \label{_MEG}
         \end{figure}
@@ -382,39 +381,34 @@ $\sim$ few $\times 10^{-17}$ \\
         MEG II is currently running and a whole part (Part ~\ref{part:MEGII}) of this thesis will be dedicated to this experiment.        
         
         \subsubsection{Mu3e}
-        The goal of the Mu3e experiment is to achieve a single-event sensitivity on the $\mu^+ \rightarrow e^+ e^+e^-$ decay at the order of $10^{-16}$ \cite{Mu3e:2016}. This experiment will utilize the same muon beam as MEG II and employ a thin hollow double-cone Mylar target to stop muons. The detector will be a 2 m cylinder situated within a 1.5 T magnetic field and divided into 5 sections (Fig. \ref{_Mu3e}). The central station will consist of two double layers of pixel detectors and a scintillating fiber tracker, while the other four stations will consist of two layers of pixel sensors and a scintillator hodoscope. A visual representation of the Mu3e apparatus can be seen in Fig. \ref{_Mu3e_3D}. To mitigate the impact of multiple Coulomb scattering, which poses limitations on precise track reconstruction, the tracker will utilize High Voltage Monolithic Active Pixel (HV-MAPS) technology, designed to partially cancel out the scattering effect within half of a turn. The estimated resolutions for time and vertex are $\sigma_t \approx 100$ ps and $\sigma_{xy} \approx 200\ \mu$m, respectively, while the momentum resolution ranges from $100$ to $400$ keV for particles with momenta between $10$ and $53$ MeV/c \cite{Signorelli}. The Mu3e experiment is planned in three phases \cite{Signorelli}, as depicted in Fig. \ref{_Mu3e}:
-\begin{itemize}
-    \item Phase Ia: Beam with an intensity of $\mathcal{O}(10^7)\ \mu^+/$s and installation of the tracker only.
-    \item Phase Ib: Beam with an intensity of $\mathcal{O}(10^8)\ \mu^+/$s (currently the maximum at PSI) with the addition of scintillating fibers and two additional tracking stations.
-    \item Phase II: Beam with an intensity of $\mathcal{O}(10^9)\ \mu^+/$s (requires a new beam-line) and inclusion of the remaining two stations to achieve the single-event sensitivity of $10^{-16}$.
-\end{itemize}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.8\textwidth]{example-image-a}
-\caption[Mu3e experiment]{Pictorial view of the Mu3e apparatus \cite{Papa}.}
-\label{_Mu3e_3D}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.8\textwidth]{example-image-a}
-\caption[Mu3e experiment phases]{A sketch view of the Mu3e apparatus \cite{Mu3e:2013} and the various phases.}
-\label{_Mu3e}
-\end{figure}
-
+        The goal of the Mu3e experiment is to achieve a single-event sensitivity on the $\mu^+ \rightarrow e^+ e^+e^-$ decay at the order of $10^{-16}$ \cite{Mu3e:2016}. This experiment will utilize the same muon beam as MEG II and employ a thin hollow double-cone Mylar target to stop muons. The detector will be a 2 m cylinder situated within a 1.5 T magnetic field and divided into 5 sections (Fig. \ref{_Mu3e}). The central station will consist of two double layers of pixel detectors and a scintillating fiber tracker, while the other four stations will consist of two layers of pixel sensors and a scintillator hodoscope. A visual representation of the Mu3e apparatus can be seen in Fig. \ref{_Mu3e_3D}. To mitigate the impact of multiple Coulomb scattering, which poses limitations on precise track reconstruction, the tracker will utilize High Voltage Monolithic Active Pixel (HV-MAPS) technology, designed to partially cancel out the scattering effect within half of a turn. The estimated resolutions for time and vertex are $\sigma_t \approx 100$ ps and $\sigma_{xy} \approx 200\ \mu$m, respectively, while the momentum resolution ranges from $100$ to $400$ keV for particles with momenta between $10$ and $53$ MeV/c \cite{Signorelli}. 
+        
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.8\textwidth]{Figures/Introduction/Mu3e_3D.png}
+            \caption[Mu3e experiment]{Pictorial view of the Mu3e apparatus \cite{Papa}.}
+        \label{_Mu3e_3D}
+        \end{figure}
 
         \subsubsection{Mu2e}
-        Mu2e employs an 8 GeV, 25 kW pulsed proton beam with 100 ns wide bunches separated by 1.7 $\mu$s. Figure \ref{MuonBeamline} illustrates the experimental setup, which consists of three sections: the Production Solenoid, Transport Solenoid, and Detector Solenoid. The magnetic field layout around the production target is graded to guide the particles into the transport section. Within this section, the gradient directs the particles towards the stopping target, while the S shape reduces background from neutral particles and enables charge sign selection using Eq. \ref{eq_D} and collimators. Generally, only negative muons with momenta below 100 MeV/c reach the stopping target. Downstream of the aluminum target, the straw tube tracker and crystal electromagnetic calorimeter are located. Both detectors feature a hollow-cylinder geometry, with the tracker consisting of crossed straw tubes grouped in 20 stations and the calorimeter composed of two identical disks made of CsI crystals read by SiPMs. With three years of data taking, Mu2e aims to achieve an expected sensitivity of $R{\mu e}<3\times10^{-17}$ \cite{MTDR}.
+        Mu2e employs an 8 GeV, 25 kW pulsed proton beam with 100 ns wide bunches separated by 1.7 $\mu$s. 
+        Figure \ref{Mu2e} illustrates the experimental setup, which consists of three sections: the Production Solenoid, Transport Solenoid, and Detector Solenoid. The magnetic field layout around the production target is graded to guide the particles into the transport section. 
+        Within this section, the gradient directs the particles toward the stopping target, while the S shape reduces the background from neutral particles and enables charge sign selection using collimators. 
+        Generally, only negative muons with momenta below 100 MeV/c reach the stopping target. 
+        Downstream of the aluminum target, the straw tube tracker and crystal electromagnetic calorimeter are located. Both detectors feature a hollow-cylinder geometry, with the tracker consisting of crossed straw tubes grouped in 20 stations and the calorimeter composed of two identical disks made of CsI crystals read by SiPMs. 
+        With three years of data taking, Mu2e aims to achieve an expected sensitivity of $R{\mu e}<3\times10^{-17}$ \cite{MTDR}.
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.8\textwidth]{example-image-a}
-\caption[Mu2e experiment]{Pictorial view of the muon beam-line of the Mu2e experiment \cite{MTDR}.}
-\label{_MuonBeamline}
-\end{figure}
-
-Mu2e is a collaborative project involving international partners, including the Italian Institute of Nuclear Physics, responsible for constructing the electromagnetic calorimeter. The Mu2e Collaboration is also conducting preliminary investigations for the upgraded Mu2e II \cite{Mu2e_II:2018}. The proton beam intensity will be enhanced through the PIP-II upgrade \cite{PIP_II:2018}, resulting in a higher rate of stopped muons on target, increasing from $10^{10}\ \mu^-/$s (Mu2e) to $10^{11}\ \mu^-/$s. For the upgraded Mu2e II, new detector technologies are being explored. Simulation studies indicate that with three years of data acquisition, Mu2e II is expected to achieve a sensitivity of $R_{\mu e} < \times10^{-18}$.
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.8\textwidth]{Figures/Introduction/mu2e_apparatus.jpg}
+            \caption[Mu2e experiment]{Pictorial view of the muon beam-line of the Mu2e experiment \cite{MTDR}.}
+        \label{Mu2e}
+        \end{figure}
+        
+        \noindent
+        The Mu2e Collaboration is also conducting preliminary investigations for the upgraded Mu2e II \cite{Mu2e_II:2018}. 
+        The proton beam intensity will be enhanced through the PIP-II upgrade \cite{PIP_II:2018}, resulting in a higher rate of stopped muons on target, increasing from $10^{10}\ \mu^-/$s (Mu2e) to $10^{11}\ \mu^-/$s. For the upgraded Mu2e II, new detector technologies are being explored. 
+        Simulation studies indicate that with three years of data acquisition, Mu2e II is expected to achieve a sensitivity of $R_{\mu e} < \times10^{-18}$.
 
         \subsubsection{COMET}
         The COherent Muon-to-Electron Transition (COMET) experiment is currently being constructed at the Japanese Proton Accelerator Research Center (J-PARC) \cite{COMET_I}. 
@@ -432,7 +426,7 @@ The two-step approach is driven by uncertainties in the understanding of the und
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.8\textwidth]{example-image-a}
+\includegraphics[width=0.8\textwidth]{Figures/Introduction/COMET.png}
 \caption[COMET experiment]{Pictorial view of the COMET apparatus \cite{COMET_I}.}
 \label{_COMET}
 \end{figure}
@@ -908,7 +902,7 @@ The two-step approach is driven by uncertainties in the understanding of the und
     It was quite an interesting experience, allowing me to become acquainted with a different setup and to see a different aspect of the research in particle physics.
     The usual shift would consist in tuning the beam to be suited to the user's needs and supporting during the data taking.
 
-\status{started}
+\status{review}
 \printbibliography[
     heading = bibliographychapter,
     title=Bibliography for the introduction
