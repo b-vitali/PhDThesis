@@ -1,4 +1,4 @@
-\status{started}
+\status{review}
 \chapter{muEDM}
 \label{ch:muEDM}
 \begin{refsection}
@@ -116,22 +116,171 @@ This is my attempt at an up-to-date description, which relies on the ``muEDM Sta
             \caption{}
             \label{fig:muEDM:g-2_EDM}
         \end{figure}
-        
+
+\status{review}
 \section{The muEDM experiment}
-
-\status{started}
-\section{The precursor}
-    The task at hand is quite complex and for this reason, the aim is to first have a working prototype to demonstrate the measuring principles, the achieved control on the different sources of uncertainties and the correct working of the different subdetectors.
-
-    \subsection{Beam monitor}
-    \subsection{TOF}
-    \subsection{Injection}
-    \subsection{Faraday rotator}
+    In the upcoming years, we plan to search for a muon Electric Dipole Moment (EDM) using an existing solenoid, as shown in Fig.~\ref{fig:PSCSolenoid}. 
+    The experiment will be connected to a surface muon beam line at PSI, delivering approximately \SI{4e6}{\upmu \per s} of $p=\SI{28}{MeV/c}$. 
+    The muons are confined in a transverse phase space of $\epsilon_{xx'}= 192\ \pi$mmrad and $\epsilon_{yy'}= 171\ \pi$mmrad. 
+    To enhance precision, a long copper tube within a superconducting shield is employed for collimation, reducing the number of muons inside the solenoid to about \SI{1.2e5}{\upmu \per s}. 
+    A precisely timed magnetic pulse is then used to capture and store the selected muons within the weakly focusing magnetic field.
     
-    \status{started}
+    A trigger is generated from the anticoincidence between two scintillators at the collimation channel exit. 
+    This setup allows us to store only one muon at a time, with an expected rate of about \SI{800}{\upmu \per s} meeting the required conditions. 
+    During storage, muons circulate with a radius of $r=\SI{31}{mm}$, and a scintillating fiber tracker is employed to track the direction of the positron resulting from muon decay. 
+    The precession frequency, $\Omega$, is extracted by measuring the oscillation of the positron energy distribution as a function of decay time. 
+    The frozen-spin condition is determined when $\Omega(E)=0$, allowing for the measurement of a non-zero EDM.
+    
+    In the presence of an EDM, the muon spin precesses out of the orbit plane, influencing the decay positron's trajectory. 
+    By detecting the decay asymmetry, we can identify the EDM. 
+    The project is to divide the task in to phases.
+    During Phase I, the highest sensitivity is achieved for positron momenta above \SI{40}{MeV/c}, resulting in a mean asymmetry of about $A=0.35$.
+    With an expected sensitivity of $\sigma(d_\mu)<\SI{2.8E-16}{ecm}$ per muon, we anticipate achieving $\sigma(d_\mu)<\SI{3E-21}{ecm}$ in a year of data taking with a detection rate of $N=\SI{300}{\per\second}$ positrons.
+    
+    \begin{figure}%
+    \centering
+        \subfloat[Picture of the muEDM superconducting solenoid.]{
+        \includegraphics[width=0.35\columnwidth]{Figures/muEDM/PSCSolenoid.jpg}
+        \label{fig:PSCSolenoid}}%
+        \hfill
+        \subfloat[Sketh of the muEDM setup.]{
+        \includegraphics[width=0.60\columnwidth]{Figures/muEDM/PSC-FrozenSpin2023.png}
+        \label{fig:PrecusorSketch}}
+        \caption{Photo~(a) and sketch~(b) of the compact superconducting solenoid and the experimental setup for the search for the EDM of the muon. The warm bore of the solenoid has an inner diameter of \SI{200}{mm} and an outer diameter of about \SI{1000}{mm}.}%
+    \label{fig:PhaseISetup}%
+    \end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.66\columnwidth]{Figures/muEDM/n_vs_phi.png}
+\caption{Positron energy distribution as a function of the angle between the muon spin and momentum. The fractional energy $u = E/E_\text{max}$ is shown on the abscissa. The maximum positron energy for Phase~I is $E_\text{max} = \SI{68.9}{MeV}$. The color bar shows the $g-2$ phase in units of $\pi$ radians, where 0 is spin and momentum aligned (blue) and 1 is anti-aligned (red).
+}%
+\label{fig:n_vs_phi}
+\end{figure}
+
+\status{review}
+\section{The precursor}
+    The task at hand is quite complex and for this reason, the aim is to first have a working prototype to demonstrate the measuring principles, the achieved control on the different sources of uncertainties, and the correct working of the different subdetectors.
+    A review of the design and status of the different parts will be now given, in order of appearance during an event:
+    \begin{center}
+        \vspace*{-3em} % Adjust the vertical space as needed
+        \begin{align*}
+        &\text{Muon injection:} \quad \text{beam monitor} \rightarrow \text{TOF} \rightarrow \text{Injection} \rightarrow \text{Injection channel} \rightarrow \text{muon tracker} \\
+        &\text{Storing and decay:} \quad \text{kicker} \rightarrow \text{Faraday rotator} \rightarrow \text{Frozen-spin electrodes} \rightarrow \text{positron tracker}
+        \end{align*}
+        \vspace*{-3em} % Adjust the vertical space as needed
+    \end{center}
+    
+    \status{review}
+    \subsection{Beam monitor}
+        For precise muon beam focusing in the muonEDM experiment, a detector with front and back scintillator planes was designed. 
+        The beam passes through the central hole of the detector, corresponding to the injection tube size. 
+        The scintillator tiles, optically coupled to SiPMs, register the muon rates and these are used to center the beam by adjusting the count imbalances.
+        To discriminate muons from positrons, the front scintillator layer fully absorbs surface muons, while the thicker back layer detects positrons.
+        Simulation using \textsc{G4beamline} determined that a \SI{2}{mm}-thick scintillator for the front layer and a \SI{5}{mm}-thick one for the back provide optimal separation.
+        Two detector geometries, with four diagonally-segmented tiles and eight rectangular tiles, were tested during the 2023 beam time.
+        Sketch and simulation are shown in Fig.~\ref{fig:BeamMonSimCentering} while the picture of the detectors tested is in Fig.~\ref{fig:BeamMonAssembly}.
+
+        A preliminary centering algorithm based on hit counting in individual tiles was implemented. 
+        It adjusted the beam position iteratively until asymmetries were reduced. 
+        The simulation results showed that muon-positron discrimination becomes crucial for positron contamination above 10\% (see Fig.~\ref{fig:BeamMonAsymmSim}), emphasizing the importance of proper centering for the muon component.
+        Eljen Technology plastic scintillator (EJ-212) and BC-404 are used for the front and back layers, respectively. 
+        Hamamatsu SiPMs S13360-1325PE and S13360-3025PE are coupled to the scintillator tiles. 
+        The SiPMs are coupled to the tiles using optical cement, and the detectors are wrapped in Tedlar foil for light-tightness. 
+        Ongoing optimizations of the centering algorithm will benefit from data obtained during the beam time to enhance future measurements.
+
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.5\linewidth]{Figures/muEDM/BeamMonitor/BeamMon_2mmScint_g4bl.png}
+            \caption{Most probable visible deposited energy by muons and positrons in scintillators of various thicknesses, simulated in \textsc{G4beamline}. Muons and positrons with a momentum of \SI{28}{\MeVc} pass through a \SI{2}{mm}-thick front scintillator before reaching a \SI{5}{mm}-thick back scintillator. The green points are the decay positrons from muons stopped in the front scintillator.}
+            \label{fig:BeamMonSimDepositedEn}
+        \end{figure}
+        
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.8\linewidth]{Figures/muEDM/BeamMonitor/BeamMonConfigurations.png}
+            \caption{Left: four geometries considered for the beam monitor. Right: Results of the beam centering in simulation, using the algorithm as described in the text, for the four geometries shown on the left image. Muon hits are colored differently based on which tile they hit, all positron hits are black.}
+            \label{fig:BeamMonSimCentering}
+        \end{figure}
+        
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.4\linewidth]{Figures/muEDM/BeamMonitor/Mu+OnlyAsymm.png}
+               \hspace{0.8cm}
+            \includegraphics[width=0.4\linewidth]{Figures/muEDM/BeamMonitor/Mu-OnlyAsymm.png}
+            \caption{Muon+positron (left) and muon-only (right) average asymmetries after the centering based on muon+positron counts. The asymmetries are plotted as a function of positron contribution in the beam.}
+            \label{fig:BeamMonAsymmSim}
+        \end{figure}
+        
+        
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.4\linewidth]{Figures/muEDM/BeamMonitor/BeamMonRect.png}
+            \hspace{0.8cm}
+            \includegraphics[width=0.4\linewidth]{Figures/muEDM/BeamMonitor/BeamMonTriang4.png}
+            
+            \caption{The two versions of the beam monitor during the assembly.}
+            \label{fig:BeamMonAssembly}
+        \end{figure}
+
+    \status{review}
+    \subsection{TOF}
+        The accurate measurement of the muon Electric Dipole Moment (EDM) relies heavily on systematic effects control, which will be discussed in Sec.~\ref{sec:muEDM:systematics}. 
+        The primary concern is the alignment of the electric field in the frozen-spin technique relative to the magnetic field defining the storage orbit. 
+        To address this, a strategy involves alternating measurements with both clockwise (CW) and counter-clockwise (CCW) injected muons. 
+        Switching from CW to CCW involves inverting the magnetic field and shifting the entire experiment by about \SI{90}{mm}, changing the magnetically shielded injection channel.
+        
+        The optimal cancellation of systematic effects requires identical initial conditions for the muon beam, like the spin phase and mean momentum. 
+        Time of Flight (TOF) measurements for individual muons during injection enable the selection of CW and CCW datasets with nearly identical momentum distributions. 
+        In 2023, prototype detectors were produced and TOF was measured in a test setup for alternating magnetic fields. 
+        In 2024, the plan is to characterize the relative change in the initial muon spin after CW and CCW injection.
+        
+        The TOF detectors consist of thin Eljen Technology EJ-212 plastic scintillators coupled to Hamamatsu silicon photomultipliers. 
+        Each detector has four channels, and their assembly details are shown in Fig.\ref{fig:muTOF_assemblyprocedure}. 
+        The detectors aim for high detection efficiency (>95\%) and timing resolution (<\SI{1}{ns}). 
+        Challenges include addressing the low number of collected scintillating photons due to the thin scintillator and handling a relatively high rate of thermal noise photon-electrons ($\sim$kHz). 
+        The flexible detector design, with four independent channels, allows for optimal threshold triggering to achieve high detection efficiency and timing resolution.
+        Additionally, a \gf-based Monte Carlo simulation aids in optimizing the detector design and complements data analysis.
+        
+        \begin{figure}
+            \centering
+            \includegraphics[width=16cm]{Figures/muEDM/muTOF_assembly.jpg}
+            \caption{The TOF detectors during the assembly procedure. The scintillating windows during the gluing into the light guide (top left). The MPPC boards, where four MPPCs are soldered in series to form a single channel (top middle). A detail of the light guide (Bottom-right).}
+        \label{fig:muTOF_assemblyprocedure}
+        \end{figure}
+        
+    \status{review}
+    \subsection{Entrance}
+        To store muons at the center of the solenoid, a magnetic kick must be triggered at the right moment when the muon passes the weakly focusing field region. 
+        An entrance detector, crucial for generating the trigger signal, consists of two thin scintillator tiles for CW and CCW injection and a thicker scintillator with openings around the nominal reference trajectory of the muon. 
+        The trigger is initiated by the thin scintillator in anticoincidence with the thick one, reducing the required pulse rate of the kicker power supply from \SI{120}{kHz} to \SI{500}{Hz}. 
+        Phase I entrance detector designs are under investigation \gf-based simulation tools, namely \textsc{musrSim} and \textsc{G4beamline}. 
+        The CAD design of the entrance detector is shown in Fig.~\ref{fig:MuonEntranceTriggerCAD}.
+
+        A fast electronic circuit is essential for the timely activation of the magnetic pulse, with simulation studies emphasizing the critical need for pulse latency within the \SI{120}{ns} to \SI{150}{ns} window. 
+        Minimizing time delays throughout the system is crucial to meet these specifications.
+        
+        In 2023, data analysis from a test beam at PSI in late 2022 was conducted. 
+        Two prototypes, featuring a thin entrance scintillator followed by a channel of four thick scintillators, all read out by SiPMs, were tested. 
+        The measured results, particularly in terms of collected light, showed good agreement with simulations.
+        The results of the simulations and the dedicated beamtimes will be discussed in Ch.~\ref{ch:muEDM:entrance}.
+        Additionally, in Dic. 2023 new data, with a different readout scheme, were taken. 
+        The preliminary analysis (and promising results) of these data will be also discussed.
+        Based on these findings, ongoing work focuses on finalizing the design of the entrance detector for its intended functionality.
+
+        \textcolor{red}{Dallo status report 2023 ho tagliato "Power supply for muon trigger electronics", "Pre-amplifier and splitter", "Discriminator". Forse vale la pena di aggiungere? Plus, Injection o Entrance?}
+
+        \begin{figure}
+        \centering
+            \includegraphics[width=0.35\linewidth]{Figures/muEDM/MuonEntranceTriggerCAD.png}
+            \caption{CAD sketch of the entrance trigger. On the left, the muons exit the injection channel. The strong magnetic field immediately bends the muons onto a spiral trajectory. First, they pass through a thin ($\leq\SI{100}{\micro\meter}$) entrance scintillator. A thick second scintillator forms an active aperture, with holes at positions along the reference muon trajectory, which stops and detects muons that are outside the acceptance phase space. The trigger for the magnetic pulse, see Sec.~\ref{sec:muEDM:kicker}, will be generated by the anticoincidence of the two.}
+        \label{fig:MuonEntranceTriggerCAD}
+        \end{figure}
+
+    \status{review}
     \subsection{Superconducting injection channel}
         To allow the incoming muons to enter the magnet without being reflected or deviated by fringing fields an injection channel is needed.
-        For reasons that will be discussed in the section dedicated to the systematics (see Sec.~\ref{muEDM:systematics}), we will actually require two symmetrical injections.
+        For reasons that will be discussed in the section dedicated to the systematics (see Sec.~\ref{sec:muEDM:systematics}), we will actually require two symmetrical injections.
         The idea is to use a superconducting pipe: the fields around the pipe will generate Eddy currents which will, in turn, generate an opposite field inside the pipe, canceling the first.
         Clearly, the development of such a system is not trivial, and a precise study of the different shapes and materials is required. 
         The hope would be to find a suitable \textit{high-temperature} superconductor.
@@ -144,55 +293,46 @@ This is my attempt at an up-to-date description, which relies on the ``muEDM Sta
         Once the SC-prototypes are assembled, we will test them and compare the shielding factor to results from numerical models using the finite element method (COMSOL) to identify the most efficient configuration with the highest shielding factor. 
 
         \paragraph{First tests}
-We are using a test setup made of a Helmholtz coil pair with a magnetic field strength of \SI{100}{mT} and a liquid nitrogen (LN\textsubscript{2}) bath maintained at \SI{77}{K} to evaluate the superconducting prototypes. The SC-prototype, under study, will be placed between the two coils and the whole system will be submerged into the cryogenic bath, as shown in Figure \ref{fig:Setup}.
+        We are using a test setup made of a Helmholtz coil pair with a magnetic field strength of \SI{100}{mT} and a liquid nitrogen (LN\textsubscript{2}) bath maintained at \SI{77}{K} to evaluate the superconducting prototypes. 
+        The SC prototype, under study, will be placed between the two coils and the whole system will be submerged in the cryogenic bath, as shown in Figure \ref{fig:Setup}.
 
-\begin{figure}
-    \centering
-		\subfloat[]{
-    \includegraphics[width=0.5\columnwidth]{Figures/muEDM/SCshielding/SetUp.jpg}}
-		\hfill
-		\subfloat[]{
-    \includegraphics[width=0.3\columnwidth]{Figures/muEDM/SCshielding/IMG_8296.jpg}}
-    \caption{(a)~Experimental setup for testing of superconducting shield prototypes; Helmholtz coil pair and a HTS-prototype placed between the two coils; (b)~setup submerged in LN\textsubscript{2}.}
-    \label{fig:Setup}
-\end{figure}
+        \begin{figure}
+            \centering
+            \subfloat[]{
+            \includegraphics[width=0.5\columnwidth]{Figures/muEDM/SCshielding/SetUp.jpg}}
+            \hfill
+            \subfloat[]{
+            \includegraphics[width=0.3\columnwidth]{Figures/muEDM/SCshielding/IMG_8296.jpg}}
+            \caption{(a)~Experimental setup for testing of superconducting shield prototypes; Helmholtz coil pair and a HTS-prototype placed between the two coils; (b)~setup submerged in LN\textsubscript{2}.}
+        \label{fig:Setup}
+        \end{figure}
 
-Initial measurements were performed on a prototype with a YBCO-tape, helically wound around a copper tube with an inner diameter of \SI{15}{mm} and a Bi-2223 sintered tube. Measurements of the magnetic field inside the prototypes were conducted using four Hall sensors\footnote{THS119 Hall Sensors, TOSHIBA Electronic Devises \& Storage Corporation, 2023}, distributed along a 3D-printed support inside the tube on four positions with a separation of \SI{24}{mm} between each of them. This setup enabled the measurement of the magnetic field as a function of position. The measurements were taken at \SI{77}{K}, with and without superconducting shielding, as illustrated in Figures~\ref{fig:YBCO} and~\ref{fig:Bi2223}.
+        Initial measurements were performed on a prototype with a YBCO-tape, helically wound around a copper tube with an inner diameter of \SI{15}{mm} and a Bi-2223 sintered tube. 
+        Measurements of the magnetic field inside the prototypes were conducted using four Hall sensors\footnote{THS119 Hall Sensors, TOSHIBA Electronic Devises \& Storage Corporation, 2023}, distributed along a 3D-printed support inside the tube on four positions with a separation of \SI{24}{mm} between each of them. 
+        This setup enabled the measurement of the magnetic field as a function of position. 
+        The measurements were taken at \SI{77}{K}, with and without superconducting shielding, as illustrated in Figures~\ref{fig:YBCO} and~\ref{fig:Bi2223}.
 
-\begin{figure}
-    \centering
-		\subfloat[]{
-    \includegraphics[width=0.58\columnwidth]{Figures/muEDM/SCshielding/YBCO_testMeasurements.png}}\hfill
-		\subfloat[]{
-    \includegraphics[width=0.40\columnwidth]{Figures/muEDM/SCshielding/YBCO_ScreeningFactor.png}}
-    \caption{Measurement of the YBCO prototype. (a)~Measured magnetic field versus time, {\it left}, and versus coil current, {\it center}, at \SI{77}{K} with and without prototype. (b)~Experimental shielding factor of YBCO prototype.}
-    \label{fig:YBCO}
-\end{figure}
-%
-%Comparing the plots in Figure \ref{fig:Plots}, we notice that the plateaus of the SC-shielded tube are curved with respect to the sharp plateaus of the tube without the SC-shielding. This indicates the presence of persistent currents flowing in the SC-shielded tube, counteracting the external magnetic field, and thus shows signs of superconductivity. After completing the measurement cycle, the current returns to \SI{0}{A}, but there is still remaining magnetic field inside the SC-tube. This indicates the presence of hysteresis effect, where persistent currents are still flowing inside the superconductor even when the magnetic field is removed. In future tests with better SC-tubes, a more dominant presence of persistent currents and hysteresis is expected as well as lower leaking magnetic flux densities.
-
-
-\begin{figure}
-    \centering
-		\subfloat[]{
-    \includegraphics[width=0.62\columnwidth]{Figures/muEDM/SCshielding/Bi2223_testMeasurements.png}}\hfill
-		\subfloat[]{
-    \includegraphics[width=0.34\columnwidth]{Figures/muEDM/SCshielding/Bi2223_ScreeningFactor.png}}
-    \caption{Measurement of the Bi2223 prototype. (a)~Measured magnetic field versus time, {\it left}, and versus coil current, {\it center}, at \SI{77}{K} with and without prototype, and as simulated. (b)~Comparison of experimental versus simulated shielding factor of Bi2223 prototype.}
-    \label{fig:Bi2223}
-\end{figure}
+        \begin{figure}
+            \centering
+            \subfloat[]{
+            \includegraphics[width=0.58\columnwidth]{Figures/muEDM/SCshielding/YBCO_testMeasurements.png}}\hfill
+            \subfloat[]{
+            \includegraphics[width=0.40\columnwidth]{Figures/muEDM/SCshielding/YBCO_ScreeningFactor.png}}
+            \caption{Measurement of the YBCO prototype. (a)~Measured magnetic field versus time, {\it left}, and versus coil current, {\it center}, at \SI{77}{K} with and without prototype. (b)~Shielding factor of YBCO prototype.}
+        \label{fig:YBCO}
+        \end{figure}
+        
+        \begin{figure}
+            \centering
+            \subfloat[]{
+            \includegraphics[width=0.62\columnwidth]{Figures/muEDM/SCshielding/Bi2223_testMeasurements.png}}\hfill
+            \subfloat[]{
+            \includegraphics[width=0.34\columnwidth]{Figures/muEDM/SCshielding/Bi2223_ScreeningFactor.png}}
+            \caption{Measurement of the Bi2223 prototype. (a)~Measured magnetic field versus time, {\it left}, and versus coil current, {\it center}, at \SI{77}{K} with and without prototype, and as simulated. (b)~Comparison of experimental versus simulated shielding factor of Bi2223 prototype.}
+        \label{fig:Bi2223}
+        \end{figure}
 
     \status{review}
-    \subsection{Entrance detector} 
-        After a muon successfully enters the experiment it would spiral to the other side of the magnet. 
-        To store it a magnetic kick is necessary. 
-        How to produce this kick is going to be discussed in the next section but in either case, this system needs to be triggered.
-        To detect the muon entering the system a thin scintillator can be used.
-        This needs to be thick enough to produce sufficient light but thin enough not to deflect the particle from the design orbit.
-        With a dedicated \gf simulation\footnote{To be honest this was actually my first \gf project and \textit{few iterations} were needed.}, the amount of light exiting the different sides of the thin scintillator was studied as a function of the muon momentum. 
-        The results of the simulations and the dedicated beamtimes to develop this entrance detector will be discussed in Ch.~\ref{ch:muEDM:entrance}, dedicated to this detector.
-
-    \status{started}
     \subsection{Muon tracking}
     \label{sec:muEDM:gridpix:beamtime}
         Although during physics runs it is important to minimize the number of interactions of the muon along the path, it is a cardinal step to prove the muons are following the correct path and are properly stored.
@@ -204,11 +344,12 @@ Initial measurements were performed on a prototype with a YBCO-tape, helically w
         A voltage difference between the mesh and the chip produces an avalanche when drift electrons reach the mesh so that the \grid behaves like a sort of microscopic Micromegas.
 
         \paragraph{Beamtime}
-        A prototype of this detector was developed a single GridPix and flushed with helium-isobutane gas mixtures. 
-        It was tested in 2022 and the results have been published and can be found in \cite{muEDM:PSI:GridPix}.
+        A prototype of this detector was developed with a single GridPix and flushed with helium-isobutane gas mixtures. 
+        It was tested in 2022, and the results have been published and can be found in \cite{muEDM:PSI:GridPix}.
         The setup was quite simple: the beam was centered through the TPC and scintillators were used as an external trigger.
         During this testing, the detector was tested at different pressures and voltages, and with different mixtures of gas.
         In Fig.~\ref{fig:gridpix_plateau} the trend of the detection efficiency of GridPix as a function of the mesh voltage is shown, demonstrating that the detector can be used with these kinds of mixtures with a wide efficiency plateau.
+        In Fig.~\ref{fig:tpc_reso} the reconstructed momentum and phase space.\\
 
         \begin{figure}
             \centering
@@ -217,6 +358,18 @@ Initial measurements were performed on a prototype with a YBCO-tape, helically w
             \label{fig:gridpix_plateau}
         \end{figure}
         
+        \begin{figure}
+            \centering
+            \subfloat[]{\includegraphics[width=0.5\linewidth]{Figures/muEDM/momentum_long_0.4.pdf}
+            }
+            \subfloat[]{
+            \includegraphics[width=0.45\linewidth]{Figures/muEDM/phase_space_long_0.4.pdf}
+            }
+            \caption{Performance of a longitudinal TPC for the reconstruction of injected muons. (a) Reconstructed momentum (assuming \SI{28}{MeV/c} initial momentum). (b) True (blue) and reconstructed (red) phase space coordinates and angles (u: horizontal; v: vertical).}
+        \label{fig:tpc_reso}
+        \end{figure}
+        
+        \noindent
         Following a successful beam test, simulation studies were conducted to evaluate the tracking capabilities of a Time Projection Chamber (TPC) designed for tracking \SI{28}{MeV/c} muons within the Phase~I magnet. 
         Two geometries were explored: a conventional longitudinal setup, where electrons drift along the $z$ axis parallel to the magnetic field, and an unconventional radial configuration, with electron drift in the $(x,y)$ plane. 
         Typically, TPC track resolution is highest in the direction orthogonal to the drift, favoring the longitudinal option for optimal momentum resolution, while the radial geometry excels in measuring muon entrance angles. 
@@ -227,17 +380,16 @@ Initial measurements were performed on a prototype with a YBCO-tape, helically w
         On the detector front, tests are scheduled to experimentally validate the proposal to operate the detector at sub-atmospheric pressure, considering the anticipated very high ionization rates in the Phase~I experiment. 
         The design process will be complemented by thorough simulation studies aimed at optimizing the final configuration.
         
-    \status{started}
+    \status{review}
     \subsection{Kicker}
+    \label{sec:muEDM:kicker}
         The prerequisite for the \textit{frozen spin} is to first store the muon around the design orbit.
         This is achieved by applying a longitudinal kick, canceling the momentum component parallel to the magnetic field.
         The development of this element is non-trivial because of the stringent requirements on the strength, time scale, and residual effects of the kick.
         A weakly focusing static field, produced by a circular coil, ensures confinement. 
         To compensate for muon acceleration upon entering the weakly focusing field, the pulsed field must be optimized to reduce longitudinal oscillations.
-        The trigger signal for the magnet pulse, generated by an entrance detector (Sec.\ref{sec:MuInjTrigger}), selects muons within the storage phase space. 
+        The trigger signal for the magnet pulse, generated by the entrance detector previously discussed, selects muons within the storage phase space. 
         Considering processing delays, the \textit{on-demand} pulse generator must have an internal latency <$\SI{60}{ns}$.
-        We started by looking into different shapes and types of coil as well as developing \ltsp simulations of the generating circuit.
-        The current version of the circuit is shown in Fig.~\ref{fig:muEDM:kicker:circuit}.
         
         The Institute for Pulsed Power and Microwave Technology at KIT developed high-voltage switching technology \cite{GateBoosting}, meeting current pulse specifications. 
         The generator, designed with a \SI{20}{\micro s} recovery time, can deliver up to 2000 pulses per second. 
@@ -284,10 +436,10 @@ Initial measurements were performed on a prototype with a YBCO-tape, helically w
         The current design, shown in Fig.~\ref{fig:circuit} includes resistance-capacitive~(RC) damping elements on the coaxial cable, tuned to critically damp the primary pulse and suppress after-pulse oscillations. 
         This avoids perturbing the muon orbit or inducing time-dependent spin precession signals. 
         The pulse shape, influencing the applied momentum kick, is adjustable to maximize storage efficiency. 
-        Simulated current profiles illustrate optimized damping for maximizing peak current and reducing after-pulse oscillations. 
+        Simulated current profiles, shown in Fig.~\ref{fig:pulses}, illustrate optimized damping for maximizing peak current and reducing after-pulse oscillations. 
         The voltage over the charging capacitor \textit{C1} demonstrates recovery within $1\%$ of the nominal operating voltage after a \SI{20}{\micro s} delay, meeting the desired interval between muon triggers.
         We plan to commission and test the pulse generator in mid-2024 for the upcoming beam test. 
-        Pulse generator development is underway at KIT, with circuit parameters being finalized. Simultaneously, full load circuit characterization, utilizing a network analyzer, is ongoing to refine the ANSYS model of the quadrant configuration.
+        The circuit parameters are being finalized, while a full load circuit characterization, utilizing a network analyzer, is ongoing to refine the ANSYS model of the quadrant configuration.
             
         \begin{figure}
             \centering
@@ -311,44 +463,76 @@ Initial measurements were performed on a prototype with a YBCO-tape, helically w
         \label{fig:pulses}
         \end{figure}
 
-    \status{started}
+    \status{review}
+    \subsection{Faraday rotator}
+        To measure the field strength and time dependence of short high-intensity magnetic-field pulses, a compact sensor was designed. 
+        The sensor, based on Faraday rotation\footnote{The Faraday effect causes a polarization rotation which is proportional to the projection of the magnetic field along the direction of the light propagation.}, aims for a sensitivity of a few microtesla up to 200 MHz. 
+        Powered by a Toptica potassium laser, it employs a probe with a polarizer, a \SI{1}{\cm\cubed} TGG crystal with a high Verdet\footnote{The Verdet constant describes the strength of the Faraday effect in a material.} constant, a right-angle mirror, and an analyzer. 
+        The laser beam passes twice through the crystal, enhancing sensitivity. 
+        In Fig.~\ref{fig:faraday_probe} a picture of it.
+        The angular shift in the polarization plane is measured by a ThorLabs photodiode.
+        
+        \noindent
+        The sensor's performance was tested by applying a small AC magnetic field at \SI{100}{kHz} to the TGG crystal using a custom copper coil. 
+        The setup, shown in Fig.~\ref{fig:faraday_probe}, achieved microtesla sensitivity, crucial for the \SI{100}{kHz} to \SI{10}{MHz} range. 
+        The experimental results demonstrate efficient measurement of microtesla magnetic fields, enhanced by strong laser power and noise cancellation using a differential photodiode. 
+        The compact design enables measurements in confined spaces, crucial for the muonEDM experimental setup.
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[height = 7cm]{Figures/muEDM/sensor.jpg}
+            \hfill
+            \includegraphics[height = 7cm]{Figures/muEDM/setup100kHz.png}
+            \caption{Left: The TGG crystal holder with polarizer and analyzer. Center: Setup for characterization of the TGG crystal and verification of the performance of the magnetometer. The one loop coil serves to produce a micro-Tesla level field at \SI{100}{kHz}. Right: The potassium laser used to power the probe.}
+        \label{fig:faraday_probe}
+        \end{figure}
+
+    \status{review}
     \subsection{Frozen-spin electrodes}
         After the muon has been successfully stored around the design orbit the next step is to apply a radial electric field. 
         The strength of this field is going to modify the frequency of the g-2 precession, eventually \textit{freezing} the spin (eq. \ref{eq:freezed}) along the momentum direction.
-        These electrodes need to be out of the muon orbit and with a minimal material budget to reduce the positron scattering.  
-        Dedicated simulations and prototyping have been developed also for this element.\\\\
+        The radial electric field will be induced by concentric cylindrical electrodes at $r=\SI{40}{mm}$ (grounded) and $r=\SI{20}{mm}$ (high voltage), requiring $\sim\SI{6}{kV}$ to achieve a frozen-spin field strength of $\approx\SI{3}{kV\per cm}$ at the nominal orbit radius ($\rho=\SI{31}{mm}$).
+        A momentum bite of $0.5\%$ leads to a limit of approximately $1\%$ for matching the frozen-spin field strength over the momentum distribution, requiring a voltage precision better than $0.5\%$. 
+        To control systematic effects from a longitudinal electric field, the applied voltage stability must be constrained to $\sim10^{-4}$.
+        The 20HVA24-BP1-F high voltage amplifier by \textit{Advanced Energy}\footnote{\url{www.advancedenergy.com/en-us/products/dc-dc-conversion-products/high-voltage-boost-(u-v)/high-voltage-amplifiers/hva-series/}} meets these requirements with limited voltage ripple and a bipolar supply, enabling calibration of the frozen-spin field strength. 
+        This calibration involves observing spin precession due to the anomalous magnetic moment when the electric field is offset from $E_f$. 
+        The device will be tested with existing electrode prototypes to verify stability under applied high voltage in a vacuum, facilitating electric field measurements and geometric alignment. 
+        This progress informs the final electrode system design for integration in 2024, with further development leading to incorporation into anticipated beam tests in 2025.
 
-The radial electric field will be induced by concentric cylindrical electrodes at $r=\SI{40}{mm}$ (grounded) and $r=\SI{20}{mm}$ (high voltage), requiring $\sim\SI{6}{kV}$ to achieve a frozen-spin field strength of $\approx\SI{3}{kV\per cm}$ at the nominal orbit radius ($\rho=\SI{31}{mm}$).
-
-A momentum bite of $0.5\%$ leads to a limit of approximately $1\%$ for matching the frozen-spin field strength over the momentum distribution, requiring a voltage precision better than $0.5\%$. To control systematic effects from a longitudinal electric field, the applied voltage stability must be constrained to $\sim10^{-4}$.
-
-The 20HVA24-BP1-F high voltage amplifier by \textit{Advanced Energy}\footnote{\url{www.advancedenergy.com/en-us/products/dc-dc-conversion-products/high-voltage-boost-(u-v)/high-voltage-amplifiers/hva-series/}} meets these requirements with limited voltage ripple and a bipolar supply, enabling calibration of the frozen-spin field strength. This calibration involves observing spin precession due to the anomalous magnetic moment when the electric field is offset from $E_f$. The device will be tested with existing electrode prototypes to verify stability under applied high voltage in a vacuum, facilitating electric field measurements and geometric alignment. This progress informs the final electrode system design for integration in 2024, with further development leading to incorporation into anticipated beam tests in 2025.
-Prototype electrodes, made from aluminized Kapton films, were designed to study eddy-currents induced by the magnetic field pulse. To minimize eddy currents, material with higher resistivity or optimized geometry is crucial. Measurement of the radial component at the muon orbit is necessary for shielding determination and design optimization.
-
-Using a \SI{5}{mm} radius pickup coil, voltages induced by a \SI{10}{\mega\hertz} sinusoidal current in the pulse coils were compared for various electrode configurations. A ground electrode made from homogeneously aluminized Kapton exhibited a maximum shielding factor of $1.9(1)$, increasing to $3.0(2)$ with the HV electrode installed. However, azimuthal asymmetry along the muon orbit was observed due to the discontinuity at the gluing seam.
-
-A new prototype with aluminum distributed in \SI{2}{mm} stripes (\SI{2.2}{mm} pitch) was prepared. Measurements with this segmented electrode showed shielding factors $<1.1$ ($90\%$ C.L.), indicating effective restriction of radial eddy-current flow across length scales comparable to the coils. This allows near-complete transmission of the radial field at frequencies relevant to the magnetic field pulse (Sec.~\ref{sec:B_FieldPulse}), with no measurable shielding or azimuthal asymmetry.
-
-Noting that a segmented electrode introduces periodic field non-uniformity along the orbit, investigations were conducted to explore possible systematic effects arising from the accumulation of a geometric phase. For instance, separating the electrodes into 100 longitudinal strands would induce $E$-field oscillations of approximately \SI{40}{\giga\hertz}.
-
-Implemented in ANSYS with 60 wires of \SI{1}{mm} diameter for the high voltage electrode and 120 for the ground (Fig.~\ref{fig:segmented}(b)), the transverse cross-section of the electric field shows negligible high-frequency oscillations for a displaced orbit (\SI{6}{mm}). The study demonstrates that a segmented electrode will not introduce additional systematic effects.
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{Figures/muEDM/Electrode/ElectricField.pdf}
-    \caption{The radial electric field corresponding to the frozen-spin field strength at the nominal orbit radius is plotted over the radial position. The dashed vertical lines indicate the radial offset due to changes in momentum $\pm0.5\%$. The dashed curves indicate the electric field which would satisfy the frozen-spin condition for these shifted momenta and radii. The resultant discrepancy is $\sim1\%$, limiting the precision necessary for the electric field strength given a momentum bite of $0.5\%$.}
-    \label{fig:efieldprecision}
-\end{figure}
-
-\begin{figure}
-    \centering
-        \subfloat[Stripe-segmented electrode prototype]{
-    \includegraphics[height=0.4\textwidth]{Figures/muEDM/Electrode/stripedfoil.jpg}}
-		\hfill
-        \subfloat[Wire electrode simulation]{
-    \includegraphics[height=0.4\textwidth]{Figures/muEDM/Electrode/ansys_striped_field.png}}
-    \caption{A segmented electrode prevents eddy current shielding of the magnetic pulse, while preserving the required electric field properties. A prototype made from aluminized Kapton (a) showed negligible shielding, while simulation studies using a wire array electrode modeled in ANSYS (b) show no significant systematic effects and sufficient uniformity of the field in the storage region.}
-    \label{fig:segmented}
-\end{figure}
+        \paragraph{Prototype}
+        Prototype electrodes, made from aluminized Kapton films, were designed to study eddy currents induced by the magnetic field pulse. 
+        To minimize eddy currents, material with higher resistivity or optimized geometry is crucial. 
+        Measurement of the radial component at the muon orbit is necessary for shielding determination and design optimization.
+        Using a \SI{5}{mm} radius pickup coil, voltages induced by a \SI{10}{\mega\hertz} sinusoidal current in the pulse coils were compared for various electrode configurations. 
+        A ground electrode made from homogeneously aluminized Kapton exhibited a maximum shielding factor of $1.9(1)$, increasing to $3.0(2)$ with the HV electrode installed. 
+        However, azimuthal asymmetry along the muon orbit was observed due to the discontinuity at the gluing seam.
+        
+        \noindent
+        A new prototype with aluminum distributed in \SI{2}{mm} stripes (\SI{2.2}{mm} pitch) was prepared (see Fig.~\ref{fig:segmented}(a)). 
+        Measurements with this segmented electrode showed shielding factors $<1.1$ ($90\%$ C.L.), indicating effective restriction of radial eddy-current flow across length scales comparable to the coils. 
+        This allows near-complete transmission of the radial field at frequencies relevant to the magnetic field pulse, with no measurable shielding or azimuthal asymmetry.
+        Noting that a segmented electrode introduces periodic field non-uniformity along the orbit, investigations were conducted to explore possible systematic effects arising from the accumulation of a geometric phase. 
+        For instance, separating the electrodes into 100 longitudinal strands would induce $E$-field oscillations of approximately \SI{40}{\giga\hertz}.
+        Implemented in ANSYS with 60 wires of \SI{1}{mm} diameter for the high voltage electrode and 120 for the ground (Fig.~\ref{fig:segmented}(b)), the transverse cross-section of the electric field shows negligible high-frequency oscillations for a displaced orbit (\SI{6}{mm}). The study demonstrates that a segmented electrode will not introduce additional systematic effects.
+        
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.8\textwidth]{Figures/muEDM/Electrode/ElectricField.pdf}
+            \caption{The radial electric field corresponding to the frozen-spin field strength at the nominal orbit radius is plotted over the radial position. The dashed vertical lines indicate the radial offset due to changes in momentum $\pm0.5\%$. The dashed curves indicate the electric field which would satisfy the frozen-spin condition for these shifted momenta and radii. The resultant discrepancy is $\sim1\%$, limiting the precision necessary for the electric field strength given a momentum bite of $0.5\%$.}
+            \label{fig:efieldprecision}
+        \end{figure}
+        
+        \begin{figure}
+            \centering
+            \subfloat[Stripe-segmented electrode prototype]{
+            \includegraphics[height=0.4\textwidth]{Figures/muEDM/Electrode/stripedfoil.jpg}}
+            \hfill
+            \subfloat[Wire electrode simulation]{
+            \includegraphics[height=0.4\textwidth]{Figures/muEDM/Electrode/ansys_striped_field.png}}
+            \caption{A segmented electrode prevents eddy current shielding of the magnetic pulse, while preserving the required electric field properties. A prototype made from aluminized Kapton (a) showed negligible shielding, while simulation studies using a wire array electrode modeled in ANSYS (b) show no significant systematic effects and sufficient uniformity of the field in the storage region.}
+        \label{fig:segmented}
+        \end{figure}
+    
     \status{review}
     \subsection{Positron tracking}
         The development of the positron tracker has been a big part of my work in the collaboration.
@@ -439,7 +623,7 @@ Implemented in ANSYS with 60 wires of \SI{1}{mm} diameter for the high voltage e
     
 \status{review}
 \section{Systematics}
-\label{muEDM:systematics}
+\label{sec:muEDM:systematics}
     Like for the majority of the experiment at the edge of our current understanding, the systematic effects play a key role.
     Most of the studies on this topic were performed by Chavdar Dustov, Post Doc at PSI. 
     The key aspects have been compiled in a recent publication \cite{chavdar:2023}, on which this section relies. 
