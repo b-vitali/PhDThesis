@@ -121,7 +121,7 @@ This item was one of the main tasks in my involvement in this experiment and it 
         \end{outline}
         Overall, CEX data could be collected when the target was considered `full enough': below 2.1 bar, meaning 50\% full. 
         In the two weeks, this translates to efficiency of $D_{2021}\approx0.5$.
-        The efficiency for 2021 was lower than expected and the necessary statistic was not reached for every patch (Fig.~\ref{fig:CEX:2021:energy}).
+        The efficiency for 2021 was lower than expected and the necessary statistic was not reached for every patch (Fig.~\ref{fig:CEX:patches:2021}).
 
         \begin{figure}
             \centering
@@ -244,7 +244,7 @@ This item was one of the main tasks in my involvement in this experiment and it 
         CEX data were collected when the target was considered `full enough': below 2.1 bar, meaning 50\% full. 
         In the two weeks, this translates to efficiency of $D_{2021}\approx0.6$.
         The hydrogen and helium pressure during data-taking is shown in Fig.~\ref{fig:CEX:datataking:2022}.
-        The efficiency for 2022 was higher than the previous year and was enough to collect the necessary statistics for every patch.
+        The efficiency for 2022 was higher than the previous year and was enough to collect the necessary statistics for every patch (Fig.~\ref{fig:CEX:patches:2022}).
         The analysis of the data collected during 2022 is still ongoing.
 
 \status{review}
@@ -341,7 +341,7 @@ This item was one of the main tasks in my involvement in this experiment and it 
             \1 We used a 250L dewar every 24h
             \2[->] Cheaper than last year and simpler to organize
         \end{outline}
-        Compared to the previous years, more CEX data were collected in a shorter period, marking a success for this iteration of the LH2 target. 
+        Compared to the previous years, more data were collected in a shorter period (Fig.~\ref{fig:CEX:patches:2023}), marking a success for this iteration of the LH2 target. 
         At the same time, the usage of Liquid Helium, although still elevated, was much lower than in 2022. In Fig.~\ref{fig:CEX:dewar} the comparison between the dewar usage in 2022 and 2023 (this info was lost for 2021).
         The analysis of the data collected is still ongoing.
 
@@ -358,6 +358,20 @@ This item was one of the main tasks in my involvement in this experiment and it 
             \includegraphics[width=0.9\textwidth, keepaspectratio]{Figures/LH2/2023/2023CEX_dewars.png}
             \caption[Dewar usage in 2022 and 2023.]{Comparison of the dewar usage in 2022 and 2023. While the general trend during 2023 has been much better than in 2022, a spurious day of data-taking in 2022 was particularly efficient. The reason is unfortunately no clear and the condition hard to reproduce.}
             \label{fig:CEX:dewar}
+        \end{figure}
+
+    \begin{figure}[ht]   
+            \centering
+            \subfloat[CEX2021]{
+            \includegraphics[height = 6cm, keepaspectratio]{Figures/LH2/2021/CEX2021_patches.png}            \label{fig:CEX:patches:2021}}
+            \hfill
+            \subfloat[CEX2022]{
+            \includegraphics[height = 6cm, keepaspectratio]{Figures/LH2/2022/CEX2022_patches.pdf}            \label{fig:CEX:patches:2022}}
+            \hfill
+            \subfloat[CEX2023]{
+            \includegraphics[height = 6cm, keepaspectratio]{Figures/LH2/2023/CEX2023_patches.pdf}            \label{fig:CEX:patches:2023}}
+            \caption{Number of triggered events during Charge EXchange data taking in 2021 2022 and 2023. Notice the lack of events in 3 patches in 2021 due to the low dutycycle of the LH2 target. For 2022 and 2023, the required statistics was collected and exceeded.}
+            \label{fig:CEX:patches}
         \end{figure}
 
 \status{review}

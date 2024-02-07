@@ -4,27 +4,66 @@
 {\itshape After the recent publications from the ATOMKI collaboration, the so-called X17 anomaly piqued the interest of the community. The flexibility of the MEG II apparatus allows for a variety of exotic searches and the collaboration deemed of interest in searching for this anomaly in an uncorrelated way.
 The chapter starts with a recap of the previous searches and then moves to the description of this search in MEG II: setup used, simulations developed, data acquisition, and data analysis.}
 
+\status{started}
 \section{ATOMKI and the X17 `anomaly'}
     In recent years, the nuclear reaction \ce{^7Li(p,\e,\Ae)^8Be} peaked the physics community's interest.
     The reason is, in 2016 the Atomki laboratory reported an excess in the angular distribution of the pairs $\e \Ae$ coming from the Internal Pair Creation (IPC).
     The significance found was $\approx7\sigma$ and similar results were later obtained.
-    The current explanation is the creation of a \SI{17}{MeV/c^2} boson (hence the name), associated with the interaction of dark and ordinary matter.
+    The current hypothesis is the creation of a \SI{17}{MeV/c^2} boson (hence the name), associated with the interaction of dark and ordinary matter.
+    
+    \status{review}
+    \subsection{The process}
+        The proton on Lithium reaction shows two distinct resonances, as illustrated in Fig.~\ref{fig:X17:resonance}.
+        The first is at a proton energy of $E_p=\SI{441}{keV}$, leading to a \SI{17.64}{MeV} excited state.
+        The second, for $E_p=\SI{1030}{keV}$, rising to the \SI{18.15}{MeV} state.
+        The energy state levels are shown in Fig.~\ref{fig:X17:states}.
+        Both excited Beryllium states can emit a photon, which can later convert into a $\e\Ae$ External Pair Conversion (EPC), or a directly a $\e\Ae$ pair, hence an Internal Pair Conversion (IPC).
+        In addition to the ground level, both can also decay in the first excited level, at $E=\SI{3.03}{MeV}$.
+        The relative fraction of these processes are shown in ~\ref{fig:X17:states:b}.
+        Taking all into consideration, we have four possible transitions from the \SI{17.64}{MeV}\footnote{EPC(17.64), EPC(14.61), IPC(17.64), IPC(14.61)} and four from \SI{18.15}{MeV}\footnote{EPC(18.15), EPC(15.12), IPC(18.15), IPC(15.12)}. 
+        The width of the different line 
+        \begin{figure}
+            \centering
+            \includegraphics[width = 0.8\textwidth]{Figures/X17/pLi_crossection.png}
+            \caption{}
+            \label{fig:X17:resonance}
+        \end{figure}
+        
+        \begin{figure}
+            \centering
+            \subfloat[]{\includegraphics[height = 4cm]{Figures/X17/Be_levels.png}}
+            \subfloat[]{\includegraphics[height = 4cm]{Figures/X17/Be_levels_mixing.png}\label{fig:X17:states:b}}          
+            \caption{}
+            \label{fig:X17:states}
+        \end{figure}
 
+    \status{started}
+    \subsection{The esults}
+        What the ATOMKI collaboration found was an excess at $\sim\SI{140}{\deg}$ in the IPC. 
+        The initial result yielded an invariant mass of $M = 16.70\pm51$~MeV, later refined to $M=16.98\pm0.16\pm0.20$~ MeV.
+        These results were confirmed studying the \ce{^3H(p,\g)^4He} and \ce{^11B(p,\g)^12C}.\\
+        After these results, Zhang and Miller \cite{} improved the reaction model to predict the cross sections. This model could not explain the excess.\\
+        The latest entry was the preliminary result by the  University of Sciences in Hanoi.
+        Unfortunately, all these studies have the same limitation: the measurements were done with a planar configuration,  on the plane perpendicular to the proton beam, as shown in Fig.~\ref{fig:X17:ATOMKI}.
+        A study with wider acceptance is required \cite{}, and this was what sparked the MEG II interest.
+        
 \status{started}
 \section{X17 in MEG II}
     After reading with great interest the papers from ATOMKI, the MEG collaboration started evaluating if repeating this measurement was achievable with the MEG II apparatus.
-    In 2022 the first data collection was performed but the time constraints, required to keep the main focus of the experiment on the $\upmu \rightarrow \upgamma e$ process, meant not all the necessary preparatory studies could be performed.
-    The details of this first data-taking will be skipped and we will move directly to the second campaign, performed in 2023.
-    
-    \subsection{MC simulations}
-    
-    \status{started}
+    In 2022 the first data collection was performed but the time constraints, required to keep the main focus of the experiment on $\upmu \rightarrow \upgamma e$, meant not all the necessary preparatory studies could be performed.
+    The details of this first data-taking will be skipped and we will move directly to the second campaign, performed in 2023. 
+    To be underlined is that this first campaign was cardinal in the rapid development of the tools required for the rest of the search: MC simulation, triggers, and analysis.\\
+        
+    \status{review}
     \subsection{Magnetic field choice}
         The first step is to identify the magnetic field required. 
         The geometry of the MEG II detector, in junction with the magnetic field, defines the acceptance of the produced particles.
         Given the nature of the COBRA magnet, the parameter here is the scaling of the magnetic field.
         Thorough simulations were run to optimize the scaling factor, finding the best compromise between the efficiency for signal and background reconstruction to be $B_{X17}=0.15\times B_{MEG}$. 
         This value can be roughly estimated considering that a scale factor of 1 is optimized for positrons of \SI{53}{MeV} while the pair produced by the X17 decay should be roughly at \SI{8}{MeV} ($8/53\approx 0.15$). 
+        In reality, the hypothetical X17 would be produced with a boost, placing the energy of the pair particles in the range $[5.9,12.2]$~MeV.
+        In 2022 data were collected at 15\% 16\% and 17\% and the optimal value was found to be the first.
+        This translates to an energy acceptance $[\sim7.5,\sim10.8]$~MeV.
         
     \status{started}
     \subsection{Target}
@@ -34,28 +73,42 @@ The chapter starts with a recap of the previous searches and then moves to the d
         \paragraph{Vacuum and mechanical structure}
         The thickness and dimensions of the carbon fiber vacuum chamber have been optimized via dedicated simulations for both integral structure and particle interaction.
         After receiving the carbon fiber, the chamber was glued and tested for vacuum.
+        The mechanics of holding the target itself is shown in Fig.~\ref{} and it is made of copper.
+        The reason for using this material is to improve the dissipation of the heat generated by the beam on the target.
+        This, unfortunately, means a good percentage of the transition leading to a photon (meaning not an IPC) will generate an external pair (EPC) when the photon interacts with the copper.
+        This contribution is bigger at lower angles, meaning IPC are the one dominating the region of interest.
+        To reduce the contribution from EPC, the copper ring holding the target was later made thinner. 
         
         \paragraph{Lithium targets}
         The interesting process requires Lithium atoms but Lithium targets tend to be unstable. 
-        Among the options studied, \ce{LiF} and \ce{Li_{3.6}PO_{3.4}N_{0.6}} were the most promising.
-        \ce{LiF} targets were produced by INFN Legnaro while \ce{Li_{3.6}PO_{3.4}N_{0.6}} targets were produced at PSI.
-        Looking back we now know that the spattering process behind the production of the \ce{Li_{3.6}PO_{3.4}N_{0.6}} targets resulted in a poorly characterized end-product (more on this in the following section).
+        Among the options studied, \ce{LiF} and \ce{Li_{3.6}PO_{3.4}N_{0.6}}\footnote{The fraction of the different atoms depends on the production process, which in this instance was \textit{sputtering}. These were the values measured for the target produce at PSI.} were the most promising.
+        \ce{LiF} targets were produced by INFN Legnaro while \ce{LiPON} targets were produced at PSI.
+        Looking back we now know that the spattering process behind the production of the \ce{LiPON} targets resulted in a poorly characterized end-product (more on this in the following section).
         What drove us to rely on the LiPON instead of the LiF was to avoid the F resonance. 
-        Some data was acquired using the \ce{LiF} target but the Fluorine has a resonance at \SI{}{} with a cross-section much higher than the one of the Lithium.
+        Some data was acquired using the \ce{LiF} target but the Fluorine has a resonance at \SI{6.13}{MeV}, \SI{6.92}{MeV}, and \SI{7.12}{MeV} with a cross-section much higher than the one of the Lithium.
         This meant that the events of interest were hidden by the F resonance.
         More on targets will follow.
+
+    \status{started}
+    \subsection{MC simulations}
+        To develop a complete simulation, the obvious decision was to implement the details in the pre-existing MEG II simulation.
+        This is \textit{GEM}, based on \gf, which returns the detector responses to the physics event. 
+        After that, the \textit{bartender} converts the simulation into realistic waveforms, to be analyzed with the standard MEG II hit reconstructions.
+        The track-finding algorithms and trigger strategies can be then tested on realistic events.
         
 \status{started}
 \section{Data acquisition}
-    We went through two short data-taking periods. 
+    We went through different data-taking periods. 
     The first was at the end of 2022 and lasted 3 weeks while the second was in Feb. 2023 and lasted 4 weeks.
     During the first period, we collected data used to develop the MC simulations, event reconstruction, and optimize the trigger.
     At this stage, the understanding was only partial but we deemed it sufficient to collect useful data as an intermediate step.
     The second period was the main data acquisition. 
+    Additional studies were performed in Nov. 2023 and Feb. 2024.
+    These last two will be discussed later.
     
     \status{review}
     \subsection{Beam tuning}
-        The beam tuning was performed by substituting the end cap of the proton beam line with a transparent cap with a AAA crystal. 
+        The beam tuning was performed by substituting the end cap of the proton beam line with a transparent cap with a quartz crystal. 
         The proton beam produces visible photons hitting the crystal so the beam position can be observed.
         Normally this operation would be done while the upstream side of COBRA is not closed, allowing the installation of a webcam that gives instant feedback on the beam position.
         This was not the case so we were forced to use the camera installed inside COBRA for MEG II target monitoring.
@@ -91,6 +144,11 @@ The chapter starts with a recap of the previous searches and then moves to the d
         The solution was to use the BGO, described in Sec.~\ref{sec:LH2:BGO}, and crosscheck the results via a dedicated data set collected with the XEC.
         For the normalization, the idea was to install a small NaI crystal below COBRA and use the combined information from this detector, the BGO, and the various measurements of the CW proton current.
 
+        \paragraph{Measured asymmetry}
+        Unfortunately, no asymmetry was measured in the data collected in 2023.
+        No definitive hypothesis was made on this behavior.
+        The two lines of thought were: either the line generated is not the \SI{18.1}{MeV} resonance or there is some detail missing in the detector setup.
+        
 \status{started}
 \section{Data analysis}
     My contribution to the data analysis was only partial so I will not go into much detail. 
