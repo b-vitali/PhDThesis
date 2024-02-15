@@ -284,7 +284,7 @@ We will skip some preliminary studies and we will start with the description of 
         On a practical level, this system requires finding a way of reading the transverse fibers from the central region of the experiment.
         This is non-trivial and possible improvements on this design were studied, the most promising being the Cylindrical Helical Tracker (CHeT), discussed in the next section.
         
-\status{started}
+\status{review}
 \section{CHeT}
     The first step in further developing and prototyping the geometry chosen in the previous paragraph is to understand the requirements for this sub-detector and how the prospected resolutions compare to these.
     This scintillating fiber tracker will be used for position tracking and in particular is going to be complemented by silicon strips. The crucial information this system needs to provide is the longitudinal position of the particle with a good resolution: $\delta \ell \lesssim \SI{1}{mm}$.
@@ -366,7 +366,7 @@ We will skip some preliminary studies and we will start with the description of 
             \label{fig:CyFi:5deg}
         \end{figure}
 
-    \status{started}
+    \status{review}
     \subsection{\gf simulation}
         The first hurdle in the Geant4 simulation for this sub-detector is the definition of the geometry.
         While the inside structure of the fibers and the readout are the same as discussed previously (see Sec.~\ref{sec:muEDM:fiber:g4}), the fiber shape is now less straightforward.
@@ -383,7 +383,14 @@ We will skip some preliminary studies and we will start with the description of 
         The core part of the code for generating the G4TessellatedSolid fibers, although perhaps not of particular interest, is in appendix \ref{ch:G4TessellatedSolid}.\\
 
         \noindent
-        The resulting simulation, after having implemented everything so far described, is shown in Fig.~\ref{}, and is quite flexible: the dimensions of the CHeT, as well as the angles of the two layers and the fiber thickness, are parameters to be used when creating the CHeT geometry.
+        The resulting simulation, after having implemented everything so far described, is shown in Fig.~\ref{fig:CHeT:G4}, and is quite flexible: the dimensions of the CHeT, as well as the angles of the two layers and the fiber thickness, are parameters to be used when creating the CHeT geometry.
+
+        \begin{figure}
+            \centering
+            \includegraphics[width = 0.9\textwidth]{Figures/muEDM/CyFi/CHeT_G4.png}
+            \caption[muEDM: CHeT \gf]{\gf simulation of the CHeT. The size of the fibers was increased to enhance the readability of the figure. While the structure may not be crystal clear, the fibers illuminated by the optical photons assist in guiding the eye along the two layers. In blue the particle traversing the detector.}
+            \label{fig:CHeT:G4}
+        \end{figure}
         
     \status{review}
     \subsection{From $\upgamma$s to waveforms}
@@ -421,20 +428,44 @@ We will skip some preliminary studies and we will start with the description of 
         \1 To perform a transformation for the \textit{hits} in a more `natural' coordinate system: $xyz\ra r\varphi z$
     \end{outline}
 
-    \paragraph{GENFIT}
+        \paragraph{GENFIT}
         The tracking code could be developed from scratch or based on a pre-existing working code. 
         Given the size of the collaboration and the task, the second solution seems more adequate.
         In this regard, a good option would be to rely on a code developed for general track fitting in particle physics is GENFIT\footnote{\href{https://github.com/GenFit/GenFit}{GENFIT: https://github.com/GenFit/GenFit}}.
         %A brief description of the code itself can be found in App.~\ref{ch:genfit}.
         The development of the tracking procedure for the CHeT detector had to be put to a halt. This section is kept here just as food for thought for future development.
 
+        \paragraph{Ghost hits}
+        Although requiring $\Delta T\leq1$ made so the same couple of fibers cannot cross multiple times, there is still a risk of ill-defined hits.
+        If the particle hits the detector in two distinct places this will create a hit on 4 fibers. 
+        If the timing resolution is not sufficient, this generates 4 possible interaction points.
+        This situation is shown in Fig.~\ref{fig:CHeT:ghosts}, where the stars indicate the real hit locations.
+        The existence of the other crossing point forces us to implement the double-end readout scheme.
+        The resolution along the fiber will be enough to solve the redundancy of the ghost hits. 
+
+    \begin{figure}
+        \centering
+        \subfloat[\gf simulation of the CHeT. An event to highlight the challenge of ghosts.]{\includegraphics[width = 0.35\textwidth]{Figures/muEDM/CyFi/CHeT_G4_verty.png}\label{fig:CHeT:G4_verty}}\hfill
+        \subfloat[Fibers from different `real' hits can still generate \textit{ghosts}. Marked with the star the `real hits' and with dots every crossing.]{\includegraphics[width = 0.6\textwidth]{Figures/muEDM/CyFi/CHET_ghost_study.png}\label{fig:CHeT:ghosts}}
+        \caption[muEDM: CHeT \gf and \textit{ghost} hits]{The $\Delta T\leq1$ requirement prevents fibers from crossing multiple times, but there is a risk of ambiguous hits. If a particle hits the detector in multiple places, with inadequate timing resolution, multiple potential interaction points arise, as illustrated in Fig.~\ref{fig:CHeT:ghosts}, with stars denoting real hits. To address this, we will implement a double-end readout scheme, with sufficient resolution to resolve ghost hits.}
+        \label{fig:CHeT}
+    \end{figure}
+    
 \section{A study of radial geometry}
     The development of the Pixel detector, supposed to be a counterpart to the CHeT, unfortunately, had some delay.
     This means that, during the first phase, the Pixel detector will not be available and the scintillating fibers need to be repurposed to be the only positron tracking detector.
     The designs discussed up until now do not collect enough hits to be the sole tracker, hence requiring going back to the drawing board.
-    
-\section{Conclusions}
 
+\status{started}
+\section{Conclusions}
+    This chapter describes the designs and simulations of the positron tracker.
+    As of right now, some requirements for such a system are still `blurry'.
+    Understanding the different aspects of the muEDM search generates requirements for the subsystem which are updated and, in turn, change the whole design of the experiment.
+    The design included in the proposal nicely satisfied the requirements but presented some challenges in the readout, particularly for the inner barrel of the transverse layer.
+    The `updated' CHeT design overcame the readout challenge at the cost of introducing a challenge due to the possible ambiguity of the hits (ghosts).
+    Given the delay foreseen on the Pixel side, the requirements for the fiber sub-system changed.
+    This prompted additional studies to develop different geometries which would be autonomous and self-sufficient in the positron tracking (at least for Phase I).
+    
 \status{started}
 \printbibliography[
     heading = bibliographychapter,
