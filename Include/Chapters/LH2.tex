@@ -35,10 +35,28 @@ This item was one of the main tasks in my involvement in this experiment and it 
 \section{BGO}
     \label{sec:LH2:BGO}
     The BGO crystal already mentioned, and shown in Fig.~\ref{fig:CEX:bgo}, is an auxiliary detector that plays a key role in two subjects of this thesis.
-    For this reason, we will here describe it in some detail.
     BGO refers to \ce{Bi4Ge3O12}, a compound with a cubic crystal structure and often used as a scintillator.
+    Given the high Z ($Z_{Bi}=83$) and high density, this material is a very good $\g$ absorber (properties are listed in Tab.~\ref{tab:BGO:properties}).
     This detector is, in particular, a matrix 4x4 of \SI{4x4}{cm} crystals and mounted on a structure (see Fig.~\ref{fig:CEX:mover}) that allows it to translate and rotate around COBRA.
     This detector plays the key role in the back-to-back event tagging but it was also used during the X17 search, subject of Ch.~\ref{ch:X17}.
+    Key aspects of this detector are the calibration and inter-calibrations of the different crystals, discussed in App.~\ref{ch:BGO}\footnote{I worked on this item with David St\"{a}ger, a student from ETH, who collected these informations in his thesis \cite{David}}.
+    
+
+    \begin{table}[]
+        \centering
+        \caption{Properties of the Material}
+        \label{tab:BGO:properties}
+        \begin{tabular}{@{}lll@{}}
+        \toprule
+        \textbf{Quantity}            & \textbf{Value} & \textbf{Unit} \\ \midrule
+        Density                      & 7.130          & g/cm$^3$      \\
+        Radiation Length $X_0$      & 1.118          & cm            \\
+        Molière Radius $r_0$        & 2.259          & cm            \\
+        Max. Emission Wavelength    & 480            & nm            \\
+        Lower Wavelength Cutoff     & 320            & nm            \\
+        Light Yield                 & 8-10           & photons/keV$\gamma$ \\ \bottomrule
+        \end{tabular}
+    \end{table}
 
 \status{review}
 \section{LH2 target}

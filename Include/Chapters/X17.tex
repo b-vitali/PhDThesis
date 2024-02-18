@@ -5,13 +5,13 @@
 {\itshape After the recent publications from the ATOMKI collaboration, the so-called X17 anomaly piqued the interest of the community. The flexibility of the MEG II apparatus allows for a variety of exotic searches and the collaboration deemed of interest searching for this anomaly in an uncorrelated way.
 The chapter starts with a recap of the previous searches and then moves to the description of this search in MEG II: setup used, simulations developed, data acquisition, and data analysis.}
 
-\status{started}
+\status{review}
 \section{ATOMKI and the X17 `anomaly'}
     In recent years, the nuclear reaction \ce{^7Li(p,\e,\Ae)^8Be} peaked the physics community's interest.
     The reason is, in 2016 the Atomki laboratory reported an excess in the angular distribution of the pairs $\e \Ae$ coming from the Internal Pair Creation (IPC) \cite{X17:results:2017}.
     The significance found was $\approx7\sigma$ and similar results were later obtained.
     The current hypothesis is the creation of a \SI{17}{MeV/c^2} boson (hence the name), associated with the interaction of dark and ordinary matter.
-    A good review on the status for this anomaly is in \cite{X17:2023}.
+    A good review of the status for the searches of this anomaly is in \cite{X17:2023}.
     
     \status{review}
     \subsection{The process}
@@ -21,9 +21,8 @@ The chapter starts with a recap of the previous searches and then moves to the d
         The energy state levels are shown in Fig.~\ref{fig:X17:states}.
         Both excited Beryllium states can emit a photon, which can later convert into a $\e\Ae$ External Pair Conversion (EPC), or a directly a $\e\Ae$ pair ($BR\approx\num{3.9e-3}$), hence an Internal Pair Conversion (IPC).
         In addition to the ground level, both can also decay in the first excited level, at $E=\SI{3.03}{MeV}$.
-        The relative fraction of these processes are shown in ~\ref{fig:X17:states:b}.
-        Taking all into consideration, we have four possible transitions from the \SI{17.64}{MeV}\footnote{EPC(17.64), EPC(14.61), IPC(17.64), IPC(14.61)} and four from \SI{18.15}{MeV}\footnote{EPC(18.15), EPC(15.12), IPC(18.15), IPC(15.12)}. 
-        The details on the energy levels can be found in \cite{X17:Elevels:2004}.
+        The relative fraction of these processes is shown in ~\ref{fig:X17:states:b} and details on the energy levels can be found in \cite{X17:Elevels:2004}.
+        In total, we have four possible transitions from the \SI{17.64}{MeV}\footnote{EPC(17.64), EPC(14.61), IPC(17.64), IPC(14.61)} and four from \SI{18.15}{MeV}\footnote{EPC(18.15), EPC(15.12), IPC(18.15), IPC(15.12)}. 
         On the practical side, we can talk of IPC15, EPC15, IPC18, and EPC18.
         
         \begin{figure}
@@ -37,33 +36,35 @@ The chapter starts with a recap of the previous searches and then moves to the d
             \centering
             \subfloat[The first resonance occurs at a proton energy of $E_p=\SI{441}{keV}$, leading to a \SI{17.64}{MeV} excited state, while the second resonance, observed at $E_p=\SI{1030}{keV}$, results in the \SI{18.15}{MeV} state.]{\includegraphics[height = 3.9cm]{Figures/X17/Be_levels.png}}\hfill
             \subfloat[Additionally to the ground level, both states can decay to the first excited level at $E=\SI{3.03}{MeV}$.]{\includegraphics[height = 3.9cm]{Figures/X17/Be_levels_mixing.png}\label{fig:X17:states:b}}          
-            \caption[Energy levels and transitions of \ce{^8Be}]{The proton-Lithium reaction exhibits two distinct resonances \cite{X17:crossections} and different transitions \cite{X17:Elevels:2004}. The relative fractions of these processes are illustrated in Fig.~\ref{fig:X17:states:b}.}
+            \caption[Energy levels and transitions of \ce{^8Be}]{The proton-Lithium reaction exhibits two distinct resonances, shown in Fig.~\ref{fig:X17:resonance} \cite{X17:crossections} and different transitions \cite{X17:Elevels:2004}. The relative fractions of these processes are illustrated in Fig.~\ref{fig:X17:states:b}.}
             \label{fig:X17:states}
         \end{figure}
 
-    \status{started}
+    \status{review}
     \subsection{The esults}
         What the ATOMKI collaboration found was an excess at $\sim\SI{140}{\deg}$ in the IPC. 
-        The initial result yielded an invariant mass of $M = 16.70\pm51$~MeV, later refined to $M=16.98\pm0.16\pm0.20$~ MeV.
+        The initial result yielded an invariant mass of $M = 16.70\pm0.51$~MeV \cite{X17:Anomaly:2015}, later refined to $M=16.94\pm0.12\pm0.20$~ MeV \cite{X17:2023}.
         These results were confirmed studying the \ce{^3H(p,\g)^4He} and \ce{^11B(p,\g)^12C}.\\
-        After these results, Zhang and Miller \cite{X17:Zhang:2017}\cite{X17:Zhang:2020}\cite{X17:Zahng:2021} improved the reaction model to predict the cross sections. This model could not explain the excess.\\
-        The latest entry was the preliminary result by the  University of Sciences in Hanoi.
+        After these results, Zhang and Miller \cite{X17:Zhang:2017}\cite{X17:Zhang:2020}\cite{X17:Zahng:2021} improved the reaction model to predict the cross sections. 
+        Unfortunately, this model could not explain the excess.\\
+        The latest entry was the preliminary result by the  University of Sciences in Hanoi \cite{X17:Hanoi:2023}.
         Unfortunately, all these studies have the same limitation: the measurements were done with a planar configuration,  on the plane perpendicular to the proton beam, as shown in Fig.~\ref{fig:X17:ATOMKI}.
-        A study with wider acceptance is required \cite{}, and this was what sparked the MEG II interest.
+        A study with wider acceptance is required \cite{X17:2023}, and this was what sparked the MEG II interest.
 
         \begin{figure}
             \centering
             \includegraphics[width = 0.8\textwidth]{Figures/X17/Atomki_geometry.png}
-            \caption{The planar geometry is the one chosen in all searches to date. In both versions the energy is measured with plastic scintillators while the position was measured with a multi-wire proportional chamber and later with double-sided silicon strip detectors.}
+            \caption{The planar geometry is the one chosen in all searches to date. In both versions, the energy is measured with plastic scintillators while the position is measured with a multi-wire proportional chamber, later upgraded to double-sided silicon strip detectors.}
             \label{fig:X17:ATOMKI}
         \end{figure}
         
-\status{started}
+\status{review}
 \section{X17 in MEG II}
     After reading with great interest the papers from ATOMKI, the MEG collaboration started evaluating if repeating this measurement was achievable with the MEG II apparatus.
     In 2022 the first data collection was performed but the time constraints, required to keep the main focus of the experiment on $\upmu \rightarrow \upgamma e$, meant not all the necessary preparatory studies could be performed.
     The details of this first data-taking will be skipped and we will move directly to the second campaign, performed in 2023. 
     To be underlined is that this first campaign was cardinal in the rapid development of the tools required for the rest of the search: MC simulation, triggers, and analysis.
+    Through the analysis of the data collected in 2023 some upgrades are ongoing and more data will be collected in 2024.
         
     \status{review}
     \subsection{Magnetic field choice}
@@ -73,19 +74,19 @@ The chapter starts with a recap of the previous searches and then moves to the d
         Thorough simulations were run to optimize the scaling factor, finding the best compromise between the efficiency for signal and background reconstruction to be $B_{X17}=0.15\times B_{MEG}$. 
         This value can be roughly estimated considering that a scale factor of 1 is optimized for positrons of \SI{53}{MeV} while the pair produced by the X17 decay should be roughly at \SI{8}{MeV} ($8/53\approx 0.15$). 
         In reality, the hypothetical X17 would be produced with a boost, placing the energy of the pair particles in the range $[5.9,12.2]$~MeV.
-        In 2022 data were collected at 15\% 16\% and 17\% and the optimal value was found to be the first.
+        In 2022 and 2023 data were collected at 15\% 16\% and 17\% and the optimal value was found to be the first.
         This translates to an energy acceptance $[\sim7.5,\sim10.8]$~MeV.
         
     \status{review}
     \subsection{Target}
-        The setup for the target has been optimized with dedicated studies []. 
+        The setup for the target has been optimized with dedicated studies \cite{X17:Meucci}. 
         The final design is quite straightforward: a carbon fiber vacuum chamber mounted at the tip of the insertion system of the CW bellows system; a mounting system, made of copper, holds different types of targets at \SI{45}{\deg}.
         The bellows system is the one used for XEC weekly calibrations and will be not discussed.
         
         \paragraph{Vacuum and mechanical structure}
         The thickness  (\SI{400}{\micro\meter}) and diameter (\SI{13}{cm}) of the carbon fiber vacuum chamber have been optimized via dedicated simulations for both integral structure and particle interaction.
         After receiving the carbon fiber, the chamber was glued to an aluminum flange and end-cap, with three stainless steel rods and three acrylic rings to reinforce the structure, and tested for vacuum.
-        This setup is shown in Fig.~\ref{fig:X17:holder}
+        This setup is shown in Fig.~\ref{fig:X17:holder}.
         The mechanics of holding the target itself is also shown and it is made of copper.
         The reason for using this material is to improve the dissipation of the heat generated by the beam on the target.
         This, unfortunately, means a good percentage of the transition leading to a photon (meaning not an IPC) will generate an external pair (EPC) when the photon interacts with the copper.
@@ -103,12 +104,11 @@ The chapter starts with a recap of the previous searches and then moves to the d
         The interesting process requires Lithium atoms but Lithium targets tend to be unstable. 
         Among the options studied, \ce{LiF} and \ce{Li_{3.6}PO_{3.4}N_{0.6}}\footnote{The fraction of the different atoms depends on the production process, which in this instance was \textit{sputtering}. These were the values measured for the target produced at PSI.} were the most promising, both on Cu substrate.
         \ce{LiF} targets were produced by INFN Legnaro while \ce{LiPON} targets were produced at PSI.
-        Looking back we now know that the spattering process behind the production of the \ce{LiPON} targets resulted in a poorly characterized end-product (more on this in the following section).
-        What drove us to rely on the LiPON instead of the LiF was to avoid the F resonance. 
-        Some data was acquired using the \ce{LiF} target but the Fluorine has resonances \ce{^17F(p,\alpha\gamma)^16O} at \SI{6.13}{MeV}, \SI{6.92}{MeV}, and \SI{7.12}{MeV} with a cross-section much higher than the one of the Lithium \cite{}.
+        Looking back we now know that the spattering process behind the production of the \ce{LiPON} targets resulted in a poorly characterized end-product (more on this in a following section). 
+        Some data were acquired using the \ce{LiF} target, but the Fluorine has resonances \ce{^17F(p,\alpha\gamma)^16O} at \SI{6.13}{MeV}, \SI{6.92}{MeV}, and \SI{7.12}{MeV} with a cross-section much higher than the one of the Lithium \cite{}.
         This meant that the events of interest were hidden by the F resonance.
+        For this reason, the collaboration opted for LiPON.
         Some spectra taken with the BGO for both targets are in Fig.~\ref{fig:X17:BGO:targets}.
-        More on targets will follow.
 
         \begin{figure}
             \centering
@@ -125,8 +125,7 @@ The chapter starts with a recap of the previous searches and then moves to the d
         The track-finding algorithms and trigger strategies can be then tested on realistic events.
         The core aspects of the simulation are:
         \begin{outline}
-            \1 The \SI{15}{MeV} line is simulate with \SI{3}{MeV} width
-            \1 while the \SI{18.1}{MeV} is monochromatic
+            \1 The \SI{15}{MeV} line is simulate with \SI{3}{MeV} width, while the \SI{18.1}{MeV} is monochromatic
             \1 The excited beryllium is at rest
             \1 Isotropical decay in the rest frame of the X17 ($M=\SI{16.7}{MeV/c^2}$)
         \end{outline}     
@@ -140,7 +139,7 @@ The chapter starts with a recap of the previous searches and then moves to the d
         the IPC spectrum is generated using the Zhang-Miller cross-section, which includes non-resonant proton direct capture;
         the transition energies are generated separately. Zhang-Miller model, originally for the 18.15 MeV transition, is also applied to the 15.12 MeV transition, introducing additional uncertainty. The cross-section parameters are determined using old photon data and may benefit from updated measurements.
     
-    \status{started}
+    \status{review}
     \subsection{Data acquisition(s)}
         We went through different data-taking periods. 
         The first was at the end of 2022 and lasted 3 weeks while the second was in Feb. 2023 and lasted 4 weeks.
@@ -150,18 +149,30 @@ The chapter starts with a recap of the previous searches and then moves to the d
         A short data-taking in May 2023 followed to collect some photon spectra with the XEC.
         Additional studies were performed in Nov. 2023 and Feb. 2024.
         These last two will be discussed later.
-    
-    \paragraph{Beam tuning}
+
+        \paragraph{Setup} Although this search is done with the MEG II apparatus, some minor changes should be underlined.
+        The X17 data were collected while the MEG II acquisition was not ongoing. This means it was in parallel with the maintenance of the XEC, which was undergoing annealing to recover MPPC PDE.
+        For this reason, we relied on two auxiliary detectors, shown in Fig.~\ref{fig:X17:Brillance}: the BGO and an additional 3-inch Lanthanium Bromide crystal (\ce{LaBr3} `Brillance'), both read by PMTs.
+        We also took data with the BGO in different positions to study the asymmetry of the spectra.
+
+        \begin{figure}
+            \centering
+            \includegraphics[width = 0.9\textwidth]{Figures/X17/BGOandBrillance.png}
+            \caption[X17: Auxiliarly detecotrs]{Pictures of the auxiliary detectors: BGO, on the left, and Brillance, on the right.}
+            \label{fig:X17:Brillance}
+        \end{figure}
+        
+        \paragraph{Beam tuning}
         The beam tuning was performed by substituting the end cap of the proton beam line with a transparent cap with a quartz crystal. 
         The proton beam produces visible photons hitting the crystal so the beam position can be observed.
         Normally this operation would be done while the upstream side of COBRA is not closed, allowing the installation of a webcam that gives instant feedback on the beam position.
         This was not the case so we were forced to use the camera installed inside COBRA for MEG II target monitoring.
         This camera has some settings for \textit{gain} and \textit{aperture} but is controlled using a script in \textit{ssh} and to view the picture first is necessary to move them locally, making the whole procedure somewhat cumbersome.
-        Key aspects of the beam to be tuned were: 
+        Key aspects of the tuning:
         \begin{outline}
-            \1 Energy: This parameter is controlled by the \textit{Terminal Voltage} of the CW.
-            \1 Focus: This parameter is controlled by the \textit{Extraction Voltage} of the CW. Fig.~\ref{fig:focus_500keV} shows how the beam spot changes as a function of this parameter. 
+            \1 Energy: This parameter is controlled by the \textit{Terminal Voltage} of the CW. 
             \1 Position: This parameter is controlled by the three dipoles of the CW beamline. The change of the position for different values of the dipoles at \SI{500}{keV} is shown in Fig.~\ref{fig:position_500keV}.
+            \1 Focus: This parameter is controlled by the \textit{Extraction Voltage} of the CW. Fig.~\ref{fig:focus_500keV} shows how the beam spot changes as a function of this parameter.
         \end{outline}
 
         \begin{figure}
@@ -177,18 +188,17 @@ The chapter starts with a recap of the previous searches and then moves to the d
             \label{fig:focus_500keV}
         \end{figure}
         \noindent
-        After a careful scan of the three parameters, working points at different energies were chosen: the most relevant are the ones for \SI{500}{keV} and \SI{1080}{keV}.
+        After a careful scan, working points at different energies were chosen: the most relevant are the ones for \SI{500}{keV} and \SI{1080}{keV}.
         It is of interest to notice that \SI{1080}{keV} is the balance between what was previously discussed and the limitations of the CW machine: a higher ($\sim$\SI{1100}{keV}) energy would be a better choice but the nominal upper limit of the machine is \SI{1}{MeV}, meaning having it running stably at \SI{1080}{keV} is already an achievement.
-        To the best of our knowledge, the beam at COBRA center during was $(x, y) = \SIlist{2; -2}{mm}$; $(\sigma_x, \sigma_y) = \SIlist{2; 2}{mm}$.\\
+        To the best of our knowledge, the beam at COBRA center during data-taking was $(x, y) = \SIlist{2; -2}{mm}$; $(\sigma_x, \sigma_y) = \SIlist{2; 2}{mm}$.\\
 
         \noindent
         After the first tuning, these parameters were used for the different data-takings. 
         In Sec.~\ref{sec:X17:H2+} we will see why this beam-tuning had a fundamental flaw, linked to the presence of \ce{H2^+}.
 
-
         \paragraph{Trigger and Rates}
-        The X17 trigger developed requires 18 hits (with a 60 mV threshold in the waveform amplitude) on both CDCH ends and at least one hit in the SPX, defined as both readout channels of a tile with a waveform amplitude greater than 40 mV. 
-        At the same time, BGO, Brillance, pTC single, CDHC Track, and pedestal trigger were acquired, with a prescale factor.
+        The X17 trigger developed requires 18 hits on both CDCH ends\footnote{Unfortunately, at trigger level we cannot match the same wire on both sides} and at least one hit in the pTC. 
+        At the same time, BGO, Brillance, pTC single, CDHC Track, and pedestal trigger were acquired, with a prescale factor. 
         A comparison between the trigger rate in data and MC has been made for a proton current of 6$\mu$A. 
         At this current, X17 trigger rate is about 30 Hz on data.
         Based on measured gamma rates on BGO (60 kHz), trigger efficiencies estimated from simulation (0.039$\%$ and 6.5$\%$ for EPC and IPC respectively), and the IPC BR (0.0032), the background rates can be estimated. 
@@ -198,10 +208,10 @@ The chapter starts with a recap of the previous searches and then moves to the d
 \section{Data analysis}
     My contribution to the data analysis was only partial so I will not go into much detail. 
     Even so, at least a broad overview of the analysis status at the time of writing is in order.
-    Most of the studies on event reconstruction and quality cuts were performed by Hicham Benmansour, while the Likelihood analysis was developed by Giovanni Dal Maso. 
-    I contributed in different aspects but mainly during the development of the Likelihood analysis.
+    Most of the studies on event reconstruction and quality cuts were performed by Hicham Benmansour, while the Likelihood analysis was developed by Giovanni Dal Maso \cite{Giovanni}. 
+    I contributed in different aspects but mainly during the development of the Likelihood analysis and BGO analysis.
 
-    \status{started}
+    \status{review}
     \subsection{Pair reconstruction}
         The first step for this search is to correlate particles and create $\e \Ae$ pairs. 
         This is not a given in an experiment that was developed for a different task, namely reconstructing $\e$ and $\g$. 
@@ -227,7 +237,7 @@ The chapter starts with a recap of the previous searches and then moves to the d
             \item $|z_{vertex}-z_{beamspot}|$ $<$ 2.5 cm, $z_{vertex}$ being the z coordinate of the point of closest approach to the beamline and $z_{beamspot}$ the best estimate of the z coordinate of the beam spot on target;
             \item  time order in the hits $T_{0,lasthit}>T_{0,firshit}$;
             \item  $(z_{lasthit}-z_{firshit}) \times z_{firshit} > 0$, to ensure the track goes away from the target;
-            \item distance 1$^{st}$ hit - vertex smaller than 35 cm, to ensure the first turn is not missed;
+            \item distance 1$^{st}$ hit to vertex smaller than 35 cm, to ensure the first turn is not missed;
             \item half-turn tracks (tracks which never exit the chamber) should have a hit density $>$ 0.8 hits/cm and a track score $>$ 20, track score being defined as $\mbox{ngoodhits} + 10 \times \mbox{track hit density}$;
             \item  $|z_{firsthit}|>2.5$ cm;
             \item no hits with opposite $z_{hit}$;
@@ -239,8 +249,7 @@ The chapter starts with a recap of the previous searches and then moves to the d
         \paragraph{Pair selections}
         For events where at least one positron track and at least one electron track pass the previous selection, pair selection criteria are applied:
         \begin{itemize}
-            \item the positron track and the electron track should have no hits in common. 
-            If any positron track has hits in common with any electron track the event is rejected (to ensure no track is reconstructed with the wrong sign)
+            \item the $\e$/$\Ae$ tracks should have no hits in common, to ensure no track is reconstructed with the wrong sign-
             \item the distance between the vertices of both tracks should be $\leq$ 3 cm.
         \end{itemize}
 
@@ -273,7 +282,7 @@ The chapter starts with a recap of the previous searches and then moves to the d
                   positron track selection (wrt trg)    & 38\%    & 37\%& 33\%&  27\%& 21\%& 8\%    \\      \hline
                         pair selection (wrt trg)          & 9\% & 8\%& 5\%&  5\% & \textcolor{red}{0.4\%}&   1.4\%  \\      \hline
                 \end{tabular}
-            \caption{}
+            \caption{Efficiency of the different reconstructions.}
             \label{tab:X17:efficiency}
         \end{table*}
 
@@ -322,9 +331,9 @@ The chapter starts with a recap of the previous searches and then moves to the d
         \begin{itemize}
             \item all tracks are fitted separately to the z axis POCA
             \item the best positron and electron tracks are selected
-            \item the common vertex is searched with a beam spot constraint using the tool RAVE (Reconstruction in Abstract Versatile Environments, supported in GENFIT. The beam spot constraint is defined as (x,y,z) coordinates plus the invariant matrix (3mm sigma beam spot constraint). 
+            \item the common vertex is searched with a beam spot constraint using the tool RAVE (Reconstruction in Abstract Versatile Environments), supported in GENFIT \cite{RAVE}\cite{GENFIT}. The beam spot constraint is defined as (x,y,z) coordinates plus the invariant matrix with $\sigma =\SI{3}{mm}$. 
         \end{itemize}
-        Figure~\ref{fig:vertexing} shows the comparison in the opening angle resolution for IPC18 and X17 MC with and without vertexing, obtaining a 25$\%$ improvement in the core resolution of a double Gaussian.
+        Fig.~\ref{fig:vertexing} shows the comparison in the opening angle resolution for IPC18 and X17 MC with and without vertexing, obtaining a 25$\%$ improvement in the core resolution of a double Gaussian.
         
         \begin{figure}[htbp]
             \centering
@@ -335,30 +344,30 @@ The chapter starts with a recap of the previous searches and then moves to the d
 
         \status{review}
         \subsection{Beam spot}
-        Figure~\ref{fig:beamspot1} shows the distributions of the reconstructed vertex at the target for positrons and electrons, on X17 data. 
+        Fig.~\ref{fig:beamspot1} shows the distributions of the reconstructed vertex at the target for positrons and electrons, on X17 data. 
         It can be noted that the vertices are off-center by 7 mm and the positron and electron vertices distributions are shifted versus one another.
         On MC, IPC vertices are correctly reconstructed (within 1 mm) while EPC vertices are reconstructed with a systematic shift toward negative y (most likely from the gamma anisotropy and a bias from the trigger) and there is a shift between positrons and electrons.
-        The beam spot position on data has been determined according to the following procedure: the x coordinate was extracted from an IPC-enriched data sample at a low opening angle; The y coordinate was determined by fitting the data y distribution to the MC distribution where a 60$\%$-40$\%$ proportion has been assumed for EPC/IPC. The fit is shown in Figure~\ref{fig:beamspotfit}.
+        The beam spot position on data has been determined according to the following procedure: the x coordinate was extracted from an IPC-enriched data sample at a low opening angle; the y coordinate was determined by fitting the data y distribution to the MC distribution where a 60$\%$-40$\%$ proportion has been assumed for EPC/IPC. The fit is shown in Fig.~\ref{fig:beamspotfit}.
         The values obtained are $(x, y) = \SIlist{-2; -3}{mm}$; $\sigma_x= \sigma_y = \SI{3}{mm}$.
 
         \begin{figure}[]
             \centering
             \includegraphics[scale=0.5]{Figures/X17/Analysis/BeamSpotData.pdf}
-            \caption{Distribution of the reconstructed vertex position at the target for positrons (left) and electrons (right) on X17 data.}
+            \caption{Distribution of the reconstructed vertex position positrons (left) and electrons (right) on X17 data.}
              \label{fig:beamspot1}
         \end{figure}
         
         \begin{figure}[]
             \centering
             \includegraphics[scale=0.5]{Figures/X17/Analysis/BeamSpotFit.pdf}
-            \caption{y vertex distribution in X17 data fitted to the MC distribution where a 60$\%$-40$\%$ proportion has been assumed for EPC/IPC.}
+            \caption{Y vertex distribution fitted to the MC: a 60$\%$-40$\%$ proportion has been assumed for EPC/IPC.}
             \label{fig:beamspotfit}
         \end{figure}
 
     \status{review}
     \subsection{Blinding strategy}\label{sec:blind}
     A blinded signal region has been defined according to the following conditions: $E_{sum}\in[\SI{16}{MeV},\ \SI{20}{MeV}]$ and $\theta_{rel}\in[\SI{115}{\deg},\ \SI{160}{\deg}]$.
-    Figure~\ref{fig:regions} shows, in the E$_{sum}$ vs $\theta_{rel}$ plane, the blinded signal region together with the relative angle sideband (16 MeV $<$ E$_{sum}$ $<$ 20 MeV and 0$^o$ $<$ $\theta_{rel}$ $<$ 115$^o$) and the E$_{sum}$ sideband (14 MeV $<$ E$_{sum}$ $<$ 16 MeV and 0$^o$ $<$ $\theta_{rel}$ $<$ 180$^o$).
+    Fig.~\ref{fig:regions} shows, in the E$_{sum}$ vs $\theta_{rel}$ plane, the blinded signal region together with the relative angle sideband (16 MeV $<$ E$_{sum}$ $<$ 20 MeV and 0$^o$ $<$ $\theta_{rel}$ $<$ 115$^o$) and the E$_{sum}$ sideband (14 MeV $<$ E$_{sum}$ $<$ 16 MeV and 0$^o$ $<$ $\theta_{rel}$ $<$ 180$^o$).
     \begin{figure}[htbp]
         \centering
         \includegraphics[width = 0.9\textwidth]{Figures/X17/Analysis/Regions.pdf}  
@@ -368,6 +377,7 @@ The chapter starts with a recap of the previous searches and then moves to the d
 
     \status{started}
     \subsection{Likelihood analysis}
+    \label{sec:X17:likelihood}
         Although the Feldman-Cousin approach is well-established in particle physics research, this was our first hands-on experience. 
         After studying the relevant papers \cite{feldman:1998}\cite{feldman:2011} and the internal notes of the collaboration we decided to first develop a mock-up\footnote{The full description of the code will be here skipped but it can be found in the following         \href{https://github.com/gdalmaso96/X17_LL_mock_up}{\underline{git repository \faGithubSquare}}} to understand the framework necessary for a Feldman Cousin approach to data analysis.  
         The full-blown X17 analysis will be performed with the code already written for the MEG II analysis. 
@@ -403,7 +413,7 @@ The chapter starts with a recap of the previous searches and then moves to the d
 
         \begin{equation}
         \label{eq:X17:Poisson}
-            \mathcal{L}{const} = \mathcal{L} \prod_{j=1}^4 \frac{\hat{\hat{\mathcal{N}}}_j^{\mathcal{N}_j}e^{-\hat{\mathcal{N}}_j}}{\mathcal{N}_j!}
+            \mathcal{L}_{const} = \mathcal{L} \prod_{j=1}^4 \frac{\hat{\hat{\mathcal{N}}}_j^{\mathcal{N}_j}e^{-\hat{\mathcal{N}}_j}}{\mathcal{N}_j!}
         \end{equation}
 
         \noindent
@@ -472,37 +482,61 @@ The chapter starts with a recap of the previous searches and then moves to the d
         \begin{figure}
             \centering
             \includegraphics[width=0.9\linewidth]{Figures//X17//Likelihood/examples-binned.png}
-            \caption{In the binned likelihood fit of the ToyMC sample in Figure 1.15, only marginal distributions are shown, without nuisance parameters. It uses 2-dimensional PDFs for $E_{sum}$ and $\theta_{rel}$, presenting ToyMC data (black), the best fit (blue), and summed background PDFs (red).}
+            \caption{In the binned likelihood fit of the ToyMC sample in Fig. 1.15, only marginal distributions are shown, without nuisance parameters. It uses 2-dimensional PDFs for $E_{sum}$ and $\theta_{rel}$, presenting ToyMC data (black), the best fit (blue), and summed background PDFs (red).}
             \label{fig:X17:binnedexample}
         \end{figure}
-
+        
 \paragraph{Tests}
-Figure 1.17 compares estimators from unbinned and binned likelihood analyses on 500 ToyMC samples. 
-The binned analysis runs >50 times faster, thus it's preferred for FC. 
-Subsequent tests are conducted with binned likelihood analysis only.
-
-Figure 1.18 shows estimator distributions with nuisance parameters included. OPTIONS 1, 2, and 3 are tested, revealing OPTION 3 consistently yields signal yields compatible with zero. The overpopulated bin in background yield may result from the chosen parametrization for Esum EPC PDFs, based on limited MC production.
-
+Many tests are ongoing, like comparing estimators from unbinned and binned likelihood analyses on 500 ToyMC samples, with the second being >50 times faster. 
+The different `options' are also tested, revealing option \textbf{D} consistently yields a signal compatible with zero. 
+The parametrization for Esum EPC PDFs, dictated by the limited MC production, seems to tend to an overpopulation in background yield. 
 The current strategy lacks consideration for possible correlations between energy sum and relative angle and more tests are needed with final MC production. 
 
 \paragraph{CL estimate}
+The distribution of $\lambda_{LR}$ is computed on a $15 \times 15$ grid between 0 and 900 average X17 events and between 15 MeV/c$^2$ and 18.15 MeV/c$^2$ X17 mass. 
+For each point in the grid, the ToyMC generation and fitting was performed for 1 h. 
+This delivered an inhomogeneous number of ToyMCs produced per point on the grid as the convergence time depends on the strength of the signal. 
+Each point in the grid has a generated statistics ranging between $\sim 130$ and $\sim 350$ ToyMCs. 
+To compute the CLs, the likelihood on the data sample, which is in this case a reference ToyMC sample, is profiled in the grid points and the $\lambda_{LR}$ is computed. 
+For each grid point, the $\lambda_{LR}$ is ranked giving the local CLs. 
+The procedure is then repeated 100 times by resampling the dataset and computing the profile likelihood for each iteration for different values of the average X17 yield. 
+The median of the upper and lower limits and of the best-fit estimates are studied as a function of the average X17 yield. 
+Such estimates depend on the template used, resulting in a bias on the best fit and on the quoted limits. 
+The bias is visible, leading to a median yield of 400 X17 events for a scenario where the true value is 450. 
+Plots showing the different aspects are in Fig.~\ref{fig:X17:likelihood:CL}.
+
+\begin{figure}
+    \centering
+    \subfloat[The profile likelihood (left) and the local p-value (right) estimated with Wilks’ theorem, for 500 X17, are shown. The solid/dashed black lines shows the 90\%/68\% p-value levels.]{\includegraphics[width=0.9\textwidth]{Figures/X17/Likelihood/likelihood_profile_tests.png}}{}
+    \subfloat[FC construction in the ideal statistics scenario for 500 X17. On the right, a cubic spline interpolation is shown. The solid black line shows the 90\% CL belt. By reducing the statistics of the EPC templates by a factor 10, the limits on the X17 yield increase by 14\%, and the limits on the X17 mass increase by 11\%]{\includegraphics[width=0.9\textwidth]{Figures/X17/Likelihood/likelihood_FC_tests.png}}{}
+    \subfloat[Median 90\% CLs and best fits expected as a function of the true X17 yield in the ideal statistics scenarios. The limits are shown both in the estimated X17 yield (left) and mass (right).]{\includegraphics[width=0.9\textwidth]{Figures/X17/Likelihood/likelihood_CL_tests.png}}{}
+    \caption{Example of the profile likelihood ratio (a) and of the full FC construction (b) for 500 X17 events in an ideal case. In (c) the median 90\% CLs and best fits expected as a function of the true X17 yield.}
+    \label{fig:X17:likelihood:CL}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{Figures/X17/Likelihood/likelihood_median_UL_test.png}
+    \caption{Enter Caption}
+    \label{fig:enter-label}
+\end{figure}
 
 \paragraph{Improvements}
-Due to the limited Monte Carlo (MC) statistics currently and anticipated in the final production, an alternative likelihood approach has been developed. 
-In their work, the authors in \cite{X17:likelihood:BB} formulated a binned likelihood for template fits, accounting for the impact of low MC statistics. This likelihood combines terms for the observed data ($\mathcal{L}_{data}$) and the template distributions ($\mathcal{L}_{nuisance}$), treating each bin's population as following a Poisson distribution around its true value:
+Due to the current (and anticipated) limited Monte Carlo statistics, an alternative likelihood approach has been developed. 
+In their work, the authors in \cite{X17:likelihood:BB} formulated a binned likelihood for template fits, accounting for the impact of low MC statistics. 
+This likelihood combines terms for the observed data ($\mathcal{L}_{data}$) and the template distributions ($\mathcal{L}_{nuisance}$), treating each bin's population as following a Poisson distribution around its true value:
 \begin{equation}
     \mathcal{L} = \mathcal{L}_{data} + \mathcal{L}_{nuisance} =
     \sum_{i=1}^n D_i \log (f_i) - f_i + \sum_{i}^{n}\sum_{j}^{m}a_{ij}\log (A_{ij})-A_{ij}
 \end{equation}
 where $n$ is the number of bins, $m$ the number of populations, $D_i$ the population in the data i-th data bin, $f_i$ the estimated population in the i-th bin, $a_{ji}$ the observed statistics in the j-th MC sample in bin i, and $A_{ij}$ is the estimator of $a_{ji}$.
-This approach introduces one nuisance parameter $A_{ij}$ per bin per population, which are used to estimate $f_i$ and to define the \textit{population strenght} $p_j$
+This approach introduces one nuisance parameter $A_{ij}$ per bin per population, which is used to estimate $f_i$ defining the \textit{population strenght} $p_j$
 \begin{equation}
     f_i=\sum_{j=1}^m \frac{\hat{\mathcal{N}}_{data,j}}{\hat{\mathcal{N}}_{MC,j}} A_{ij}= \sum_{j=1}^m p_j A_{ij}
 \end{equation}
-The maximum of the likelihood is found by differentiating it for
-$p_j$ and $A_ji$ and setting the derivatives to zero, analytically or via a minimizer, like MIGRAD.
-We will skip the details but this approach allows us to correct for limited statistics and possible correlations between variables.
-This likelihood is currently still under study, with possible changes to implement an analytical and faster minimization.
+The maximum of the likelihood is found by solving $\partial_{p_j}\mathcal{L}=0$ and  $\partial_{A_{ji}}\mathcal{L}=0$ analytically or via a minimizer, like MIGRAD.
+We will skip the details but this approach would allow us to correct for limited statistics and possible correlations between variables.
+This likelihood is currently still under study, with possible changes to implement the analytical (and  faster) minimization.
 
     \status{review}
     \subsection{Asymmetry and normalization}
@@ -524,15 +558,37 @@ This likelihood is currently still under study, with possible changes to impleme
             \label{fig:X17:CW:current}
         \end{figure}
 
-        \paragraph{Measured asymmetry}
-        Unfortunately, no asymmetry was measured in the data collected in 2023.
+        \paragraph{BGO spectra}
+        Here we will not discuss the BGO calibration, which is described in App.~\ref{ch:BGO}.
+        The first test was to see if the rotation of the target holder of \SI{90}{\deg} would affect the $\g$ spectra. 
+        This could be the case because of the different position of the copper ring holding the target.
+        The BGO spectra in the `X17' and the `rotated' position are shown in Fig.~\ref{fig:BGO:rotated} and no substantial difference was found.
+        From the width of the \SI{17.6}{MeV}, which is very narrow ($\Gamma=\SI{11}{keV}$), we can extract the BGO energy resolution to be $\sigma_{BGO} \approx 3.1\%$.
+        When comparing two subsequent \SI{500}{keV} and \SI{1080}{keV} datasets, we found the two peaks closer than the expected \SI{500}{keV}.
+        In practice, the \SI{18.15}{MeV} is at a lower energy and this discrepancy cannot be justified by the precision of the calibration.
+        The spectra are shown in Fig.~\ref{fig:BGO:500vs1080}.
         No definitive hypothesis was made on this behavior.
         The two lines of thought were: either the line generated is not the \SI{18.1}{MeV} resonance or there is some detail missing in the detector setup.
-        This point will be discussed later in this chapter after the analysis done on the targets.
+        This point will be discussed later in this chapter after the analysis done on the targets and on the CW beam.
+        
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.9\linewidth]{Figures//X17//BGO/BGO_rotated.png}
+            \caption{BGO spectra at $E_p=\SI{500}{MeV}$ for a normal and rotated target. The two spectra are compatible.}
+            \label{fig:BGO:rotated}
+        \end{figure}
+
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.9\linewidth]{Figures//X17//BGO/BGO_500vs1080.png}
+            \caption{BGO spectra taken at $E_p=\SI{500}{MeV}$ (Black), and $E_p=\SI{1080}{MeV}$ (Blue) on LIPON. The second spectrum should be peaked at \SI{18.15}{MeV} (+\SI{500}{keV}) but is not. The \SI{17.6}{MeV} line seems to be prevalent.}
+            \label{fig:BGO:500vs1080}
+        \end{figure}
+
         
         \paragraph{Xenon Calorimeter} 
         In May 23 data with XEC calorimeter as a gamma detector were taken to study the photon spectra, with a 500 nm thin Lipon photon target.
-        Figure~\ref{fig:xecspectrum} shows the photon spectrum taken at different proton energies. As already noticed in the BGO, the two Be(17.6) and Be(18.1) lines don't appear to be separated.
+        Fig.~\ref{fig:xecspectrum} shows the photon spectrum taken at different proton energies. As already noticed in the BGO, the two Be(17.6) and Be(18.1) lines don't appear to be separated.
         Another puzzling feature is the relative height of the 15 and 18 MeV peaks.
         Looking at the cross-section in Fig.~\ref{fig:X17:resonance}, one would expect the relative height of the resonance to vary differently.
         
@@ -545,6 +601,7 @@ This likelihood is currently still under study, with possible changes to impleme
 
     \status{review}   
     \section{Target studies}
+    \label{sec:X17:targets}
         To further understand the results of the preliminary analysis, and to cross-check different hypotheses, a few of the targets were studied by experts at PSI and from Sapienza University of Rome.
         These targets were studied with SAM and EDX measurements and the results, of which an example is shown in Fig.~\ref{fig:X17:target:LiPON:psi}, were in line: the targets were found to be poorly characterized, with thicker and uneven deposit than expected.
         After the analysis done on the target used in Feb. during the data-taking, we asked some colleagues from PSI to produce a different LiPON target.
@@ -649,8 +706,26 @@ This likelihood is currently still under study, with possible changes to impleme
             \caption{Example of the data taken in Feb. 2023 to study the CW beam. The top picture shows the dependence of the current measured with the Faradey Cup with collimator as a function of the Beam Blocker current with COBRA at 15\%. The bottom plot shows the same plot with no collimator but with different magnetic fields.}
             \label{fig:X17:H2+}
         \end{figure}
-    
+
+\status{review}
 \section{Results and conclusions}
+    This chapter was dedicated to the X17 search with the MEG II apparatus.
+    After a summary of the anomaly under study we saw how the search is ongoing in MEG II, with details on the analysis. 
+    Unfortunately, the data of 2023, while still of interest, are dominated by the \SI{17.6}{MeV} line instead of the \SI{18.1}{MeV} due to the target and/or \ce{H2+} CW beam component. 
+    I had an active role in all preparations and data-taking and played I marginal role in the analysis, particularly in the development of the likelihood analysis framework.\\
+    
+    \noindent
+    Regarding the data-taking campaign of 2023, the MC simulation accuracy is under investigation in sidebands, with ongoing MC production. 
+    We plan to address the limited MC statistics, due to resource constraints, implementing the Beeston-Barlow likelihood, discussed in Sec.~\ref{sec:X17:likelihood}. 
+    The expected sensitivity on the 2023 data is 272(4) X17 events, compared to 450 by ATOMKI.
+    The estimated significance of an anomaly akin to ATOMKI's measurements is 3.36$\sigma$; a 4.27$\sigma$ significance could be reached with a tenfold increase in EPC MC statistics.\\
+    
+    \noindent
+    The collaboration plans to have another data-taking focusing on the \SI{18.1}{MeV} line changing the target, as discussed in Sec.~\ref{sec:X17:targets}, and removing the \ce{H2+} from the CW beam, as discussed in Sec.~\ref{sec:X17:H2+}. 
+    These two improvements should give a sample that is purer and with a higher expected sensitivity.
+
+
+
 
 \cite{X17:1996} \cite{X17:nuclear:2004} \cite{X17:Krasznahorkay:2015} \cite{X17:Ellwanger:2016} \cite{X17:Feng:2016} \cite{X17_Kozaczuk:2017} \cite{X17:Krasznahorkay:2017} \cite{X17:2019} \cite{X17:2021} 
 
