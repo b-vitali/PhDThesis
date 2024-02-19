@@ -1,4 +1,4 @@
-\status{started}
+\status{review}
 \chapter{Search for X17}
 \begin{refsection}
 \label{ch:X17}
@@ -141,6 +141,7 @@ The chapter starts with a recap of the previous searches and then moves to the d
     
     \status{review}
     \subsection{Data acquisition(s)}
+    \label{sec:X17:beamtuning}
         We went through different data-taking periods. 
         The first was at the end of 2022 and lasted 3 weeks while the second was in Feb. 2023 and lasted 4 weeks.
         During the first period, we collected data used to develop the MC simulations, event reconstruction, and optimize the trigger.
@@ -204,7 +205,7 @@ The chapter starts with a recap of the previous searches and then moves to the d
         Based on measured gamma rates on BGO (60 kHz), trigger efficiencies estimated from simulation (0.039$\%$ and 6.5$\%$ for EPC and IPC respectively), and the IPC BR (0.0032), the background rates can be estimated. 
         It is found that expected trigger rates are 23 Hz and 12 Hz for EPC and IPC respectively, for a total rate of about 35 Hz, in fair agreement with the measured 30 Hz at \SI{6}{\micro\ampere}.
         
-\status{started}
+\status{review}
 \section{Data analysis}
     My contribution to the data analysis was only partial so I will not go into much detail. 
     Even so, at least a broad overview of the analysis status at the time of writing is in order.
@@ -375,35 +376,38 @@ The chapter starts with a recap of the previous searches and then moves to the d
          \label{fig:regions}
     \end{figure}
 
-    \status{started}
+    \status{review}
     \subsection{Likelihood analysis}
     \label{sec:X17:likelihood}
         Although the Feldman-Cousin approach is well-established in particle physics research, this was our first hands-on experience. 
-        After studying the relevant papers \cite{feldman:1998}\cite{feldman:2011} and the internal notes of the collaboration we decided to first develop a mock-up\footnote{The full description of the code will be here skipped but it can be found in the following         \href{https://github.com/gdalmaso96/X17_LL_mock_up}{\underline{git repository \faGithubSquare}}} to understand the framework necessary for a Feldman Cousin approach to data analysis.  
+        After studying the relevant papers \cite{feldman:1998}\cite{feldman:2011} and the internal notes of the collaboration, we decided to first develop a mock-up\footnote{The full description of the code will be here skipped but it can be found in the following         \href{https://github.com/gdalmaso96/X17_LL_mock_up}{\underline{git repository \faGithubSquare}}} to understand the framework necessary for a Feldman Cousin approach to data analysis.  
         The full-blown X17 analysis will be performed with the code already written for the MEG II analysis. 
         This code was developed and improved upon over many years and was both more robust and flexible. 
         Although I followed the whole procedure, the finalization of the mock-up and the transition to the MEG II code was done by Giovanni Dal Maso. 
         The broad idea is to extract the Probability Density Functions (PDF) parametrizing the spectra generated in GEM and benchmarked with the side-bends.
         This approach relies on the statistics of the MC production, which is unfortunately limited.
         An alternative method would be to implement background PDFs as histogram templates, as in the Beeston-Barlow \cite{X17:likelihood:BB}.
+        All the missing details can be found in the PhD thesis of Giovanni Dal Maso \cite{Giovanni}.
 
         \paragraph{Likelihood}
         The likelihood is defined by five populations: X17, IPC15, IPC18, EPC15, and EPC18.
         Given the flexibility of the framework, the analysis can be 1D, in \textit{invariant mass/ relative angle} or 2D, adding the \textit{energy sum} and can be binned or un-binned.
-        The likelihood lokes like the following, in which $\textbf{x}_j$ are the kinematic variables of the \textit{i}-th event.
-        The parameters are the mass of the X17 and the exèected number of pairs per population, with the sum distributed as poisson.
+        The likelihood is shown in Eq.~\ref{eq:X17:L}, in which $\textbf{x}_j$ are the kinematic variables of the \textit{i}-th event.
+        The parameters are the mass of the X17 and the expected number of pairs per population, with the sum distributed as Poisson.
         The additional exponent $\mathcal{N}_i$ is needed for the binned version.
         
         \begin{align}
             \mathcal{L} &= (\textbf{x} | \hat{\mathcal{N}}_{S}, \hat{\mathcal{N}}_{EPC15}, \hat{\mathcal{N}}_{EPC18}, \hat{\mathcal{N}}_{IPC15}, \hat{\mathcal{N}}_{IPC18}, \hat{m}) \\
             &= \frac{\hat{\mathcal{N}}^\mathcal{N} e^{-\hat{\mathcal{N}}} }{\mathcal{N}!}  \prod_{i=1}^{m} \Big( \sum_{j=0}^{4} \frac{\hat{\mathcal{N}}_{j}}{\hat{\mathcal{N}}} \text{pdf}_j(\textbf{x}_j)\Big)^{(\mathcal{N}_i)}
+            \label{eq:X17:L}
         \end{align}
 
         \noindent
         The likelihood function incorporates systematic effects by introducing nuisance parameters, which are distributed with a Gaussian penalty term centered around their expected values, as in Eq.~\ref{eq:X17:nuisance}. 
-        These parameters account for uncertainties, particularly in the shape of probability density functions (PDFs) of certain events, primarily due to limited Monte Carlo statistics. Additionally, when analyzing mono-dimensional invariant mass or relative angle, the distribution of energy sum is fitted separately to estimate the number of pairs in each population. This information is then integrated into the likelihood analysis through a Poisson penalty term for each type of background event.
-        While, if the analysis is mono-dimentional, the $E_{sum}$ can be fitted to estimate the number of events per population.
-        This adds a Poisson penalty to the likelihood like in Eq.~\ref{eq:X17:Poisson}.
+        These parameters account for uncertainties, particularly in the shape of probability density functions (PDFs) of certain events, primarily due to limited Monte Carlo statistics. 
+        Additionally, when analyzing mono-dimensional invariant mass or relative angle, the distribution of energy sum is fitted separately to estimate the number of pairs in each population. 
+        This information is then integrated into the likelihood analysis through a Poisson penalty term for each type of background event.
+        This adds a penalty to the likelihood like in Eq.~\ref{eq:X17:Poisson}.
         
         
         \begin{equation}
@@ -423,21 +427,27 @@ The chapter starts with a recap of the previous searches and then moves to the d
         Confidence levels are determined based on the fraction of toy experiments with a lower likelihood ratio than the data, with 90\% confidence belts commonly considered. 
         The uncertainty on the CL depends on the number of ToyMC per toy experiment and can be evaluated as:
         $$\sigma_{\hat{CL}} = \sqrt{\frac{\hat{CL}(1-\hat{CL})}{N_{ToyMC}}}$$
-        Significance of a signal is evaluated by comparing the likelihood ratio of the data to that of null experiments. 
-        Computational demands may require approximations, such as estimating p-values based on asymptotic distributions. 
-        The likelihood function is optimized using the MINUIT algorithm, allowing for extended analysis over higher-dimensional parameter spaces and binned likelihood analysis. 
-        The framework offers flexibility in selecting probability density functions from a dedicated database.
 
         \begin{equation}
         \label{eq:X17:LR}
             \lambda_{LR} = -2\biggl[\ln\bigl( \mathcal{L}(\hat{\hat{\theta}},\theta_{k,0}) \bigr) - \ln\bigl( \mathcal{L}(\hat{\theta}) \bigr)\biggr]
         \end{equation}
         
+        \noindent
+        The significance of a signal is evaluated by comparing the likelihood ratio of the data to that of null experiments. 
+        Computational demands may require approximations, such as estimating p-values based on asymptotic distributions. 
+        The likelihood function is optimized using the MINUIT algorithm \cite{MINUIT}\cite{MINUIT:manual}, allowing for extended analysis over higher-dimensional parameter spaces and binned likelihood analysis. 
+        The framework offers flexibility in selecting PDFs from a database.
+
+
+        
         \paragraph{PDFs}
         The PDFs are parametrized based on the limited MC production done in July 2023.
-        The yields of each population can be evaluated by comparing measured and expected BGO rates. The resulting populations are in Tab.~\ref{tab:X17:populations}
+        The yields of each population can be evaluated by comparing measured and expected BGO rates. 
+        The resulting populations are in Tab.~\ref{tab:X17:populations}.
         The PDFs utilized to model the EPC spectra are crucial for accurately representing the signal region, especially given the limited EPC MC statistics.
-        The choice, in Eq.~\ref{eq:X17:EPC:E} and Eq.~\ref{eq:X17:EPC:theta}, was an asymmetric Gaussian distribution for $E_{sum}$ and a Gaussian with asymmetric asymptotes
+        The choice, in Eq.~\ref{eq:X17:EPC:E} and Eq.~\ref{eq:X17:EPC:theta}, was an asymmetric Gaussian distribution for $E_{sum}$ and a Gaussian with asymmetric asymptotes.
+        An example of binned likelihood fit on ToyMC is in Fig.~\ref{fig:X17:binnedexample}
 
         \begin{equation}
         \label{eq:X17:EPC:E}
@@ -458,13 +468,13 @@ The chapter starts with a recap of the previous searches and then moves to the d
         \end{equation}
 
         \noindent
-        A ranking of systematic effects was devised, leading to four potential sets of systematics for the final fit, essential to ensure the sensitivity of the analysis while accurately representing the signal region:
-        \begin{itemize}
-            \item \textbf{A}: Only the systematics not related to the shape of the EPC PDFs are fitted, e.g. signal normalization;
-            \item \textbf{B}: A plus $\alpha_R$ of both EPC 15 and EPC 18 are included;
-            \item \textbf{C}: B plus $\sigma_{\theta}$ of both EPC 15 and EPC 18 are included;
-            \item \textbf{D}: C plus the $E_{sum}$ parameters of both EPC 15 and EPC 18 are included.
-        \end{itemize}
+        A ranking of systematic effects was devised, leading to four potential sets of systematics for the final fit, essential to ensure the sensitivity of the analysis:
+        \begin{outline}
+            \1[\textbf{A}]: Only the systematics not related to the shape of the EPC PDFs, e.g. signal normalization;
+            \1[\textbf{B}]: A plus the $\alpha_R$ parameters of both EPC 15 and EPC 18;
+            \1[\textbf{C}]: B plus the $\sigma_{\theta}$ parameters of both EPC 15 and EPC 18;
+            \1[\textbf{D}]: C plus the $E_{sum}$ parameters of both EPC 15 and EPC 18.
+        \end{outline}
 
         \begin{table}[htbp]
             \centering
@@ -482,7 +492,7 @@ The chapter starts with a recap of the previous searches and then moves to the d
         \begin{figure}
             \centering
             \includegraphics[width=0.9\linewidth]{Figures//X17//Likelihood/examples-binned.png}
-            \caption{In the binned likelihood fit of the ToyMC sample in Fig. 1.15, only marginal distributions are shown, without nuisance parameters. It uses 2-dimensional PDFs for $E_{sum}$ and $\theta_{rel}$, presenting ToyMC data (black), the best fit (blue), and summed background PDFs (red).}
+            \caption{The binned likelihood fit of a ToyMC sample. It uses 2-dimensional PDFs for $E_{sum}$ and $\theta_{rel}$, presenting ToyMC data (black), the best fit (blue), and summed background PDFs (red).}
             \label{fig:X17:binnedexample}
         \end{figure}
         
@@ -490,7 +500,7 @@ The chapter starts with a recap of the previous searches and then moves to the d
 Many tests are ongoing, like comparing estimators from unbinned and binned likelihood analyses on 500 ToyMC samples, with the second being >50 times faster. 
 The different `options' are also tested, revealing option \textbf{D} consistently yields a signal compatible with zero. 
 The parametrization for Esum EPC PDFs, dictated by the limited MC production, seems to tend to an overpopulation in background yield. 
-The current strategy lacks consideration for possible correlations between energy sum and relative angle and more tests are needed with final MC production. 
+The current strategy also lacks consideration for possible correlations between energy sum and relative angle and more tests are needed with final MC production. 
 
 \paragraph{CL estimate}
 The distribution of $\lambda_{LR}$ is computed on a $15 \times 15$ grid between 0 and 900 average X17 events and between 15 MeV/c$^2$ and 18.15 MeV/c$^2$ X17 mass. 
@@ -503,7 +513,7 @@ The procedure is then repeated 100 times by resampling the dataset and computing
 The median of the upper and lower limits and of the best-fit estimates are studied as a function of the average X17 yield. 
 Such estimates depend on the template used, resulting in a bias on the best fit and on the quoted limits. 
 The bias is visible, leading to a median yield of 400 X17 events for a scenario where the true value is 450. 
-Plots showing the different aspects are in Fig.~\ref{fig:X17:likelihood:CL}.
+The corresponding plots are in Fig.~\ref{fig:X17:likelihood:CL}.
 
 \begin{figure}
     \centering
@@ -512,13 +522,6 @@ Plots showing the different aspects are in Fig.~\ref{fig:X17:likelihood:CL}.
     \subfloat[Median 90\% CLs and best fits expected as a function of the true X17 yield in the ideal statistics scenarios. The limits are shown both in the estimated X17 yield (left) and mass (right).]{\includegraphics[width=0.9\textwidth]{Figures/X17/Likelihood/likelihood_CL_tests.png}}{}
     \caption{Example of the profile likelihood ratio (a) and of the full FC construction (b) for 500 X17 events in an ideal case. In (c) the median 90\% CLs and best fits expected as a function of the true X17 yield.}
     \label{fig:X17:likelihood:CL}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{Figures/X17/Likelihood/likelihood_median_UL_test.png}
-    \caption{Enter Caption}
-    \label{fig:enter-label}
 \end{figure}
 
 \paragraph{Improvements}
@@ -603,13 +606,14 @@ This likelihood is currently still under study, with possible changes to impleme
     \section{Target studies}
     \label{sec:X17:targets}
         To further understand the results of the preliminary analysis, and to cross-check different hypotheses, a few of the targets were studied by experts at PSI and from Sapienza University of Rome.
-        These targets were studied with SAM and EDX measurements and the results, of which an example is shown in Fig.~\ref{fig:X17:target:LiPON:psi}, were in line: the targets were found to be poorly characterized, with thicker and uneven deposit than expected.
+        These targets were studied with SAM and EDX measurements and the results, of which an example is shown in Fig.~\ref{fig:X17:target:LiPON:psi}, were in line: the targets were found to be poorly characterized, with thicker than expected and uneven deposit.
         After the analysis done on the target used in Feb. during the data-taking, we asked some colleagues from PSI to produce a different LiPON target.
         The requirement was a target `as big as possible' and with a thickness of \SI{500}{\nano m}.
         The way the machine works made it so that the maximum dimension of the target was a diameter of \SI{1}{cm}.
         Given the setup developed for the target was for bigger substrates we had to improvise ways to hold this new target in position.
         We first tried to hold it between two folded aluminum foils. 
         This system was not satisfactory so we moved to a Cu foil with two parallel cuts to create a `pocket'.
+        A picture of the two setups is in Fig.~\ref{fig:X17:target:LiPON:psi} while a picture of the target  is in Fig.~\ref{fig:X17:target:LiPON:psi:burned}.
         \begin{figure}
             \centering
             \includegraphics[width = 0.9\textwidth]{Figures/X17/PSI_LiPON_picture.png}
@@ -624,27 +628,27 @@ This likelihood is currently still under study, with possible changes to impleme
         Looking at the sample with the Cu support at the two energies we would expect a shift of \SI{500}{keV} in the peak position. As in the previous data-taking, the shift found is much smaller (see Fig.~\ref{fig:X17:2023:Cu:shift}). Performing a fit with two Gaussians in the expected positions we can evaluate the rough estimate of the two components. The result is a small percentage of the \SI{18.1}{MeV}, around $\sim6\%$.
 
         \noindent
-        The results of these tests highlighted two things: the energy of the CW machine is reliable; the old target seems to not be the cause of the reduced shift in energy at \SI{1080}{keV}.
+        The results of these tests highlighted two things: the energy of the CW machine is reliable; the old target seems to not be the (only) cause of the reduced shift in energy at \SI{1080}{keV}.
     
     \begin{figure}
         \centering
         \includegraphics[width = 0.4\textwidth]{Figures/X17/Dec2023/X17_Dec2023_AlTarget.jpeg}
         \includegraphics[width = 0.4\textwidth]{Figures/X17/Dec2023/X17_Dec2023_CuTarget.jpeg}
-        \caption[Small LiPON target setup]{Two different ways to hold the small LiPON sample given to us by the PSI colleagues. We first tried to hold it in place with folded aluminum foils. We later realized this was not the optimal solution given the spectrum produced by protons on Al. We then moved to a cleaner Cu setup.}
+        \caption[X17: Small LiPON target setup]{Two different ways to hold the small LiPON sample given to us by the PSI colleagues. We first tried to hold it in place with folded aluminum foils. We later realized this was not the optimal solution given the spectrum produced by protons on Al. We then moved to a cleaner Cu setup.}
         \label{fig:X17:target:LiPON:psi}
     \end{figure}
     \begin{figure}
         \centering
 
         \includegraphics[width = 0.4\textwidth]{Figures/X17/Dec2023/X17_Dec2023_AlTarget_burned.png}
-        \caption[Small LiPON target]{Here is a picture of the target itself after two days of data-taking at 5 and \SI{10}{\micro A}. The dark spot marks the position on which the beam was impinging.}
-        \label{fig:X17:target:LiPON:psi}
+        \caption[X17: Small LiPON target]{Here is a picture of the target itself after two days of data-taking at 5 and \SI{10}{\micro A}. The dark spot marks the position on which the beam was impinging.}
+        \label{fig:X17:target:LiPON:psi:burned}
     \end{figure}       
 
     \begin{figure}
         \centering
         \includegraphics[width = 0.9\textwidth]{Figures/X17/Dec2023/X172023_Al_Cu.png}
-        \caption{The data from two supports (Al and Cu) were compared for \SI{500}{keV} and \SI{1080}{keV} protons. At the lower energy, no difference was observed; only the expected resonance at $E_p=\SI{440}{keV}$ was detected. However, at the higher energy, a new line appeared for Al, indicating the energy of the incoming beam.}
+        \caption[X17: Al and Cu support spectra]{The data from two supports (Al and Cu) were compared for \SI{500}{keV} and \SI{1080}{keV} protons. At the lower energy, no difference was observed; only the expected resonance at $E_p=\SI{440}{keV}$ was detected. However, at the higher energy, a new line appeared for Al, indicating the energy of the incoming beam.}
         \label{fig:X17:2023:AlCu}
     \end{figure}
 
@@ -652,24 +656,24 @@ This likelihood is currently still under study, with possible changes to impleme
     \begin{figure}
         \centering
         \includegraphics[width = 0.9\textwidth]{Figures/X17/Dec2023/X172023_energy_shift.png}
-        \caption{Examining the sample with Cu support at both energies, we anticipated a peak position shift of \SI{500}{keV}. However, the observed shift was significantly smaller. By fitting two Gaussians at expected positions, we estimated the two components to be approximately $\sim6\%$ of the \SI{18.1}{MeV}.
+        \caption[X17: Cu support spectra at 500 and 1080 keV]{Examining the sample with Cu support at both energies, we anticipated a peak position shift of \SI{500}{keV}. However, the observed shift was significantly smaller. By fitting two Gaussians at expected positions, we estimated the two components to be approximately $\sim6\%$ of the \SI{18.1}{MeV}.
 }
         \label{fig:X17:2023:Cu:shift}
     \end{figure}
 
-    \status{started}
+    \status{review}
     \section{Beam studies: Jan 2024}
     \label{sec:X17:H2+}
-        After the analysis of the different targets and the small data-taking at the end of 2023, we realized the problem lay in the proton beam produced by the CW.
+        After the analysis of the different targets and the small data-taking at the end of 2023, we realized the problem may lay in the proton beam produced by the CW.
         The option of the beam not being at the expected energy was already discarded, for example by the peak measured at $\SI{11}{MeV}$ using aluminum to hold the target.
         The point was that, while producing mainly \ce{H1+}, the machine produces also \ce{H2+} and \ce{H3+}.
         The relative fraction of the different species is roughly $0.7:0.25:0.05$, meaning the fraction of \ce{H2} is non-negligible.
-        Having this specie the same $\SI{1}{MeV}$ energy as the protons, when interacting with the target it splits, creating  $\SI{500}{keV}$ protons.
-        These particles interact with the Lithium in the much higher resonance, generating the measured \SI{17.6}{MeV} line. 
+        Having this specie the same $\SI{1}{MeV}$ energy as the protons, when interacting with the target could split, creating  $\SI{500}{keV}$ protons.
+        These particles would interact with the Lithium in the much higher resonance, generating the measured \SI{17.6}{MeV} line. 
     
-        \status{started}
+        \status{review}
         \subsection{Collimator and beam studies}
-        After mounting the quartz crystal used already in Sec.\ref{} as close as possible to the CW source ($\approx \SI{2}{m}$) it was possible to see the position of the two beam spots.
+        After mounting the quartz crystal, used already for the beam-tuning in Sec.~\ref{sec:X17:beamtuning}, as close as possible to the CW source ($\approx \SI{2}{m}$) it was possible to see the position of the two beam spots.
         Assuming the brighter one was the one generated by the protons, it was possible to mount a temporary copper collimator to stop the second component of the beam.
         The beam blocker normally functions also as beam current measurement. 
         This system is not designed for that and the occasion was taken to install a Faraday cup and compare the two measurements. 
@@ -680,7 +684,7 @@ This likelihood is currently still under study, with possible changes to impleme
         \noindent
         Unfortunately, we experienced a problem similar to what was described in Sec.~\ref{sec:cw:machine}. 
         The machine started sparking at $V>\SI{800}{V}$, meaning that these studies could not be conducted at \SI{1080}{keV} and no further data taking was possible in Feb. 2024.
-        The fault seems to be the condition of the \ce{SF6} in the machine but further investigation is required.
+        The fault seems to be the condition of the \ce{SF6} in the machine but further investigation is ongoing and new \ce{SF6} is on the way to PSI.
 
         \begin{table}[]
             \centering
@@ -712,7 +716,7 @@ This likelihood is currently still under study, with possible changes to impleme
     This chapter was dedicated to the X17 search with the MEG II apparatus.
     After a summary of the anomaly under study we saw how the search is ongoing in MEG II, with details on the analysis. 
     Unfortunately, the data of 2023, while still of interest, are dominated by the \SI{17.6}{MeV} line instead of the \SI{18.1}{MeV} due to the target and/or \ce{H2+} CW beam component. 
-    I had an active role in all preparations and data-taking and played I marginal role in the analysis, particularly in the development of the likelihood analysis framework.\\
+    I had an active role in all preparations and data-taking and played I marginal role in the analysis, particularly in the development of the likelihood analysis framework and the BGO calibration procedure.\\
     
     \noindent
     Regarding the data-taking campaign of 2023, the MC simulation accuracy is under investigation in sidebands, with ongoing MC production. 
@@ -723,11 +727,6 @@ This likelihood is currently still under study, with possible changes to impleme
     \noindent
     The collaboration plans to have another data-taking focusing on the \SI{18.1}{MeV} line changing the target, as discussed in Sec.~\ref{sec:X17:targets}, and removing the \ce{H2+} from the CW beam, as discussed in Sec.~\ref{sec:X17:H2+}. 
     These two improvements should give a sample that is purer and with a higher expected sensitivity.
-
-
-
-
-\cite{X17:1996} \cite{X17:nuclear:2004} \cite{X17:Krasznahorkay:2015} \cite{X17:Ellwanger:2016} \cite{X17:Feng:2016} \cite{X17_Kozaczuk:2017} \cite{X17:Krasznahorkay:2017} \cite{X17:2019} \cite{X17:2021} 
 
 \status{started}
 \printbibliography[
