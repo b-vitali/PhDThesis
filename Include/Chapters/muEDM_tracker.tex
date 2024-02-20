@@ -22,6 +22,7 @@ We will skip some preliminary studies and we will start with the description of 
     
 \status{review}
 \section{Design in the 2022 proposal}
+\label{sec:muEDM:proposal}
     The kinematics of the $e^+$ coming from the decay is described in a Sec.~\ref{sec:muEDM:sensitivity}.
     From preliminary results, the resolutions required for the different studies are the following:
     \begin{outline}
@@ -304,6 +305,7 @@ We will skip some preliminary studies and we will start with the description of 
 
     \status{review}
     \subsection{Angle choices for the layers}
+    \label{sec:muEDM:CHeT:crossed}
         When considering two layers the angles must be chosen to improve the overall resolution, which in practice means minimizing the uncertainty only on one axes per ribbon.
         Let's consider the different layouts in \ref{fig:CyFi:examples:a} and how they translate to resolutions in \ref{fig:CyFi:examples:b}.
         Clearly having the two ribbons at \SI{90}{\deg} along the axes is the best option but if we want to avoid having the readout on the plane of the muon orbit we need to consider less steep angles for the single ribbons.
@@ -311,6 +313,7 @@ We will skip some preliminary studies and we will start with the description of 
 
     \status{review}
     \subsection{Cylindrical geometry}
+    \label{sec:muEDM:CHeT}
         At this point is important to notice an additional constraint, given by the cylindrical geometry.
         If, instead of having planar ribbons, the fibers are woven into two concentric cylinders one needs to avoid having multiple crossings.
         If two fibers cross multiple times, when both are scintillating the position of the impinging particle is ill-defined. There is a `real' crossing point but also additional \textit{ghosts} hits.
@@ -450,13 +453,31 @@ We will skip some preliminary studies and we will start with the description of 
         \caption[muEDM: CHeT \gf and \textit{ghost} hits]{The $\Delta T\leq1$ requirement prevents fibers from crossing multiple times, but there is a risk of ambiguous hits. If a particle hits the detector in multiple places, with inadequate timing resolution, multiple potential interaction points arise, as illustrated in Fig.~\ref{fig:CHeT:ghosts}, with stars denoting real hits. To address this, we will implement a double-end readout scheme, with sufficient resolution to resolve ghost hits.}
         \label{fig:CHeT}
     \end{figure}
-    
+
+\status{started}
 \section{A study of radial geometry}
     The development of the Pixel detector, supposed to be a counterpart to the CHeT, unfortunately, had some delay.
     This means that, during the first phase, the Pixel detector will not be available and the scintillating fibers need to be repurposed to be the only positron tracking detector.
-    The designs discussed up until now do not collect enough hits to be the sole tracker, hence requiring going back to the drawing board.
+    The designs discussed up until now do not collect enough hits to be the sole tracker, hence requiring going back to the drawing board.\\
+    
+    \noindent
+    To rapidly study possible geometries, we opted for quick \gf simulations, in which the ribbons of fibers are approximated by solid scintillator volumes with no scintillation properties.
+    This allows us to take into consideration the energy loss and multiple scattering the positron undergoes, saving the CPU time required to run an optical simulation, tracking each optical photon bouncing in the scintillator.\\
 
-\status{started}
+    \status{started}
+    \subsection{Possible geometries}
+        After a few iterations, the option of having a radial solution with crossed ribbons was discarded. 
+        Although crossed fibers improve the $\hat{y}$ resolution, as discussed in Sec.~\ref{sec:muEDM:CHeT:crossed}, it also increases the space required for the tracker at both ends, making the mechanics more complicated and adding material to the particle trajectory in non-interesting regions.\\
+
+        \noindent
+        The most promising solutions seem to be:
+        \begin{outline}
+            \1 A purely radial geometry, with ribbons of fibers running longitudinally alternated to shorter ribbons of fibers running radially, delivering the good resolution on $\hat{y}$
+            \1 A radial geometry of vertical fibers (with fewer ribbons) complemented by an internal barrel for the same reason, analogous to the inner part of the detector discussed in Sec.~\ref{sec:muEDM:proposal}.
+        \end{outline}
+        
+
+\status{review}
 \section{Conclusions}
     This chapter describes the designs and simulations of the positron tracker.
     As of right now, some requirements for such a system are still `blurry'.
@@ -464,7 +485,7 @@ We will skip some preliminary studies and we will start with the description of 
     The design included in the proposal nicely satisfied the requirements but presented some challenges in the readout, particularly for the inner barrel of the transverse layer.
     The `updated' CHeT design overcame the readout challenge at the cost of introducing a challenge due to the possible ambiguity of the hits (ghosts).
     Given the delay foreseen on the Pixel side, the requirements for the fiber sub-system changed.
-    This prompted additional studies to develop different geometries which would be autonomous and self-sufficient in the positron tracking (at least for Phase I).
+    This prompted additional studies to develop different geometries that would be autonomous and self-sufficient in the positron tracking (at least for Phase I).
     
 \status{started}
 \printbibliography[

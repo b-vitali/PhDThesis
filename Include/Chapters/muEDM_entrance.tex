@@ -1,4 +1,4 @@
-\status{started}
+\status{review}
 \chapter{Scintillators in muEDM}
 \label{ch:muEDM:entrance}
 \begin{refsection}
@@ -359,7 +359,7 @@ We will then move through the beamtimes.
     \subsection{Model evaluation and conclusions}
         This first beamtime aimed at testing the agreement between the Highland formula and the \gf Urb\'{a}n model for the multiple scattering in thin materials.
         The analysis of the data collected is still not finalized, but a rough agreement between data and models can be seen in Fig.~\ref{fig:muEDM:bt2021:results}.
-        There are improvements that could be added to the analysis and/or to the simulation of the experimental setup, so updated results are expected in the following months.
+        Some improvements could be added to the analysis and/or to the simulation of the experimental setup, so updated results are expected in the following months.
         
     \begin{figure}   
             \centering
@@ -471,7 +471,7 @@ We will then move through the beamtimes.
             \centering
             \subfloat[The setup mounted at the end of the beamline.]{\includegraphics[width=0.45\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/muEDM2022_beamtuning.png}\label{fig:muEDM:bt2022:setup:beam}}
             \hfill
-            \subfloat[The view of the detectors from the Mylar window before making it light tight.]{\includegraphics[width=0.45\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/muEDM2022_window.png}\label{fig:muEDM:bt2022:setup:window}}            
+            \subfloat[The view of the detectors from the Mylar window before making it light-tight.]{\includegraphics[width=0.45\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/muEDM2022_window.png}\label{fig:muEDM:bt2022:setup:window}}            
             \caption[muEDM:2022 installation]{Pictures of the system after the installation along the beamline.}
             \label{fig:muEDM:bt2022:blobs}
         \end{figure}
@@ -568,12 +568,12 @@ We will then move through the beamtimes.
             The first distinction is if the focus is set on the gate or the exit.
             In the former, if the trigger is performed only on the gate, we expect the divergence of the beam to increase the probability of the muon hitting the telescope.
             Once we require the exit to be also triggered, the fractions of accepted and rejected events swap. 
-            This is esemplified looking at the difference between top and bottom plots in Fig.~\ref{fig:muEDM:bt2022:summary}.
+            This is exemplified looking at the difference between top and bottom plots in Fig.~\ref{fig:muEDM:bt2022:summary}.
             Studying the exit-focused beam we expect a similar fraction of events when triggering on both scintillators, while triggering only on the gate should increase the fraction of accepted events.
             The reason is that the convergence of the beam should reduce the probability of the muon hitting the telescope.
-            This behaviour is seen comparing left and right plots in Fig.~\ref{fig:muEDM:bt2022:summary}.
+            This behavior is seen comparing left and right plots in Fig.~\ref{fig:muEDM:bt2022:summary}.
             An interesting feature is the presence of events in which the muons produce hits in the gate, telescope, and exit. 
-            This fraction depends on the trigger but, for example, when triggering on gate\&exit, this constitute $>15\%$ of the events.\\
+            This fraction depends on the trigger but, for example, when triggering on gate\&exit, this constitutes $>15\%$ of the events.\\
 
             \begin{figure}
                 \centering
@@ -605,49 +605,71 @@ We will then move through the beamtimes.
             The expectations are in line with the data, as shown in Fig.~\ref{fig:muEDM:bt2022:blobs:pisa} and Fig.~\ref{fig:muEDM:bt2022:blobs:shanghai}. 
         \begin{figure}   
             \centering
-            \subfloat[Sketch to explain the correlation patterns between the charges of the different scintillators in the telescope in case of crosstalk.]{\includegraphics[width=0.9\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/telescope_blobs.png}\label{fig:muEDM:bt2022:blobs:idea}}\\
+            \subfloat[Sketch to explain the correlation patterns between the charges of the different scintillators in the telescope in case of crosstalk. The scintillators are color-coded to aid understanding the patterns.]{\includegraphics[width=0.9\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/telescope_blobs.png}\label{fig:muEDM:bt2022:blobs:idea}}\\
             \subfloat[In the case of the telescope from Pisa, the double readout and modular style created small gaps between the scintillators. The result is that no optical crosstalk is expected nor found.]{\includegraphics[width=0.9\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/pisa_blobs.png}\label{fig:muEDM:bt2022:blobs:pisa}}\\
             \subfloat[In the Shanghai telescope, the scintillators are in contact. The result is the appearance of the correlation structures. These are in agreement with the expectations and nicely reproduced by the simulations.]{\includegraphics[width=0.9\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/shanghai_blobs_g4.png}\label{fig:muEDM:bt2022:blobs:shanghai}}            
             \caption[muEDM:2022 optical crosstalk]{In case optical crosstalk is present, the correlation of the charges measured by the different scintillators show interesting patterns. These are expected and found in the Shanghai telescope, and not in the Pisa version, due to small gaps in the system.}
             \label{fig:muEDM:bt2022:blobs}
         \end{figure}
 
-\status{started}
-\section{Beamtime 2023: Multi readout entrance}
+\status{review}
+\section{Beamtime 2023: TOF and Multi readout entrance}
 \label{sec:muEDM:beamtime2023}
-    The beamtime at the end of 2023 had four main goals:
-    \begin{outline}
-        \1 Test the beam alignment
-        \1 Test the multi-readout entrance scintillators
-        \1 Develop a Time OF Flight (TOF) measurement to study the momentum spread.
-        \1 Test the injection channel into the magnet
-    \end{outline}
+    In this section, we present the experimental setup along with the first preliminary results of the test beam measurement in $\pi E1$ in December 2023. 
+    The main goal of this test beam was to study the systematic effect of a change in the momentum of injected muons for magnetic fields with different polarities and magnitudes. 
+    For this purpose, we focused on the measurement of the time of flight~(ToF) of muons as they pass through the vacuum of an injection channel that acts as a magnetic shield permitting a low magnetic-field path into the bore of the solenoid. 
+    At the same time, different detectors were tested, such as the beam monitor and ToF detector prototypes of varying scintillator thicknesses, between \SIrange{25}{200}{\micro\meter}.
 
-    \status{started}
+    \status{review}
     \subsection{Data taking}
-    \subsubsection{Setup}
-        Let's start by describing the setup used during this beam-time.
-        As already introduced 
+        Let's start by describing the setup used during this beam time.
+        The idea was to have two injection channels: inject the beam on the top line, then invert the magnetic field and shift the whole apparatus vertically to inject from the bottom line.
+        Due to the delay of the height-adjustable magnet support, we could only use one channel.
+        Additionally, given the studies on SC injections (Sec.~\ref{sec:muEDM:injection}) were still ongoing, we opted for magnetic steel, which would shield up to \SI{0.8}{T}. 
+        For this reason, we limited the magnet field to $-750<B<750$ mT, so that the fringing fields could not behave as magnetic mirrors, rejecting the incoming muon, or deflecting them too much from the trajectory.
+        Figure~\ref{fig:TB2023murTubes} shows a simulation of the relative permittivity of the injection tube for three different nominal magnetic-field values in the center of the solenoid bore. With a field of \SI{750}{\milli\tesla} the relative permittivity of the tubes remains above 10 indicating no or only low saturation along the tube. Moreover, as seen in Figure~\ref{fig:TB2023FieldInTube}, with a field of \SI{750}{\milli\tesla} the magnetic field strength in the middle of the tube is below \SI{100}{\milli\tesla} for $\sim$\SI{98}{\%} of the length of the injection tube. 
+        By setting the PSC magnet to produce a magnetic field of \SI{750}{\milli\tesla} inside its bore, a shielding factor of almost two along the center axis of the injection tube is expected.
+        The expected stress for these injection channels is significant and for this reason, a proper holding structure was developed and we opted for \textit{dummy}-injection tubes to mitigate the stress generated on the magnet.
+        The \ansys structural simulation, the CAD design of the holder, and the overall setup are shown in Fig.~\ref{fig:muEDM:2023:setup}.
+        The injection channel was vacuumed and sealed with \SI{35}{\micro\meter} \mylar foils.
+        At both ends of the injection channels detector modules were connected: three upstream (Veto, BeamMonitor, TOF in) and one downstream (TOF out), all described in the following paragraphs.
+        The DAQ system was the WaveDAQ standalone board, able to digitize the waveforms of each channel up to 5 GSample/s. 
+        The WaveDAQ provides also the power for the MPPC, up to $\approx\SI{220}{V}$ per channel. 
+        The trigger configurations were also set using the GUI interface of WaveDAQ. 
 
-        \paragraph{Injection channel}
-        Another key aspect of this beamtime is the study of the injection channel in the magnet. 
-        Here the fringing fields could behave as magnetic mirrors, rejecting the incoming muon, or deflecting them from the ideal trajectory.
-        The expected stress for these injection channels is significant and for this reason, a proper holding structure was developed.
-        The \ansys structural simulation and the CAD design of the holder are shown in Fig.~\ref{fig:muEDM:bt2023:injectionCAD}
-        
         \begin{figure}
             \centering
-            \includegraphics[width=0.8\textwidth]{Figures/muEDM_Dec2023/muEDM2023_injection_ANSYS.png}
-            \includegraphics[width=0.8\textwidth]{Figures/muEDM_Dec2023/muEDM2023_injection_CAD.png}
-            \includegraphics[width=0.8\textwidth]{Figures/muEDM_Dec2023/TOF_Setup.png}
-            \caption[muEDM 2023: Injection support structure.]{An injection support structure was developed to prevent the injection system from being bent by the magnetic fringing fields. This support was studied with \ansys}
-            \label{fig:muEDM:bt2023:injectionCAD}
+            \subfloat[Relative permittivity in the magnetic steel]{
+            \includegraphics[width=0.9\textwidth]{Figures/muEDM_Dec2023/SaturationLowField.png}
+            \label{fig:TB2023murTubes}}
+            \\
+            \subfloat[Magnetic field strength along the middle of the tube]{
+            \includegraphics[width=0.9\textwidth]{Figures/muEDM_Dec2023/FieldTubesSim.png}
+            \label{fig:TB2023FieldInTube}}
+            \caption{Simulation results for different nominal magnetic fields at the center of the PSC solenoid. (a)~shows the relative permittivity of the injection tubes as a function of the distance along the tube, starting from the upstream position and going towards the downstream position inside the bore of the PSC magnet. (b)~shows the magnetic field strength along the middle of the injection tube. Note that the two significant features are a result of a reduced wall thickness of the steel tube at these positions, for the mechanical support.}
+            \label{fig:TB2023FieldStrengthTubes}
+        \end{figure}	
+        \begin{figure}
+            \centering
+            \subfloat[The stress of the setup and ghost image of the deformation caused ($\times100$).]{\includegraphics[width=0.8\textwidth]{Figures/muEDM_Dec2023/ForceSim.png}}\\
+            \subfloat[CAD design of the whole setup.]{\includegraphics[width=0.8\textwidth]{Figures/muEDM_Dec2023/AssemblyTestBeam2023.png}}\\
+            \subfloat[CAD detail of the US detectors.]{\includegraphics[width=0.45\textwidth]{Figures/muEDM_Dec2023/AssemblyTestBeam2023US.png}}\hfill
+            \subfloat[CAD detail of the DS detectors.]{\includegraphics[width=0.45\textwidth]{Figures/muEDM_Dec2023/AssemblyTestBeam2023DS.png}}
+            \caption{The support structure was developed to reduce stresses to the injection channel and the PSC magnet: \textbf{(a)} shows the \ansys studies, \textbf{(b)} the whole setup, \textbf{(c)} and \textbf{(d)} the detail of the US and DS detectors.}
+            \label{fig:muEDM:2023:setup}
         \end{figure}
-        
-        \paragraph{Beam centering monitor}
-        The first item in the setup is a squared detector made of scintillators arranged to have a squared hole.
-        The aim of this detector, as outlined in Ch.~\ref{ch:muEDM}, is to center the beam.
-        A picture of the detector is in Fig.~\ref{} while the details of the working principles were previously discussed.
+
+
+        \paragraph{Beam and Beam Monitor}
+        The first thing was to measure the lateral phase space to later match the simulations.
+        This can be calculated from measurements of the beam profile taken over a scan of the current in the last two quadrupoles. 
+        The profiles were measured using a $2\times\SI{2}{mm\squared}$ pill counter moved by an $xy$-scanner for each implemented beam configuration.
+        After removing the pill, the first item in the setup was the Beam Monitor, a squared detector made of scintillators arranged to have a squared hole.
+        The aim of this detector, as outlined in Ch.~\ref{ch:muEDM}, where the details of the working principles were previously discussed, is to center the beam.
+        Two monitors with different segmentation and scintillator tile shapes were tested.
+        One consisted of eight rectangular tiles, while the other consisted of four triangular tiles per layer. 
+        Additionally, two orientations at a rotation of $0^{\circ}$ and $180^{\circ}$ around the beam axis were compared to check the performance of individual tiles. 
+        Finally, the measurements were performed at different magnetic fields generated by the PSC magnet to map the deflection of the beam spot at the entrance of the injection channel.
         
         \paragraph{Time Of Flight (TOF)}
         Following the beam monitor, two scintillators are used to evaluate the time of flight.
@@ -658,8 +680,21 @@ We will then move through the beamtimes.
         The distribution of $\Delta t$ is the convolution of the momentum distribution and the intrinsic time resolution of the system.
         Assuming a Gaussian distribution for the beam momentum, centered around \SI{28}{MeV/c} and having spread 1\%, 3\%, and 5\%, we can evaluate the $\Delta t_{measured}$ for different distances.
         In Fig~\ref{fig:muEDM:bt2023:TOFPython} the expected distributions for $1\%$ spread and $\upsigma_{int}\approx\SI{300}{\micro s}$, while the \textit{std. dev.} of the obtained distributions is shown as a function of distance for 3\% and 5\%.
-        From these (rough) estimations we can conclude a 1\% momentum spread, with the given $\upsigma_{int}$ and reasonable distances, cannot be appreciated. 
+        From these estimations we can conclude a 1\% momentum spread, with the given $\upsigma_{int}$ and reasonable distances, cannot be appreciated. 
         The situation seems different for 3\% and 5\%.
+        Figure~\ref{fig:TB2023ToFPhoto} shows one of the ToF prototypes fabricated in 2023, while it was being mounted to the injection tubes. \\
+
+        \noindent
+        The coincidence of different channels per detector was studied, to decrease the threshold, increase the sensitivity of each detector, and reach the maximum efficiency by comparing combinations of different prototypes under test beam conditions. 
+        As the beam characteristics and the momentum of the muons were essentially constant, it was possible to test the effects of the magnetic field ``handedness'', CW vs.\ CCW storage of the muons inside the storage magnet, on the momentum and muon trajectory along the injection channel by measuring the ToF between upstream~(US) and downstream~(DS) detector. 
+        Measurements with different magnetic field strengths and polarities were performed.
+        The changes in the magnetic field were performed by sweeping between the maximum magnetic-field magnitudes of $\pm$\SI{750}{\milli\tesla}, in such a way as to also be sensitive to possible hysteresis effects.
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.5\textwidth]{Figures/muEDM_Dec2023/IMG_20231209_225342Small.png}
+            \caption{One of the ToF detector prototypes fabricated in 2023 with four readout channels. The detector is mounted on the downstream detector module which is attached to the injection tubes.}
+            \label{fig:TB2023ToFPhoto}
+        \end{figure}
         
         \begin{figure}
             \centering
@@ -672,16 +707,232 @@ We will then move through the beamtimes.
         \end{figure}
 
         \paragraph{Multi-readout \textit{gate}}
+        A cardinal point was the implementation of four independent readout channels for the new thin scintillators. 
+        This was discussed earlier (Sec~\ref{sec:muEDM:beamtime2022}) and is linked to the necessity of lowering the threshold while keeping a low dark rate.
+        A picture during the soldering and the CAD design are shown in Fig.~\ref{fig:muEDM:bt2023:TOF:picture}.
+        We took data with mixed (old 1ch and new 4ch) and matched (new 4ch and new 4ch) setups.
+        This allowed us to benchmark the new detectors.
         
         \begin{figure}
             \centering
             \includegraphics[height=5cm]{Figures/muEDM_Dec2023/TOF_soldering.jpg}
             \includegraphics[height=5cm]{Figures/muEDM_Dec2023/TOF_CAD.png}
             \caption[muEDM 2023: TOF detector soldering.]{A picture of the TOF detectors used during the 2023 December beam-time. Thin scintillators (50 and \SI{100}{\micro m}) read on four sides by four SiPMs.}
-            \label{fig:muEDM:bt2023:TOFPython}
+            \label{fig:muEDM:bt2023:TOF:picture}
+        \end{figure}
+
+        \paragraph{Efficiency and calibration}
+        Along the $\pi E1$ beamline, a separator akin to a Wien filter is employed to discriminate between muons and pions by adjusting the relative strengths of magnetic and electric fields. 
+        When both fields are set to zero, particles with the desired momentum (in our case, \SI{28}{MeVc/}) pass through the separator and reach the experiment. 
+        We utilized this functionality to calibrate the Time of Flight (ToF) setup by measuring the ToF of positrons traveling near the speed of light.
+        Another setup was dedicated to evaluating the relative efficiency and intrinsic time resolution of the detectors. Two detectors were positioned back-to-back with minimal spacing (a few millimeters), and this configuration was repeated for all possible detector pairs.
+
+    \status{review}
+    \subsection{Data analysis}
+        \paragraph{Beam Monitor}
+        The two tested versions were the 4 and 8-segmented variants.
+        Using the WaveDREAM board, the 16 different channels had a threshold adjusted so to keep the dark noise manageable.
+        Ideally, with the beam on, the front \SI{2}{mm} scintillators would distinguish the particle ID creating two peaks but this was not the case for all channels (Fig.~\ref{fig:BeamMonRect_pulsesDefaultThresh}). 
+        Optical coupling and soldering of these channels are under test.
+        At this point, the threshold of the front layer was changed to select muons.
+        Two triggers were used during data-taking: requiring a hit in the channel of interest, regardless of all other 15 channels, and requiring a hit in the tile of interest, while vetoing a hit in all the 5 mm channels.
+        The beam monitor position and B field scan were repeated by flipping the detector by \SI{180}{\deg}.
+        Examples of the measurements taken for the two versions are in Fig.~\ref{fig:BeamMonRect_positionScan} and Fig.~\ref{fig:BeamMonTriang_positionScan}. 
+        Overall the 8-segmented version behaved as expected while the other presented a `hot'-channel.
+        The analysis is still ongoing but the positioning of the beam seems to be sub-optimal. 
+        For example, the 4-segmented version misplaced the beam center by \SI{6.3}{mm}.
+
+
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.49\textwidth]{Figures/muEDM_Dec2023/Corner_overlay_TueHVset_rect.png}
+            \includegraphics[width=0.49\textwidth]{Figures/muEDM_Dec2023/Middle_overlay_TueHVset_rect.png}
+            \caption{Charge integral of the 8-segmented beam monitor as extracted online in WaveDAQ GUI. Left: overlay of all the corner 2~mm thick tiles. Right: overlay of all the middle 2~mm thick tiles. The peak on the right corresponds to positrons, while the broader peak on the left corresponds to muon energy depositions.}
+            \label{fig:BeamMonRect_pulsesDefaultThresh}
         \end{figure}
         
-    \subsection{Data analysis}
+        \begin{sidewaysfigure}
+            \centering
+            \includegraphics[width=0.95\textwidth]{Figures/muEDM_Dec2023/BeamMonRect_scanData2023.png}%
+            \caption{The online rates in kHZ in 2~mm thick tiles of the 8-segmented beam monitor. The rates were recorded for three x-positions left and right of the nominal detector position (the center images). The top two rows show the rates for the beam monitor in "0 deg" position, while the bottom two rows show the data for the "180 deg" rotated monitor. Two rows for each detector rotation correspond to the two trigger configurations (see text), with the upper row being just the rate of a channel, and the bottom row requiring a hit in the channel and no hits in the thicker back scintillator plane. The beam is entering the image plane along the line of sight.}
+            \label{fig:BeamMonRect_positionScan}
+        \end{sidewaysfigure}
+        
+        \begin{sidewaysfigure}
+            \centering
+            \includegraphics[width=0.9\linewidth]{Figures/muEDM_Dec2023/BeamMonTriang_scanData2023.png}%
+            \caption{The online rates in kHZ in 2~mm thick tiles of the 4-segmented beam monitor. The rates were recorded for two x-positions left and right of the nominal detector position (the center images). The top two rows show the rates for the beam monitor in "0 deg" position, while the bottom two rows show the data for the "180 deg" rotated monitor. Two rows for each detector rotation correspond to the two trigger configurations (see text), with the upper row being just the rate of a channel, and the bottom row requiring a hit in the tile (with a signal in both channels) and no hits in the thicker back scintillator plane. The beam is entering the image plane along the line of sight.}
+            \label{fig:BeamMonTriang_positionScan}
+        \end{sidewaysfigure}
+
+        \paragraph{TOF scintillators}
+        Two TOF detectors per scintillating foil thickness (\SI{100}{\micro m} and \SI{50}{\micro m}) have been tested, for a total of four detectors, in different combinations. 
+        The beamtime aimed to measure the detection efficiency of each detector and its intrinsic timing resolution, as well as the time-of-flight resolution for all the possible combinations of the available detectors.
+        The threshold of each channel was set to have a dark count rate of a few 100 Hz (apart from a couple of noisy channels up to 1 kHz) with the Beam Blocker closed. 
+        As a reference, with the settings of our beamline, we had a typical rate of $\approx50$ KHz on the US detector.
+
+        \noindent
+        Two experimental setups have been used to extract the detector characteristics as listed above:
+        \begin{itemize}
+            \item the \textit{short} configuration, with the two detectors separated by less than 1 cm, along the beamline direction. 
+            The first detector is the detector under test (DUT), while the second is the reference (REF). 
+            This configuration can be used to extract the efficiency of the DUT, by triggering on the REF, and the intrinsic timing resolution for the detector pair under study, due to the relatively short distance between the two detectors.
+            \item the \textit{long} configuration, with the two detectors mounted at the entrance and exit of the injection line. This configuration is the one used to measure the TOF.
+        \end{itemize} 
+        Fig.~\ref{fig:TOF_short_and_long} shows the pictures of the mounted detectors in short (left) and long (right) configurations.\\
+
+        \begin{figure}
+            \centering
+            \includegraphics[width=1\linewidth]{Figures/muEDM_Dec2023/TOF_setup_assembly_in_area.png}
+            \caption{The \textit{short} and \textit{long} configurations, used to extract the main parameters of the TOF detectors.}
+            \label{fig:TOF_short_and_long}
+        \end{figure}
+
+        \noindent
+        Detectors of the same thickness showed similar efficiency. 
+        The numbers reported here refer to the mean of the two. 
+        They are still preliminary and conservative but provide a reasonable overview.
+
+        \begin{outline}
+            \1 \textbf{\SI{100}{\micro m}}: A full detection efficiency (> 99\%) is measured requiring \textit{at least one fired channel}. It decreases if at least \textit{two}, \textit{three}, or \textit{four} fired channels is requested (>98\%, >96\%, >95\%).
+            \1 \textbf{\SI{50}{\micro m}}: With similar requirements the efficiency measured is >87\%, >64\%, >45\%, and >40\%.
+        \end{outline}\\
+
+        \noindent
+        Fig.~\ref{fig:TOF_intrinsictimeresolution100pair} shows the intrinsic time resolution for the \SI{100}{\micro m} detector pair, using a constant fraction method to extract the time of each channel. 
+        A timing resolution of ~450 ps is measured if the time difference of two fixed channels is plotted (red line). 
+        The timing algorithm can be easily optimized by taking advantage of the segmented detector, made of four independent channels. 
+        For each event, the fastest channel on each side can be used to plot the time difference. 
+        This is shown as the blue line, with a timing resolution down to ~\SI{300}{ps}. 
+        The same analysis can be repeated with the two detectors mounted in the long configuration, with the results shown in Fig.~\ref{fig:TOF_TOFresolutionpair} with the mean of the distribution being the TOF of the impinging particles and its resolution being the convolution of several terms, including the intrinsic timing resolution of the detector pair and the momentum spread of the particles.
+        \noindent
+        Although these results are very preliminary, the expected detector performances are nicely addressed and satisfy the experiment requirements.
+
+
+        \begin{figure}
+            \centering 
+            \subfloat[Short configuration with \SI{100}{\micro m} detector pair.]{\includegraphics[width=0.5\linewidth]{Figures/muEDM_Dec2023/TOF_preliminary_shortconfiguration100pair.png}\label{fig:TOF_intrinsictimeresolution100pair}}
+            \subfloat[Long configuration with \SI{100}{\micro m} detector pair.]{\includegraphics[width=0.5\linewidth]{Figures/muEDM_Dec2023/TOF_preliminary_longconfiguration100pair.png}\label{fig:TOF_TOFresolutionpair}}
+            \caption{Time difference for the \SI{100}{\micro m} detector pair, mounted om the \textit{short} (a) and \textit{long} (b) configuration. In red the result of taking two fixed channels, in blue taking the first channel to be triggered in the detectors.}
+        \end{figure}
+
+        \paragraph{TOF}
+        TOF measurements were taken for different detector setups and at different magnetic fields in the range of \SI{-750}{mT} to \SI{+750}{mT}. 
+        The mounted detectors have scintillating foil thicknesses of \SI{200}{\micro\meter} (Detector \#0), \SI{100}{\micro\meter} (Detector \#1 and \#2) and \SI{50}{\micro\meter} (Detector \#3 and \#4) and were used in five different configurations: US\#0-DS\#1, US\#2-DS\#1, US\#3-DS\#1, US\#4-DS\#3 and US\#4-DS\#1. Table~\ref{tab:ToFMeasurementsOverview} shows an overview of the TOF measurements taken. 
+        For the preliminary Time of Flight study, only measurements with changing B fields have been considered.
+
+        \noindent
+        To extract the time when a particle passes a detector, the signals of all four channels of a detector are summed and a constant fraction discrimination (CFD) method is applied. 
+        This is akin to taking the first channel per detector.
+        The CFD delays the original signal by five data points, corresponding to a delay of about \SI{1}{ns}, and half of the original signal is subtracted from the delayed pulse. 
+        This results in a histogram for the ToF, see as an example Fig.~\ref{fig:tof_emg_fit}.
+        The mean of the distribution is calculated without taking into account the long tail\footnote{This will be later fixed by fitting to an exponentially modified Gaussian.} on the right side of the distribution and Fig.~\ref{fig:ToFMeanConfigComparison} shows a comparison of the preliminary means for the five detector setups.
+        Fig.~\ref{fig:ToFDiffMeanDiffBConfigComparison} displays the change of the mean plotted against the change in the magnetic field for consecutive measurements in the same detector configuration. 
+        Some significant trends are present and currently under study. 
+
+        \begin{figure}
+            \centering
+            \subfloat[Time of flight of positrons (blue) and muons (red). The widths of the two are in agreement, indicating good performance of the pulse analysis.]{
+            \includegraphics[width=0.49\linewidth]{Figures/muEDM_Dec2023/ToF_hist_noSep_DS1_US3.png}}
+            \hfill
+            \subfloat[ToF histograms with the same detector setup at positive and negative \SI{750}{mT} magnetic field. The means of the two ToF spectra differ by only 0.16\%.]{
+            \includegraphics[width=0.49\linewidth]{Figures/muEDM_Dec2023/ToF_hist_plusminus.png}
+            }
+            \caption{\textbf{(a)} Time of flight of positrons and muons measured with \SI{50}{\micro\meter} upstream and \SI{100}{\micro\meter} downstream detectors and \textbf{(b)} the same setup with muons at $\pm750$ mT. Due to energy losses in air and the entrance trigger, the muon peak is fitted with an exponentially modified Gaussian instead.}
+            \label{fig:tof_emg_fit}
+        \end{figure}
+        
+        \begin{figure}
+            \centering
+            \subfloat[TOF means vs PSC magnetic field. Differences can be explained with the energy loss in the upstream detector.]{\includegraphics[width=0.49\linewidth]{Figures/muEDM_Dec2023/ToFMeanConfigComparison.png}\label{fig:ToFMeanConfigComparison}}
+            \hfill
+            \subfloat[TOF mean change vs change in field between consecutive measurements.]{\includegraphics[width=0.49\linewidth]{Figures/muEDM_Dec2023/ToFDiffMeanDiffB_ConfigComparison_perc.png}\label{fig:ToFDiffMeanDiffBConfigComparison}}
+            \caption{In \textbf{(a)} the TOF means for the five detector setups are plotted against the B field settings while in \textbf{(b)} the change of the mean ToF versus the change of the magnetic field for consecutive measurements. A detector setup corresponds to the upstream (US) and downstream (DS) detectors for the Time of Flight measurement (\#0 is the old \SI{200}{\micro\meter} detector).}
+        \end{figure}
+
+        \begin{table}
+        \centering
+        \tiny
+            \begin{tabular}{|l|l|l|l|l|l|l|}
+            \hline
+            Detector US & Detector DS & B Field, mT & Position & Events & FS52, mm & FS54LROU, mm \\ \hline
+            Old0 200um  & New1 100um  & 0 {[}0{]}        & 0 mm     & 100k   & 50            & 50,50,50,50       \\ \hline
+            Old0 200um  & New1 100um  & 250 {[}0{]}      & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            Old0 200um  & New1 100um  & 500 {[}250{]}    & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            Old0 200um  & New1 100um  & 750 {[}500{]}    & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            Old0 200um  & New1 100um  & 0 {[}750{]}      & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            Old0 200um  & New1 100um  & -750 {[}0{]}     & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            Old0 200um  & New1 100um  & -500 {[}-750{]}  & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            Old0 200um  & New1 100um  & -250 {[}-500{]}  & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            Old0 200um  & New1 100um  & -250 {[}-250{]}  & 0 mm     & 250k   & 50            & 50,50,50,50       \\ \hline
+            Old0 200um  & New1 100um  & -250 {[}-250{]}  & 0 mm     & 250k   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & 0 {[}-250{]}     & 0 mm     & 550k   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & 250 {[}0{]}      & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & 500 {[}250{]}    & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & 750 {[}500{]}    & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & 0 {[}750{]}      & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & -750 {[}0{]}     & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & -500 {[}-750{]}  & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & -250 {[}-500{]}  & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & 750 {[}-250{]}   & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & 500 {[}+750{]}   & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & 250 {[}+500{]}   & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & 0 {[}+250{]}     & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & -250 {[}0{]}     & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & -500 {[}-250{]}  & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & -750 {[}-500{]}  & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & 0 {[}-750{]}     & 0 mm     & 100k   & 8.55-8.60     & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & 0 {[}-750{]}     & 0 mm     & 100k   & 8.6           & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & 0 {[}-750{]}     & 0 mm     & 100k   & 15            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & 0 {[}-750{]}     & 0 mm     & 400 k  & 30            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & 0 {[}-750{]}     & 0 mm     & 400 k  & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & 750 {[}0{]}      & 0 mm     & 500 k  & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & -750 {[}+750{]}  & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & 750 {[}-750{]}   & 0 mm     & 200K   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & -750 {[}+750{]}  & 0 mm     & 200K   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & 750 {[}-750{]}   & 0 mm     & 200K   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & -750 {[}+750{]}  & 0 mm     & 200K   & 50            & 50,50,50,50       \\ \hline
+            New3 50um   & New1 100um  & 0 {[}-750{]}     & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            New3 50um   & New1 100um  & 0 {[}-750{]}     & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            New3 50um   & New1 100um  & 0 {[}-750{]}     & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            New3 50um   & New1 100um  & 0 {[}-750{]}     & 0 mm     & 400k   & 50            & 20,20,15,15       \\ \hline
+            New3 50um   & New4 50um   & 0 {[}-750{]}     & 0 mm     & 400k   & 50            & 20,20,15,15       \\ \hline
+            New3 50um   & New4 50um   & 0 {[}-750{]}     & 0 mm     & 500k   & 50            & 20,20,15,15       \\ \hline
+            New3 50um   & New4 50um   & 0 {[}-750{]}     & 0 mm     & 50k    & 50            & 20,20,15,15       \\ \hline
+            New3 50um   & New4 50um   & 0 {[}-750{]}     & 0 mm     & 100k   & 50            & 20,20,15,15       \\ \hline
+            New3 50um   & New4 50um   & 750 {[}-750{]}   & 0 mm     & 500k   & 50            & 20,20,15,15       \\ \hline
+            New3 50um   & New4 50um   & -750 {[}+750{]}  & 0 mm     & 500k   & 50            & 20,20,15,15       \\ \hline
+            New3 50um   & New1 100um  & 750 {[}-750{]}   & 0 mm     & 500k   & 50            & 20,20,15,15       \\ \hline
+            New3 50um   & New1 100um  & 750 {[}-750{]}   & 0 mm     & 150k   & 50            & 50,50,50,50       \\ \hline
+            New3 50um   & New1 100um  & -750 {[}+750{]}  & 0 mm     & 150k   & 50            & 50,50,50,50       \\ \hline
+            New3 50um   & New1 100um  & -750 {[}+750{]}  & 0 mm     & 200k   & 50            & 50,50,50,50       \\ \hline
+            New3 50um   & New1 100um  & 750 {[}-750{]}   & 0 mm     & 100k   & 50            & 50,50,50,50       \\ \hline
+            New3 50um   & New1 100um  & -750 {[}+750{]}  & 0 mm     & 100k   & 50            & 50,50,50,50       \\ \hline
+            New3 50um   & New1 100um  & 0 {[}-750{]}     & 27.8 mm  &        & 50            & 50,50,50,50       \\ \hline
+            New3 50um   & New1 100um  & 0 {[}-750{]}     & -27.8 mm &        & 50            & 50,50,50,50       \\ \hline
+            New3 50um   & New1 100um  & 0 {[}-750{]}     & -18.5 mm &        & 50            & 50,50,50,50       \\ \hline
+            New3 50um   & New1 100um  & 0 {[}-750{]}     & -9.3 mm  &        & 50            & 50,50,50,50       \\ \hline
+            New3 50um   & New1 100um  & 0 {[}-750{]}     & 9.3 mm   &        & 50            & 50,50,50,50       \\ \hline
+            New3 50um   & New1 100um  & 0 {[}-750{]}     & 18.5 mm  &        & 50            & 50,50,50,50       \\ \hline
+            New4 50um   & New1 100um  & 0 {[}-750{]}     & 0 mm     & 500k   & 50            & 50,50,50,50       \\ \hline
+            New4 50um   & New1 100um  & -750 {[}0{]}     & 0 mm     & 250k   & 50            & 50,50,50,50       \\ \hline
+            New4 50um   & New1 100um  & 750 {[}-750{]}   & 0 mm     & 250k   & 50            & 50,50,50,50       \\ \hline
+            New4 50um   & New1 100um  & 750 {[}-750{]}   & 0 mm     & 250k   & 50            & 50,50,50,50       \\ \hline
+            New4 50um   & New1 100um  & 0 {[}750{]}      & 27.8 mm  & 100 k  & 50            & 50,50,50,50       \\ \hline
+            New4 50um   & New1 100um  & 0 {[}750{]}      & 18.5 mm  & 10 k   & 50            & 50,50,50,50       \\ \hline
+            New4 50um   & New1 100um  & 0 {[}750{]}      & 18.5 mm  & 20 k   & 50            & 50,50,50,50       \\ \hline
+            New4 50um   & New1 100um  & 0 {[}750{]}      & 9.3 mm   & 30 k   & 50            & 50,50,50,50       \\ \hline
+            New4 50um   & New1 100um  & 0 {[}750{]}      & -9.3 mm  & 30 k   & 50            & 50,50,50,50       \\ \hline
+            New4 50um   & New1 100um  & 0 {[}750{]}      & -18.5 mm & 30 k   & 50            & 50,50,50,50       \\ \hline
+            New4 50um   & New1 100um  & 0 {[}750{]}      & -27.8 mm & 30 k   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & -750 {[}+750{]}  & 0 mm     & 250k   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & 750 {[}-750{]}   & 0 mm     & 250k   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & 750 {[}-750{]}   & 0 mm     & 250k   & 50            & 50,50,50,50       \\ \hline
+            New2 100um  & New1 100um  & -750 {[}+750{]}  & 0 mm     & 250k   & 50            & 50,50,50,50       \\ \hline
+            \end{tabular}
+            \caption{Overview of the Time of Flight measurements ordered by date, displaying the upstream (US) and downstream (DS) detectors, the magnetic field of the solenoid, its position along the rails, the number of events and the slit settings for slits FS52 and FS54 for every measurement.}
+        \label{tab:ToFMeasurementsOverview}
+        \end{table}
 
 \status{started}
 \printbibliography[

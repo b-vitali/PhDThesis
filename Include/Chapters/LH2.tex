@@ -1,4 +1,4 @@
-\status{started}
+\status{review}
 \chapter{Liquid Hydrogen target}
 \label{ch:MEG:CEX}
 \begin{refsection}
@@ -116,10 +116,9 @@ This item was one of the main tasks in my involvement in this experiment and it 
         The procedures to operate the system were developed, discussed with the safety committee, and adapted to the different upgrades.
         We will not discuss them here.
 
-\status{started}
+\status{review}
 \section{2021}
-    I started my Ph.D in November 2020 but I joined the activities after the first year, in October 2021. 
-    For this reason, I did not participate in the development of the first iteration of the target and I joined directly the tests before the data-taking period.
+    I started my Ph.D. in November 2020 and I joined the activities after a  year, in October 2021, directly for the tests before the data-taking period.
     The status of the LH2 Target and the preliminary results of the 2021 CEX were presented at the 15th Pisa Meeting on Advanced Detectors \cite{Elba:mio}.
 
     \status{review}
@@ -137,7 +136,7 @@ This item was one of the main tasks in my involvement in this experiment and it 
             \1 During liquefaction, some spikes can be seen: these are instances in which the system became unstable and liquefaction was lost
             \1 The speed of cooling and liquefaction is always the same, a result of hardware 
         \end{outline}
-        Overall, CEX data could be collected when the target was considered `full enough': below 2.1 bar, meaning 50\% full. 
+        CEX data could be collected when the target was `full enough': below 2.1 bar, meaning 50\% full. 
         In the two weeks, this translates to efficiency of $D_{2021}\approx0.5$.
         The efficiency for 2021 was lower than expected and the necessary statistic was not reached for every patch (Fig.~\ref{fig:CEX:patches:2021}).
 
@@ -150,44 +149,51 @@ This item was one of the main tasks in my involvement in this experiment and it 
             \label{fig:CEX:2021:installation}
         \end{figure}
 
-    \status{started}
+    \status{review}
     \subsection{Data anlaysis}
-        While the broad idea of the XEC calibrations was already outlined in Sec.~\ref{sec:MEG:XEC}, it is perhaps worth now describing how the analysis of the data from the Carge EXchange reaction allows extracting not only the timing and energy resolution but also the energy scale.
+        While the broad idea of the XEC calibrations was already outlined in Sec.~\ref{sec:MEG:XEC}, it is perhaps worth now describing how the analysis of the data from the Carge EXchange reaction allows extracting not only the timing and energy resolution but also the energy parameters of the detector.
         
         \paragraph{Timing}
-        The time resolution of the XEC was evaluated by taking the difference in time between the detector and the pre-shower counter, correcting for the time of flight (TOF).
+        The time resolution is evaluated by taking the difference in time between the detector and the pre-shower counter (see Fig.~\ref{fig:CEX:scheme}), correcting for the time of flight (TOF).
         \begin{align}
             \Delta t &= t_\g - t_{ps} - t_{TOF}\\
             \sigma_{\Delta t} &=  \sigma_{t_\g} \oplus \sigma_{t_{ps}} \oplus \sigma_{t_{TOF}}
         \end{align}
-        The contribution coming from the pre-shower counter, , being it comprised of scintillators, was measured and found to be $\sigma_{ps}=\SI{28.2(2)}{ns}$.
+        The contribution coming from the pre-shower counter, being it comprised of scintillators, was measured and found to be $\sigma_{ps}=\SI{28.2(2)}{ns}$.
         The main contribution to $\sigma_{t_{TOF}}$ comes from the resolution in the position of the vertex $\sigma_{vertex}$.
         This can be evaluated as 
         $$\sigma_{t_{vertex}} = \sigma_{vertex} \oplus \sigma_{ref} \oplus \sigma_{ps}$$
         Due to the reduce statistics, the result was $\sigma_{verted} = \SI{70(6)}{ps}$.
-        Adding the measured $\sigma_{\Delta t} = \SI{99.5(5)}{ps}$, we have all the elements to extract the intrinsic resolution of the detector.
-        The timing resolution found is energy-dependent as well as position-dependent, but, for the interesting range $\SI{50}{MeV}<E_\gamma<\SI{58}{MeV}$ and with minimal cut, the result is $\sigma_{t_\g}=\SI{65(6)}{ps}$, as shown in Fig.~\ref{fig:CEX:2021:timing}. 
+        Adding the measured $\sigma_{\Delta t} = \SI{99.5(5)}{ps}$ (see Fig.~\ref{fig:LH2:XEC:resolution:t}), we have all the elements to extract the intrinsic resolution of the detector.
+        The timing resolution found is energy-dependent as well as position-dependent; for the interesting range $\SI{50}{MeV}<E_\gamma<\SI{58}{MeV}$ and with minimal cut, the result was $\sigma_{t_\g}=\SI{65(6)}{ps}$. 
 
         \begin{figure}
             \centering
-            \subfloat[Scheme with reference counter and pre-shower.]{\includegraphics[height = 5cm, keepaspectratio]{Figures/LH2/2021/CEX_preshower_reference.png}}
-            \subfloat[Extracted timing resolution from CEX 2021.]{
-            \includegraphics[height = 5cm, keepaspectratio]{Figures/LH2/2021/CEX2021_time.png}}
-            \caption{}
-            \label{fig:CEX:2021:timing}
+            \includegraphics[width = 0.5\textwidth]{Figures/LH2/2021/CEX_preshower_reference.png}
+            \caption{The XEC time resolution is evaluated with the help of auxiliary detectors}
+            \label{fig:CEX:scheme}
         \end{figure}
 
-        \begin{figure}
-            \centering
-            \subfloat[Number of event per patch during CEX 2021]{\includegraphics[height = 5cm, keepaspectratio]{Figures/LH2/2021/CEX2021_patches.png}}
-            \subfloat[E]{
-            \includegraphics[height = 5cm, keepaspectratio]{Figures/LH2/2021/CEX2021_time.png}}
-            \caption{}
-            \label{fig:CEX:2021:energy}
-        \end{figure}
-
-        \paragraph{Energy} The data collected during the CEX have been used for two purposes: as one of the points in the evaluation of the resolution in the energy of the detector and to evaluate the absolute scaling of the energy measured.
+        \paragraph{Energy} The data collected during the CEX have been used for two purposes: as one of the points in the evaluation of the resolution in the energy of the detector (see Fig.~\ref{fig:LH2:XEC:resolution:E}) and to evaluate the absolute scaling of the energy measured.
+        This second point is related to the known energy of the $\g\g$ pair if emitted back to back: \SI{55}{MeV}.
+        The CEX measurement allows also us to study the non-uniformity of the XEC detector.
+        In Fig.~\ref{fig:CEX2021:nonuniformity} (taken from Sec.~\ref{sec:MEG:XEC:performance}), this non-uniformity is shown along the different axes.
         
+        \begin{figure}[]   
+            \centering
+            \subfloat[Time resolution of the XEC, obtained via the time difference of XEC and \textit{pre-shower} fitted with a double Gaussian.]{            \includegraphics[height=6cm]{Figures/MEG/XEC_t_resolution.png}\label{fig:LH2:XEC:resolution:t}}
+            \hfill
+            \subfloat[Energy resolution of the XEC.  The function used is Eq.~\ref{eq:XEC:E}.]{\includegraphics[height=6cm]{Figures/MEG/XEC_E_resolution.png}\label{fig:LH2:XEC:resolution:E}}
+            \caption{Timing (a) and energy (b) resolutions of the XEC obtained for \SI{55}{MeV} $\g$s generated via the CEX. The results are for the central region of the detector ($u\in[-10,10]$cm and $v\in[-30,-10]$cm).}
+            \label{fig:LH2:XEC:resolution}
+        \end{figure}
+
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.9\linewidth]{Figures/LH2/2021/CEX2021_position-dependence.png}
+            \caption{Position dependence of the reconstructed \SI{55}{MeV} $\g$ from $\pi^0\ra\g\g$.}
+            \label{fig:CEX2021:nonuniformity}
+        \end{figure}
 \status{review}
 \section{2022}
     After (the only partial success of) the 2021 CEX data-taking, major upgrades were needed.
