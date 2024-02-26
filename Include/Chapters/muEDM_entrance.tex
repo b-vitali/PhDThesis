@@ -843,6 +843,20 @@ We will then move through the beamtimes.
             \caption[muEDM 2023: TOF and magnetic hysteresis]{In \textbf{(a)} the TOF means for the five detector setups are plotted against the B field settings while in \textbf{(b)} the change of the mean ToF versus the change of the magnetic field for consecutive measurements. A detector setup corresponds to the upstream (US) and downstream (DS) detectors for the Time of Flight measurement (\#0 is the old \SI{200}{\micro\meter} detector).}
         \end{figure}
 
+\status{done}
+\section{Conclusions}
+    We started this chapter with an overview of what the process of scintillation is and the different types of scintillators. We then moved to the implementation of such a detector in \gf, a core software in particle physics simulations.
+    We then described the Entrance detector, designed to trigger the magnetic kick to store the muons, and the Telescope, designed to help test the first detector. 
+    A description of the different beam times followed: 2021 dedicated to the study of multiple scattering; 2022 dedicated to the overmentioned Entrance and Telescope; 2023 to test the Beam monitor and TOF detectors.
+
+    \noindent
+    The obtained results are here not summarized but the core idea is that many different preparatory studies are required when developing a new project. 
+    Most of the results obtained were in line with expectations and satisfactory for the muEDM requirements.\\
+
+    \noindent
+    On a personal level, many items in this chapter mark `a first' for me: from the implementation of a \gf simulation to the gluing of SiPMs. 
+    The whole process has been very interesting and the overall development of the muEDM experiment (and collaboration) deeply fascinating.
+
         \begin{table}
         \centering
         \tiny
@@ -923,11 +937,11 @@ We will then move through the beamtimes.
             New2 100um  & New1 100um  & 750 {[}-750{]}   & 0 mm     & 250k   & 50            & 50,50,50,50       \\ \hline
             New2 100um  & New1 100um  & -750 {[}+750{]}  & 0 mm     & 250k   & 50            & 50,50,50,50       \\ \hline
             \end{tabular}
-            \caption{Overview of the Time of Flight measurements ordered by date, displaying the upstream (US) and downstream (DS) detectors, the magnetic field of the solenoid, its position along the rails, the number of events and the slit settings for slits FS52 and FS54 for every measurement.}
+            \caption[Datasets taken in 2023 for the TOF]{Overview of the Time of Flight measurements ordered by date, displaying the upstream (US) and downstream (DS) detectors, the magnetic field of the solenoid, its position along the rails, the number of events and the slit settings for slits FS52 and FS54 for every measurement.}
         \label{tab:ToFMeasurementsOverview}
         \end{table}
 
-\status{started}
+\status{done}
 \printbibliography[
     heading = bibliographychapter,
     title=Bibliography on Scintillators in muEDM

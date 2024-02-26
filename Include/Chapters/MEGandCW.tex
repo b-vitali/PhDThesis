@@ -1,20 +1,23 @@
-\status{review}
+\status{done}
 \chapter{MEG II and the Cockcroft–Walton}
 \label{ch:MEG}
 \begin{refsection}
 {\itshape This Chapter is dedicated to an in-depth description of the MEG II search and apparatus. After the description of the different subdetectors and their functionality a description of the beamlines will follow. MEG II is served by the main muon beamline, part of the PSI beamlines described in the Introduction Chapter, and a secondary proton beamline equipped with its own Cockcroft–Walton. This machine has different uses in the collaboration, which will be here discussed, and its functioning has been one of my main tasks. For this reason, some additional details will be here included. Most of the information on MEG II can be found in the two recent papers: detector \cite{MEG_II:detector} and 2021 data-analysis \cite{MEG_II:physics}.}
 
-\status{review}
+\status{done}
 \section{MEG II}
     The MEG II experiments aims at improving the limit set by its predecessor: $BR(\Am\ra\Ae\upgamma)<\num{4.2e-13}$ \cite{MEG} down to $\sim\num{6e-14}$.
     The signature of this process is a back-to-back pair of $\g$ and $\Ae$, with $E_\g = E_{\Ae} = \SI{53.2}{MeV}$.
     The main background is the accidental coincidence of high momentum positrons from Michel decay $\Am \ra \Ae \upnu_e \bar{\upnu}_\upmu$ and high energy photons from the radiative muon decay (RMD) $\Am\ra\Ae\upnu_e \bar{\upnu}_\upmu\g$, positron Bremsstrahlung or positron annihilation.\\
-    The experiment, which is located at PSI, is currently running and a sketch of it is shown in Fig.~\ref{fig:MEGII}
+    
+    \noindent
+    The experiment, which is located at PSI, is currently running and a sketch of it is shown in Fig.~\ref{fig:MEGII}.
     In particular, the muons are delivered by the $\uppi E5$ beamline.
     The key aspects of the upgrade are: a thinner and more slanted target, a pixelated Timing Counter (pTC), a new Cylindrical Drift CHamber (CDCH), the addition of a Radiative Decay Counter, a finer granularity for the Liquid Xenon Calorimeter (XEC) using MPPC, new electronics and calibration methods.
     The kinematic variables associated with the positron are measured with the spectrometer (COnstant Bending RAdius magnet (COBRA)+CDCH+pTC). 
     The kinematic variables (E, t, position) of the $\g$, expected to be monochromatic at $52.8$ MeV, are measured with the XEC.
-    This is a 1000 $\ell$ ``c-shaped'' Liquid Xe calorimeter, equipped with both PMT and SiPM.\\
+    This is a 900 $\ell$ ``c-shaped'' Liquid Xe calorimeter, equipped with both PMT and SiPM.
+    
     \paragraph{Coordinate system}
     The coordinate system used is cylindrical $(r, \phi, z)$ with its origin located at the center of COBRA. 
     The $z$-axis aligns with the COBRA axis, coinciding with the direction of the incoming muon beam. 
@@ -26,14 +29,14 @@
     \begin{figure}
         \centering
         \includegraphics[width = 0.8\textwidth]{Figures/Introduction/MEG_II.png}
-        \caption{Sketch of the MEG II apparatus with a $\Am\ra\Ae\g$ event.}
+        \caption[MEG II: Sketch of the apparatus]{Sketch of the MEG II apparatus with a $\Am\ra\Ae\g$ event.}
         \label{fig:MEGII}
     \end{figure}
 
     \paragraph{Alignment} The analysis of the relative alignment within each detector, like the extraction of the \textit{real} position of the wires in the CDCH, and between the different detectors is key in the event reconstruction.
-    We will not describe how these are performed but all the details can be found in \cite{MEG_II:detector}.
+    We will not describe how these are performed but details can be found in \cite{MEG_II:detector}.
 
-\status{review}
+\status{done}
 \section{The liquid XEnon Calorimeter}
     \label{sec:MEG:XEC}
     As already introduced, the kinematic variables (E, t, position) of the $\g$, expected to be monochromatic at $52.8$ MeV, are measured with the liquid XEnon Calorimeter (XEC).
@@ -43,7 +46,7 @@
     The local coordinate system is the following: $u$ - axis along the beamline, $v$ - vertical axis intersecting COBRA center, $w$ - the depth in the detector.
     
 
-    \status{review}
+    \status{done}
     \subsection{Xe scintillation}
         MEG's XEC is the first large Xe detector based on scintillation.
         In Sec.~\ref{sec:muEDM:scintillators} the working principle of scintillators was discussed but the description of liquid scintillators was postponed. 
@@ -70,9 +73,9 @@
         Unfortunately, this cannot happen while taking data due to the noise introduced in the system and is done every year before the run starts.
         Purification in the gaseous phase is done during the whole beam time with a hot getter.
 
-    \status{review}
+    \status{done}
     \subsection{Photon detection}
-        The MPPCs and PMTs used went through a period of R\&/D due to the harsh environment:
+        The MPPCs and PMTs used went through a period of R\&D due to the harsh environment:
         \begin{outline}
             \1 The Xe spectrum is centered at \SI{178}{nm}: vacuum ultra-violet regime
             \1 To ensure the light collection, the sensors are immersed at \SI{165}{\kelvin}
@@ -93,17 +96,16 @@
 
         \paragraph{PMTs' gain} The absolute gain of PMTs is evaluated by shining the sensors with a blue LED and evaluating the linear correlation between the mean and variance of the \textit{charge} as a function of the LED intensity.
         At the beginning of each run, the gains are set to $\sim\num{0.8e6}$ adjusting the HV. 
-        This value will then lower during the run, as shown in Fig.~\ref{PMT}.
 
          \begin{figure}[]   
             \centering
             \subfloat[Decrease of the average PDF during the 2021 run.]{\includegraphics[height=4.4cm]{Figures/MEG/XEC_2021_PDEdecrease.png}\label{fig:MEC:XEC:PDE:drop}}
             \subfloat[PDE recovery thanks to the annealing.]{            \includegraphics[height=4.3cm]{Figures/MEG/XEC_2022_PDE.png}\label{fig:MEC:XEC:PDE:annealing}}
-            \caption{The PDE of the MPPCs was found to be deteriorating due to radiation damage (a). The process of annealing carried out before every physics run, allows the recovery of the PDE (b).}
+            \caption[XEC: PDE and annealing]{The PDE of the MPPCs was found to be deteriorating due to radiation damage (a). The process of annealing carried out before every physics run, allows the recovery of the PDE (b).}
             \label{fig:MEC:XEC:PDE}
         \end{figure}
         
-    \status{review}
+    \status{done}
     \subsection{Calibration}    
     \label{sec:MEG:XEC:calibrations}
     As anticipated, different calibrations were developed to follow the evolution of the XEC and to tune its functionality. 
@@ -129,7 +131,7 @@
     The process is the Charge EXchange reaction (CEX), $\pi^-p\rightarrow \pi^0n$ and $\pi^0\rightarrow\gamma\gamma$, and produces flat $\gamma$ in $[54.9,82.9]$ MeV.
     Tagging the back-to-back events it is possible to select the low end of the spectrum, which is close to the expected signature of $\Am\ra\Ae\g$ at \SI{52.8}{MeV}. This calibration will be discussed in detail in Ch.~\ref{ch:MEG:CEX}.
 
-    \status{review} 
+    \status{done} 
     \subsection{Reconstruction and performance}
     \label{sec:MEG:XEC:performance}
     Let's now discuss how the kinetic variables of the detected $\g$ are extracted and the current understanding of the overall performance of this detector. 
@@ -168,16 +170,16 @@
             \subfloat[Time resolution of the XEC, obtained via the time difference of XEC and \textit{pre-shower} fitted with a double Gaussian.]{            \includegraphics[height=6cm]{Figures/MEG/XEC_t_resolution.png}\label{fig:MEC:XEC:resolution:t}}
             \hfill
             \subfloat[Energy resolution of the XEC.  The function used is Eq.~\ref{eq:XEC:E}.]{\includegraphics[height=6cm]{Figures/MEG/XEC_E_resolution.png}\label{fig:MEC:XEC:resolution:E}}
-            \caption{Timing (a) and energy (b) resolutions of the XEC obtained for \SI{55}{MeV} $\g$s generated via the CEX. The results are for the central region of the detector ($u\in[-10,10]$cm and $v\in[-30,-10]$cm).}
+            \caption[XEC: resolutions]{Timing (a) and energy (b) resolutions of the XEC obtained for \SI{55}{MeV} $\g$s generated via the CEX. The results are for the central region of the detector ($u\in[-10,10]$cm and $v\in[-30,-10]$cm).}
             \label{fig:MEC:XEC:resolution}
         \end{figure}
 
-\status{review}
+\status{done}
 \section{Spectrometer}
     As already introduced, the spectrometer for the positron's kinematic variables is made of COBRA, CDCH, and pTC.
     We will now review their working principles and designs.
 
-    \status{review}
+    \status{done}
     \subsection{COBRA}
     \label{MEG:COBRA}
         The COnstant Bending RAdius magnet (COBRA) consists of a main superconducting magnet a two normal conducting compensation coils.
@@ -192,11 +194,11 @@
             \centering
             \includegraphics[height = 4.5cm]{Figures/MEG/COBRA_B.jpeg}
             \includegraphics[height = 4.5cm]{Figures/MEG/cobra_effect_meg1.png}
-            \caption{The specific profile of the axial magnetic field of COBRA is the result of the 5 different coils. The aim is to sweep the particles at higher $\abs{z}$ with an independent radius.}
+            \caption[COBRA]{The specific profile of the axial magnetic field of COBRA is the result of the 5 different coils. The aim is to sweep the particles at higher $\abs{z}$ with an independent radius.}
             \label{fig:MEGII:COBRA:B}
         \end{figure}
         
-    \status{review}
+    \status{done}
     \subsection{Cylindrical Drift CHamber (CDCH)}
         The major difference between MEG's drift chamber and its successor is that the CDCH is a single-volume, replacing the segmented structure.
         This is a $\sim\SI{1.9}{m}$ long cylinder, filled with a helium-isobutane mixture and containing nine concentric layers of 192 gold-plated tungsten wires, which are the heart of this detector.
@@ -207,13 +209,13 @@
         The final result after mounting all the wires is shown in Fig.~\ref{fig:MEGII:CDCH}.
         The change in tracking efficiency was studied with simulation yielding a decrease of $< 1\%$.
         Many additional studies can be found in \cite{MEG_II:detector}, like the GARFIELD++ simulations, gas mixtures analysis, and wire tensions.
-        To prevent discharges and improve the overall stability, the original He-isobutane gas mixture (90 : 10) was also modified adding a small fraction of oxygen and isopropyl alcohol.\\
+        To prevent discharges and improve the overall stability, the original He-isobutane gas mixture (90 : 10) was also modified adding a small fraction of oxygen and isopropyl alcohol.
         While the 144 HV are supplied with a commercial system, WaveDREAM boards supply the necessary low voltage for the front-end and take care of the digitalization of the waveforms collected at both ends of the wires.
 
         \begin{figure}
             \centering
             \includegraphics[width = \textwidth]{Figures/MEG/CDCH.png}
-            \caption{CDCH with all the wires mounted. The light catching the wires highlights the stereo design of the detector.}
+            \caption[CDCH: picture]{CDCH with all the wires. The light catching the wires highlights the stereo design of the detector.}
             \label{fig:MEGII:CDCH}
         \end{figure}
 
@@ -282,7 +284,7 @@
 
         \begin{figure}
             \centering
-            \includegraphics[width = 0.48\textwidth]{Figures/MEG/CDCH_michelfit.png}
+            \includegraphics[width = 0.8\textwidth]{Figures/MEG/CDCH_michelfit.png}
             \caption[CDCH: Michel fit]{Michel positron spectrum in logarithmic (a) and linear (b) scales. Black - data; Blue - 3 Gaussians to describe the resolution; Red- fit. The acceptance curve is shown in (c).}
             \label{fig:MEGII:CDCH:michel}
         \end{figure}
@@ -292,7 +294,7 @@
         The CDCH2 will soon be completed and is expected to be delivered to PSI in spring 2024.
         The choice of mounting the new system will then depend on the current status and stability of the CDCH.
 
-    \status{review}
+    \status{done}
     \subsection{pixelated Timing Counter (pTC)}
         The time coincidence between $\Ae$ and $\g$ is a crucial aspect of the experiment. 
         The pixellated Timing Counter plays two roles: first, it is part of the trigger algorithms; second it assigns the time of the positron track, which is then propagated backward to the target plane $t_{\Ae}$. 
@@ -318,47 +320,46 @@
         \begin{figure}
             \centering
             \includegraphics[width = 0.8\textwidth]{Figures/MEG/pTC.png}
-            \caption{Picture of the timing counter tiles.}
+            \caption[pTC: picture]{Picture of the timing counter tiles.}
             \label{fig:MEGII:pTC}
         \end{figure}
 
         \begin{figure}
             \centering
             \includegraphics[width = 0.8\textwidth]{Figures/MEG/pTC_tile.png}
-            \caption{A pTC tile: $120\times40/50\times5$ mm$^3$ of \bc{422} read by arrays of 6 AdvanSiD $3\times3$ mm SiPM.}
+            \caption[pTC: picture of a tile]{A pTC tile: $120\times40/50\times5$ mm$^3$ of \bc{422} read by arrays of 6 AdvanSiD $3\times3$ mm SiPM.}
             \label{fig:MEGII:pTC:tile}
         \end{figure}
 
         \begin{figure}
             \centering
             \includegraphics[width = \textwidth]{Figures/MEG/pTC_rate.png}
-            \caption{Hit rates map of the pTC at $R_\upmu = \SI{5e7}{\upmu \per s}$ during the 2022 run. Each circle indicates a counter.}
+            \caption[pTC: rates map]{Hit rates map of the pTC at $R_\upmu = \SI{5e7}{\upmu \per s}$ during the 2022 run. Each circle indicates a counter.}
             \label{fig:MEGII:pTC:rate}
         \end{figure}
 
-\status{review}
+\status{done}
 \section{Trigger and DAQ}
-    Although the trigger and DAQ for MEG II were developed on top of the previous knowledge, the number of additional channels ($\times4$) was quite the challenge. 
-    Here we will illustrate some of the key features while the details can be found in \cite{Galli2014JINST}.
-    The solution adopted was to merge the two branches in the WaveDAQ system.
+    Although the trigger and DAQ for MEG II were developed on top of the previous knowledge, the number of additional channels ($\times4$) was a challenge. 
+    Here we will illustrate some of the key features while details can be found in \cite{Galli2014JINST}.
+    The solution adopted was to merge the two branches in the WaveDAQ system \cite{Ritt2010NIMA}.
     Between 2015 and 2020 the system was tested, expanded, and was completed in 2021.
     It was then ready for the DAQ campaign of May 2021, with 35 crates with up to 16 WaveDREAM modules.
 
-    \status{review}
+    \status{done}
     \subsection{WaveDAQ}
-    The WaveDREAM is a 16-channel data acquisition platform utilizing two DRS4 chips for digitizing analog signals at speeds up to 5.0 GSPS.
+    The WaveDREAM is a 16-channel data acquisition platform utilizing two DRS4 chips for digitizing analog signals at speeds up to 5.0 GSPS \cite{Ritt2010NIMA}.
     Input channels have a programmable gain stage (0.25–100) with an 800 MHz analog bandwidth, providing bias voltage for SiPMs. 
     Detected events trigger external ADC readout, and data is sent to a Data Concentrator Board (DCB) over Ethernet. 
     Trigger decisions are made by FPGA Trigger Concentrator Boards within $\sim\SI{600}{ns}$.
-    The DAQ operates in \textit{push-mode}: trigger signals prompt boards to prepare data for DCBs, delivered to the DAQ server via Ethernet. However, there is a potential packet loss, leading to incomplete event reception and DAQ inefficiency. 
-    
+    The DAQ operates in \textit{push-mode}: trigger signals prompt boards to prepare data for DCBs, delivered to the DAQ server via Ethernet. However, there is a potential packet loss, leading to incomplete event reception and DAQ inefficiency.\\ 
     The typical trigger rate during physics runs ranges from 10 to 30 Hz. 
     Each waveform is $\sim$1.5 kB, necessitating a 10 Gbit/s connection between WaveDAQ and the DAQ server. 
     To manage the data rate, a private network, is used independently of the laboratory network. 
     A multi-threaded software involves four independent processing steps: Collector, Builder, Worker, and Data Handler. 
     Each step can be parallelised as needed; in total, we use 32 threads.
 
-    \status{review}
+    \status{done}
     \subsection{Data reduction}
         A full MEG II event is as large as 16 MB, but this can be reduced without deteriorating the experiment’s performance by applying data reduction schemes tailored to each detector.\\
         \noindent
@@ -375,14 +376,14 @@
         The same approach cannot be used for the CDCH because the signal-to-noise separation is not at the same level, so all waveforms are written to disk and re-binned by a factor of ten. 
         The overall event size reduction is a factor $\approx 10$.
 
-    \status{review}
+    \status{done}
     \subsection{Performances}
         The infrastructure guarantees over 99\% efficiency for trigger rates up to 35 Hz, corresponding to an 8 Gbit/s traffic rate on the private network. 
         However, some inefficiency is observed above this threshold.
         For detector calibration runs requiring only a subsample of signals, the system can run at the current maximum rate of about 52 Hz. 
         This is crucial to minimize detector calibration time and increase the sample of physics data.
         
-    \status{review}
+    \status{done}
     \subsection{Triggers}
         The WaveDAQ system supports up to 64 independent trigger lines, each with its prescaling factor. 
         Trigger lines are identified by a number, serving as a priority order when multiple conditions are matched. 
@@ -401,7 +402,7 @@
         Approximately 10 trigger lines are dedicated to LXe calibration, involving energy scale calibration with triggered $\g$ rays of known energies (from 9 to 130 MeV). 
         The pTC is calibrated daily using a laser-based system, with a dedicated trigger line providing synchronization. 
         
-\status{review}
+\status{done}
 \section{Beam and target}
     The beamlines at PSI were described in \ref{intro:beamlines}. 
     The beamline delivering $\mu^+$ to MEG II, in particular, is the $\pi E5$ line, shown in  Fig. \ref{fig:pie5}.
@@ -409,7 +410,7 @@
     Here we will describe the beamline, outline the key elements, and the related simulations. 
     We will then describe the MEG II target, with some detail on the way to take into account its deformations during the analysis.
 
-    \status{review}
+    \status{done}
     \subsection{$\pi E5$}
         This beam-line has actually two possible configurations: this will allow the area to be shared between MEG II and Mu3e. 
         As already illustrated, the surface muons delivered by this beam-line are produced for the decay of the pions generated as secondary beams from the HIPA proton beam.
@@ -442,18 +443,18 @@
         \begin{figure}
             \centering
             \includegraphics[width = \textwidth]{Figures/MEG/piE5_beamline.png}
-            \caption{Detail sketch of the $\pi E5$ beamline at PSI.}
+            \caption[$\pi E5$: sketch]{Detail sketch of the $\pi E5$ beamline at PSI.}
             \label{fig:pie5}
         \end{figure}
         
         \begin{figure}
             \centering
             \includegraphics[width = 0.8\textwidth]{Figures/MEG/meg_beamprofile.png}
-            \caption{Beam profile at COBRA center for a stopped muon rate of $R_\upmu = \SI{5.3e7}{\upmu \per \second}$ at $I_p = \SI{2.2}{mA}$.}
+            \caption[$\pi E5$: beam at COBRA center]{Beam profile at COBRA center for a stopped muon rate of $R_\upmu = \SI{5.3e7}{\upmu \per \second}$ at $I_p = \SI{2.2}{mA}$.}
             \label{fig:meg:beamprofile}
         \end{figure}
 
-    \status{review}
+    \status{done}
     \subsection{Simulations}
         As introduced in the previous section, the understanding of the beam behavior is a key aspect of the experiment.
         The beamline itself was developed using TRANSPORT, a beam optics simulation program.
@@ -471,7 +472,7 @@
         \begin{figure}
             \centering
             \includegraphics[width = \textwidth]{Figures/MEG/piE5_gfb.png}
-            \caption{\gfb simulation of few tracks (orange lines) in the $\pi E5$ beamline. It's possible to recognize the elements discussed previously and showed in Fig~\ref{fig:pie5}.}
+            \caption[$\pi E5$: \gfb simulation]{\gfb simulation of few tracks (orange lines) in the $\pi E5$ beamline. It's possible to recognize the elements discussed previously and showed in Fig~\ref{fig:pie5}.}
             \label{fig:piE5_gfb}
         \end{figure}
         
@@ -488,11 +489,11 @@
         \begin{figure}
             \centering
             \includegraphics[width = \textwidth]{Figures/MEG/madx_vs_g4b.png}
-            \caption{Comperison of the results from the \gfb and \madx simulations for $\pi E5$. While the agreement is very good for most of the beamline, there is some difference inside COBRA. This is due to the difficulty in describing the highly `non-standard' magnet. Given \madx has no particle interaction, the comparison is fair only when removing all materials from the beamline in the \gfb simulation.}
+            \caption[$\pi E5$: \madx simulation]{Comperison of the results from the \gfb and \madx simulations for $\pi E5$. While the agreement is very good for most of the beamline, there is some difference inside COBRA. This is due to the difficulty in describing the highly `non-standard' magnet. Given \madx has no particle interaction, the comparison is fair only when removing all materials from the beamline in the \gfb simulation.}
             \label{fig:madx_vs_g4b}
         \end{figure}
 
-    \status{review}
+    \status{done}
     \subsection{MEG II target}
     \label{sec:MEG:target}
         The aim of the target is to stop $\Am$ at COBRA center while minimizing the interaction of the secondary particles produced.
@@ -523,11 +524,11 @@
         \begin{figure}
             \centering
             \includegraphics[width = 0.8\textwidth]{Figures/MEG/meg_target.png}
-            \caption{Picture of the BC400 target. Clearly visible is the dot pattern on both the target and carbon fiber frame. Six holes, admittedly less visible, are located on the axes of the ellipse.}
+            \caption[MEG II Target]{Picture of the BC400 target. Clearly visible is the dot pattern on both the target and carbon fiber frame. Six holes, admittedly less visible, are located on the axes of the ellipse.}
             \label{fig:meg:target}
         \end{figure}
 
-\status{review}
+\status{done}
 \section{Sensitivity}  
     When collecting the information from all the different subdetectors the picture looks something like shown in Fig.~\ref{fig:MEG:event}.
     The confidence interval is extracted on the variables that have good discriminating power wrt the background: $E_{\Ae}$, $E_\g,$, the relative angle $\Phi_{\Ae\g}$, the relative time $t_{\Ae\g}$, plus two variables relative to the RDC ($t_{\Ae, RDC}-t_{\g, XEC}$ and $E_{\Ae, RDC}$).
@@ -535,7 +536,7 @@
     The analysis region is defined as ($E_{\Ae}\in[48,58]$MeV; $t_{\Ae\g}\in[-500,500]$ps).
     The probability density functions (PDFs) for the background are constructed looking at the \textit{sidebads}, while for the signal the expected distributions are convolved with the extracted resolutions.
     The sensitivity obtained reflects the resolutions, efficiency, and the live time of data-taking. 
-    This information is shown in Fig.~\ref{fig:MEG:sensitivity}
+    This information is shown in Fig.~\ref{fig:MEG:sensitivity}.
     The most recent analysis was published in 2023, setting the new upper-limit at $\num{3.1e-17}$ \cite{MEG_II:physics}.
     
     \begin{figure}   
@@ -543,8 +544,8 @@
         \subfloat[Example of a photon detected by the XEC.]{\includegraphics[width=\textwidth]{Figures/MEG/XEC_example.png}\label{}}\\
         \subfloat[Example of a $\Ae$ detected by the pTC.]{            \includegraphics[height=6.3cm]{Figures/MEG/pTC_example.png}\label{}}
         \hfill
-        \subfloat[Example of a $\Ae$ detected by the CDCH. AAA WRONG]{            \includegraphics[height=6.6cm]{Figures/MEG/CDCH_example.png}}
-        \caption{Once all the MEG II detectors are combined, the usual data-taking looks something like this. These are just examples taken from different events.}
+        \subfloat[Example CDCH heat map.]{            \includegraphics[height=6.6cm]{Figures/MEG/CDCH_example.png}}
+        \caption[MEG II: data-taking]{Once all the MEG II detectors are combined, the usual data-taking looks something like this. These are just examples taken from different events. For the CDCH a heat map is shown, this type of plot is cardinal in detecting issues in this detector. For example in sector 3 the blue region is switched off.}
         \label{fig:MEG:event}
     \end{figure}
         
@@ -553,18 +554,18 @@
         \subfloat[Obtained and expected resolutions at $R_\upmu = \SI{3e7}{\upmu \per s}$. A $5\divisionsymbol7\%$ deterioration of the positron efficiency was found at $R_\upmu = \SI{3e7}{\upmu \per s}$.]{\raisebox{-.5\height}{      \includegraphics[height=5cm]{Figures/MEG/MEG_resolutions.png}}\label{}}
         \hfill
         \subfloat[Expected sensitivity as a function of the DAQ livetime.]{\includegraphics[height=8cm]{Figures/MEG/MEG_sensitivity.png}}
-        \caption{The sensitivity reached by MEG II has a strong dependence on the DAQ livetime, as shown in (b), and the resolution/efficiency obtained, shown in (a).}
+        \caption[MEG II: resolutions and sensitivity]{The sensitivity reached by MEG II has a strong dependence on the DAQ livetime, as shown in (b), and the resolution/efficiency obtained, shown in (a).}
         \label{fig:MEG:sensitivity}
     \end{figure}
 
-\status{review}
+\status{done}
 \section{Cockcroft–Walton}
     \label{sec:cw:calib}
     In addition to the muon beamline, MEG II has a Cockcroft–Walton proton accelerator. 
     After the description of the machine, we will highlight the use of this accelerator by the collaboration (calibrations of the XEC and exotic searches) and the recent maintenance.
     One of my main tasks during this Ph.D. has been the usage of this machine, so I was quite fortunate to be able to shadow the expert during the maintenance.
 
-    \status{review}
+    \status{done}
     \subsection{Description of the machine}
         \label{sec:cw:machine}
         The accelerator is a single-stage in-line singletron produced by HVEE. 
@@ -578,7 +579,7 @@
        \begin{figure}
             \centering
             \includegraphics[width=0.8\textwidth]{Figures/MEG/CW/cw_ionsource.jpeg}
-            \caption{Sketch of the ion source of the CW.}
+            \caption[CW: source]{Sketch of the ion source of the CW.}
             \label{fig:CW:sketch:ionsource}
         \end{figure}
         
@@ -597,7 +598,7 @@
             \subfloat[``Standard'' CW circuit.]{\includegraphics[height=5.5cm]{Figures/MEG/CW/CW_standard.png}}\label{fig:CW:circuit:standard}
             \subfloat[Schematic of the `real' CW circuit.]{\includegraphics[height=5.5cm]{Figures/MEG/CW/cw_circuit_stack.jpeg}\label{fig:CW:circuit:stack}}\\
             \subfloat[Sketch of the inner structure of a \textit{stack ass'y}: 15 rectifiers and 2 resistors.]{            \includegraphics[width=0.8\textwidth]{Figures/MEG/CW/cw_rectifier.jpeg}\label{fig:CW:sketch:rectifier}}
-            \caption{The first schematic (a) is presented just for reference, given the usual depiction of a CW circuit. The second (b) shows the CW circuit and the capacitive coupling to the RF driver while the third (c) shows the internal structure of a rectifier stack (\textit{stack ass'y}).}
+            \caption[CW: circuit and rectifiers]{The first schematic (a) is presented just for reference, given the usual depiction of a CW circuit. The second (b) shows the CW circuit and the capacitive coupling to the RF driver while the third (c) shows the internal structure of a rectifier stack (\textit{stack ass'y}).}
         \end{figure}
 
         \paragraph{Driver}
@@ -610,7 +611,7 @@
         \begin{figure}
             \centering
             \includegraphics[width=0.8\textwidth]{Figures/MEG/CW/cw_circuit_driver.jpeg}
-            \caption{Block diagram of the driver}
+            \caption[CW: driver]{Block diagram of the driver}
             \label{fig:CW:circuit:driver}
         \end{figure}
 
@@ -640,38 +641,38 @@
             \subfloat[Sketch of the circuit to measure the Q-factor.]{            \includegraphics[width=0.49\textwidth]{Figures/MEG/CW/cw_qfactor.jpeg}\label{fig:CW:sketch:Q-factor}}
             \hfill
             \subfloat[Example of measurement of the Q-factor: in red the delay while in blue the fraction $V_1/V_2$.]{\includegraphics[width=0.49\textwidth]{Figures/MEG/CW/CW_Q-factor.png}\label{fig:CW:Q-factor}}
-            \caption{The Q-factor is the ratio of blind to dissipated power. Via this number is possible to evaluate the energy dissipated as heat running the machine. If it is too low the machine cannot operate correctly.}
+            \caption[CW: Q-factor measurement]{The Q-factor is the ratio of blind to dissipated power. Via this number is possible to evaluate the energy dissipated as heat running the machine. If it is too low the machine cannot operate correctly.}
         \end{figure}
 
         \begin{figure}
             \centering
             \includegraphics[width=1\textwidth]{Figures/MEG/CW/view_front.jpg}
-            \caption{View of the CW after the extraction from the external volume. This volume contains \ce{SF6} which is used as a gaseous dielectric medium and needs to be evacuated before the extraction.}
+            \caption[CW: picture]{View of the CW after the extraction from the external volume. This volume contains \ce{SF6} which is used as a gaseous dielectric medium and needs to be evacuated before the extraction.}
             \label{fig:CW:view}
         \end{figure}
 
         \begin{figure}
             \centering
             \includegraphics[width=1\textwidth]{Figures/MEG/CW/view_source.jpg}
-            \caption{View of the source of the CW   machine.}
+            \caption[CW: source picture]{View of the source of the CW   machine.}
             \label{fig:CW:view_source}
         \end{figure}
 
         \begin{figure}
             \centering
             \includegraphics[width=1\textwidth]{Figures/MEG/CW/view_top.jpg}
-            \caption{Top view of the CW after the removal of a few \textit{corona rings}. Here we can see all the elements of a CW circuit: red - the resistors on top; metallic rings on the central tube - the capacitors; blue and metallic cups - the resistance and capacitors of the rectifiers, which run vertically.}
+            \caption[CW: picture after removing corona rings]{Top view of the CW after the removal of a few \textit{corona rings}. Here we can see all the elements of a CW circuit: red - the resistors on top; metallic rings on the central tube - the capacitors; blue and metallic cups - the resistance and capacitors of the rectifiers, which run vertically.}
             \label{fig:CW:view_top}
         \end{figure}
 
         \begin{figure}
             \centering
             \includegraphics[width=1\textwidth]{Figures/MEG/CW/panel.jpg}
-            \caption{Picture of the control panel for the CW machine.}
+            \caption[CW: control panel]{Picture of the control panel for the CW machine.}
             \label{fig:CW:panel}
         \end{figure}
 
-    \status{review}
+    \status{done}
     \subsection{Usage}
         This machine is used 3 times a week, together with a \ce{^7Li} target (Lithium tetraborate (\ce{Li2B4O7})), to produce the \SI{17.6}{MeV} line from the \ce{^7Li(p,\g)^8Be} process to calibrate the XEC. For this process, the required energy is $E_p=\SI{500}{keV}$.
         This process was already outlined in Sec.~\ref{sec:MEG:XEC:calibrations}.
@@ -682,7 +683,7 @@
         This search, done in 2021-2023, will be extensively discussed in Ch.~\ref{ch:X17} but we wanted to underline here the key role that the CW machine has played in this parasitic search for exotic physics. 
         For this search, we used the machine up to $E_p=\SI{1080}{keV}$ (Higher than the nominal maximum voltage).
 
-    \status{review}
+    \status{done}
     \subsection{CW issues and maintenance}
         By the end of 2020, the CW started having some minor problems: the machine was running fine but the time required to switch it on kept growing longer.
         While the whole procedure would normally take $\sim$ 15 min the time required exceeded the hour.
@@ -719,7 +720,7 @@
             \hfill
             \subfloat[Broken rectifier ass'y after the extraction: clearly visible is the burned blue resistor at the top.]{
             \includegraphics[width=0.49\textwidth, keepaspectratio]{Figures/MEG/CW/rect_broken.jpg}\label{fig:CW:rect_broken}}
-            \caption{After close inspection we found burning marks on two rectifiers' ass'y (\ref{fig:CW:burned_in}). These were removed (\ref{fig:CW:removal}) and carefully inspected (\ref{fig:CW:rect_broken}). The only salvageable part of the rectifiers were the aluminum capacitors, which we cleaned from burning residuals, while all diodes and resistors had to be exchanged.}
+            \caption[CW: substitution of broken rectifier]{After close inspection we found burning marks on two rectifiers' ass'y (\ref{fig:CW:burned_in}). These were removed (\ref{fig:CW:removal}) and carefully inspected (\ref{fig:CW:rect_broken}). The only salvageable part of the rectifiers were the aluminum capacitors, which we cleaned from burning residuals, while all diodes and resistors had to be exchanged.}
             \label{fig:CW:broken}
         \end{figure}
 
@@ -729,18 +730,18 @@
             \subfloat[Assembly of one of the new stack: black - resistors; brown - diodes; metallic - aluminum capacitors.]{\includegraphics[width=0.49\textwidth]{Figures/MEG/CW/rect_build.png}\label{fig:CW:rect_build}}
             \hfill
             \subfloat[One of the finished new rectifiers.]{       \includegraphics[width=0.49\textwidth, keepaspectratio]{Figures/MEG/CW/rect_new.png}\label{fig:CW:rect_new}}
-            \caption{The rectifiers are made of three elements: diodes; aluminum capacitors; resistors (\ref{fig:CW:burned}). Only the capacitors were salvageable: we re-assembled the rectifiers with new diodes and resistors (\ref{fig:CW:rect_build}; \ref{fig:CW:rect_new}).}
+            \caption[CW: assembly of a rectifier]{The rectifiers are made of three elements: diodes; aluminum capacitors; resistors (\ref{fig:CW:burned}). Only the capacitors were salvageable: we re-assembled the rectifiers with new diodes and resistors (\ref{fig:CW:rect_build}; \ref{fig:CW:rect_new}).}
             \label{fig:CW:fixed}
         \end{figure}
 
-\status{review}
+\status{done}
 \section{Conclusions}
 In this (very dense) chapter we went through the description of two key elements of the work I have done during these three years: the MEG II apparatus and the Cockcroft–Walton.
 While I took no part in the design of either, in these years I spent a lot of time `hands-on' on many subsystems of the MEG II apparatus: calibrations, tuning, and fixes of various types.
 On the other side, the CW functioning has been one of my main tasks.
 The unfortunate hiccup with it gave me the additional unforeseen opportunity to assist the HVEE technician in testing and fixing the machine, which was an extremely interesting and instructive experience. 
 
-\status{review}
+\status{done}
 \printbibliography[
     heading = bibliographychapter,
     title=Bibliography on MEG II
