@@ -6,10 +6,10 @@
     showstringspaces=false
 }
 
-\status{started}
+\status{done}
 \chapter{Fibers with G4TessellatedSolid}
 {\itshape
-This appendix is to illustrate the core of the code necessary to create the fibers in \gf for the muEDM simulations.}
+This appendix illustrates the core of the code to create the fibers for the \gf muEDM simulations.}
 \label{ch:G4TessellatedSolid}
 \begin{lstlisting}
 /*
@@ -25,39 +25,39 @@ G4TessellatedSolid* HelixMaker::CreateHelix(G4String name, TVector3 center, doub
     double turns = AngleToTurns(runningangle, length, center.x());
 	
     // Create base starting from 'center' and 'size'; triangulate it and add it to the helix
-	std::vector<TVector3> base = CreateBase(center, size);
+    std::vector<TVector3> base = CreateBase(center, size);
     // Tilt to metch the running angle
     base = Tilt(base, center, runningangle);
 
     // If no extrusion just cap it, otherwise use the AddExtrusion function
     if(extrusion == 0) {
         std::vector<std::tuple<TVector3, TVector3, TVector3>> triang_base = TriangulateBase(base);
-	    MyADD(helix,triang_base);
+        MyADD(helix,triang_base);
     }
     else{
         std::vector<std::tuple<TVector3, TVector3, TVector3>> triang_base_extrusion = AddExtrusion(base, extrusion);
         MyADD(helix,triang_base_extrusion);
     }
 
-	std::vector<TVector3> first=base;
-	std::vector<TVector3> second;
+    std::vector<TVector3> first=base;
+    std::vector<TVector3> second;
 
-	// Create the side: duplicate and move the base; triangulate the side; add to helix and repeat. 
-	for(int i=0; i<steps; i++){
-		second=Transform(first, turns, steps, center, length);
-		std::vector<std::tuple<TVector3, TVector3, TVector3>> triang_side = TriangulateSide(first,second);
-		MyADD(helix,triang_side);
-		first = second; 
-	}
+    // Create the side: duplicate and move the base; triangulate the side; add to helix and repeat. 
+    for(int i=0; i<steps; i++){
+        second=Transform(first, turns, steps, center, length);
+        std::vector<std::tuple<TVector3, TVector3, TVector3>> triang_side = TriangulateSide(first,second);
+        MyADD(helix,triang_side);
+	first = second; 
+    }
 
-	// The last vertex loop is use to cap the helix (NB it needs to be flipped)
+    // The last vertex loop is use to cap the helix (NB it needs to be flipped)
     std::vector<TVector3> cap = first;
     cap = FlipLoop(cap);
 
     // If no extrusion just cap it, otherwise use the AddExtrusion function
     if(extrusion==0){
         std::vector<std::tuple<TVector3, TVector3, TVector3>> triang_cap = TriangulateBase(cap);
-	    MyADD(helix,triang_cap);
+        MyADD(helix,triang_cap);
 	
     }
     else{
@@ -151,7 +151,9 @@ std::vector<TVector3> HelixMaker::Tilt(std::vector<TVector3>v,  TVector3 center,
     }
     return u;
 }
-
+\end{lstlisting}
+\newpage
+\begin{lstlisting}
 // Function to add a triangulation to a G4TessellatedSolid.
 void HelixMaker::MyADD(G4TessellatedSolid* helix, std::vector<std::tuple<TVector3, TVector3, TVector3>> triang){
 	TVector3 a,b,c;

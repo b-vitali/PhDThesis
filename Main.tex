@@ -214,20 +214,22 @@
 \clearpage
 
 %%   QUOTE 
-%\input{Include/Frontmatter/Quote}
-%\newpage
+\input{Include/Frontmatter/Quote}
+\newpage
 
 %%   ABSTRACT
-%\afterpage{\null\thispagestyle{missing}\clearpage} % Blank page
-%\input{Include/Frontmatter/Abstract} 
+\afterpage{\null\thispagestyle{missing}\clearpage} % Blank page
+\input{Include/Frontmatter/Abstract} 
 \begin{singlespace}
 
 %%   TOC
 \tableofcontents 	
 \pagebreak
+\status{started}
 \addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
 \pagebreak
+\status{started}
 \addcontentsline{toc}{chapter}{\listtablename}
 \listoftables
 
@@ -287,8 +289,6 @@
 \renewcommand{\headrulewidth}{0.4pt} 
 \renewcommand{\footrulewidth}{0.4pt} 
 
-
-\addcontentsline{toc}{chapter}{\textcolor{red}{missing}, \textcolor{orange}{started}, \textcolor{green}{review}, \textcolor{blue}{corrected}, \textcolor{black}{done}}
 %%%%%                %%%%%  
 %%%%%    CHAPTERS    %%%%%  
 %%%%%                %%%%%  
@@ -309,7 +309,7 @@
 %%   APPENDIX
 \cleardoublepage
 \appendix % to tell LaTeX that the following chapters are appendices
-%\input{Include/Backmatter/Appendix/Appendix_G4TessellatedSolid}
+\input{Include/Backmatter/Appendix/Appendix_G4TessellatedSolid}
 \input{Include/Backmatter/Appendix/Appendix_Kalman}
 \input{Include/Backmatter/Appendix/BGO}
 
@@ -320,9 +320,10 @@
 %\printbibliography[title=Complete Bibliography]
 
 %%   ACKNOWLEDGEMENTS
-%\cleardoublepage
-%\status{started}
-%\addcontentsline{toc}{chapter}{Acknowledgement}
-%\input{Include/Backmatter/Acknowledgement}
+\cleardoublepage
+\status{started}
+\status{done}
+\addcontentsline{toc}{chapter}{Acknowledgement}
+\input{Include/Backmatter/Acknowledgement}
 
 \end{document} 

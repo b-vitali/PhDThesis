@@ -1,4 +1,4 @@
-\status{review}
+\status{done}
 \chapter{BGO Calibrations}
 \begin{refsection}
 {\itshape The BGO is an auxiliary detector of the MEG II apparatus. It is usually used during the CEX calibration, as discussed in Ch.~\ref{ch:MEG:CEX}, but it was also part of the X17 data-taking discussed in Ch~\ref{ch:X17}. Here we will see how the calibration (and inter-calibration) is tackled. I worked on this item with a master student from ETH, David St\"{a}ger, who compiled all the information in his thesis \cite{David}.}
@@ -33,7 +33,7 @@ Various collected datasets are available for calibration purposes, as listed in 
     \label{tab:datasets}
     \end{table}
 
-\status{review}
+\status{done}
 \section{Calibration factors}
     To calibrate the detector, we determine calibration factors $f_j$ for each of the 16 channels using photons emitted in the $\text{Li} + p \rightarrow \text{Be} + \gamma$ reaction at $E_p = \SI{500}{keV}$. 
     Since the reaction yields a continuous spectrum, due to the width of the 15.6 MeV line, we adjust the observed spectrum by shifting peaks to expected energies in a step procedure:
@@ -63,7 +63,7 @@ Various collected datasets are available for calibration purposes, as listed in 
         \label{fig:BGO:leak}
     \end{figure}
 
-    \status{review}
+    \status{done}
     \subsection{Sample size}
         To examine the sensitivity of calibration factors to sample size, we utilized a dataset of 90 runs collected on January 30, 2023, just before a month-long period of X17 data collection with no further calibration runs. 
         Initially, we determined calibration factors using the described procedure for the entire 90-run dataset.
@@ -95,7 +95,7 @@ Various collected datasets are available for calibration purposes, as listed in 
         \label{tab:calibration_factors}
         \end{table}
 
-\status{review}
+\status{done}
 \section{Stability}
 An interesting point is the time stability of the calibration. For this purpose, data were taken on three days: 29-30-31.01.2023. 
 The variation, shown in Fig.~\ref{fig:BGO:stability:3days}, is found to be very dependent on the channel. 
@@ -115,9 +115,9 @@ The difference of the peak position before and after linear correction is shown 
     \centering
     \subfloat[The change of the calibration factors on 3 days span.]{\includegraphics[width=0.9\textwidth]{Figures/X17/BGO/BGO_calibration_3days.png}\label{fig:BGO:stability:3days}}\\
     \subfloat[Drift of the calibration factors between start and finish of the data-taking period (29 days).]{\includegraphics[width=0.9\textwidth]{Figures/X17/BGO/BGO_calibration_StartStop.png}\label{fig:BGO:stability:StartFinish}}   
-    \caption{Time stability of the calibration factors: (a) 3 days, (b) start and finish of the data-taking.}
+    \caption[BGO: calibration stablity]{Time stability of the calibration factors: (a) 3 days, (b) start and finish of the data-taking.}
 \end{figure}
-\status{review}
+\status{done}
 \section*{Bibliography}
 \printbibliography[heading=none]
 \end{refsection}

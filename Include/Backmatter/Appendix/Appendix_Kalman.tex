@@ -1,11 +1,11 @@
-\status{review}
+\status{done}
 \chapter{Kalman filter}
 \begin{refsection}
 {\itshape
-This Appendix is to illustrate the working principle of a Kalman filter, showing a simple linear problem in 2D. This is taken, with minor adjustments, from my Master Thesis: In situ monitoring of the stopped muon flux at Mu2e. Although during my PhD I did not implement any Kalman filter, this concept is central in MEG II analysis as well as the muEDM upcoming track fitting and in modern particle physics at large.}
+This Appendix is to illustrate the working principle of a Kalman filter, showing a simple linear problem in 2D. This is taken, with minor adjustments, from my Master Thesis: In situ monitoring of the stopped muon flux at Mu2e \cite{mythesis}. Although during my PhD I did not implement any Kalman filter, this concept is central in MEG II analysis as well as the muEDM upcoming track fitting and in modern particle physics at large.}
 \label{ch:Kalman}
 
-\status{review}
+\status{done}
 \section{The problem}
     Once the pattern recognition algorithms have been executed, a preliminary but rough estimate of the track parameters $\vec{\eta}$ is available. 
     At this point, there are still numerous effects that should be accounted for when trying to optimize track reconstruction. 
@@ -22,7 +22,7 @@ This Appendix is to illustrate the working principle of a Kalman filter, showing
     These are common conditions and the effect in terms of variation of the track parameters values can be substantial.
     Fig. \ref{_Kutschke_Kalman_circ} shows one possible simple example \cite{Kutschke}.
     Now the procedure of finding the `optimal' track parameters suddenly implies also that we need to define the position where we want to determine those parameters.
-    It is often the case we are interested in determining the value of $\vec{\eta}$ at the target because this is where the physical process takes place. 
+    It is often the case we are interested in determining the value of $\vec{\eta}$ at the target, where the physical process takes place. 
 
     \begin{figure}[h!]
         \centering
@@ -31,7 +31,7 @@ This Appendix is to illustrate the working principle of a Kalman filter, showing
         \label{_Kutschke_Kalman_circ}
     \end{figure}
 
-\status{review}
+\status{done}
 \section{The solution}
     The Kalman filter is a well-established algorithm in the standard formalism employed for track fitting developed to account for mechanisms like interactions with the detector material and magnetic field distortions that can affect the particle trajectory \cite{Kalman:1984}\cite{Kalman:1987}. 
     Most of today's implementations are based on the BaBar filter and adaptations of \cite{Kalman}\cite{Kalman:1987}.
@@ -40,17 +40,17 @@ This Appendix is to illustrate the working principle of a Kalman filter, showing
     If more effects need to be accounted for, a second and more complete Kalman filter can be executed to introduce the missing residual effects. 
     There are two important general aspects of this iterative algorithm we should briefly mention: 
     \begin{itemize}
-        \item With N points and n parameters the algorithm does not require to compute the inverse of N$\times$N matrices\footnote{This is the case when introducing multiple scattering in a general fitting procedure: the position of a hit changes because of the interaction in another position creating a correlation between hits, summarized in a N$\times$N matrix.} and simply uses multiplications of n$\times$n matrices (easy to program and fast to run).
-        If the problem is linearized the algorithm does not even require the inverse of the n$\times$n matrix;
-        \item Executing the algorithm in both directions of the trajectory once, storing the values of $\vec{\eta}$ and $V$ after considering each point, allows us to determine the estimates with optimal uncertainties in any position.
+        \item With N points and n parameters the algorithm does not require to compute the inverse of N$\times$N matrices\footnote{This is the case when introducing multiple scattering in a general fitting procedure: the position of a hit changes because of the interaction in another position creating a correlation between hits, summarized in a N$\times$N matrix.} and uses n$\times$n matrices (easy to program and fast to run).
+        If the problem is linearized, the algorithm does not even require the inverse of the n$\times$n matrix;
+        \item Executing the algorithm in both directions of the trajectory, storing $\vec{\eta}$ and $V$ after each point, allows us to determine the estimates with optimal uncertainties in any position.
     \end{itemize} 
     The full implementation is extremely complicated and its thorough description is beyond the scope of this Thesis. 
     Nonetheless, it is still useful to describe the basic principle through the discussion of a simplified problem, as a 2D linear fit. 
     This will be done in Sec.~\ref{2Dfit}.
 
-\status{review}
+\status{done}
 \section{Implementation}
-    The Kalman filter equations, linearized in $\eta$, are reported in Eq.\ref{eq_Kalman} with no proof, which is available in \cite{KutschkePaper}. 
+    The Kalman filter equations, linearized in $\eta$, are reported in Eq.~\ref{eq_Kalman} with no proof, which is available in \cite{KutschkePaper}. 
     In these equations, $\eta$ (dropping the vector symbol to avoid a too-heavy notation) and $V$ are the current estimates of the vector and the covariance matrix, while the primed versions are the new estimates after a new hit is added. 
     The measurement is indicated as $d_m$, with uncertainties $\sigma$, and $d(\eta)$ is the measurement as predicted by the track parameters. 
     Finally, $D_i$ represents the derivatives with respect to one of the track parameters. 
@@ -65,14 +65,14 @@ This Appendix is to illustrate the working principle of a Kalman filter, showing
         \label{eq_Kalman}
     \end{equation}
 
-\status{review}
+\status{done}
 \section{Example: a 2D linear fit}
     \label{2Dfit}
     Track fitting and Kalman filtering are complex procedures and we have reported the description of the simpler 2D linear problem (Fig. \ref{_Kutschke_Kalman}) in the following to better explain them. 
     More detailed documentation is available in \cite{Kutschke} \cite{KutschkePaper}. 
     In the following, we can assume to have a particle moving along a straight line and a number of tracking stations positioned at the relative distance $L$ among them which measure the vertical coordinate.
     The tracking stations measure the $y_i$ positions, all with the same uncertainty $\sigma$, and our goal is to estimate the parameters of the line at a point IP placed externally to the volume occupied by the detectors.
-    The equation of the trajectory is reported in eq. \ref{linear}, the vector of parameters and the covariance matrix are reported in eq. \ref{vector}
+    The equation of the trajectory is reported in Eq. \ref{linear}, the vector of parameters and the covariance matrix are reported in Eq. \ref{vector}
     \begin{gather}
         y = mx +b \label{linear}\\
         \eta = \begin{bmatrix} m \\  b \end{bmatrix},\ \ V=\begin{bmatrix} V_{mm}& V_{mb} \\ V_{bm}& V_{bb} \end{bmatrix} \label{vector}
@@ -169,19 +169,19 @@ V^{(3)}\approx
 It is interesting to notice that once the third point has been added, 
 the diagonal elements of the covariance matrix are reduced with respect to the case with only two points. 
 
-\paragraph{Finishing} Once the procedure has been iterated  to reach point A, 
+\paragraph{Finishing} Once the procedure has been iterated  up to A, 
 the estimators of the trajectory use all the available information and are valid in a neighborhood region of A. 
-To extrapolate to the track IP, 
+To extrapolate to IP, 
 the procedure is the same as before, 
 describing the trajectory in the coordinate system set in the IP. 
 
-\status{review}
+\status{done}
 \subsection{Adding multiple scattering}
 How does the problem of track fitting change if the detectors are not ideal planes but consist of a thin scattering volume? 
 The initialization and the inclusion of the first hit do not change. 
 The uncertainty due to multiple scattering on the first hit is negligible because of the starting covariance matrix. 
 In this simple model, the scattering is \textit{local} and contributes only to the slope error and not the off-diagonal terms 
-and the intercept, but as the track is extrapolated away from the surface it contributes to these terms as well.\\
+and the intercept, but as the track is extrapolated away from the surface it contributes to these terms as well.
 If the surface introduces a factor $\delta$ in the error of the slope, 
 the matrix in eq \ref{eq_V2} the vector remains the same while the matrix becomes
 $$
@@ -195,7 +195,7 @@ From this point on the presence of $\delta$ can change substantially the results
  In \cite{KutschkePaper} the calculations are extensively developed up to the third point (point C) 
  with the specific example $\delta^2L^2=\sigma^2$ to keep the passages easy to follow.
 
-\status{review}
+\status{done}
 \section*{Bibliography}
 \printbibliography[heading=none]
 \end{refsection}

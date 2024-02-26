@@ -1,4 +1,4 @@
-\status{review}
+\status{done}
 \chapter{Scintillators in muEDM}
 \label{ch:muEDM:entrance}
 \begin{refsection}
@@ -11,7 +11,7 @@ After that the TOF detector.
 We will then move through the beamtimes.
 }
 
-\status{review}
+\status{done}
 \section{Short intro to scintillators}
 \label{sec:muEDM:scintillators}
     A \textit{scintillator} is any material that emits light when exposed to ionizing radiation, like high-energy photons or charged particles.
@@ -27,7 +27,7 @@ We will then move through the beamtimes.
     We will discuss plastic scintillators. 
     An example of a liquid scintillator, based on Xenon, will be presented when describing the MEG II apparatus (see Ch.\ref{ch:MEG}).
 
-    \status{review}
+    \status{done}
     \subsection{Plastic scintillators}
         Plastic scintillators are by far the most widely used and their densities range from $1.03$ to $\SI{1.2}{g\per cm^3}$, with a light yield of $1\divisionsymbol\SI{100}{\upgamma/eV}$ of energy deposit \cite{PDG}.
         The number of photons emitted is not linear with the energy deposit: in very dense ionization the light yield is lower than expected.
@@ -40,9 +40,9 @@ We will then move through the beamtimes.
         Plastic scintillators are widely used in particle detectors due to their high light yield and fast response time, enabling sub-nanosecond timing resolution. 
         They offer the advantage of pulse shape discrimination, allowing for particle identification based on emitted light during the decay "tail".
         These are also popular due to their ease of fabrication into various shapes and cost-effectiveness. 
-        Scintillating fibers made from plastic scintillators are commonly used in tracking and calorimetry applications.
+        Plastic scintillators fibers are commonly used in tracking and calorimetry applications.
 
-    \status{review}
+    \status{done}
     \subsection{Scintillating Fibers}
         This is also a good moment to introduce The concept of \textit{scintillating fibers}.
         We will not use them in this chapter but will be key in Ch.~\ref{ch:muEDM:tracker}, dedicated to the $\Ae$ tracking.\\
@@ -68,16 +68,16 @@ We will then move through the beamtimes.
         High-quality fibers can achieve attenuation lengths of several meters.
         In case the quality of the fiber is not enough for the task at hand, the addition of a very thin layer (few atoms) of a reflective material, like aluminum, can further improve the light collection. 
 
-    \status{review}
+    \status{done}
     \subsection{Scintillation process}
-        Charged particles passing through matter create excited molecules, some of which release a small amount of their energy as optical photons through a process known as scintillation. This phenomenon is prominent in organic substances containing aromatic rings like polystyrene (PS) and polyvinyltoluene (PVT), as well as in liquids such as toluene, xylene, and pseudocumene.\\
+        Charged particles passing through matter create excited molecules, some of which release a small amount of energy as optical photons through a process known as scintillation. This phenomenon is prominent in organic substances containing aromatic rings like polystyrene (PS) and polyvinyltoluene (PVT), as well as in liquids such as toluene, xylene, and pseudocumene.
         In fluorescence, molecules are initially excited by absorbing a photon and then deexcite by emitting a longer wavelength photon. To shift scintillation light to a more convenient wavelength, fluorescent materials are used as ``wave-shifters''.
-        However, complex molecules in fluorescence can exhibit self-absorption, which shortens the attenuation length. 
+        However, complex molecules can exhibit self-absorption, which shortens the attenuation length. 
         The greater the difference between absorption and emission wavelengths (Stokes' shift), the less self-absorption occurs, making a larger shift desirable.\\
         
         \noindent
         In high-energy physics, plastic scintillators are typically composed of selected fluors dissolved in a plastic base containing aromatic rings. Most plastic scintillators use either PVT or PS as their base, with PVT-based scintillators being often brighter. 
-        Adding a fluor in high concentration (1\% by weight) into the base helps improve the attenuation length, as it efficiently re-radiates absorbed energy at wavelengths where the base is more transparent.
+        Adding a fluor (1\% by weight) into the base helps improve the attenuation length, as it efficiently re-radiates absorbed energy at wavelengths where the base is more transparent.
         The primary fluor also plays a crucial role in shortening the scintillator's decay time, increasing the total light yield. 
         The strong coupling between the base and fluor, known as Foerster resonance energy transfer, occurs at short distances, enhancing the speed and light yield of plastic scintillators.
         In some cases, a "secondary" fluor may be added in fractional percent levels, and occasionally even a third.
@@ -85,12 +85,12 @@ We will then move through the beamtimes.
         \noindent
         For specialized applications, scintillators with increased radiation resistance or unique properties like neutron/gamma discrimination can be created by significantly increasing fluor concentrations.
         
-\status{review}
+\status{done}
 \section{\gf simulations}
     \label{sec:muEDM:entrance:sim}
-    \status{review}
+    \status{done}
     \subsection{What is \gf?}
-        \gf (GEometry ANd Tracking) is a powerful open-source simulation toolkit used in various scientific fields, primarily for studying the interactions of particles with matter, and is widely employed in particle, nuclear, and medical physics. 
+        \gf (GEometry ANd Tracking) is a powerful open-source simulation toolkit used in various scientific fields, primarily for studying the interactions of particles with matter, and is widely employed in particle, nuclear, and medical physics \cite{GEANT4:2002}. 
         At its core, \gf works by representing the physical world as a set of geometric shapes and materials. 
         After defining the properties of particles, their energy, and the materials they interact with, \gf simulates their behavior. 
         This toolkit utilizes a range of physics models and algorithms to accurately model particle interactions, including electromagnetic, hadronic, and optical processes. It can simulate particles of various energies, from subatomic to cosmic ray levels.
@@ -98,7 +98,7 @@ We will then move through the beamtimes.
         Steps are forced to end when crossing the boundary between two materials/volumes to ensure proper care is taken in the transition. 
         This is of particular importance for optical simulations, such as the propagation of OpticalPhotons produced by scintillation.
 
-    \status{review}
+    \status{done}
     \subsection{Entrance system}
         To study the feasibility of the entrance thin scintillator, a \gf simulation was developed.
         The first step, after achieving a running simulation of scintillation, was to study the range of muons of the interesting momenta, as well as the energy deposit. 
@@ -116,7 +116,7 @@ We will then move through the beamtimes.
         \begin{figure}
             \centering
             \includegraphics[width=0.9\textwidth]{Figures/muEDM/Entrance/BetheBloch.png}\\
-            \caption{This figure illustrates the Bethe-Bloch formula \cite{PDG}, a vital tool in particle physics, depicting how charged particles lose energy when traversing through matter.}
+            \caption[Bethe-Bloch for particles energy loss]{This figure illustrates the Bethe-Bloch formula \cite{PDG}, a vital tool in particle physics, depicting how charged particles lose energy when traversing through matter.}
             \label{fig:muEDM:entrance:BetheBloch}
         \end{figure}
         
@@ -128,7 +128,7 @@ We will then move through the beamtimes.
             \subfloat[A \SI{28}{MeV\per c} $\Am$ has $E_k \approx \SI{3.6}{MeV}$.]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM/Entrance/mu_28_thick.pdf}\label{fig:muEDM:entrance:edep:mu28}}
             \hfill
             \subfloat[The energy deposit slowly moves from Landau to a gaussian distribution.]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM/Entrance/mu_28_Edep_0.250.pdf}\label{fig:muEDM:entrance:edep:mu28_0.25}}
-            \caption{Curve for the average energy deposit in a \bc{400} scintillator for $\Am$ (\ref{fig:muEDM:entrance:edep:e28}) and $\Ae$ (\ref{fig:muEDM:entrance:edep:mu28}) at \SI{28}{MeV\per c}. Clearly visible is the linearity of the energy loss for the $\Ae$ with thickness. This linearity is lost for the $\Am$: first, we see an exponential trend and then a plateau when $E_{dep}\approx E_k$ and the $\Am$ is stopped. The distribution of the energy deposit slowly transitions from a Landau to a Gaussian: (\ref{fig:muEDM:entrance:edep:e28_0.25}) is an example of the first type; (\ref{fig:muEDM:entrance:edep:e28_0.25}) is an example of the transition.}
+            \caption[muEDM \gf: Energy deposit in thin scintillators]{Curve for the average energy deposit in a \bc{400} scintillator for $\Am$ (\ref{fig:muEDM:entrance:edep:e28}) and $\Ae$ (\ref{fig:muEDM:entrance:edep:mu28}) at \SI{28}{MeV\per c}. Clearly visible is the linearity of the energy loss for the $\Ae$ with thickness. This linearity is lost for the $\Am$: first, we see an exponential trend and then a plateau when $E_{dep}\approx E_k$ and the $\Am$ is stopped. The distribution of the energy deposit slowly transitions from a Landau to a Gaussian: (\ref{fig:muEDM:entrance:edep:e28_0.25}) is an example of the first type; (\ref{fig:muEDM:entrance:edep:e28_0.25}) is an example of the transition.}
             \label{fig:muEDM:entrance:edep}
         \end{figure}
         
@@ -137,15 +137,25 @@ We will then move through the beamtimes.
             \subfloat[A \SI{28}{MeV\per c} $\Am$ has $E_k \approx \SI{3.6}{MeV}$.]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM/Entrance/28mu_edep.png}\label{fig:muEDM:entrance:edep:log:28}}
             \hfill
             \subfloat[A \SI{128}{MeV\per c} $\Am$ has $E_k \approx \SI{60.3}{MeV}$.]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM/Entrance/128mu_edep.png}\label{fig:muEDM:entrance:edep:log:128}}
-            \caption{Detail on the lower section of the curve for the average energy deposit in a \bc{400} scintillator for $\Am$ at \SI{28}{MeV\per c} and \SI{128}{MeV\per c}.}
+            \caption[muEDM \gf: Energy deposit in thin scintillators (log-scale)]{Detail on the lower section of the curve for the average energy deposit in a \bc{400} scintillator for $\Am$ at \SI{28}{MeV\per c} and \SI{128}{MeV\per c}.}
             \label{fig:muEDM:entrance:edep:log}
         \end{figure}
 
         \subsubsection{Multiple scattering}
             An important sanity check was also to study the multiple scattering in the scintillator. 
-            More details on the functional description and the \gf implementation of the multiple scattering will follow, in \ref{sec:muEDM:tim}.
+            More details on the functional description and the \gf implementation of the multiple scattering will follow, in Sec.~\ref{sec:muEDM:tim}.
             This was done with a fit to the Highland formula (Eq.~\ref{eq:highland}) the average value of the scattering angle as a function of the thickness. 
             These fits are shown in Fig.~\ref{fig:muEDM:entrance:ms} and the results, $X_{0, 28MeV} = \SI{54.36(17)}{gm/cm^2}$ and $X_{0, 128MeV} = \SI{54.30(14)}{gm/cm^2}$, are consistent with the value for \bc{400} of $X_{0}\sim 50$.
+
+
+            \begin{figure}   
+                \centering
+                \subfloat[\SI{28}{MeV/c} muons in thin scintillators]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM/Entrance/28mu_angleout_fit.png}\label{fig:muEDM:entrance:ms:28}}
+                \hfill
+                \subfloat[\SI{128}{MeV/c} muons in thin scintillators]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM/Entrance/128mu_angleout_fit.png}\label{fig:muEDM:entrance:ms:128}}
+                \caption[muEDM \gf: scattering angle in scintillators]{Average scattering angle in different thicknesses of \bc{400} scintillator for $\Am$ at \SI{28}{MeV\per c} and \SI{128}{MeV\per c}. From these plots was found $X_0 = \SI{54.33(12)}{g/cm^2}$.}
+                \label{fig:muEDM:entrance:ms}
+            \end{figure}
 
         \subsubsection{Thickness and number of photons}
             The amount of energy deposited by the incoming particle is reflected by the number of photons generated by scintillation.
@@ -154,7 +164,7 @@ We will then move through the beamtimes.
             This is affected by the position, number, size, and PDE\footnote{Photon detection efficiency describes the effectiveness of a photon detector in registering incoming photons. It quantifies the probability that a photon incident on the detector will be detected and converted into an electrical signal} of the SiPMs. 
             To simulate the SiPM readout we can use a silicon volume coupled to the scintillator via an additional volume of optical grease\footnote{Also known as optical coupling grease or index-matching grease, is a specialized type of grease used in optics and photonics applications. It is designed to improve the optical coupling between optical components.}.
             The first iteration was performed in a perfect scenario, with a floating scintillator glued to the sensors.
-            The second iteration matches reality more, and a light guide is used to hold the scintillator and give enough surface for the SiPM gluing.
+            The second iteration matches reality more, and a light guide is used to hold the scintillator and give enough surface for the SiPM gluing (Fig.~\ref{fig:muEDM:entrance:guide:vis}).
             In Fig.~\ref{fig:muEDM:entrance:guide} the total number of produced optical photons is compared to the number of photons collected with/without an optical guide.
             A few points are worth underlying:
             \begin{outline}
@@ -163,43 +173,28 @@ We will then move through the beamtimes.
                 \1 Number and size of the SiPM active region plays a big role (here 16 SiPMs were used)
                 \1 The position of the SiPM on the edges is less influential than what naively might be expected. The photon distribution is quite uniform once the scintillator size is $\sim$cm
             \end{outline}
-            Looking at Fig.~\ref{ffig:muEDM:entrance:guide:28mu}, the number of expected photoelectrons per SiPM for interesting thicknesses is around $(\SI{50}{\micro\meter}, \sim10\ \gamma)\divisionsymbol(\SI{200}{\micro\meter}, \sim30\ \gamma)$.
+            Looking at Fig.~\ref{fig:muEDM:entrance:guide:28mu}, the number of expected photoelectrons per SiPM for interesting thicknesses is around $(\SI{50}{\micro\meter}, \sim10\ \gamma)\divisionsymbol(\SI{200}{\micro\meter}, \sim30\ \gamma)$.
             At the same time, the dark rate count limits how low the thresholds can be set in a real setup.
-            Multiple readouts would allow us to lower the threshold and improve the dark noise rejection. Calling the sides $s_i$, options could be $(s_1\land s_3)\lor(s_2\land s_4)$, $(s_1\land s_3)\land(s_2\land s_4)$, or simply $(s_1\land s_3)$.
-            We studied these different readouts schemes in the beamtime of Dec. 2023 (see Sec.~\ref{sec:muEDM:beamtime2023}) 
+            Multiple readouts would allow us to lower the threshold and improve the dark noise rejection. Calling the sides $s_i$, options could be $(s_1\land s_3)\lor(s_2\land s_4)$, $(s_1\land s_3)\land(s_2\land s_4)$, or simply $(s_1\land s_3)$ (see Fig.~\ref{fig:muEDM:entrance:gate:readout}).
+            We studied these different readout schemes in the beamtime of Dec. 2023 (see Sec.~\ref{sec:muEDM:beamtime2023}.)
+            
+            \begin{figure}   
+                \centering
+                \subfloat[The scintillator SiPM are here `floating'.]{\includegraphics[height=8cm, keepaspectratio]{Figures/muEDM/Entrance/gate_noguide.png}}
+                \hfill
+                \subfloat[Here the scintillator is in a plexiglass frame, to which the SiPM as connected.]{\includegraphics[height=8cm, keepaspectratio]{Figures/muEDM/Entrance/gate_guide.png}}
+                \caption[muEDM \gf: simulation of the entrance detector]{Geometry of the \gf simulation for the entrance detector in a simpler form \textbf{(a)} and a realistic setup, with an optical guide to which the SiPM are glued with optical grease \textbf{(b)}}
+                \label{fig:muEDM:entrance:guide:vis}
+            \end{figure}
+            
             \begin{figure}   
                 \centering
                 \subfloat[A \SI{28}{MeV\per c} $\Am$ has $E_k \approx \SI{3.6}{MeV}$.]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM/Entrance/28e_guide.png}\label{fig:muEDM:entrance:guide:28e}}
                 \hfill
-                \subfloat[A \SI{128}{MeV\per c} $\Am$ has $E_k \approx \SI{60.3}{MeV}$.]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM/Entrance/28mu_guide.png}\label{ffig:muEDM:entrance:guide:28mu}}
-                \caption{asd}
+                \subfloat[A \SI{128}{MeV\per c} $\Am$ has $E_k \approx \SI{60.3}{MeV}$.]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM/Entrance/28mu_guide.png}\label{fig:muEDM:entrance:guide:28mu}}
+                \caption[muEDM \gf: entrance detector $\g$ w/wo optical guide]{Number of collected photons fro positrons \textbf{(a)} and muons \textbf{(b)} with and without an optical guide.}
                 \label{fig:muEDM:entrance:guide}
-            \end{figure}
-    
-            \begin{figure}   
-                \centering
-                \subfloat[A \SI{28}{MeV\per c} $\Am$ has $E_k \approx \SI{3.6}{MeV}$.]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM/Entrance/gate_noguide.png}}
-                \hfill
-                \subfloat[A \SI{128}{MeV\per c} $\Am$ has $E_k \approx \SI{60.3}{MeV}$.]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM/Entrance/gate_guide.png}}
-                \caption{asd}
-                \label{fig:muEDM:entrance:guide:vis}
-            \end{figure}
-                
-            \begin{figure}
-                \centering
-                \includegraphics[width=0.6\textwidth]{Figures/muEDM/Entrance/multiple-scattering_pdg.png}\\
-                \caption{}
-                \label{fig:muEDM:entrance:pdgms}
-            \end{figure}
-    
-            \begin{figure}   
-                \centering
-                \subfloat[ASD]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM/Entrance/28mu_angleout_fit.png}\label{fig:muEDM:entrance:ms:28}}
-                \hfill
-                \subfloat[ASD]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM/Entrance/128mu_angleout_fit.png}\label{fig:muEDM:entrance:ms:128}}
-                \caption{Average scattering angle in different thicknesses of \bc{400} scintillator for $\Am$ at \SI{28}{MeV\per c} and \SI{128}{MeV\per c}. From these plots was found $X_0 = \SI{54.33(12)}{g/cm^2}$.}
-                \label{fig:muEDM:entrance:ms}
-            \end{figure}
+            \end{figure} 
     
             \begin{figure}   
                 \centering
@@ -207,17 +202,17 @@ We will then move through the beamtimes.
                 \hfill
                 \subfloat[Mounting a thin scintillator in a light guide can improve the photon collection. A `frame' shape prevents the incoming particle from interacting with additional material.]{\includegraphics[height=3.5cm, keepaspectratio]{Figures/muEDM/Entrance/gate_waveguide.png}\label{ig:muEDM:entrance:gate:readout:multi}}
                 \caption[muEDM: \textit{gate} scintillator readouts]{Two strategies to lower the threshold and improve the dark noise rejection: multiple readouts of a thin scintillator (a) and/or a light guide to improve the photon collection (b).}
-                \label{ig:muEDM:entrance:gate:readout}
+                \label{fig:muEDM:entrance:gate:readout}
             \end{figure}
 
 
-    \status{review}
+    \status{done}
     \subsection{Telescope and entrance detector}
         To study the entrance detector, a prototype was envisioned with a thin \textit{gate} scintillator read by multiple sides, a channel of 4 long scintillators creating a \textit{telescope}, and an additional scintillator as \textit{exit}.
-        The development of such a system stems from the idea of having a way of vetoing the muons scattering at bigger angles while traversing the gate without requiring multiple detectors on the muon path.
+        The development of such a system, illustrated in Fig.~\ref{fig:muEDM:entrance:sketches} stems from the idea of having a way of vetoing the muons scattering at bigger angles while traversing the gate without requiring multiple detectors on the muon path.
         I started this simulation in \gf and it was later passed to the Shanghai colleagues, who further optimized and developed it using \textsc{musrSim}.
         The last step was to validate it with the data taken during the beamtime of 2022, discussed in Sec.~\ref{sec:muEDM:beamtime2022}.
-        Although quite an interesting system, the collaboration decided not to implement it in the muEDM injection, deciding instead to rely on a Time Of Flight (TOF) measurement, which was tested in 2023 and sicussed in Sec.~\ref{sec:muEDM:beamtime2023}.
+        The collaboration decided not to implement this system in the muEDM injection, deciding instead to rely on a Time Of Flight (TOF) measurement, which was tested in 2023 and discussed in Sec.~\ref{sec:muEDM:beamtime2023}.
         \begin{figure}   
             \centering
             \subfloat[Front view of the detector system. \\The \textit{gate} is big enough to cover the aperture of the \textit{telescope}.]{\includegraphics[height=4.5cm, keepaspectratio]{Figures/muEDM/Entrance/gate_geometry.png}\label{fig:muEDM:entrance:ms:28}}
@@ -227,7 +222,7 @@ We will then move through the beamtimes.
             \label{fig:muEDM:entrance:sketches}
         \end{figure}
         
-\status{review}
+\status{done}
 \section{Beamtime 2021}
 \label{sec:muEDM:tim}
     This was the first muEDM beamtime I participated in. 
@@ -237,7 +232,7 @@ We will then move through the beamtimes.
     On top of the material details, the aim was also to validate the scattering model used in the \gf simulations for further reference.
     The setup was quite simple: a telescope of five silicon pixel sensors,  three upstream and two downstream.
 
-    \status{review}
+    \status{done}
     \subsection{Description of the multiple scattering}
         \paragraph{Highland}
         The Highland formula for multiple scattering is a parameterization for the width of the multiple scattering distribution.
@@ -269,7 +264,7 @@ We will then move through the beamtimes.
         For the Highland formula, the PDG reports an accuracy of $\sim 10\%$ in the range $\num{e-3}<x/X_0<\num{e2}$ \cite{PDG}, meaning it is less reliable for thin targets for which $x/X_0 \sim \mathcal{O}(\num{e-4})$.
         On the other hand, while \gf results have been widely tested against experimental measurements, there is a lack of data to compare in the ranges we are interested in.
 
-    \status{review}
+    \status{done}
     \subsection{Data taking}
         The idea behind the data taking is quite simple: a study on the multiple scattering can be performed using a beam telescope, such as the one sketched in Fig~\ref{fig:muEDM:bt2021:telescope}, in which the two sides of the telescope are used to track the in/out-coming particles. 
         The delicate point is to carefully take into account the scattering of the particles in the telescope itself. 
@@ -293,9 +288,9 @@ We will then move through the beamtimes.
         \begin{figure}
             \centering
             \includegraphics[width=0.6\textwidth]{Figures/muEDM_Dec2021/Positions_Telescope.png}\\
-            \caption{Sketch of the telescope of Silicon Pixel Sensors used to study the multiple scattering in different materials.
+            \caption[muEDM 2021: sketch of the telescope]{Sketch of the telescope of Silicon Pixel Sensors used to study the multiple scattering in different materials.
             The samples are held in the position of the 'target'. 
-            In this sketch, the beam is coming from the left side.}
+            The beam is coming from the left side.}
             \label{fig:muEDM:bt2021:telescope}
         \end{figure}
 
@@ -304,14 +299,14 @@ We will then move through the beamtimes.
             \subfloat[Picture of the setup for the beamtime of 2021. On the right, the scintillator was used as an external trigger, on the left, beam exit window.]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM_Dec2021/Telescope_Picture.png}\label{fig:muEDM:bt2021:setup:telescope}}
             \hfill
             \subfloat[Picture of one of the MuPix10 mounted on the two PCBs.]{\includegraphics[height=5.5cm, keepaspectratio]{Figures/muEDM_Dec2021/MuPix10_Picture.png}\label{fig:muEDM:bt2021:setup:MuPix10}}
-            \caption{Picture of the setup and one of the MuPix10 (grey-colored square) mounted on the PCBs.}
+            \caption[muEDM 2021: picture of the setup]{Picture of the setup and one of the MuPix10 (grey-colored square) mounted on the PCBs.}
             \label{fig:muEDM:bt2021:setup}
         \end{figure}
 
         \begin{figure}
             \centering
-            \includegraphics[width=0.9\textwidth]{Figures/muEDM_Dec2021/muEDM_beamtime2021_TOF.png}
-            \caption{Timing and the 2D plot for time and pulse height for \SI{120}{MeV/c} particles. The three rows show what happens when inserting degraders of different thicknesses.
+            \includegraphics[width=\textwidth]{Figures/muEDM_Dec2021/muEDM_beamtime2021_TOF.png}
+            \caption[muEDM 2021: beamstudies with degrades]{Timing and the 2D plot for time and pulse height for \SI{120}{MeV/c} particles. The three rows show what happens when inserting degraders of different thicknesses.
             With no degrader, the $\uppi$ peak is visible at lower TOF.
             When increasing the thickness, the contributions of $\uppi$ and $\upmu$ decrease.
             It is important to note that the $e$ and $\upmu$ distribution overlap.
@@ -319,22 +314,23 @@ We will then move through the beamtimes.
             \label{fig:muEDM:bt2021:TOF}
         \end{figure}
 
-    \status{review}
+    \status{done}
     \subsection{Data analysis}
         \paragraph{Track selection}
-        Initial angular distributions obtained were broad due to noise in downstream sensors, making it difficult to distinguish noise from true hits. 
+        The initial angular distributions obtained were broad due to noise in downstream sensors, making it difficult to distinguish noise from true hits. 
         To address this, a filtering process was developed to select the track candidate with the least spatial separation between the intersections of upstream and downstream tracks on the plane of the sample.
         The expected angular distribution for particles passing through a material at normal incidence should be spatially symmetric and independent of chosen projection axes. 
         Any deviation from this symmetry could indicate experimental, data processing, or analysis errors. 
         To mitigate the effects the idea was to combine distributions from multiple axes.
         In the initial distributions, the broad background can be attributed to false tracks generated by noise, poor fits, and some contribution of events with large angles of scattering in the telescope itself. 
-        This background was suppressed by enforcing a distance of \SI{1}{mm} between the points at which the upstream and downstream tracks intersect the plane of the sample.        
-        Distributions before and after applying this filter are shown in black and red in Fig.~\ref{fig:muEDM:bt2021:distributions}
+        This background was suppressed by enforcing a distance of \SI{1}{mm} between the points at which the upstream and downstream tracks intersect the plane of the sample.
+        Distributions before and after applying this filter are shown in black and red in Fig.~\ref{fig:muEDM:bt2021:distributions}.
         This distribution was then corrected for the geometric acceptance of the telescope.
+        
         \begin{figure}
             \centering
             \includegraphics[width=0.8\textwidth]{Figures/muEDM_Dec2021/distributions.png}
-            \caption{The angular distributions show: the full distribution (black), the distribution after cuts in the distance at the sample's plane (red), the distribution after acceptance correction (blue), and the fitted function for telescope characterization (violet).}
+            \caption[muEDM 2021: angular with corrections]{The angular distributions show: the full distribution (black), the distribution after cuts in the distance at the sample's plane (red), the distribution after acceptance correction (blue), and the fitted function for telescope characterization (violet).}
             \label{fig:muEDM:bt2021:distributions}
         \end{figure}
         
@@ -346,8 +342,7 @@ We will then move through the beamtimes.
         An example of such correction is shown in blue in Fig.~\ref{fig:muEDM:bt2021:distributions}
         
         \paragraph{Deconvolution}
-        The method of track selection and acceptance correction was applied to both runs with and without the sample. 
-        The distributions from these runs were then fitted.
+        The method of track selection and acceptance correction was applied to runs with and without the sample. 
         The process involved:
         \begin{outline}
             \1 Characterizing the telescope's response without the sample using a weighted sum of a Gaussian distribution and a Student's t distribution
@@ -355,7 +350,7 @@ We will then move through the beamtimes.
             \1 using the negative log-likelihood to determine the best-fit parameters for describing the measured distribution with the sample
         \end{outline}
     
-    \status{review}
+    \status{done}
     \subsection{Model evaluation and conclusions}
         This first beamtime aimed at testing the agreement between the Highland formula and the \gf Urb\'{a}n model for the multiple scattering in thin materials.
         The analysis of the data collected is still not finalized, but a rough agreement between data and models can be seen in Fig.~\ref{fig:muEDM:bt2021:results}.
@@ -366,11 +361,11 @@ We will then move through the beamtimes.
             \subfloat[Pokalon (orange), \SI{17}{\micro m} Graphite (blue), \SI{50}{\micro m} Graphite (violet), Silicon (red); circular markers for data at \SI{70}{MeV}, squared at \SI{90}{MeV}; error bars are the statistical and the shaded the total uncertainties.]{\includegraphics[width=0.48\textwidth, keepaspectratio]{Figures/muEDM_Dec2021/ms_fits.png}\label{fig:muEDM:bt2021:results:analysis}}
             \hfill
             \subfloat[Same color/shape coding as Fig.~\ref{fig:muEDM:bt2021:results:analysis} and the predictions of the Highland formula are shown by lines of width representing the uncertainty in thickness.]{\includegraphics[width=0.48\textwidth, keepaspectratio]{Figures/muEDM_Dec2021/gf-highland_evaluation.png}\label{fig:muEDM:bt2021:results:models}}
-            \caption{Results of the analysis of the different samples and confronted with predictions using the Highland formula and \gf. The details are not easy to read but the 'bring-home' message is that the results are somewhat in agreement and some improvement are planned on the analysis.}
+            \caption[muEDM 2021: data and \gf comparison]{Results of the analysis of the different samples and confronted with predictions using the Highland formula and \gf. The details are not easy to read but the 'bring-home' message is that the results are somewhat in agreement and some improvement are planned on the analysis.}
             \label{fig:muEDM:bt2021:results}
         \end{figure}
 
-\status{review}
+\status{done}
 \section{Beamtime 2022: Telescope and entrance detector}
 \label{sec:muEDM:beamtime2022}
     This second beamtime\footnote{Not counting the one for the \tpc + \grid of Sec.~\ref{sec:muEDM:gridpix:beamtime}.} happened in November 2022.
@@ -383,7 +378,7 @@ We will then move through the beamtimes.
     In particular, we took care of the entrance scintillator, auxiliary detectors, the electronic, vacuum system, and one version of the telescope. 
     To test different reading options a second telescope was developed by the Shanghai part of the collaboration and they also helped develop the mechanical structure.
 
-    \status{review}
+    \status{done}
     \subsection{Construction}
         \paragraph{Scintillators}
         The thin scintillators used during this beamtime had already been tested for previous purposes. 
@@ -400,13 +395,13 @@ We will then move through the beamtimes.
         I worked on the soldering of the SiPMs on the PCB boards for the readout (3 per side).
         Then I glued the scintillators using \textit{optical cement}.
         The gluing to the PCB is shown in Fig.~\ref{fig:muEDM:bt2021:setup:gluing}.
-        Gluing the scintillators this way, we knew small gaps between them after mounting the telescope were unavoidable. 
-        This was actually to confront it with the Shanghai telescope\footnote{Being my first gluing I used too much optical cement, which further increased the gap between crystals.}, for which the cross-talk between different crystals was expected.
+        Gluing the scintillators this way, we knew small gaps between them after mounting the telescope were unavoidable\footnote{Being my first gluing I used too much optical cement, which further increased the gap between crystals.}. 
+        This was actually to confront it with the Shanghai telescope, for which the cross-talk between different crystals was expected.
 
         \begin{figure}
             \centering
             \includegraphics[width = 0.8\textwidth]{Figures/muEDM/thin_scintillators.jpg}
-            \caption[muEDM: Thin scintillators for the beamtimes.]{Picture of different scintillators mounted on PCBs and read by multiple SiPMs. The signals of the SiPMs are summed and different thicknesses were already available at the time of the 2021 beam time.}
+            \caption[muEDM 2022: Thin scintillators for the beamtimes]{Picture of different scintillators mounted on PCBs and read by multiple SiPMs. The signals of the SiPMs are summed and different thicknesses were already available at the time of the 2022 beam time.}
             \label{fig:muEDM:thin_scintillators}
         \end{figure}
 
@@ -435,8 +430,8 @@ We will then move through the beamtimes.
             \subfloat[Assembly of the \textit{telescope} with \textit{entrance} and \textit{veto}.]{\includegraphics[width=0.49\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/telescope_front.png}\label{fig:muEDM:bt2021:telescope:front}}
             \hfill
             \subfloat[``T'' beamline piece used as vacuum chamber.]{\includegraphics[width=0.49\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/telescope_built.png}\label{fig:muEDM:bt2021:telescope:built}}
-            \caption[muEDM 2022: entrance setup]{The \textit{entrance} scintillator, the \textit{telescope}, and the \textit{veto} were assembled in a rigid structure. A ``T'' beamline piece was used to put the detector in the beamline. The lateral flange was adapted for the feedthroughs while, on the back, a \mylar widow was mounted to allow further measurements of the beam.}
-            \label{fig:muEDM:bt2021:telescope}
+            \caption[muEDM 2022: telescope setup]{The \textit{entrance} scintillator, the \textit{telescope}, and the \textit{veto} were assembled in a rigid structure. A ``T'' beamline piece was used to put the detector in the beamline. The lateral flange was adapted for the feedthroughs while, on the back, a \mylar widow was mounted to allow further measurements of the beam.}
+            \label{fig:muEDM:bt2022:telescope}
         \end{figure}
 
         \paragraph{Additional items}
@@ -446,9 +441,9 @@ We will then move through the beamtimes.
             \1 \tpc+ \grid: Used parasitically to gather some missing details, which were merged to the data from 2021 beam-time in the publication already mentioned (see Sec.~\ref{sec:muEDM:gridpix:beamtime}) \cite{muEDM:PSI:GridPix}.
         \end{outline}
 
-    \status{review}
+    \status{done}
     \subsection{Data taking}
-        The whole beamtime was roughly two weeks. 
+        The whole beamtime lasted roughly two weeks. 
         The first days were dedicated to the beam tuning and measurements.
         Two settings were defined to have the beam focused on the gate or the exit scintillator. 
         These two setups allowed us to study different aspects of the prototype, which will be discussed in the following section.
@@ -463,7 +458,7 @@ We will then move through the beamtimes.
         \begin{figure}
             \centering
             \includegraphics[width = 0.8\textwidth]{Figures/muEDM_Nov2022/muEDM2022_triggers.png}
-            \caption[muEDM:2022 triggers]{WaveDREAM interface to set the triggers. A dot is a required channel while a cross is used as veto. Some examples are: P00 - veto only; P01 - gate only; P03 - !veto \& gate \& exit.}
+            \caption[muEDM 2022: WaveDREAM trigger GUI]{WaveDREAM interface to set the triggers. A dot is a required channel while a cross is used as veto. Some examples are: P00 - veto only; P01 - gate only; P03 - !veto \& gate \& exit.}
             \label{fig:muEDM:bt2022:triggers}
         \end{figure}
         
@@ -472,11 +467,11 @@ We will then move through the beamtimes.
             \subfloat[The setup mounted at the end of the beamline.]{\includegraphics[width=0.45\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/muEDM2022_beamtuning.png}\label{fig:muEDM:bt2022:setup:beam}}
             \hfill
             \subfloat[The view of the detectors from the Mylar window before making it light-tight.]{\includegraphics[width=0.45\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/muEDM2022_window.png}\label{fig:muEDM:bt2022:setup:window}}            
-            \caption[muEDM:2022 installation]{Pictures of the system after the installation along the beamline.}
+            \caption[muEDM 2022: installation on the beamline]{Pictures of the system after the installation along the beamline.}
             \label{fig:muEDM:bt2022:blobs}
         \end{figure}
         
-    \status{review}
+    \status{done}
     \subsection{Data analysis}
         The data collected were analyzed in parallel to study the behavior of the gate and the telescope. 
         The first will be part of the muEDM experiment, the second was developed to test such a system.
@@ -494,7 +489,7 @@ We will then move through the beamtimes.
             \begin{figure}
                 \centering
                 \includegraphics[width = 0.8\textwidth]{Figures/muEDM_Nov2022/gate_eff-time.png}
-                \caption[muEDM:2022 gate efficiency]{Correlation plot for the amplitude of the signal in the gate and the TOF measured. If this plot is produced while triggering only on the exit, it can be used to evaluate the gate efficiency.}
+                \caption[muEDM 2022: gate efficiency]{Correlation plot for the amplitude of the signal in the gate and the TOF measured. If this plot is produced while triggering only on the exit, it can be used to evaluate the gate efficiency.}
                 \label{fig:muEDM:bt20212gate}
             \end{figure}
             
@@ -549,7 +544,7 @@ We will then move through the beamtimes.
             Evaluating the time difference between gate and exit we can evaluate the time of flight of the particles. 
             The spread of this measurement is the convolution of the momentum spread and the intrinsic resolution of the system made of the two scintillators: $\sigma_{TOF} = \sigma_{p} \oplus \sigma_{scint}$.
             Given gate and exit have different thicknesses, their contribution will be only approximated by $\sigma_{scint}\approx\sqrt{2}\sigma_{gate/exit}$.
-            The result of the Gaussian fit on the TOF measurement is in Fig.~\ref{fig:muEDM:bt20212gate:resolution} and the resulting res9olution is $\sigma_{TOF} \approx \SI{241}{ps}$.
+            The result of the Gaussian fit on the TOF measurement is in Fig.~\ref{fig:muEDM:bt20212gate:resolution} and the resulting resolution is $\sigma_{TOF} \approx \SI{241}{ps}$.
             Assuming a 3\% momentum spread, the resulting resolution of the detector is $\sigma_{scint}\approx 241 \ominus \SI{78}{ps} \approx \SI{228}{ps}$.
             From this we can make a rough estimate of $\sigma_{gate}\approx\SI{228}{ps}/\sqrt{2} \approx\SI{160}{ps}$.
             These results are completely satisfying.
@@ -557,7 +552,7 @@ We will then move through the beamtimes.
             \begin{figure}
                 \centering
                 \includegraphics[width = 0.8\textwidth]{Figures/muEDM_Nov2022/gate_resolution.png}
-                \caption[muEDM:2022 time resolution]{Measuring the TOF resolution, and assuming a momentum spread of 3\%, we can extract a combined resolution of gate and exit of $\sigma_{scint}\approx 241 \ominus \SI{78}{ps} \approx \SI{228}{ps}$. This result meets the requirements.}
+                \caption[muEDM 2022: gate-exit time resolution]{Measuring the TOF resolution, and assuming a momentum spread of 3\%, we can extract a combined resolution of gate and exit of $\sigma_{scint}\approx 241 \ominus \SI{78}{ps} \approx \SI{228}{ps}$. This result meets the requirements.}
                 \label{fig:muEDM:bt20212gate:resolution}
             \end{figure}
 
@@ -578,7 +573,7 @@ We will then move through the beamtimes.
             \begin{figure}
                 \centering
                 \includegraphics[width = 0.95\textwidth]{Figures/muEDM_Nov2022/shanghai_summary.png}
-                \caption[]{Summary of the different events for the two beam focuses and the prediction from the \gfb prediction. See the main text for the details.}
+                \caption[muEDM 2022: data and \gf events]{Summary of the different events for the two beam focuses and the prediction from the \gfb prediction. See the main text for the details.}
                 \label{fig:muEDM:bt2022:summary}
             \end{figure}
 
@@ -586,7 +581,7 @@ We will then move through the beamtimes.
             Let's now consider a particle interacting in one of the four scintillators of the telescope. 
             If the photons produced by scintillation can bleed into the neighbor scintillators, secondary hits could be measured in these.
             So a small fraction of light will be seen by the next scintillators and very little by the one opposite (looking at Fig.~\ref{fig:muEDM:bt2022:blobs:idea}, an example could be hitting A, small fraction in D and B, and even smaller in C).
-            If we now look at the charge correlation between the different scintillators, we find some interesting pattern.\\ 
+            If we now look at the charge correlation between the different scintillators, we find some interesting patterns.
             Looking at the correlation in a neighbor channel (A and B), we find a 4-dot pattern, the central graph of Fig.~\ref{fig:muEDM:bt2022:blobs:idea}. A hit in:
             \begin{outline}
                 \1[A] will deposit charge in A and some in B - yellow
@@ -608,11 +603,11 @@ We will then move through the beamtimes.
             \subfloat[Sketch to explain the correlation patterns between the charges of the different scintillators in the telescope in case of crosstalk. The scintillators are color-coded to aid understanding the patterns.]{\includegraphics[width=0.9\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/telescope_blobs.png}\label{fig:muEDM:bt2022:blobs:idea}}\\
             \subfloat[In the case of the telescope from Pisa, the double readout and modular style created small gaps between the scintillators. The result is that no optical crosstalk is expected nor found.]{\includegraphics[width=0.9\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/pisa_blobs.png}\label{fig:muEDM:bt2022:blobs:pisa}}\\
             \subfloat[In the Shanghai telescope, the scintillators are in contact. The result is the appearance of the correlation structures. These are in agreement with the expectations and nicely reproduced by the simulations.]{\includegraphics[width=0.9\textwidth, keepaspectratio]{Figures/muEDM_Nov2022/shanghai_blobs_g4.png}\label{fig:muEDM:bt2022:blobs:shanghai}}            
-            \caption[muEDM:2022 optical crosstalk]{In case optical crosstalk is present, the correlation of the charges measured by the different scintillators show interesting patterns. These are expected and found in the Shanghai telescope, and not in the Pisa version, due to small gaps in the system.}
+            \caption[muEDM 2022: optical crosstalk in the telescope(s)]{In case optical crosstalk is present, the correlation of the charges measured by the different scintillators show interesting patterns. These are expected and found in the Shanghai telescope, and not in the Pisa version, due to small gaps in the system.}
             \label{fig:muEDM:bt2022:blobs}
         \end{figure}
 
-\status{review}
+\status{done}
 \section{Beamtime 2023: TOF and Multi readout entrance}
 \label{sec:muEDM:beamtime2023}
     In this section, we present the experimental setup along with the first preliminary results of the test beam measurement in $\pi E1$ in December 2023. 
@@ -620,14 +615,14 @@ We will then move through the beamtimes.
     For this purpose, we focused on the measurement of the time of flight~(ToF) of muons as they pass through the vacuum of an injection channel that acts as a magnetic shield permitting a low magnetic-field path into the bore of the solenoid. 
     At the same time, different detectors were tested, such as the beam monitor and ToF detector prototypes of varying scintillator thicknesses, between \SIrange{25}{200}{\micro\meter}.
 
-    \status{review}
+    \status{done}
     \subsection{Data taking}
         Let's start by describing the setup used during this beam time.
         The idea was to have two injection channels: inject the beam on the top line, then invert the magnetic field and shift the whole apparatus vertically to inject from the bottom line.
         Due to the delay of the height-adjustable magnet support, we could only use one channel.
         Additionally, given the studies on SC injections (Sec.~\ref{sec:muEDM:injection}) were still ongoing, we opted for magnetic steel, which would shield up to \SI{0.8}{T}. 
         For this reason, we limited the magnet field to $-750<B<750$ mT, so that the fringing fields could not behave as magnetic mirrors, rejecting the incoming muon, or deflecting them too much from the trajectory.
-        Figure~\ref{fig:TB2023murTubes} shows a simulation of the relative permittivity of the injection tube for three different nominal magnetic-field values in the center of the solenoid bore. With a field of \SI{750}{\milli\tesla} the relative permittivity of the tubes remains above 10 indicating no or only low saturation along the tube. Moreover, as seen in Figure~\ref{fig:TB2023FieldInTube}, with a field of \SI{750}{\milli\tesla} the magnetic field strength in the middle of the tube is below \SI{100}{\milli\tesla} for $\sim$\SI{98}{\%} of the length of the injection tube. 
+        Figure~\ref{fig:TB2023murTubes} shows a simulation of the relative permittivity of the injection tube for three different nominal magnetic-field values in the center of the solenoid bore. With a field of \SI{750}{\milli\tesla}, the relative permittivity of the tubes remains above 10 indicating no or only low saturation along the tube. Moreover, as seen in Figure~\ref{fig:TB2023FieldInTube}, with a field of \SI{750}{\milli\tesla} the magnetic field strength in the middle of the tube is below \SI{100}{\milli\tesla} for $\sim$\SI{98}{\%} of the length of the injection tube. 
         By setting the PSC magnet to produce a magnetic field of \SI{750}{\milli\tesla} inside its bore, a shielding factor of almost two along the center axis of the injection tube is expected.
         The expected stress for these injection channels is significant and for this reason, a proper holding structure was developed and we opted for \textit{dummy}-injection tubes to mitigate the stress generated on the magnet.
         The \ansys structural simulation, the CAD design of the holder, and the overall setup are shown in Fig.~\ref{fig:muEDM:2023:setup}.
@@ -646,7 +641,7 @@ We will then move through the beamtimes.
             \subfloat[Magnetic field strength along the middle of the tube]{
             \includegraphics[width=0.9\textwidth]{Figures/muEDM_Dec2023/FieldTubesSim.png}
             \label{fig:TB2023FieldInTube}}
-            \caption{Simulation results for different nominal magnetic fields at the center of the PSC solenoid. (a)~shows the relative permittivity of the injection tubes as a function of the distance along the tube, starting from the upstream position and going towards the downstream position inside the bore of the PSC magnet. (b)~shows the magnetic field strength along the middle of the injection tube. Note that the two significant features are a result of a reduced wall thickness of the steel tube at these positions, for the mechanical support.}
+            \caption[muEDM 2023: injection shielding]{Simulation results for different nominal magnetic fields at the center of the PSC solenoid. (a)~shows the relative permittivity of the injection tubes as a function of the distance along the tube, starting from the upstream position and going towards the downstream position inside the bore of the PSC magnet. (b)~shows the magnetic field strength along the middle of the injection tube. Note that the two `features' are a result of a reduced wall thickness of the steel tube at these positions, for the mechanical support.}
             \label{fig:TB2023FieldStrengthTubes}
         \end{figure}	
         \begin{figure}
@@ -655,7 +650,7 @@ We will then move through the beamtimes.
             \subfloat[CAD design of the whole setup.]{\includegraphics[width=0.8\textwidth]{Figures/muEDM_Dec2023/AssemblyTestBeam2023.png}}\\
             \subfloat[CAD detail of the US detectors.]{\includegraphics[width=0.45\textwidth]{Figures/muEDM_Dec2023/AssemblyTestBeam2023US.png}}\hfill
             \subfloat[CAD detail of the DS detectors.]{\includegraphics[width=0.45\textwidth]{Figures/muEDM_Dec2023/AssemblyTestBeam2023DS.png}}
-            \caption{The support structure was developed to reduce stresses to the injection channel and the PSC magnet: \textbf{(a)} shows the \ansys studies, \textbf{(b)} the whole setup, \textbf{(c)} and \textbf{(d)} the detail of the US and DS detectors.}
+            \caption[muEDM 2023: simulation and CAD design of the setup]{The support structure was developed to reduce stresses to the injection channel and the PSC magnet: \textbf{(a)} shows the \ansys studies, \textbf{(b)} the whole setup, \textbf{(c)} and \textbf{(d)} the detail of the US and DS detectors.}
             \label{fig:muEDM:2023:setup}
         \end{figure}
 
@@ -667,48 +662,48 @@ We will then move through the beamtimes.
         After removing the pill, the first item in the setup was the Beam Monitor, a squared detector made of scintillators arranged to have a squared hole.
         The aim of this detector, as outlined in Ch.~\ref{ch:muEDM}, where the details of the working principles were previously discussed, is to center the beam.
         Two monitors with different segmentation and scintillator tile shapes were tested.
-        One consisted of eight rectangular tiles, while the other consisted of four triangular tiles per layer. 
+        One consisted of eight rectangular tiles, while the other consisted of four trapezoidal tiles per layer. 
         Additionally, two orientations at a rotation of $0^{\circ}$ and $180^{\circ}$ around the beam axis were compared to check the performance of individual tiles. 
         Finally, the measurements were performed at different magnetic fields generated by the PSC magnet to map the deflection of the beam spot at the entrance of the injection channel.
         
         \paragraph{Time Of Flight (TOF)}
         Following the beam monitor, two scintillators are used to evaluate the time of flight.
         The idea is to use thin scintillators to reduce the multiple scattering.
-        From the previous beamtime, we know we can use $\SI{100}{\micro m}\divisionsymbol\SI{200}{\micro m}$ achieving an intrinsic time resolution of $\upsigma_{int}\approx\SI{300}{\micro s}$.
+        From the previous beamtime (Sec.~\ref{sec:muEDM:beamtime2022}), we know we can use $\SI{100}{\micro m}\divisionsymbol\SI{200}{\micro m}$ achieving an intrinsic time resolution of $\upsigma_{int}\approx\SI{300}{\micro s}$.
         The aim here is to evaluate the momentum spread of the beam by measuring the TOF.
         The difference in momentum translates into the difference in time of the scintillator signals $\Delta t$. 
         The distribution of $\Delta t$ is the convolution of the momentum distribution and the intrinsic time resolution of the system.
         Assuming a Gaussian distribution for the beam momentum, centered around \SI{28}{MeV/c} and having spread 1\%, 3\%, and 5\%, we can evaluate the $\Delta t_{measured}$ for different distances.
-        In Fig~\ref{fig:muEDM:bt2023:TOFPython} the expected distributions for $1\%$ spread and $\upsigma_{int}\approx\SI{300}{\micro s}$, while the \textit{std. dev.} of the obtained distributions is shown as a function of distance for 3\% and 5\%.
+        In Fig~\ref{fig:muEDM:bt2023:TOFPython} the expected distributions for $1\%$ spread and $\upsigma_{int}\approx\SI{300}{\micro s}$, while the $\sigma$ of the obtained distributions is shown as a function of distance for 3\% and 5\%.
         From these estimations we can conclude a 1\% momentum spread, with the given $\upsigma_{int}$ and reasonable distances, cannot be appreciated. 
         The situation seems different for 3\% and 5\%.
         Figure~\ref{fig:TB2023ToFPhoto} shows one of the ToF prototypes fabricated in 2023, while it was being mounted to the injection tubes. \\
 
         \noindent
-        The coincidence of different channels per detector was studied, to decrease the threshold, increase the sensitivity of each detector, and reach the maximum efficiency by comparing combinations of different prototypes under test beam conditions. 
+        The coincidence of different channels per detector was studied, to decrease the threshold, increase the sensitivity of each detector, and reach the maximum efficiency by comparing different combinations. 
         As the beam characteristics and the momentum of the muons were essentially constant, it was possible to test the effects of the magnetic field ``handedness'', CW vs.\ CCW storage of the muons inside the storage magnet, on the momentum and muon trajectory along the injection channel by measuring the ToF between upstream~(US) and downstream~(DS) detector. 
-        Measurements with different magnetic field strengths and polarities were performed.
         The changes in the magnetic field were performed by sweeping between the maximum magnetic-field magnitudes of $\pm$\SI{750}{\milli\tesla}, in such a way as to also be sensitive to possible hysteresis effects.
-        \begin{figure}
-            \centering
-            \includegraphics[width=0.5\textwidth]{Figures/muEDM_Dec2023/IMG_20231209_225342Small.png}
-            \caption{One of the ToF detector prototypes fabricated in 2023 with four readout channels. The detector is mounted on the downstream detector module which is attached to the injection tubes.}
-            \label{fig:TB2023ToFPhoto}
-        \end{figure}
-        
+                
         \begin{figure}
             \centering
             \includegraphics[width=\textwidth]{Figures/muEDM_Dec2023/histo_28_1_300.png}\\
             \includegraphics[width=0.49\textwidth]{Figures/muEDM_Dec2023/trend_28_3_300.00.png}
             \hfill
             \includegraphics[width=0.49\textwidth]{Figures/muEDM_Dec2023/trend_28_5_300.00.png}
-            \caption[muEDM 2023: TOF momentum spread.]{A simple Python simulation to evaluate the resolution for the TOF for different distances, momentum spread, and time intrinsic resolution of the couple of scintillators used. For $\upsigma_{int}=\SI{300}{ps}$ we do not appreciate a 1\% spread in momentum while we have the sensitivity for 3\% and 5\%.}
+            \caption[muEDM 2023: TOF momentum spread]{A simple Python simulation to evaluate the resolution for the TOF for different distances, momentum spread, and time intrinsic resolution of the couple of scintillators used. For $\upsigma_{int}=\SI{300}{ps}$ we do not appreciate a 1\% spread in momentum while we have the sensitivity for 3\% and 5\%.}
             \label{fig:muEDM:bt2023:TOFPython}
+        \end{figure}
+
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.5\textwidth]{Figures/muEDM_Dec2023/IMG_20231209_225342Small.png}
+            \caption[muEDM 2023: TOF mounting]{One of the ToF detector prototypes fabricated in 2023 with four readout channels. The detector is mounted on the downstream detector module which is attached to the injection tubes.}
+            \label{fig:TB2023ToFPhoto}
         \end{figure}
 
         \paragraph{Multi-readout \textit{gate}}
         A cardinal point was the implementation of four independent readout channels for the new thin scintillators. 
-        This was discussed earlier (Sec~\ref{sec:muEDM:beamtime2022}) and is linked to the necessity of lowering the threshold while keeping a low dark rate.
+        This was discussed earlier (Sec.~\ref{sec:muEDM:beamtime2022}) and is linked to the necessity of lowering the threshold while keeping a low dark rate.
         A picture during the soldering and the CAD design are shown in Fig.~\ref{fig:muEDM:bt2023:TOF:picture}.
         We took data with mixed (old 1ch and new 4ch) and matched (new 4ch and new 4ch) setups.
         This allowed us to benchmark the new detectors.
@@ -717,7 +712,7 @@ We will then move through the beamtimes.
             \centering
             \includegraphics[height=5cm]{Figures/muEDM_Dec2023/TOF_soldering.jpg}
             \includegraphics[height=5cm]{Figures/muEDM_Dec2023/TOF_CAD.png}
-            \caption[muEDM 2023: TOF detector soldering.]{A picture of the TOF detectors used during the 2023 December beam-time. Thin scintillators (50 and \SI{100}{\micro m}) read on four sides by four SiPMs.}
+            \caption[muEDM 2023: TOF detector soldering and CAD]{A picture of the TOF detectors used during the 2023 December beam-time. Thin scintillators (50 and \SI{100}{\micro m}) read on four sides by four SiPMs.}
             \label{fig:muEDM:bt2023:TOF:picture}
         \end{figure}
 
@@ -727,7 +722,7 @@ We will then move through the beamtimes.
         We utilized this functionality to calibrate the Time of Flight (ToF) setup by measuring the ToF of positrons traveling near the speed of light.
         Another setup was dedicated to evaluating the relative efficiency and intrinsic time resolution of the detectors. Two detectors were positioned back-to-back with minimal spacing (a few millimeters), and this configuration was repeated for all possible detector pairs.
 
-    \status{review}
+    \status{done}
     \subsection{Data analysis}
         \paragraph{Beam Monitor}
         The two tested versions were the 4 and 8-segmented variants.
@@ -747,28 +742,28 @@ We will then move through the beamtimes.
             \centering
             \includegraphics[width=0.49\textwidth]{Figures/muEDM_Dec2023/Corner_overlay_TueHVset_rect.png}
             \includegraphics[width=0.49\textwidth]{Figures/muEDM_Dec2023/Middle_overlay_TueHVset_rect.png}
-            \caption{Charge integral of the 8-segmented beam monitor as extracted online in WaveDAQ GUI. Left: overlay of all the corner 2~mm thick tiles. Right: overlay of all the middle 2~mm thick tiles. The peak on the right corresponds to positrons, while the broader peak on the left corresponds to muon energy depositions.}
+            \caption[muEDM 2023: Beam monitor charge distributions]{Charge integral of the 8-segmented beam monitor as extracted online in WaveDAQ GUI. Left: overlay of all the corner 2~mm thick tiles. Right: overlay of all the middle 2~mm thick tiles. The peak on the right corresponds to positrons, while the broader peak on the left corresponds to muon energy depositions.}
             \label{fig:BeamMonRect_pulsesDefaultThresh}
         \end{figure}
         
         \begin{sidewaysfigure}
             \centering
             \includegraphics[width=0.95\textwidth]{Figures/muEDM_Dec2023/BeamMonRect_scanData2023.png}%
-            \caption{The online rates in kHZ in 2~mm thick tiles of the 8-segmented beam monitor. The rates were recorded for three x-positions left and right of the nominal detector position (the center images). The top two rows show the rates for the beam monitor in "0 deg" position, while the bottom two rows show the data for the "180 deg" rotated monitor. Two rows for each detector rotation correspond to the two trigger configurations (see text), with the upper row being just the rate of a channel, and the bottom row requiring a hit in the channel and no hits in the thicker back scintillator plane. The beam is entering the image plane along the line of sight.}
+            \caption[muEDM 2023: Beam monitor 8-segments analysis]{The online rates in kHZ in 2~mm thick tiles of the 8-segmented beam monitor. The rates were recorded for three x-positions left and right of the nominal detector position (the center images). The top two rows show the rates for the beam monitor in "0 deg" position, while the bottom two rows show the data for the "180 deg" rotated monitor. Two rows for each detector rotation correspond to the two trigger configurations, with the upper row being the rate of a channel, and the bottom row requiring a hit in the channel and no hits in the thicker back scintillator plane. The beam is entering the image plane along the line of sight.}
             \label{fig:BeamMonRect_positionScan}
         \end{sidewaysfigure}
         
         \begin{sidewaysfigure}
             \centering
             \includegraphics[width=0.9\linewidth]{Figures/muEDM_Dec2023/BeamMonTriang_scanData2023.png}%
-            \caption{The online rates in kHZ in 2~mm thick tiles of the 4-segmented beam monitor. The rates were recorded for two x-positions left and right of the nominal detector position (the center images). The top two rows show the rates for the beam monitor in "0 deg" position, while the bottom two rows show the data for the "180 deg" rotated monitor. Two rows for each detector rotation correspond to the two trigger configurations (see text), with the upper row being just the rate of a channel, and the bottom row requiring a hit in the tile (with a signal in both channels) and no hits in the thicker back scintillator plane. The beam is entering the image plane along the line of sight.}
+            \caption[muEDM 2023: Beam monitor 4-segments analysis]{The online rates in kHZ in 2~mm thick tiles of the 4-segmented beam monitor. The rates were recorded for two x-positions left and right of the nominal detector position (center images). The top two rows show the rates for the beam monitor in "0 deg" position, while the bottom two rows show the data for the "180 deg" rotated monitor. Two rows for each rotation correspond to the two trigger configurations, with the upper row being just the rate of a channel, and the bottom row requiring a hit in the tile (in both channels) and no hits in the back scintillator plane. The beam is entering the image plane along the line of sight.}
             \label{fig:BeamMonTriang_positionScan}
         \end{sidewaysfigure}
 
         \paragraph{TOF scintillators}
         Two TOF detectors per scintillating foil thickness (\SI{100}{\micro m} and \SI{50}{\micro m}) have been tested, for a total of four detectors, in different combinations. 
         The beamtime aimed to measure the detection efficiency of each detector and its intrinsic timing resolution, as well as the time-of-flight resolution for all the possible combinations of the available detectors.
-        The threshold of each channel was set to have a dark count rate of a few 100 Hz (apart from a couple of noisy channels up to 1 kHz) with the Beam Blocker closed. 
+        The threshold of each channel was set to have a dark count rate of a few 100 Hz (apart from a couple of noisy channels up to 1 kHz) with the beam blocker closed. 
         As a reference, with the settings of our beamline, we had a typical rate of $\approx50$ KHz on the US detector.
 
         \noindent
@@ -784,7 +779,7 @@ We will then move through the beamtimes.
         \begin{figure}
             \centering
             \includegraphics[width=1\linewidth]{Figures/muEDM_Dec2023/TOF_setup_assembly_in_area.png}
-            \caption{The \textit{short} and \textit{long} configurations, used to extract the main parameters of the TOF detectors.}
+            \caption[muEDM 2023: picture of the TOF measurements]{The \textit{short} and \textit{long} configurations, used to extract the main parameters of the TOF detectors.}
             \label{fig:TOF_short_and_long}
         \end{figure}
 
@@ -813,15 +808,13 @@ We will then move through the beamtimes.
             \centering 
             \subfloat[Short configuration with \SI{100}{\micro m} detector pair.]{\includegraphics[width=0.5\linewidth]{Figures/muEDM_Dec2023/TOF_preliminary_shortconfiguration100pair.png}\label{fig:TOF_intrinsictimeresolution100pair}}
             \subfloat[Long configuration with \SI{100}{\micro m} detector pair.]{\includegraphics[width=0.5\linewidth]{Figures/muEDM_Dec2023/TOF_preliminary_longconfiguration100pair.png}\label{fig:TOF_TOFresolutionpair}}
-            \caption{Time difference for the \SI{100}{\micro m} detector pair, mounted om the \textit{short} (a) and \textit{long} (b) configuration. In red the result of taking two fixed channels, in blue taking the first channel to be triggered in the detectors.}
+            \caption[muEDM 2023: TOF resolutions]{Time difference for the \SI{100}{\micro m} detector pair, mounted om the \textit{short} (a) and \textit{long} (b) configuration. In red the result of taking two fixed channels, in blue taking the first channel to be triggered in the detectors.}
         \end{figure}
 
         \paragraph{TOF}
         TOF measurements were taken for different detector setups and at different magnetic fields in the range of \SI{-750}{mT} to \SI{+750}{mT}. 
         The mounted detectors have scintillating foil thicknesses of \SI{200}{\micro\meter} (Detector \#0), \SI{100}{\micro\meter} (Detector \#1 and \#2) and \SI{50}{\micro\meter} (Detector \#3 and \#4) and were used in five different configurations: US\#0-DS\#1, US\#2-DS\#1, US\#3-DS\#1, US\#4-DS\#3 and US\#4-DS\#1. Table~\ref{tab:ToFMeasurementsOverview} shows an overview of the TOF measurements taken. 
         For the preliminary Time of Flight study, only measurements with changing B fields have been considered.
-
-        \noindent
         To extract the time when a particle passes a detector, the signals of all four channels of a detector are summed and a constant fraction discrimination (CFD) method is applied. 
         This is akin to taking the first channel per detector.
         The CFD delays the original signal by five data points, corresponding to a delay of about \SI{1}{ns}, and half of the original signal is subtracted from the delayed pulse. 
@@ -838,7 +831,7 @@ We will then move through the beamtimes.
             \subfloat[ToF histograms with the same detector setup at positive and negative \SI{750}{mT} magnetic field. The means of the two ToF spectra differ by only 0.16\%.]{
             \includegraphics[width=0.49\linewidth]{Figures/muEDM_Dec2023/ToF_hist_plusminus.png}
             }
-            \caption{\textbf{(a)} Time of flight of positrons and muons measured with \SI{50}{\micro\meter} upstream and \SI{100}{\micro\meter} downstream detectors and \textbf{(b)} the same setup with muons at $\pm750$ mT. Due to energy losses in air and the entrance trigger, the muon peak is fitted with an exponentially modified Gaussian instead.}
+            \caption[muEDM 2023: TOF and magnetic field]{\textbf{(a)} Time of flight of positrons and muons measured with \SI{50}{\micro\meter} upstream and \SI{100}{\micro\meter} downstream detectors and \textbf{(b)} the same setup with muons at $\pm750$ mT. Due to energy losses in air and the entrance trigger, the muon peak is fitted with an exponentially modified Gaussian instead.}
             \label{fig:tof_emg_fit}
         \end{figure}
         
@@ -847,7 +840,7 @@ We will then move through the beamtimes.
             \subfloat[TOF means vs PSC magnetic field. Differences can be explained with the energy loss in the upstream detector.]{\includegraphics[width=0.49\linewidth]{Figures/muEDM_Dec2023/ToFMeanConfigComparison.png}\label{fig:ToFMeanConfigComparison}}
             \hfill
             \subfloat[TOF mean change vs change in field between consecutive measurements.]{\includegraphics[width=0.49\linewidth]{Figures/muEDM_Dec2023/ToFDiffMeanDiffB_ConfigComparison_perc.png}\label{fig:ToFDiffMeanDiffBConfigComparison}}
-            \caption{In \textbf{(a)} the TOF means for the five detector setups are plotted against the B field settings while in \textbf{(b)} the change of the mean ToF versus the change of the magnetic field for consecutive measurements. A detector setup corresponds to the upstream (US) and downstream (DS) detectors for the Time of Flight measurement (\#0 is the old \SI{200}{\micro\meter} detector).}
+            \caption[muEDM 2023: TOF and magnetic hysteresis]{In \textbf{(a)} the TOF means for the five detector setups are plotted against the B field settings while in \textbf{(b)} the change of the mean ToF versus the change of the magnetic field for consecutive measurements. A detector setup corresponds to the upstream (US) and downstream (DS) detectors for the Time of Flight measurement (\#0 is the old \SI{200}{\micro\meter} detector).}
         \end{figure}
 
         \begin{table}
@@ -937,7 +930,7 @@ We will then move through the beamtimes.
 \status{started}
 \printbibliography[
     heading = bibliographychapter,
-    title=Bibliography on muEDM entrance detector
+    title=Bibliography on Scintillators in muEDM
 ]
 
 \end{refsection}
