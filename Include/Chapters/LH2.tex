@@ -21,7 +21,7 @@ This item was one of the main tasks in my involvement in this experiment and it 
     A sketch of the CEX measurements, a picture of the BGO detector, and its moving structure is shown in Fig.~\ref{fig:CEX}.
 
     \newcommand\h{5cm}
-    \begin{figure}[ht]   
+    \begin{figure}[]   
     \centering
         \subfloat[CEX sketch]{\includegraphics[height=\h, keepaspectratio]{Figures/LH2/CEX_sketch.png}\label{fig:CEX:sketch}}
         \subfloat[BGO crystals]{\includegraphics[height=\h]{Figures/LH2/BGO.png}\label{fig:CEX:bgo}}
@@ -283,27 +283,27 @@ This item was one of the main tasks in my involvement in this experiment and it 
     This system was proven good enough for the calibrations needed but eventually, the re-design of the system was deemed unnecessary.
     Once the plan of installing a cryopump was no longer on the table, we opted to adapt the current design free from the constraint of having such a long system. 
 
-    \status{review}
+    \status{done}
     \subsection{Upgrade}
         \paragraph{He circuit}
         The first item was to try reducing the time needed to cool the system down.
         In this direction, the only change on the Helium circuit was to install a new cooling coil.
         This was built in a similar fashion but longer (\SI{120}{mm} instead of \SI{60}{mm}) increasing the thermal conduction between liquid helium and the main copper parts.
-        A sketch of the new copper coil is shown in Fig.~\ref{fig:}.
+        A picture of the new copper coil is shown in Fig.~\ref{fig:CEX:2023:newcooler}.
         On top of this change to the He circuit, we replaced the copper rod with a shorter copper cylinder, threaded on both sides, to reduce the thermal load of the system.
         This meant the position of the cooling coil was moved further inside COBRA, requiring longer in/out helium lines. 
         
-        \paragraph{Cell} Learning from the modifications done in 2022, a new Cell was produced (see Fig.~\ref{fig:}):
+        \paragraph{Cell} Learning from the modifications done in 2022, a new Cell was produced (see Fig.~\ref{fig:CEX:2023:newcell}):
         \begin{outline}
             \1 This was built with the copper connection so that it could be screwed on the copper rod
-            \1 The thermal connection with the copper was improved by making the wall as thin (\SI{0.5}{mm}) but  having a larger copper surface, covering most of the wall (see Fig.~\ref{fig:})
+            \1 The thermal connection with the copper was improved by making the wall as thin (\SI{0.5}{mm}) but  having a larger copper surface, covering most of the wall (see Fig.~\ref{fig:CEX:2023:CADnewcell})
         \end{outline}
         
         \paragraph{Shielding} The shielding also went through few changes:
         \begin{outline}
-            \1 Multi-layer insulation was added to the in/out helium lines, to prevent the liquid helium from evaporating before reaching the cooling coil.
-            \1 A copper shielding was added around the cooling section
-            \1 Multi-layer insulation was added to the cell itself to improve the stability of the system 
+            \1 Multi-layer insulation was added to the in/out helium lines, to prevent the liquid helium from evaporating before reaching the cooling coil (see Fig.~\ref{fig:CEX:2023:target:shielding})
+            \1 A copper shielding was added around the cooling section (see Fig.~\ref{fig:CEX:2023:target:shielding})
+            \1 super-insulation was added to the cell to improve the stability (see Fig.~\ref{fig:CEX:2023:target:ML})
         \end{outline}
 
         \paragraph{Sensors} As already discussed, the slow control of the system is based on an SCS2000.
@@ -326,7 +326,29 @@ This item was one of the main tasks in my involvement in this experiment and it 
         In the plot, the azure line represents how full the cell is. 
         The reason for the multiple drops is that the test was to reduce the Helium flux while keeping the liquid Hydrogen.
 
-        \begin{figure}[ht]   
+        \begin{figure}[]   
+            \centering
+            \subfloat[New cooler]{\includegraphics[height = 6.5cm, keepaspectratio]{Figures/LH2/2023/new_cooler.png}\label{fig:CEX:2023:newcooler}}
+            \hfill
+            \subfloat[New cell]{\includegraphics[height = 6.5cm, keepaspectratio]{Figures/LH2/2023/new_cell.png}\label{fig:CEX:2023:newcell}}
+            \hfill
+            \subfloat[CAD of the new cell]{\includegraphics[height = 6.5cm, keepaspectratio]{Figures/LH2/2023/CAD_cell2023.png}\label{fig:CEX:2023:CADnewcell}}
+            \caption[CEX 2023: new cell and cooler]{To increase the system cooling power a new cooler was built, double in length \textbf{(a)}. To improve the thermal connection between cool copper and the hydrogen, a new cell was designed: thin stainless steel wall, copper threaded connection, and wider copper back wall (picture in \textbf{(b)} and CAD in \textbf{(c)})}
+            \label{fig:CEX:2023:sensors}
+        \end{figure}
+
+
+        \begin{figure}[]   
+            \centering
+            \subfloat[Picture of the `compact' \ce{LH2}.]{\includegraphics[height = 6cm, keepaspectratio]{Figures/LH2/2023/LH2_compact.jpg}\label{fig:CEX:2023:target:shielding}}
+            \hfill
+            \subfloat[Super-insulation added on the cell.]{
+            \includegraphics[height = 6cm, keepaspectratio]{Figures/LH2/2023/LH2_cellMLI.jpeg}\label{fig:CEX:2023:target:ML}}
+            \caption[CEX 2023: 'Compact' target with insulation]{The `compact' version of the \ce{LH2} target is shown in (a), with the Cu shield on the cooler, the new vetronite parts and the super-insulation on the different sections. An additional layer of super-insulation was placed on the cell itself (b) to reduce the heat-lode due to radiation of the vacuum pipe.}
+            
+        \end{figure}
+
+        \begin{figure}[]   
             \centering
             \subfloat[The sensor placed on the He lines with a Cu `clamp'.]{\includegraphics[height = 6.5cm, keepaspectratio]{Figures/LH2/2023/CEX2023_sensors_inlet.jpg}}
             \hfill
@@ -335,18 +357,8 @@ This item was one of the main tasks in my involvement in this experiment and it 
             \caption[CEX 2023: additional \lakeshore sensors]{To study the behavior and stability of the system, additional \lakeshore sensors were placed on the inlet/outile He lines (a) and both on the CU rod and the cell (b). The additional sensor on the copper part of the cell, although not easy to place, allowed us to ensure the thermal connection.}
             \label{fig:CEX:2023:sensors}
         \end{figure}
-
-        \begin{figure}[ht]   
-            \centering
-            \subfloat[Picture of the `compact' \ce{LH2}.]{\includegraphics[height = 6cm, keepaspectratio]{Figures/LH2/2023/LH2_compact.jpg}}
-            \hfill
-            \subfloat[Super-insulation added on the cell.]{
-            \includegraphics[height = 6cm, keepaspectratio]{Figures/LH2/2023/LH2_cellMLI.jpeg}}
-            \caption[CEX 2023: 'Compact' target with insulation]{The `compact' version of the \ce{LH2} target is shown in (a), with the Cu shield on the cooler, the new vetronite parts and the super-insulation on the different sections. An additional layer of super-insulation was placed on the cell itself (b) to reduce the heat-lode due to radiation of the vacuum pipe.}
-            \label{fig:CEX:2023:target}
-        \end{figure}
-        
-        \begin{figure}[ht]   
+    
+        \begin{figure}[]   
             \centering
             \includegraphics[width=\textwidth, keepaspectratio]{Figures/LH2/2023/LIQUEFACTION_23.11.23(250L).png}
             \caption[CW 2023: a successful test]{This plot illustrates the outcome of a successful liquefaction process. The azure line depicts the fill level of the cell. The repeated drops in the line signify that the test aimed to decrease the Helium flux while maintaining the presence of liquid Hydrogen.}
@@ -373,20 +385,21 @@ This item was one of the main tasks in my involvement in this experiment and it 
 
         \begin{figure}
             \centering
-            \includegraphics[width=0.6\textwidth]{Figures/LH2/2023/LH2_UCI_2023.png}
+            \includegraphics[width=0.5\textwidth]{Figures/LH2/2023/LH2_UCI_2023.png}
             \caption[CW 2023: target alignment]{After inserting the target, it was centered (as much as possible). In red a known distance for reference, in green the displacement needed to center it. NB: the UCI pictures are upside-down.}
             \label{fig:CEX:2023:allignement}
         \end{figure}
 
-        \begin{figure}
-            \centering
-            \includegraphics[width=0.9\textwidth, keepaspectratio]{Figures/LH2/2022/CEX2022_dewars.png}
-            \includegraphics[width=0.9\textwidth, keepaspectratio]{Figures/LH2/2023/2023CEX_dewars.png}
-            \caption[CEX: Dewar usage in 2022 and 2023.]{Comparison of the dewar usage in 2022 and 2023. While the general trend during 2023 has been much better than in 2022, a spurious day of data-taking in 2022 was particularly efficient. The reason is unfortunately no clear and the condition hard to reproduce.}
-            \label{fig:CEX:dewar}
-        \end{figure}
+\status{done}
+\section{Conclusions}
+    After a recap of the task at hand, the history of the Hydrogen Target design was highlighted. As just illustrated, the duty cycle, the stability, and the level of the target improved significantly during these three years: $D_{2021, 50\%}\approx 0.55 \ra D_{2022, 50\%}\approx0.6 \ra D_{2023, 90\%}>0.8$. Although minor adjustments are still planned, this will probably stay as the final design.\\
 
-    \begin{figure}[ht]   
+    \noindent
+    The development of this system has been my first (and only) real immersion in the vast subject of cryogenics. 
+    Many things were quite new to me, from the materials' thermal properties to the inner structure of a Helium dewar and from the working principle of low-temperature sensors to the CAD design of peek/vetronite parts required for structural stability and thermal insulation.
+    Although being still far from any shade of \textit{expertise}, this has been quite an eye-opening endeavor.
+
+        \begin{figure}[]   
             \centering
             \subfloat[CEX2021]{
             \includegraphics[height = 6cm, keepaspectratio]{Figures/LH2/2021/CEX2021_patches.png}            \label{fig:CEX:patches:2021}}
@@ -399,13 +412,16 @@ This item was one of the main tasks in my involvement in this experiment and it 
             \caption[CEX: Triggered events per patch in 2021/2022/2023]{Number of triggered events during Charge EXchange data taking in 2021 2022 and 2023. Notice the lack of events in 3 patches in 2021 due to the low dutycycle of the LH2 target. For 2022 and 2023, the required statistics was collected and exceeded.}
             \label{fig:CEX:patches}
         \end{figure}
+        
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.9\textwidth, keepaspectratio]{Figures/LH2/2022/CEX2022_dewars.png}
+            \includegraphics[width=0.9\textwidth, keepaspectratio]{Figures/LH2/2023/2023CEX_dewars.png}
+            \caption[CEX: Dewar usage in 2022 and 2023.]{Comparison of the dewar usage in 2022 and 2023. While the general trend during 2023 has been much better than in 2022, a spurious day of data-taking in 2022 was particularly efficient. The reason is unfortunately no clear and the condition hard to reproduce.}
+            \label{fig:CEX:dewar}
+        \end{figure}
 
-\status{done}
-\section{Conclusions}
-    After a recap of the task at hand, the history of the Hydrogen Target design was highlighted. As just illustrated, the duty cycle, the stability, and the level of the target improved significantly during these three years: $D_{2021, 50\%}\approx 0.55 \ra D_{2022, 50\%}\approx0.6 \ra D_{2023, 90\%}>0.8$. Although minor adjustments are still planned, this will probably stay as the final design.\\
-
-
-    \begin{figure}[ht]   
+    \begin{figure}[]   
     \centering
         \subfloat[CEX 2021: beam below \SI{2.1}{bar}. 
         This translates to a duty cycle of $D_{2021}\approx0.5$,  with target level $>50\%$. 
@@ -420,10 +436,6 @@ This item was one of the main tasks in my involvement in this experiment and it 
         \label{fig:CEX:datataking}
     \end{figure}
 
-    \noindent
-    The development of this system has been my first (and only) real immersion in the vast subject of cryogenics. 
-    Many things were quite new to me, from the materials' thermal properties to the inner structure of a Helium dewar and from the working principle of low-temperature sensors to the CAD design of peek/vetronite parts required for structural stability and thermal insulation.
-    Although being still far from any shade of \textit{expertise}, this has been quite an eye-opening endeavor.
     
 \status{done}
 \printbibliography[

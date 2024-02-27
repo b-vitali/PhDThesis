@@ -65,7 +65,6 @@ This is my attempt at an up-to-date description, which relies on the ``muEDM Sta
         There the experiments setting the current limits were discussed but we report in Tab.~\ref{tab:edm} the results to aid the reader.
         It is important to note there are two limits for $\upmu$: one obtained by rescaling the limit on $d_e$, obtaining an \textit{indirect limit}; one, less stringent, is a \textit{direct} limit ($^*$).
         
-        \setcounter{table}{}
         \begin{table}[h]
             \centering
             \begin{tabular}{|c|c|c|}
@@ -576,8 +575,8 @@ This is my attempt at an up-to-date description, which relies on the ``muEDM Sta
         \1[T] The second option is to count only positrons above a given fractional energy $u_0$. For the two phases, maximizing the figure of merit results in 0.22 for $u_0\approx0.60$ and 0.17 for $u_0=0.18$
         \1[W] Last option is to define emission angle and/or fractional energy bins. 
         For each bin $(u, \theta, \phi)$ we can define a figure of merit $W_{ijk} = \alpha_{ijk} \sqrt{N_{ijk}}$, with $N_{ijk}$ as integral of $ N(u, \theta, \phi)$ on the $ijk$ bin, and $\alpha_{ijk}$ the integral of $ \partial_\Psi A(u,
-	\theta, \phi) N(u, \theta, \phi) / N_{ijk}$.\\
-        The resulting figure of merit is then $\mathcal{W} =  \sqrt{\sum_{ijk} W_{ijk}^2}$ and it's maximum is $\approx0.29$.
+	\theta, \phi) N(u, \theta, \phi) / N_{ijk}$.
+        The resulting figure of merit is then $\mathcal{W} =  \sqrt{\sum_{ijk} W_{ijk}^2}$ and it's maximum is $\approx0.29$ (see Fig.~\ref{fig:WAnalysis}).
         On a practical level, it depends on the reconstruction in the different bins and is evaluated as:
         $$W^2_{ijk} = \frac{(N_\uparrow - N_\downarrow)^2}{N_\uparrow + N_\downarrow},\text{ and }  \dot A_{ijk} = \frac{d}{dt} \left( \frac{N_\uparrow - N_\downarrow}{N_\uparrow + N_\downarrow} \right)$$
     \end{outline}
@@ -594,7 +593,13 @@ This is my attempt at an up-to-date description, which relies on the ``muEDM Sta
         \caption[muEDM: sensitivity studies]{Positron energy distribution $N$, rate of change of asymmetry $\partial_\Psi A$ evaluated for spin pointing opposite and along the momentum, respectively for Phase~I and II\@. The g-2 precession is deduced from the asymmetry~($A_\mathrm{fb}$ green) between the energy distributions, while the EDM signal is proportional to the directional asymmetry~(red). The arrows point to the mean rate of change of asymmetry $\tilde \alpha$ and the fraction of the positron spectrum at the optimal threshold using the T-method. }
         \label{fig:n_dot_a}
     \end{figure}
-    
+    \begin{figure}
+        \subfloat[Phase~II, $p = \SI{125}{MeV/c}$]{\includegraphics[height=4.8cm]{Figures/muEDM/WMethod_PhaseII.png}}
+        \subfloat[Phase~I, $p = \SI{28}{MeV/c}$]{\includegraphics[height=4.8cm]{Figures/muEDM/WMethod_PhaseI.png}}
+        \caption[muEDM: W-analysis method]{Following the weighted analysis strategy, bins in angle and positron energy bring different amounts of information and the distribution changes between Phase II and Phase I.}
+        \label{fig:WAnalysis}
+    \end{figure}
+
     
     \begin{table}[ht]
         \begin{tabular}{@{}p{2.2cm}p{2cm}ccc@{\hspace{10pt}}p{2cm}ccc@{}}
@@ -608,7 +613,7 @@ This is my attempt at an up-to-date description, which relies on the ``muEDM Sta
         W-method \scriptsize (20x20x20 bins) & None & 0.292 & 1.0 & 0.292 & None & 0.280 & 1.0 & 0.280 \\
         W-method \scriptsize (20x20x20 bins) & 0.4 & 0.326 & 0.800 & 0.291 & 0.15 & 0.299 & 0.876 & 0.280 \\ \bottomrule
         \end{tabular}
-        \caption[Analysis methods for the muEDM search]{Summary of analysis methods. The ratio $N_{e^+}/N_{\mu^+}$ is the fraction of detected positrons with respect to the total number of injected muons and $\tilde \alpha$ is the mean asymmetry above a threshold. The presented values are the theoretical maximum and do not include the effects of multiple scattering of positrons or limited detector acceptance.}\label{tab:AnalysisMethods}
+        \caption[Analysis methods for the muEDM search]{Summary of analysis methods. The ratio $N_{e^+}/N_{\mu^+}$ is the fraction of detected positrons to the total number of injected $\upmu$ and $\tilde \alpha$ is the mean asymmetry above a threshold. These are the theoretical maximum and do not include the effects of multiple scattering or limited detector acceptance.}\label{tab:AnalysisMethods}
     \end{table}
     
 \status{done}
@@ -712,7 +717,6 @@ This is my attempt at an up-to-date description, which relies on the ``muEDM Sta
             \label{tab:SystematicEffects}
         \end{table}
 
-
 \status{done}
 \section{Schedule}
     As we just saw, although the development of the precursor is moving at a very nice speed, the tasks are very challenging.
@@ -727,20 +731,6 @@ This is my attempt at an up-to-date description, which relies on the ``muEDM Sta
         \1[6] Data-taking in muon EDM mode
     \end{outline}
     Fig.~\ref{fig:muEDM:schedule:long} goes beyond the long shut-down and covers the full life of the experiment, up to 2033.
-    
-    \begin{figure}
-        \centering
-        \includegraphics[width = \textwidth]{Figures/muEDM/Schedule2023-2026.png}
-        \caption[muEDM: \textit{Short} term schedule]{`Short' term muEDM schedule, with highlighted the 6 main milestones up to the \textit{long shutdown}. Milestones: 1) off-axis injection; 2) generation of the entrance trigger; 3) generation of the pulsed B field; 4) detection of $g-2$; 5) adjust $g-2$ to zero; 6) EDM data taking.}
-        \label{fig:muEDM:schedule:short}
-    \end{figure}
-       
-    \begin{figure}
-        \centering
-        \includegraphics[width = \textwidth]{Figures/muEDM/SchedPropLongTerm23.png}
-        \caption[muEDM: \textit{Long} term schedule]{`Long' term muEDM schedule, with the different phases up to the end of the experiment.}
-        \label{fig:muEDM:schedule:long}
-    \end{figure}
 
 \status{done}
 \section{Conclusions}
@@ -749,6 +739,21 @@ This is my attempt at an up-to-date description, which relies on the ``muEDM Sta
     A status on the study of the systematics and a brief section on the upcoming schedule end the chapter.
     The experiment is still in an early phase but a lot of progress has been made during the last 2/3 years.
     For completeness sake, additional readings on the reason for such a search are \cite{muEDM:Semertzidis:2001}\cite{muEDM:Flavour:2008} and parallel studies at J-PARC are ongoing \cite{muEDM:J-PARC:2011} \cite{muEDM:J-PARC:2016}.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width = \textwidth]{Figures/muEDM/Schedule2023-2026.png}
+    \caption[muEDM: \textit{Short} term schedule]{`Short' term muEDM schedule, with highlighted the 6 main milestones up to the \textit{long shutdown}. Milestones: 1) off-axis injection; 2) generation of the entrance trigger; 3) generation of the pulsed B field; 4) detection of $g-2$; 5) adjust $g-2$ to zero; 6) EDM data taking.}
+    \label{fig:muEDM:schedule:short}
+\end{figure}
+   
+\begin{figure}
+    \centering
+    \includegraphics[width = \textwidth]{Figures/muEDM/SchedPropLongTerm23.png}
+    \caption[muEDM: \textit{Long} term schedule]{`Long' term muEDM schedule, with the different phases up to the end of the experiment.}
+    \label{fig:muEDM:schedule:long}
+\end{figure}
 
 \status{done}
 \printbibliography[

@@ -24,7 +24,7 @@ This Appendix is to illustrate the working principle of a Kalman filter, showing
     Now the procedure of finding the `optimal' track parameters suddenly implies also that we need to define the position where we want to determine those parameters.
     It is often the case we are interested in determining the value of $\vec{\eta}$ at the target, where the physical process takes place. 
 
-    \begin{figure}[h!]
+    \begin{figure}
         \centering
         \includegraphics[scale=0.5]{Figures/MEG/Kutschke_Kalman_circ.png}
         \caption[Trajectory with variable parameters]{Pictorial view of the trajectory of a particle traveling along a circular path which has variable parameters \cite{Kutschke}. The two blue circles represent the tangent circles at the beginning and at the end of the track segment: both circles are separately valid approximations of the particle trajectory in specific regions but they are not the best estimates of the entire trajectory.}
@@ -78,7 +78,7 @@ This Appendix is to illustrate the working principle of a Kalman filter, showing
         \eta = \begin{bmatrix} m \\  b \end{bmatrix},\ \ V=\begin{bmatrix} V_{mm}& V_{mb} \\ V_{bm}& V_{bb} \end{bmatrix} \label{vector}
     \end{gather}  
 
-    \begin{figure}[h!]
+    \begin{figure}
         \centering
         \includegraphics[scale=0.7]{Figures/MEG/Kutschke_Kalman.png}
         \caption[2D kalman linear filter]{Pictorial view of a 2D trajectory of a particle moving along a straight line and interacting with a number of equally spaced tracking stations \cite{Kutschke}. The stations measure the $y$ positions and the goal is to determine the track parameters at some Initial Point (IP). The $x$ origin is positioned on the last station while the $y$ origin is not relevant for this exercise.}
