@@ -1,8 +1,9 @@
 %   SETUP%
-\documentclass[a4paper,11pt,oneside,titlepage]{book}
+\documentclass[a4paper,11pt,twoside,titlepage]{book}
 
 %\documentclass[draft, a4paper,11pt,oneside,titlepage]{book}
 %add "draft=false" in includegraphics[draft=false] to keep an image while ignoring the others with "draft"
+\usepackage{anyfontsize}
 
 \input{Include/Settings/Settings}
 
@@ -211,27 +212,29 @@
 
 %%   TITLE PAGE
 \input{Include/Frontmatter/Titlepage} 
-\clearpage
 
 %%   QUOTE 
+\newpage \ \newpage
 \input{Include/Frontmatter/Quote}
-\newpage
+
 
 %%   ABSTRACT
-\afterpage{\null\thispagestyle{missing}\clearpage} % Blank page
+\newpage \ \newpage
 \input{Include/Frontmatter/Abstract} 
 \begin{singlespace}
 
 %%   TOC
+\newpage \ \newpage
 \tableofcontents 	
-\pagebreak
+\newpage
 \status{done}
 \addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
-\pagebreak
+\newpage
 \status{done}
 \addcontentsline{toc}{chapter}{\listtablename}
 \listoftables
+%\newpage \ \newpage
 
 %%   NOMENCLATURE AND ACRONYMS
 %\printnomenclature
@@ -284,7 +287,7 @@
 \chead{}                   
 \rhead{\slshape \rightmark} 
 \lfoot{\small Bastiano Vitali}
-\cfoot{\hspace{2cm}\small Muons for high precision physics: muEDM \& MEG} 
+\cfoot{\hspace{2cm}\small Precision searches at the intensity frontier with muons at PSI} 
 \rfoot{\small \thepage}          
 \renewcommand{\headrulewidth}{0.4pt} 
 \renewcommand{\footrulewidth}{0.4pt} 

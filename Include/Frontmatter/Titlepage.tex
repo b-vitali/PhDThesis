@@ -1,7 +1,8 @@
 \begin{frontespizio}
 % Remember: After editing this file, delete the cache and recompile
 %---------------------Definizione font---------------------%
-\Preambolo{\renewcommand{\fronttitlefont}{\fontsize{24}{24}\bfseries}}
+\Preambolo{\renewcommand{\fronttitlefont}{\fontsize{22}{22}\bfseries}}
+\Preambolo{\renewcommand{\frontsubtitlefont}{\fontsize{18}{18}\mdseries}}
 %----------------------------------------------------------%
 	% \frontinstitutionfont 	Neretto, 14/17 
 	% \frontdivisionfont 		Tondo, 12/16 
@@ -17,7 +18,7 @@
 	% \itshape	Corsivo
 	% \scshape	Maiuscoletto
 %----------------------------------------------------------%
-\Margini{4cm}{3cm}{3cm}{3cm}				% Margini sinistro, in basso, destro e in alto
+\Margini{3cm}{3cm}{3cm}{3cm}				% Margini sinistro, in basso, destro e in alto
 \Logo[3cm]{Figures/Logo/logo_sapienza_new.jpg}
 %\Universita{Roma}
 \Istituzione{\ }
@@ -26,10 +27,14 @@
 %\Dipartimento{Ingegneria Meccanica e Aerospaziale}	% = 'Dipartimento di Ingegneria Meccanica e Aerospaziale'
 %\Corso[Master Degree]{Aeronautical Engineering}
 \Scuola{PhD in Accelerator Physics}
-\Titoletto{Thesis For The Degree Of Doctor Of Philosophy}
+\Titoletto{\vspace{-0.5cm}Thesis For The Degree Of Doctor Of Philosophy}
 %New high intensity \& brightness muon beams for experiments at the intensity frontier
-\Titolo{Muons for high precision physics: muEDM \& MEG\\
-\vspace{0cm}
+%Muons for high precision physics: muEDM \& MEG II
+%Precision searches at intensity frontiers with muons at PSI:\\\Large{From MEG II calibrations methods to muEDM tracker}
+\Titolo{Precision searches at the intensity frontier with muons at PSI}
+\Sottotitolo{\vspace{-0.3cm}
+\textnormal{From MEG II calibration methods}\\ \textnormal{to the muEDM positron tracker}\\
+\vspace{0.5cm}
 \begin{figure}[h]
 \centering
 \includegraphics[height=1.6cm]{Figures/Logo/INFN-Pisa.png}
@@ -38,14 +43,12 @@
 \includegraphics[height=1.6cm]{Figures/Logo/muEDMLogoProposal.png}
 %\includegraphics[height=1.6cm]{Figures/Logo/mucool_logo.png}
 \includegraphics[height=1.6cm]{Figures/Logo/megII_logo.png}
-\end{figure}
-}
+\end{figure}}
 
-%\Sottotitolo{}
 \Punteggiatura{}					% Modifica la punteggiatura dopo 'Candidato', 'Realatore' ecc. (vuoto per togliere)
 \NCandidato{Candidate}					% Sostituisce 'Candidato' con '...'
 \Preambolo{\renewcommand{\frontsmallfont}[1]{\small}}
-\Candidato[333453/1949877]{Bastiano Vitali}
+\Candidato[1949877]{Bastiano Vitali}
 %\Candidato{\small{1532252}}
 \NRelatore{Thesis advisor}{Thesis advisors}
 \NCorrelatore{Thesis co-advisor}{Thesis co-advisors}% Sostituisce 'Relatori' con 'Advisor' (permette anche di scrivere più relatori)
