@@ -25,4 +25,4 @@ Overall, this thesis presents a comprehensive exploration of particle physics re
 On a personal level, this work exposed me to many different topics: from the GEANT4 simulations for muEDM detectors and tracker to the cryogenics of the LH2 target, from the usage and maintenance of a CW to the calibrations of a BGO calorimeter.
 
 # KEYWORDS
-muon, EDM, muEDM, scintillators, \gf, cLFV, MEG II, Cockcroft-Walton, Liquid Hydrogen, X17.
+muon, EDM, muEDM, scintillators, GEANT4, cLFV, MEG II, Cockcroft-Walton, Liquid Hydrogen, X17.
